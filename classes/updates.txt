@@ -1,0 +1,3 @@
+30 / 20 / 2024
+
+Made the Students class along with insert fucntion in DB and the connection of the data base --> Khemu
