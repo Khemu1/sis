@@ -44,4 +44,46 @@ class DB
     "); // used to prepare an SQL statement for execution
     return $stmt->execute($data); // this is used to exectue the perpare statement
   }
+  /**
+   * This function is used to select specific data from a table in the database
+   *
+   * @param string $table the name of the table to select from
+   * @param array $columns an array of column names to select
+   * @param array $data an array of key-value pairs where the key is the column name and the value is the value to match
+   * @return array an array of associative arrays where each associative array represents a row of data
+   */
+  public static function select($table, array $columns, array $data): array
+  {
+    $keys = array_keys($data);
+    $placeholders = array_map(fn(string $key) => "$key= :$key", $keys);
+
+    // Construct the SQL query
+    $sql = "SELECT " . implode(", ", $columns) . " FROM $table WHERE " . implode(" AND ", $placeholders);
+
+    // Prepare the SQL statement
+    $stmt = self::$pdo->prepare($sql);
+
+    // Execute the statement
+    $stmt->execute($data);
+
+    // Fetch the result as an associative array
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    if ($result === false) {
+      return [];
+    }
+    return $result;
+  }
+
+  /**
+   * This function is used to select all data from a tables in the database
+   *
+   * @param string $table the name of the table to select from
+   * @return array an array of associative arrays where each associative array represents a row of data
+   */
+  public static function selectAll($table): array
+  {
+    $stmt = self::$pdo->prepare("SELECT * FROM $table");
+    $stmt->execute(); // this is used to exectue the perpare statement
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+  }
 }

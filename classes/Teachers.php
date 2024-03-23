@@ -1,22 +1,19 @@
 <?php
 require_once ("DB.php");
-
-class Students
+class Teachers
 {
   public static $table = "student";
-  public static $columns = ["id", "userName", "name", "password", "address", "nationalId", "year"];
+  public static $columns = ["id", "userName", "name", "password", "address", "nationalId", "courses"];
+
+
 
   /**
-   * Returns all the rows of the table
+   * Returns all the specified columns of the table
    * @return array an associative array of rows
    */
-  public static function selectAll(): array
+  public static function select(array $columns,array $data): array
   {
-    return DB::selectAll(self::$table);
-  }
-
-  public static function select(array $columns, array $data):array {
-    return DB::select(self::$table, $columns,$data);
+    return DB::select(self::$table,$columns,$data);
   }
   /**
    * Inserts a new record into the Students table
@@ -29,5 +26,4 @@ class Students
   {
     return DB::insert(self::$table, $data);
   }
-
 }
