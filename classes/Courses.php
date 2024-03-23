@@ -1,20 +1,10 @@
 <?php
 require_once ("DB.php");
-class Teachers
+class Courses
 {
-  public static $table = "teacher";
-  public static $columns = ["accountId", "userName", "name", "address", "nationalId", "course"];
 
-
-
-  /**
-   * Returns all the specified columns of the table
-   * @return array an associative array of rows
-   */
-  public static function select(array $columns, array $data): array
-  {
-    return DB::select(self::$table, $columns, $data);
-  }
+  public static $table = "course";
+  public static $columns = ["name", "level", "hours", "teacherAccountid"];
   /**
    * Inserts a new record into the Students table
    * - the entered values of the array must be in this format -> accountId, userName, name, address, nationalId, course

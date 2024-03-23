@@ -36,16 +36,32 @@ class DB
    * @return bool true if the data was inserted successfully, false otherwise
    */
   public static function insert(string $table, array $data): bool
-  { // key -> value = name => ali , password => 951357
-    $keys = array_keys($data); // name , password
-    $placeholders = array_map(fn(string $key) => ":$key", $keys); // :name , ":password"
+  {
+    echo print_r($data);
+    $keys = array_keys($data);
+    $placeholders = array_map(fn(string $key) => ":$key", $keys);
 
-    // INERT INTO teacher (name, password) VLAUES (:name , :password)
-    $stmt = self::$pdo->prepare("
-    INSERT INTO $table (" . implode(", ", $keys) . ") VALUES (" . implode(", ", $placeholders) . ")
-    "); // used to prepare an SQL statement for execution
-    return $stmt->execute($data); // this is used to exectue the perpare statement
+    // Construct the SQL query
+    $sql = "INSERT INTO $table (" . implode(", ", $keys) . ") VALUES (" . implode(", ", $placeholders) . ")";
+
+    // Prepare the SQL statement
+    $stmt = self::$pdo->prepare($sql);
+
+    // Bind each parameter
+    foreach ($data as $key => $value) {
+      $stmt->bindValue(":$key", $value);
+    }
+
+    try {
+      // Execute the statement
+      return $stmt->execute();
+    } catch (PDOException $e) {
+      // Handle the exception
+      echo "Execution failed: " . $e->getMessage() . "<br>";
+      return false;
+    }
   }
+
   /**
    * This function is used to select specific data from a table in the database
    *

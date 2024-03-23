@@ -8,4 +8,12 @@ Added documentation for Students class and the init method id DB class --> Khemu
 
 3 / 23 / 2024
 
-now the methods works 5 by 5
+now the insertion & selection methods works 5 by 5
+
+3 / 23 / 2024
+
+added the Courses & Enrollment classes
+
+methods are working 5 by 5 for Courses
+
+modified the insertion method for all classes, now it just take an array of values then create an associative array keys and values using cloumn array in each class

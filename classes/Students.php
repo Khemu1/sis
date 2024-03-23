@@ -15,19 +15,24 @@ class Students
     return DB::selectAll(self::$table);
   }
 
-  public static function select(array $columns, array $data):array {
-    return DB::select(self::$table, $columns,$data);
+  public static function select(array $columns, array $data): array
+  {
+    return DB::select(self::$table, $columns, $data);
   }
   /**
    * Inserts a new record into the Students table
-   * - the entered array must an associative array -> key => value
-   * - Please note: The array must be sorted like this -> id, userName, name, password, address, nationalId, year
-   * @param array $data an associative array containing the column names as keys and their values
+   * - the entered values of the array must be in this format -> accountId, userName, name, address, nationalId, course
+   * @param array $data an  array containing the values
    * @return bool true if the record was inserted, false otherwise
    */
   public static function insert(array $data): bool
   {
-    return DB::insert(self::$table, $data);
-  }
+    if (count($data) != count(self::$columns)) {
+      echo "invalid number of parameters:";
+      return false;
+    }
+    $arr = array_combine(self::$columns, $data);
 
+    return DB::insert(self::$table, $arr);
+  }
 }
