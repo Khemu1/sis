@@ -5,3 +5,7 @@ Made the Students class along with insert fucntion in DB and the connection of t
 3 / 22 / 2024
 
 Added documentation for Students class and the init method id DB class --> Khemu
+
+3 / 23 / 2024
+
+now the methods works 5 by 5

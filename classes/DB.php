@@ -36,9 +36,11 @@ class DB
    * @return bool true if the data was inserted successfully, false otherwise
    */
   public static function insert(string $table, array $data): bool
-  {
-    $keys = array_keys($data);
-    $placeholders = array_map(fn(string $key) => ":$key", $keys);
+  { // key -> value = name => ali , password => 951357
+    $keys = array_keys($data); // name , password
+    $placeholders = array_map(fn(string $key) => ":$key", $keys); // :name , ":password"
+
+    // INERT INTO teacher (name, password) VLAUES (:name , :password)
     $stmt = self::$pdo->prepare("
     INSERT INTO $table (" . implode(", ", $keys) . ") VALUES (" . implode(", ", $placeholders) . ")
     "); // used to prepare an SQL statement for execution

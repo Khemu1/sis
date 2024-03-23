@@ -2,7 +2,7 @@
 require_once ("DB.php");
 class Teachers
 {
-  public static $table = "student";
+  public static $table = "teacher";
   public static $columns = ["id", "userName", "name", "password", "address", "nationalId", "courses"];
 
 
