@@ -16,8 +16,4 @@ class Accounts
     
     return DB::insert(self::$table, $arr);
   }
-  public static function select(array $columns, array $data): array
-  {
-    return DB::select(self::$table, $columns, $data);
-  }
 }
