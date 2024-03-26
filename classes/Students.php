@@ -7,19 +7,6 @@ class Students
   public static $columns = ["id", "userName", "name", "password", "address", "nationalId", "year"];
 
   /**
-   * Returns all the rows of the table
-   * @return array an associative array of rows
-   */
-  public static function selectAll(): array
-  {
-    return DB::selectAll(self::$table);
-  }
-
-  public static function select(array $columns, array $data): array
-  {
-    return DB::select(self::$table, $columns, $data);
-  }
-  /**
    * Inserts a new record into the Students table
    * - the entered values of the array must be in this format -> accountId, userName, name, address, nationalId, course
    * @param array $data an  array containing the values

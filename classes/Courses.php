@@ -7,8 +7,8 @@ class Courses
   public static $columns = ["name", "level", "hours", "teacherAccountid"];
   /**
    * Inserts a new record into the Students table
-   * - the entered values of the array must be in this format -> accountId, userName, name, address, nationalId, course
-   * @param array $data an  array containing the values
+   * - The method only accepts 1D array
+   * - The entered values of the array must be in this format ->  name , level , hours , teacher's account id
    * @return bool true if the record was inserted, false otherwise
    */
   public static function insert(array $data): bool

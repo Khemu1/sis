@@ -8,10 +8,6 @@ Added documentation for Students class and the init method id DB class --> Khemu
 
 3 / 23 / 2024
 
-now the insertion & selection methods works 5 by 5
-
-3 / 23 / 2024
-
 added the Courses & Enrollment classes
 
 methods are working 5 by 5 for Courses
