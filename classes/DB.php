@@ -44,10 +44,10 @@ class DB
     // Construct the SQL query
     $sql = "INSERT INTO $table (" . implode(", ", $keys) . ") VALUES (" . implode(", ", $placeholders) . ")";
 
-    // Prepare the SQL statement
-    $stmt = self::$pdo->prepare($sql);
 
     try {
+      // Prepare the SQL statement 
+      $stmt = self::$pdo->prepare($sql);
       // Execute the statement
       return $stmt->execute($data);
     } catch (PDOException $e) {
