@@ -47,14 +47,9 @@ class DB
     // Prepare the SQL statement
     $stmt = self::$pdo->prepare($sql);
 
-    // Bind each parameter
-    foreach ($data as $key => $value) {
-      $stmt->bindValue(":$key", $value);
-    }
-
     try {
       // Execute the statement
-      return $stmt->execute();
+      return $stmt->execute($data);
     } catch (PDOException $e) {
       // Handle the exception
       echo "Execution failed: " . $e->getMessage() . "<br>";
