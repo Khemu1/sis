@@ -38,7 +38,6 @@ require_once ("../classes/Accounts.php");
     <input type="text" name="name" placeholder="name" required>
     <input type="password" name="password" placeholder="password" required>
     <input type="text" name="address" placeholder="address" required>
-    <input type="number" name="national_id" placeholder="National Id" required>
     <div class="dropdown">
       <label>Choose Your Courses</label>
       <div class="dropdown-content">
@@ -173,8 +172,8 @@ require_once ("../classes/Accounts.php");
 
 <?php
 if (isset ($_POST["register"])) {
-  if (!empty ($_POST["username"]) && !empty ($_POST["name"]) && !empty ($_POST["password"]) && !empty ($_POST["address"]) && !empty ($_POST["national_id"]) && count($_POST["courses"]) != 0) {
-    
+  if (!empty ($_POST["username"]) && !empty ($_POST["name"]) && !empty ($_POST["password"]) && !empty ($_POST["address"]) && count($_POST["courses"]) != 0) {
+
     $account = [$_POST["username"], $_POST["password"]];
     if (Accounts::insert($account)) {
       // Retrieve the id of the newly created account
@@ -192,7 +191,6 @@ if (isset ($_POST["register"])) {
           $_POST["username"],
           $_POST["name"],
           $_POST["address"],
-          $_POST["national_id"],
           $course
         ];
 

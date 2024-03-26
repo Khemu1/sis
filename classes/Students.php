@@ -4,7 +4,7 @@ require_once ("DB.php");
 class Students
 {
   public static $table = "student";
-  public static $columns = ["id", "userName", "name", "password", "address", "nationalId", "year"];
+  public static $columns = ["id", "userName", "name", "password", "address", "year"];
 
   /**
    * Returns all the rows of the table

@@ -3,7 +3,7 @@ require_once ("DB.php");
 class Teachers
 {
   public static $table = "teacher";
-  public static $columns = ["accountId", "userName", "name", "address", "nationalId", "course"];
+  public static $columns = ["accountId", "userName", "name", "address", "course"];
 
 
 
