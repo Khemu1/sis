@@ -32,7 +32,7 @@ class DB
   /**
    * This function is used to insert data into a tables in the database
    * @param string $table the name of the table to insert into
-   * @param array $data an array of key-value pairs where the key is the column name and the value is the value to insert
+   * @param array $data an associative array of key-value pairs where the key is the column name and the value is the value to insert
    * @return bool true if the data was inserted successfully, false otherwise
    */
   public static function insert(string $table, array $data): bool
@@ -47,14 +47,9 @@ class DB
     // Prepare the SQL statement
     $stmt = self::$pdo->prepare($sql);
 
-    // Bind each parameter
-    foreach ($data as $key => $value) {
-      $stmt->bindValue(":$key", $value);
-    }
-
     try {
       // Execute the statement
-      return $stmt->execute();
+      return $stmt->execute($data);
     } catch (PDOException $e) {
       // Handle the exception
       echo "Execution failed: " . $e->getMessage() . "<br>";
@@ -62,25 +57,4 @@ class DB
     }
   }
 
-  /**
-   * This function is used to select specific data from a table in the database
-   *
-   * @param string $table the name of the table to select from
-   * @param array $columns an array of column names to select
-   * @param array $data an array of key-value pairs where the key is the column name and the value is the value to match
-   * @return array an array of associative arrays where each associative array represents a row of data
-   */
-
-  /**
-   * This function is used to select all data from a tables in the database
-   *
-   * @param string $table the name of the table to select from
-   * @return array an array of associative arrays where each associative array represents a row of data
-   */
-  public static function selectAll($table): array
-  {
-    $stmt = self::$pdo->prepare("SELECT * FROM $table");
-    $stmt->execute(); // this is used to exectue the perpare statement
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
-  }
 }
