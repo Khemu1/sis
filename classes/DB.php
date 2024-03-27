@@ -65,7 +65,7 @@ class DB
    * @param array $data an array of key-value pairs where the key is the column name and the value is the value to match
    * @return array an array of associative arrays where each associative array represents a row of data
    */
-  public static function select($table, array $columns, array $data): array
+  public static function select($table, array $columns, array $data): array // id, user name , password --> [id=>value ,usernmae=>]
   {
     $keys = array_keys($data);
     $placeholders = array_map(fn(string $key) => "$key= :$key", $keys);
