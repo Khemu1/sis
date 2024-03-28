@@ -12,8 +12,18 @@ class Accounts
       echo "invalid number of parameters:";
       return false;
     }
-    $arr = array_combine(self::$columns,$data); // making the associative array
-    
+    $arr = array_combine(self::$columns, $data); // making the associative array
+
     return DB::insert(self::$table, $arr);
+  }
+  public static function select(array $data): array
+  {
+
+
+    return DB::select(self::$table, $data);
+  }
+  public static function selectAll(array $data, array $columns)
+  {
+    return DB::selectAll(self::$table, $columns, $data);
   }
 }

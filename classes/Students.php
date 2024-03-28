@@ -22,4 +22,15 @@ class Students
 
     return DB::insert(self::$table, $arr);
   }
+
+  public static function select(array $data): array
+  {
+
+
+    return DB::select(self::$table, $data);
+  }
+  public static function selectAll(array $data, array $columns)
+  {
+    return DB::selectAll(self::$table, $columns, $data);
+  }
 }
