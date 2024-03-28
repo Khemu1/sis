@@ -56,5 +56,35 @@ class DB
       return false;
     }
   }
+  public static function select($table, array $data): array
+  {
+    $keys = array_keys($data);
+    $placeholders = array_map(fn(string $key) => "$key= :$key", $keys);
+    $sql = "Select " . implode(", ", $keys) . " from $table where " . implode(" AND ", $placeholders); // id= :id
 
+    try {
+      $stmt = DB::$pdo->prepare($sql);
+      $stmt->execute($data);
+      $result = $stmt->fetchAll(DB::$pdo::FETCH_ASSOC);
+      return $result;
+    } catch (PDOException $e) {
+      echo $e->getMessage();
+      return [];
+    }
+  }
+  public static function selectAll($table, array $columns, array $data): array
+  {
+    $keys = array_keys($data);
+    $placeholders = array_map(fn(string $key) => "$key= :$key", $keys);
+    $sql = "Select " . implode(", ", $columns) . " from $table where " . implode(" AND ", $placeholders); // id= :id
+    try {
+      $stmt = DB::$pdo->prepare($sql);
+      $stmt->execute($data);
+      $result = $stmt->fetchAll(DB::$pdo::FETCH_ASSOC);
+      return $result;
+    } catch (PDOException $e) {
+      echo $e->getMessage();
+      return [];
+    }
+  }
 }
