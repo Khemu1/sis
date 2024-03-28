@@ -31,4 +31,4 @@ Upgraded Half dynamic selection methods to Fully dynamic selection methods -> sp
 
 3 / 28 / 2024
 
-updated documentation for all insertion methods
+updated documentation for all insertion methods -> Khemu
