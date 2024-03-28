@@ -32,3 +32,7 @@ Added Half dynamic selection methods -> spectre
 3 / 28 / 2024
 
 Upgraded Half dynamic selection methods to Fully dynamic selection methods -> spectre
+
+3 / 28 / 2024
+
+updated documentation for all insertion methods

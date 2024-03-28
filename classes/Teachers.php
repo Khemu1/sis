@@ -8,7 +8,7 @@ class Teachers
 
 
   /**
-   * Inserts a new record into the Students table
+   * Inserts a new record into the teacher table
    * - The method only accepts 1D array
    * - The entered values of the array must be in this format -> accountId, userName, name, address, nationalId, course
    * - This method must be called along with the Course's method

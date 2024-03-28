@@ -6,6 +6,13 @@ class Accounts
   public static $table = "account";
   public static $columns = ["userName", "password",];
 
+  /**
+   * Inserts a new record into the account table
+   * - accepts a 1D array
+   * - the entered values of the array must be in this format ->  userName, password
+   * @param array $data an  array containing the values
+   * @return bool true if the record was inserted, false otherwise
+   */
   public static function insert(array $data): bool
   {
     if (count($data) != count(self::$columns)) {

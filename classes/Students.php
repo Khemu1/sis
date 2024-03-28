@@ -4,11 +4,13 @@ require_once ("DB.php");
 class Students
 {
   public static $table = "student";
-  public static $columns = ["id", "userName", "name", "password", "address", "nationalId", "year"];
+  public static $columns = ["accountId", "userName", "name", "address", "level"];
+
 
   /**
-   * Inserts a new record into the Students table
-   * - the entered values of the array must be in this format -> accountId, userName, name, address, nationalId, course
+   * Inserts a new record into the student table
+   * - Accepts a 1D array
+   * - The entered values of the array must be in this format -> accountId, userName, name, address , level
    * @param array $data an  array containing the values
    * @return bool true if the record was inserted, false otherwise
    */

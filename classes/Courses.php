@@ -6,7 +6,7 @@ class Courses
   public static $table = "course";
   public static $columns = ["name", "level", "hours", "teacherAccountid"];
   /**
-   * Inserts a new record into the Students table
+   * Inserts a new record into the course table
    * - The method only accepts 1D array
    * - The entered values of the array must be in this format ->  name , level , hours , teacher's account id
    * - This method must be called along the Teacher's method
