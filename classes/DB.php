@@ -37,7 +37,6 @@ class DB
    */
   public static function insert(string $table, array $data): bool
   {
-    echo print_r($data);
     $keys = array_keys($data);
     $placeholders = array_map(fn(string $key) => ":$key", $keys);
 
@@ -80,7 +79,7 @@ class DB
     $stmt->execute($data);
 
     // Fetch the result as an associative array
-    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     if ($result === false) {
       return [];
     }

@@ -22,3 +22,7 @@ modified the insertion method for all classes, now it just take an array of valu
 3 / 26 / 2024 
 
 removed the national id column from the database
+
+4 / 3 / 2024
+
+completed Enrollement Class , added Teachs class , exists method Enrollement , doesTeach method for Teaches , selectWithLevel method for Teaches

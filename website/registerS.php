@@ -2,6 +2,8 @@
 require_once ("../config/setup.php");
 require_once ("../classes/Students.php");
 require_once ("../classes/Teachers.php");
+require_once ("../classes/Courses.php");
+require_once ("../classes/Accounts.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +20,6 @@ require_once ("../classes/Teachers.php");
     <input type="text" name="name" placeholder="name" require>
     <input type="password" name="password" placeholder="password" require>
     <input type="text" name="address" placeholder="address" require>
-    <input type="number" name="national_id" placeholder="National Id" require>
     <input type="number" name="level" placeholder="level" require>
     <input type="submit" value="register" name="register">
   </form>
@@ -28,13 +29,18 @@ require_once ("../classes/Teachers.php");
 
 <?php
 
-if (isset ($_POST["register"])) {
-  if (!(empty ($_POST["username"]) && empty ($_POST["name"]) && empty ($_POST["password"]) && empty ($_POST["address"]) && empty ($_POST["national_id"]) && empty ($_POST["level"]))) {
-    if (count($data) === 6) {
-      $data = ["username" => $_POST["username"], "name" => $_POST["name"], "password" => $_POST["password"], "address" => $_POST["address"], "nationalId" => $_POST["national_id"], "year" => $_POST["level"]];
+if (isset($_POST["register"])) {
+  if (!(empty($_POST["username"]) && empty($_POST["name"]) && empty($_POST["password"]) && empty($_POST["address"]) && empty($_POST["level"]))) {
+    $userName = $_POST["username"];
+    $name = $_POST["name"];
+    $password = $_POST["password"];
+    $address = $_POST["address"];
+    $level = intval($_POST["level"]);
+    if ($level === 1 || $level === 2) {
+      Accounts::insert([$userName, $password]);
+      $accountId = intval(Accounts::select(["id"], ["userName" => $userName])[0]["id"]);
+      Students::insert([$accountId, $userName, $name, $address, $level]);
     }
-  } else {
-    echo "please fill all fields";
   }
 }
 

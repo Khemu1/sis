@@ -4,6 +4,9 @@ require_once ("../classes/Students.php");
 require_once ("../classes/Teachers.php");
 require_once ("../classes/Courses.php");
 require_once ("../classes/Accounts.php");
+require_once ("../classes/Enrollment.php");
+require_once ("../classes/Teaches.php");
+
 
 
 ?>
@@ -34,10 +37,10 @@ require_once ("../classes/Accounts.php");
 
 <body>
   <form action="" method="POST">
-    <input type="text" name="username" placeholder="username" required>
-    <input type="text" name="name" placeholder="name" required>
-    <input type="password" name="password" placeholder="password" required>
-    <input type="text" name="address" placeholder="address" required>
+    <input type="text" name="username" placeholder="username">
+    <input type="text" name="name" placeholder="name">
+    <input type="password" name="password" placeholder="password">
+    <input type="text" name="address" placeholder="address">
     <div class="dropdown">
       <label>Choose Your Courses</label>
       <div class="dropdown-content">
@@ -151,7 +154,7 @@ require_once ("../classes/Accounts.php");
             <input type="hidden" name="hours[]" value="3">
           </label><br>
           <label>
-            <input type="checkbox" name="courses[]" value="Network Laps"> Network Labs
+            <input type="checkbox" name="courses[]" value="Network Labs"> Network Labs
             <input type="hidden" name="levels[]" value="2">
             <input type="hidden" name="hours[]" value="2">
           </label><br>
@@ -171,48 +174,35 @@ require_once ("../classes/Accounts.php");
 </html>
 
 <?php
-if (isset ($_POST["register"])) {
-  if (!empty ($_POST["username"]) && !empty ($_POST["name"]) && !empty ($_POST["password"]) && !empty ($_POST["address"]) && count($_POST["courses"]) != 0) {
+if (isset($_POST["register"])) {
+  Enrollment::enroll();
+  // if (!empty($_POST["username"]) && !empty($_POST["name"]) && !empty($_POST["password"]) && !empty($_POST["address"]) && count($_POST["courses"]) != 0) {
 
-    $account = [$_POST["username"], $_POST["password"]];
-    if (Accounts::insert($account)) {
-      // Retrieve the id of the newly created account
-      $accountId = intval(Accounts::select(["id"], ["userName" => $_POST["username"]])["id"]);
-      $courses = $_POST["courses"];
-      $levels = $_POST["levels"];
-      $hours = $_POST["hours"];
-      for ($i = 0; $i < count($courses); $i++) {
-        $course = $courses[$i];
-        $level = $levels[$i];
-        $hour = $hours[$i];
-        // Insert into database
-        $teacherData = [
-          $accountId,
-          $_POST["username"],
-          $_POST["name"],
-          $_POST["address"],
-          $course
-        ];
+  //   $account = [$_POST["username"], $_POST["password"]];
+  //   if (Accounts::insert($account)) {
+  //     $accountId = intval(Accounts::select(["id"], ["userName" => $_POST["username"]])[0]["id"]);
+  //     $courses = $_POST["courses"];
+  //     $teacherData = [
+  //       $accountId,
+  //       $_POST["username"],
+  //       $_POST["name"],
+  //       $_POST["address"],
+  //     ];
+  //     Teachers::insert($teacherData);
+  //     for ($i = 0; $i < count($courses); $i++) {
+  //       $course = $courses[$i];
+  //       Teaches::insert([
+  //         $_POST["username"],
+  //         $course
+  //       ]);
+  //     }
+  //   }
+  //   // Insert into database
 
-        $courseData = [
-          $course,
-          $level,
-          $hour,
-          $accountId
-        ];
+  // } else {
+  //   echo "Failed to create account.";
+  // }
 
-        Courses::insert($courseData);
-        Teachers::insert($teacherData);
-      }
-
-    } else {
-      echo "Failed to create account.";
-    }
-  } else {
-    echo "Please fill all fields and select at least one course.";
-  }
 }
-
-
 
 ?>
