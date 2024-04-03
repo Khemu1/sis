@@ -175,33 +175,33 @@ require_once ("../classes/Teaches.php");
 
 <?php
 if (isset($_POST["register"])) {
-  Enrollment::enroll();
-  // if (!empty($_POST["username"]) && !empty($_POST["name"]) && !empty($_POST["password"]) && !empty($_POST["address"]) && count($_POST["courses"]) != 0) {
+  if (!empty($_POST["username"]) && !empty($_POST["name"]) && !empty($_POST["password"]) && !empty($_POST["address"]) && count($_POST["courses"]) != 0) {
 
-  //   $account = [$_POST["username"], $_POST["password"]];
-  //   if (Accounts::insert($account)) {
-  //     $accountId = intval(Accounts::select(["id"], ["userName" => $_POST["username"]])[0]["id"]);
-  //     $courses = $_POST["courses"];
-  //     $teacherData = [
-  //       $accountId,
-  //       $_POST["username"],
-  //       $_POST["name"],
-  //       $_POST["address"],
-  //     ];
-  //     Teachers::insert($teacherData);
-  //     for ($i = 0; $i < count($courses); $i++) {
-  //       $course = $courses[$i];
-  //       Teaches::insert([
-  //         $_POST["username"],
-  //         $course
-  //       ]);
-  //     }
-  //   }
-  //   // Insert into database
+    $account = [$_POST["username"], $_POST["password"]];
+    if (Accounts::insert($account)) {
+      $accountId = intval(Accounts::select(["id"], ["userName" => $_POST["username"]])[0]["id"]);
+      $courses = $_POST["courses"];
+      $teacherData = [
+        $accountId,
+        $_POST["username"],
+        $_POST["name"],
+        $_POST["address"],
+      ];
+      Teachers::insert($teacherData);
+      for ($i = 0; $i < count($courses); $i++) {
+        $course = $courses[$i];
+        Teaches::insert([
+          $_POST["username"],
+          $course
+        ]);
+      }
+      Enrollment::enroll();
 
-  // } else {
-  //   echo "Failed to create account.";
-  // }
+    }
+
+  } else {
+    echo "Failed to create account.";
+  }
 
 }
 

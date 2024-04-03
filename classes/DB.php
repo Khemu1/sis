@@ -92,10 +92,56 @@ class DB
    * @param string $table the name of the table to select from
    * @return array an array of associative arrays where each associative array represents a row of data
    */
-  public static function selectAll($table): array
-  {
+  /**
+ * This function is used to select all data from a table in the database.
+ *
+ * @param string $table The name of the table to select from.
+ *
+ * @return array An array of associative arrays where each associative array represents a row of data.
+ */
+public static function selectAll(string $table): array
+{
     $stmt = self::$pdo->prepare("SELECT * FROM $table");
-    $stmt->execute(); // this is used to exectue the perpare statement
+    $stmt->execute(); // this is used to execute the prepare statement
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
-  }
+}
+  /**
+ * This function is used to update data in a table in the database.
+ *
+ * @param string $table The name of the table to update.
+ * @param array $data An associative array where the key is the column name and the value is the new value to update.
+ * @param array $condition An associative array where the key is the column name and the value is the value to match the rows to be updated.
+ *
+ * @return bool true if the data was updated successfully, false otherwise.
+ */
+public static function update($table, $data, $condition): bool {
+    $dataKeys = array_keys($data);
+    $conditionKeys = array_keys($condition);
+
+    $dataPlaceholders = array_map(function (string $key) {
+        return "$key = :$key";
+    }, $dataKeys);
+    $conditionPlaceholders = array_map(function (string $key) {
+        return "$key = :$key";
+    }, $conditionKeys);
+    $sql = "UPDATE $table SET " . implode(", ", $dataPlaceholders) . " WHERE " . implode(" AND ", $conditionPlaceholders);
+
+    try {
+        $stmt = self::$pdo->prepare($sql);
+
+        foreach ($data as $key => $value) {
+            $stmt->bindValue(":$key", $value);
+        }
+
+        foreach ($condition as $key => $value) {
+            $stmt->bindValue(":$key", $value);
+        }
+
+        return $stmt->execute();
+    } catch (\Throwable $th) {
+        echo $th->getMessage();
+        return false;
+    }
+}
+
 }

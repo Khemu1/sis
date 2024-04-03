@@ -4,6 +4,9 @@ require_once ("../classes/Students.php");
 require_once ("../classes/Teachers.php");
 require_once ("../classes/Courses.php");
 require_once ("../classes/Accounts.php");
+require_once ("../classes/Enrollment.php");
+require_once ("../classes/Teaches.php");
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -40,6 +43,7 @@ if (isset($_POST["register"])) {
       Accounts::insert([$userName, $password]);
       $accountId = intval(Accounts::select(["id"], ["userName" => $userName])[0]["id"]);
       Students::insert([$accountId, $userName, $name, $address, $level]);
+      Enrollment::enroll();
     }
   }
 }

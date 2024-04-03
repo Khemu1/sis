@@ -26,3 +26,9 @@ removed the national id column from the database
 4 / 3 / 2024
 
 completed Enrollement Class , added Teachs class , exists method Enrollement , doesTeach method for Teaches , selectWithLevel method for Teaches
+
+handled the duplications casses for students in Enrollement
+
+handled null courses when there are no teachers
+
+added an update method for students in Enrollement
