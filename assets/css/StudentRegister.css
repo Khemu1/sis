@@ -1,0 +1,22 @@
+.invalid {
+  box-shadow: 0px 0px 5px 5px red;
+
+  transition: all 250ms ease-in-out;
+}
+.valid {
+  box-shadow: 0px 0px 5px 5px green;
+
+  transition: all 250ms ease-in-out;
+}
+
+form {
+  display: grid;
+  grid: auto/1fr;
+  gap: 15px;
+}
+form input {
+  width: 150px;
+}
+form input:focus-within {
+  outline: none;
+}

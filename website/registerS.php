@@ -15,16 +15,17 @@ require_once ("../classes/Teaches.php");
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Student Registertion</title>
+  <link rel="stylesheet" href="../assets/css/StudentRegister.css">
 </head>
 
 <body>
   <form action="" method="POST">
-    <input type="text" name="username" placeholder="username" require>
-    <input type="text" name="name" placeholder="name" require>
-    <input type="password" name="password" placeholder="password" require>
-    <input type="text" name="address" placeholder="address" require>
-    <input type="number" name="level" placeholder="level" require>
-    <input type="submit" value="register" name="register">
+    <input type="text" class="user-name" name="username" placeholder="username" require>
+    <input type="text" name="name" class="name" placeholder="name" require>
+    <input type="password" class="password" name="password" placeholder="password" require>
+    <input type="text" name="address" class="address" placeholder="address" require>
+    <input type="number" name="level" class="level" placeholder="level" value="1" require>
+    <input type="submit" value="register" class="register" name="register">
   </form>
 </body>
 
@@ -49,3 +50,5 @@ if (isset($_POST["register"])) {
 }
 
 ?>
+
+<script type="module" src="../assets/js/StudentRegister.js"></script>
