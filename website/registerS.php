@@ -19,7 +19,7 @@ require_once ("../classes/Teaches.php");
 </head>
 
 <body>
-  <form action="" method="POST">
+  <form method="POST">
     <input type="text" class="user-name" name="username" placeholder="username" require>
     <input type="text" name="name" class="name" placeholder="name" require>
     <input type="password" class="password" name="password" placeholder="password" require>
@@ -34,19 +34,18 @@ require_once ("../classes/Teaches.php");
 <?php
 
 if (isset($_POST["register"])) {
-  if (!(empty($_POST["username"]) && empty($_POST["name"]) && empty($_POST["password"]) && empty($_POST["address"]) && empty($_POST["level"]))) {
-    $userName = $_POST["username"];
-    $name = $_POST["name"];
-    $password = $_POST["password"];
-    $address = $_POST["address"];
-    $level = intval($_POST["level"]);
-    if ($level === 1 || $level === 2) {
-      Accounts::insert([$userName, $password]);
-      $accountId = intval(Accounts::select(["id"], ["userName" => $userName])[0]["id"]);
-      Students::insert([$accountId, $userName, $name, $address, $level]);
-      Enrollment::enroll();
-    }
+  $userName = $_POST["username"];
+  $name = $_POST["name"];
+  $password = $_POST["password"];
+  $address = $_POST["address"];
+  $level = intval($_POST["level"]);
+  if ($level === 1 || $level === 2) {
+    Accounts::insert([$userName, $password]);
+    $accountId = intval(Accounts::select(["id"], ["userName" => $userName])[0]["id"]);
+    Students::insert([$accountId, $userName, $name, $address, $level]);
+    Enrollment::enroll();
   }
+
 }
 
 ?>

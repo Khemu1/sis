@@ -11,14 +11,12 @@ export function validUserName(username) {
  * @param {string} name
  */
 export function validName(name) {
-
   return !!name.trim().match("^[a-zA-Z ]{10,20}$");
 }
 /**
  * @param {string} password
  */
-export function validPassword(target) {
-  let password = target.value;
+export function validPassword(password) {
   return !!password.trim().match("^[a-zA-Z0-9 ]{5,10}$");
 }
 /**
@@ -42,4 +40,20 @@ export function resetLevel(e) {
   if (level !== "1" && level !== "2") {
     e.target.value = "1";
   }
+}
+/**
+ *
+ * @param {array} checboxes
+ * @returns {array}
+ */
+export function checked(checboxes) {
+  let checked = [];
+  if (checboxes) {
+    checboxes.forEach((checkbox) => {
+      if (checkbox.checked) {
+        checked.push(checkbox.value);
+      }
+    });
+  }
+  return checked;
 }
