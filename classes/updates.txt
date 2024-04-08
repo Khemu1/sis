@@ -17,6 +17,7 @@ modified the insertion method for all classes, now it just take an array of valu
 
 3 / 26 / 2024 
 
+<<<<<<< HEAD
 removed the national id column from the database -> Khemu
 
 
@@ -32,3 +33,16 @@ Upgraded Half dynamic selection methods to Fully dynamic selection methods -> sp
 3 / 28 / 2024
 
 updated documentation for all insertion methods -> Khemu
+=======
+removed the national id column from the database
+
+4 / 3 / 2024
+
+completed Enrollement Class , added Teachs class , exists method Enrollement , doesTeach method for Teaches , selectWithLevel method for Teaches
+
+handled the duplications casses for students in Enrollement
+
+handled null courses when there are no teachers
+
+added an update method for students in Enrollement
+>>>>>>> 6267822f74bd8f51b82a21acf7c9fedcaae04622
