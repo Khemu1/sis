@@ -13,7 +13,7 @@ require_once ("../classes/Teaches.php");
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="RegisterS.css">
+  <link rel="stylesheet" href="../assets/css/RegisterS.css">
   <title>EELU Sign Up</title>
 </head>
 <body>
