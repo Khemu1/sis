@@ -1,11 +1,12 @@
 <?php
-require_once ("../config/setup.php");
-require_once ("../classes/Students.php");
-require_once ("../classes/Teachers.php");
-require_once ("../classes/Courses.php");
-require_once ("../classes/Accounts.php");
-require_once ("../classes/Enrollment.php");
-require_once ("../classes/Teaches.php");
+require_once ("../../config/setup.php");
+require_once ("../../models/Accounts.php");
+require_once ("../../models/Courses.php");
+require_once ("../../models/Enrollment.php");
+require_once ("../../models/Students.php");
+require_once ("../../models/Teachers.php");
+require_once ("../../models/Teaches.php");
+require_once ("../../models/Utils.php");
 
 ?>
 <!DOCTYPE html>
@@ -14,8 +15,8 @@ require_once ("../classes/Teaches.php");
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../assets/css/RegisterS.css">
-  <title>EELU Sign Up</title>
+  <link rel="stylesheet" href="../css/StudentRegister.css">
+  <title>Kemet Sign Up</title>
 </head>
 
 <body>
