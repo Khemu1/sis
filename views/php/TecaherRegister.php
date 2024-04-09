@@ -181,36 +181,5 @@ require_once ("../classes/Teaches.php");
 
 </html>
 
-<?php
-if (isset($_POST["register"])) {
-
-  $account = [$_POST["username"], $_POST["password"]];
-  if (Accounts::insert($account)) {
-    $accountId = intval(Accounts::select(["id"], ["userName" => $_POST["username"]])[0]["id"]);
-    $courses = $_POST["courses"];
-    $teacherData = [
-      $accountId,
-      $_POST["username"],
-      $_POST["name"],
-      $_POST["address"],
-    ];
-    Teachers::insert($teacherData);
-    for ($i = 0; $i < count($courses); $i++) {
-      $course = $courses[$i];
-      Teaches::insert([
-        $_POST["username"],
-        $course
-      ]);
-    }
-    Enrollment::enroll();
-
-  }
-  echo "submitted successfully";
-
-
-} else {
-  echo "Failed to create account.";
-}
-?>
 
 <script type="module" src="../js/TecaherRegister.js?t=<?= time() ?>"></script>

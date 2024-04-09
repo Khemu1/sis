@@ -62,21 +62,42 @@ levelField.addEventListener("input", function (e) {
   utils.resetLevel(e);
 });
 
-form.addEventListener("submit", function (e) {
-  let formData = new FormData(this);
-  console.log(formData);
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  let formD = new FormData(form);
+  let username = formD.get("username");
+  let password = formD.get("password");
+  let name = formD.get("name");
+  let address = formD.get("address");
+  let level = formD.get("level");
+  let result = await fetch("../../controller/login.php", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      login: "Joe amama",
+      username: username,
+      name: name,
+      password: password,
+      address: address,
+      level: level,
+    }),
+  });
 
-  let username = formData.get("username");
-  let name = formData.get("name");
-  let password = formData.get("password");
-  let address = formData.get("address");
-  let level = formData.get("level");
-
-  if (!utils.validUserName(username)) return;
-  if (!utils.validName(name)) return;
-  if (!utils.validPassword(password)) return;
-  if (!utils.validAddress(address)) return;
-  if (!utils.validLevel(level)) return;
-  console.log("valid");
-  this.submit();
+  // Handle the response
+  if (result.ok) {
+    let responseData = await result.json();
+    let stat = responseData.status;
+    console.log(responseData);
+    console.log(stat);
+    if (stat == "success") {
+      console.log("yeeeeeeeeeeeeeees");
+      // window.location.href = "http://localhost:8080/sis/home.php";
+    } else {
+      console.log(responseData.message);
+    }
+  } else {
+    console.error("Error: " + result.statusText);
+  }
 });
