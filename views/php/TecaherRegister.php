@@ -1,11 +1,12 @@
 <?php
-require_once ("../config/setup.php");
-require_once ("../classes/Students.php");
-require_once ("../classes/Teachers.php");
-require_once ("../classes/Courses.php");
-require_once ("../classes/Accounts.php");
-require_once ("../classes/Enrollment.php");
-require_once ("../classes/Teaches.php");
+require_once ("../../config/setup.php");
+require_once ("../../models/Accounts.php");
+require_once ("../../models/Courses.php");
+require_once ("../../models/Enrollment.php");
+require_once ("../../models/Students.php");
+require_once ("../../models/Teachers.php");
+require_once ("../../models/Teaches.php");
+require_once ("../../models/Utils.php");
 
 
 
@@ -18,7 +19,7 @@ require_once ("../classes/Teaches.php");
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Teacher Registertion</title>
 
-  <link rel="stylesheet" href="../assets/css/StudentRegister.css">
+  <!-- <link rel="stylesheet" href="../assets/css/StudentRegister.css"> -->
 
   <style>
     .dropdown-content {
@@ -39,7 +40,7 @@ require_once ("../classes/Teaches.php");
 
 <body>
   <form action="" method="POST">
-    <input type="text" class="user-name" name="username" placeholder="username" require>
+    <input type="text" class="user-name" name="userName" placeholder="username" require>
     <input type="text" name="name" class="name" placeholder="name" require>
     <input type="password" class="password" name="password" placeholder="password" require>
     <input type="text" name="address" class="address" placeholder="address" require>

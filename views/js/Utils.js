@@ -4,26 +4,26 @@
  * @param {string} username
  */
 export function validUserName(username) {
-  return !!username.trim().match("^[a-zA-Z0-9 ]{5,10}$");
+  return !!username.trim().match("^[a-zA-Z0-9 ]{2,12}$");
 }
 
 /**
  * @param {string} name
  */
 export function validName(name) {
-  return !!name.trim().match("^[a-zA-Z ]{10,20}$");
+  return !!name.trim().match("^[a-zA-Z ]{2,12}$");
 }
 /**
  * @param {string} password
  */
 export function validPassword(password) {
-  return !!password.trim().match("^[a-zA-Z0-9 ]{5,10}$");
+  return !!password.trim().match("^[a-zA-Z0-9 ]{2,12}$");
 }
 /**
  * @param {string} address
  */
 export function validAddress(address) {
-  return !!address.trim().match("^[a-zA-Z0-9,. ]{10,50}$");
+  return !!address.trim().match("^[a-zA-Z0-9,. ]{2,12}$");
 }
 /**
  * @param {string} level

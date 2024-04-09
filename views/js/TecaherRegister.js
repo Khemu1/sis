@@ -51,18 +51,51 @@ addressField.addEventListener("input", function (e) {
   }
 });
 
-form.addEventListener("submit", function (e) {
-  let formData = new FormData(this);
-  let username = formData.get("username");
-  let name = formData.get("name");
-  let password = formData.get("password");
-  let address = formData.get("address");
-  let courses = formData.getAll("courses[]");
-  if (!utils.validUserName(username)) return;
-  if (!utils.validName(name)) return;
-  if (!utils.validPassword(password)) return;
-  if (!utils.validAddress(address)) return;
-  if (utils.checked(courses).length <= 0) return;
-  console.log("valid");
-  this.submit
+form.addEventListener("submit", async (e) => {
+  let formD = new FormData(form);
+  let username = formD.get("userName");
+  let password = formD.get("password");
+  let name = formD.get("name");
+  let address = formD.get("address");
+  let courses = formD.getAll("courses[]");
+  console.log(courses);
+  let result = await fetch("../../controller/TecaherRegister.php", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      register: "Student",
+      userName: username,
+      name: name,
+      password: password,
+      address: address,
+      courses: courses,
+    }),
+  });
+
+  // Handle the response
+  if (result.ok) {
+    let responseData = await result.json();
+    let stat = responseData.status;
+    console.log(responseData);
+    console.log(stat);
+    if (stat == "success") {
+      console.log("yeeeeeeeeeeeeeees");
+      // window.location.href = "http://localhost:8080/sis/home.php";
+    } else {
+      let errors = responseData.errors;
+      // Object.keys(errors).forEach((error) => {
+      //   if (error === "username") userNameField.classList.add("invalid");
+      //   if (error === "name") nameField.classList.add("invalid");
+      //   if (error === "password") passwordField.classList.add("invalid");
+      //   if (error === "address") addressField.classList.add("invalid");
+      //   if (error === "level") levelField.classList.add("invalid");
+      // });
+      // utils.handelErrorDisplay(errors);
+      console.log(responseData.message);
+    }
+  } else {
+    console.error("Error: " + result.statusText);
+  }
 });

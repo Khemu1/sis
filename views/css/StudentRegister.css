@@ -9,11 +9,6 @@
   transition: all 250ms ease-in-out;
 }
 
-form {
-  display: grid;
-  grid: auto/1fr;
-  gap: 15px;
-}
 form input {
   width: 150px;
 }

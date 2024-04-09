@@ -33,7 +33,8 @@ if (!empty($errors)) {
   echo json_encode($response);
   $Account = [$data["userName"], $data["password"]];
   Accounts::insert($Account);
-  $student = [$data["userName"], $data["name"], $data["password"], $data["address"], $data["level"]];
+  $accountId = Accounts::select(["id"], ["userName" => $data["userName"]]);
+  $student = [$accountId,$data["userName"], $data["name"], $data["password"], $data["address"], $data["level"]];
   Students::insert($student);
 }
 

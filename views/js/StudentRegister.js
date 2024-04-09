@@ -63,7 +63,6 @@ levelField.addEventListener("input", function (e) {
 });
 
 form.addEventListener("submit", async (e) => {
-  e.preventDefault();
   let formD = new FormData(form);
   let username = formD.get("userName");
   let password = formD.get("password");
@@ -93,7 +92,7 @@ form.addEventListener("submit", async (e) => {
     console.log(stat);
     if (stat == "success") {
       console.log("yeeeeeeeeeeeeeees");
-      // window.location.href = "http://localhost:8080/sis/home.php";
+      window.location.href = "http://localhost:8080/sis/home.php";
     } else {
       let errors = responseData.errors;
       Object.keys(errors).forEach((error) => {
