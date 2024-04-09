@@ -47,13 +47,14 @@ if (isset($_POST["register"])){
   $password=$_POST["password"];
   $address =$_POST["address"];
   $level=$_POST["level"];
-  if(Students::select(["userName"],["userName" => $userName])){
-      echo "Aleady Signed in";
-  }else{
-    Accounts::insert([$userName, $password]);
+  if(!(Students::select(["userName"],["userName" => $userName]))){
+        Accounts::insert([$userName, $password]);
     $accountId = intval(Accounts::select(["id"], ["userName" => $userName])[0]["id"]);
     Students::insert([$accountId, $userName, $name, $address, $level]);
     Enrollment::enroll();
+  }else{
+      echo "Aleady Signed in";
+
   }
   }
 
