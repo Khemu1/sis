@@ -27,12 +27,12 @@ require_once ("../../models/Utils.php");
     </div>
     <div class="body" width="200" height="200">
       <form method="Post">
-        <input type="text" name="userName" value="UserName"><br>
-        <input type="text" name="name" value="name"><br>
-        <input type="text" name="password" value="Password"><br>
-        <input type="text" name="address" value="address"><br>
-        <input type="text" name="level" value="level"><br>
-        <input type="submit" name="register" value="Register"><br>
+        <input type="text" name="userName" placeholder="UserName"><br>
+        <input type="text" name="name" placeholder="name"><br>
+        <input type="text" name="password" placeholder="Password"><br>
+        <input type="text" name="address" placeholder="address"><br>
+        <input type="text" name="level" placeholder="level"><br>
+        <input type="submit" name="register" placeholder="Register"><br>
       </form>
     </div>
     <div class="footer" width="200" height="200">
