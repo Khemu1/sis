@@ -4,7 +4,7 @@ class DB
 {
   private static $server = "localhost";
   private static $user = "root";
-  private static $password = "";
+  private static $password = "Frkadada952&77776YHGGvbnnn585858811";
   private static $database = "sis";
   public static PDO $pdo;
   /**

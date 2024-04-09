@@ -23,16 +23,14 @@ class Accounts
 
     return DB::insert(self::$table, $arr);
   }
-  public static function select(array $data): array
+  public static function select($columns, array $data): array
   {
 
-
-    return DB::select(self::$table, $data);
+    return DB::select(self::$table, $columns, $data);
   }
-  public static function selectAll(array $data, array $columns)
+  public static function selectAll()
   {
-    return DB::selectAll(self::$table, $columns, $data);
+    return DB::selectAll(self::$table);
   }
-
 
 }
