@@ -1,20 +1,20 @@
 // @ts-nocheck
 import * as utils from "./Utils.js";
-let usernameField = document.querySelector(".user-name");
+let userNameField = document.querySelector(".user-name");
 let nameField = document.querySelector(".name");
 let passwordField = document.querySelector(".password");
 let addressField = document.querySelector(".address");
 let levelField = document.querySelector(".level");
 let form = document.querySelector("form");
 
-usernameField.addEventListener("input", function (e) {
+userNameField.addEventListener("input", function (e) {
   // console.log(e.target.value);
   if (utils.validUserName(e.target.value)) {
-    usernameField.classList.remove("invalid");
-    usernameField.classList.add("valid");
+    userNameField.classList.remove("invalid");
+    userNameField.classList.add("valid");
   } else {
-    usernameField.classList.remove("valid");
-    usernameField.classList.add("invalid");
+    userNameField.classList.remove("valid");
+    userNameField.classList.add("invalid");
   }
 });
 
@@ -65,19 +65,19 @@ levelField.addEventListener("input", function (e) {
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
   let formD = new FormData(form);
-  let username = formD.get("username");
+  let username = formD.get("userName");
   let password = formD.get("password");
   let name = formD.get("name");
   let address = formD.get("address");
   let level = formD.get("level");
-  let result = await fetch("../../controller/login.php", {
+  let result = await fetch("../../controller/StudentRegister.php", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      login: "Joe amama",
-      username: username,
+      register: "Student",
+      userName: username,
       name: name,
       password: password,
       address: address,
@@ -95,6 +95,15 @@ form.addEventListener("submit", async (e) => {
       console.log("yeeeeeeeeeeeeeees");
       // window.location.href = "http://localhost:8080/sis/home.php";
     } else {
+      let errors = responseData.errors;
+      Object.keys(errors).forEach((error) => {
+        if (error === "username") userNameField.classList.add("invalid");
+        if (error === "name") nameField.classList.add("invalid");
+        if (error === "password") passwordField.classList.add("invalid");
+        if (error === "address") addressField.classList.add("invalid");
+        if (error === "level") levelField.classList.add("invalid");
+      });
+      // utils.handelErrorDisplay(errors);
       console.log(responseData.message);
     }
   } else {

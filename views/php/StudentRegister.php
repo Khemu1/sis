@@ -27,11 +27,11 @@ require_once ("../../models/Utils.php");
     </div>
     <div class="body" width="200" height="200">
       <form method="Post">
-        <input type="text" name="userName" placeholder="UserName"><br>
-        <input type="text" name="name" placeholder="name"><br>
-        <input type="text" name="password" placeholder="Password"><br>
-        <input type="text" name="address" placeholder="address"><br>
-        <input type="text" name="level" placeholder="level"><br>
+        <input type="text" name="userName" class="user-name" placeholder="UserName"><br>
+        <input type="text" name="name" class="name" placeholder="name"><br>
+        <input type="text" name="password" class="password" placeholder="Password"><br>
+        <input type="text" name="address" class="address" placeholder="address"><br>
+        <input type="text" name="level" class="level" placeholder="level"><br>
         <input type="submit" name="register" placeholder="Register"><br>
       </form>
     </div>
@@ -46,23 +46,6 @@ require_once ("../../models/Utils.php");
 
 <?php
 
-if (isset($_POST["register"])) {
-  $userName = $_POST["userName"];
-  $name = $_POST["name"];
-  $password = $_POST["password"];
-  $address = $_POST["address"];
-  $level = $_POST["level"];
-  if (!(Students::select(["userName"], ["userName" => $userName]))) {
-    Accounts::insert([$userName, $password]);
-    $accountId = intval(Accounts::select(["id"], ["userName" => $userName])[0]["id"]);
-    Students::insert([$accountId, $userName, $name, $address, $level]);
-    Enrollment::enroll();
-  }
-}
-
-
-
-
 ?>
 
-<script type="module" src="../js/StudentRegister?t=<?= time() ?>"></script>
+<script type="module" src="../js/StudentRegister.js?t=<?= time() ?>"></script>

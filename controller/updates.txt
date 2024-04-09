@@ -1,11 +1,3 @@
-3 / 23 / 2024
+4 / 9 / 2024
 
-added the login page & Registartion pages
-
-3 / 23/ 2024
-
-added a dropdown menu for courses , had to use hidden fields and arrays
-
-4 / 5 / 2024
-
-Now validation happens with js instead of php
+made the files for API requests

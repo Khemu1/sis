@@ -17,4 +17,4 @@
 
 </html>
 
-<script type="module" src="../assets/js/login.js?t=<?= time() ?>"></script>
+<script type="module" src="../js/login.js?t=<?= time() ?>"></script>

@@ -32,3 +32,7 @@ handled the duplications casses for students in Enrollement
 handled null courses when there are no teachers
 
 added an update method for students in Enrollement
+
+4 / 9 / 2024
+
+made the the Utils class for validations

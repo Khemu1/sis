@@ -57,3 +57,18 @@ export function checked(checboxes) {
   }
   return checked;
 }
+
+/**
+ *
+ * @param {Object} errors
+ * @returns {array}
+ */
+export function handelErrorDisplay(errors) {
+  Object.keys(errors).forEach((error) => {
+    if (error === "username") usernameField.classList.add("invalid");
+    if (error === "name") nameField.classList.add("invalid");
+    if (error === "password") passwordField.classList.add("invalid");
+    if (error === "address") addressField.classList.add("invalid");
+    if (error === "level") levelField.classList.add("invalid");
+  });
+}

@@ -2,3 +2,7 @@
 
 added Utils file & StudentRegister
 added TeacherRegister
+
+4 / 9 / 2024 
+
+made the API calling for student and login only teacher's left

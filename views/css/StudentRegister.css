@@ -1,4 +1,4 @@
-/* .invalid {
+.invalid {
   box-shadow: 0px 0px 5px 5px red;
 
   transition: all 250ms ease-in-out;
@@ -19,7 +19,7 @@ form input {
 }
 form input:focus-within {
   outline: none;
-} */
+}
 
 body {
   background-color: #ecebeb;
