@@ -47,7 +47,7 @@ if (isset($_POST["register"])){
   $password=$_POST["password"];
   $address =$_POST["address"];
   $level=$_POST["level"];
-  if(Students::select(["userName"],[$userName])){
+  if(Students::select(["userName"],["userName" => $userName])){
       echo "Aleady Signed in";
   }else{
     Accounts::insert([$userName, $password]);
