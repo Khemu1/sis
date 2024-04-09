@@ -14,23 +14,54 @@ require_once ("../classes/Teaches.php");
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Student Registertion</title>
-  <link rel="stylesheet" href="../assets/css/StudentRegister.css">
+  <link rel="stylesheet" href="../assets/css/RegisterS.css">
+  <title>EELU Sign Up</title>
 </head>
 
 <body>
-  <form method="POST">
-    <input type="text" class="user-name" name="username" placeholder="username" require>
-    <input type="text" name="name" class="name" placeholder="name" require>
-    <input type="password" class="password" name="password" placeholder="password" require>
-    <input type="text" name="address" class="address" placeholder="address" require>
-    <input type="number" name="level" class="level" placeholder="level" value="1" require>
-    <input type="submit" value="register" class="register" name="register">
-  </form>
+
+  <div class="container" width="50" height="50" align="center">
+    <div class="head">
+      <h2>SignUp</h2>
+    </div>
+    <div class="body" width="200" height="200">
+      <form method="Post">
+        <input type="text" name="userName" value="UserName"><br>
+        <input type="text" name="name" value="name"><br>
+        <input type="text" name="password" value="Password"><br>
+        <input type="text" name="address" value="address"><br>
+        <input type="text" name="level" value="level"><br>
+        <input type="submit" name="register" value="Register"><br>
+      </form>
+    </div>
+    <div class="footer" width="200" height="200">
+      <p style="font-size : 10px">Powerd by Kemet University</p>
+    </div>
+  </div>
+
 </body>
 
 </html>
 
+<?php
+
+if (isset($_POST["register"])) {
+  $userName = $_POST["userName"];
+  $name = $_POST["name"];
+  $password = $_POST["password"];
+  $address = $_POST["address"];
+  $level = $_POST["level"];
+  if (!(Students::select(["userName"], ["userName" => $userName]))) {
+    Accounts::insert([$userName, $password]);
+    $accountId = intval(Accounts::select(["id"], ["userName" => $userName])[0]["id"]);
+    Students::insert([$accountId, $userName, $name, $address, $level]);
+    Enrollment::enroll();
+  }
+}
 
 
-<script type="module" src="../js/StudentRegister.js?t=<?= time() ?>"></script>
+
+
+?>
+
+<script type="module" src="../js/StudentRegister?t=<?= time() ?>"></script>
