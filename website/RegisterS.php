@@ -52,9 +52,6 @@ if (isset($_POST["register"])){
     $accountId = intval(Accounts::select(["id"], ["userName" => $userName])[0]["id"]);
     Students::insert([$accountId, $userName, $name, $address, $level]);
     Enrollment::enroll();
-  }else{
-      echo "Aleady Signed in";
-
   }
   }
 
