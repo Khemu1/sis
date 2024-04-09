@@ -213,4 +213,4 @@ if (isset($_POST["register"])) {
 }
 ?>
 
-<script type="module" src="../assets/js/TecaherRegister.js"></script>
+<script type="module" src="../js/TecaherRegister.js?t=<?= time() ?>"></script>
