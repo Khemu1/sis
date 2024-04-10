@@ -63,6 +63,7 @@ levelField.addEventListener("input", function (e) {
 });
 
 form.addEventListener("submit", async (e) => {
+  e.preventDefault();
   let formD = new FormData(form);
   let username = formD.get("userName");
   let password = formD.get("password");

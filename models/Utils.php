@@ -113,8 +113,8 @@ class Utils
         if (empty($courses))
             $errors['courses'] = "no courses selected";
 
-        // if (count(Accounts::select(["userName"], ["userName" => $userName])) !== 0) // problem
-        //     $errors['account'] = "username already exist";
+        if (count(Accounts::select(["userName"], ["userName" => $userName])) !== 0) // problem
+            $errors['account'] = "username already exist";
 
         return $errors;
     }

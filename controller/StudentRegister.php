@@ -14,7 +14,7 @@ require_once ("../models/Utils.php");
 
 header("Content-Type: application/json");
 
-$data = json_decode(trim(file_get_contents("php://input")), true);
+$data = json_decode(trim(file_get_contents("php://input")), true); // the return data from js 
 
 $fields = [$data["userName"] ?? "", $data["name"] ?? "", $data["password"] ?? "", $data["address"] ?? "", $data["level"] ?? ""];
 $errors = Utils::validateStudentFields($fields);
@@ -31,12 +31,14 @@ if (!empty($errors)) {
     "message" => "login successful"
   ];
   echo json_encode($response);
+
   $Account = [$data["userName"], $data["password"]];
   Accounts::insert($Account);
-  $accountId = Accounts::select(["id"], ["userName" => $data["userName"]]);
-  $student = [$accountId,$data["userName"], $data["name"], $data["password"], $data["address"], $data["level"]];
+  $accountId = intval(Accounts::select(["id"], ["userName" => $data["userName"]])[0]["id"]);
+  $student = [$accountId, $data["userName"], $data["name"], $data["address"], $data["level"]];
   Students::insert($student);
 }
+exit();
 
 
 

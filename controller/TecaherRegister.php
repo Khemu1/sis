@@ -34,10 +34,16 @@ if (!empty($errors)) {
   echo json_encode($response);
   $Account = [$data["userName"], $data["password"]];
   Accounts::insert($Account);
-  $accountId = Accounts::select(["id"], ["userName" => $data["userName"]]);
-  $teacher = [$accountId,$data["userName"], $data["name"], $data["password"], $data["address"], $data["level"]];
+  $accountId = intval(Accounts::select(["id"], ["userName" => $data["userName"]])[0]["id"]);
+  $teacher = [$accountId, $data["userName"], $data["name"], $data["address"]];
   Teachers::insert($teacher);
+  foreach ($data["courses"] as $course) {
+    $teaches = [$data["userName"], $course];
+    Teaches::insert($teaches);
+  }
+
 }
+exit();
 
 
 

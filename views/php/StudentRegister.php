@@ -23,13 +23,13 @@ require_once ("../../models/Utils.php");
 
   <div class="container" width="50" height="50" align="center">
     <div class="head">
-      <h2>SignUp</h2>
+      <h2>Student Registration</h2>
     </div>
     <div class="body" width="200" height="200">
       <form method="Post">
         <input type="text" name="userName" class="user-name" placeholder="UserName"><br>
         <input type="text" name="name" class="name" placeholder="name"><br>
-        <input type="text" name="password" class="password" placeholder="Password"><br>
+        <input type="password" name="password" class="password" placeholder="Password"><br>
         <input type="text" name="address" class="address" placeholder="address"><br>
         <input type="text" name="level" class="level" placeholder="level"><br>
         <input type="submit" name="register" placeholder="Register"><br>

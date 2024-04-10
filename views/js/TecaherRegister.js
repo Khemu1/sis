@@ -4,7 +4,8 @@ let usernameField = document.querySelector(".user-name");
 let nameField = document.querySelector(".name");
 let passwordField = document.querySelector(".password");
 let addressField = document.querySelector(".address");
-let coursesField = document.querySelectorAll(".course");
+let courses = document.querySelectorAll(".course");
+let coursesField = document.querySelector(".dropdown");
 let form = document.querySelector("form");
 
 usernameField.addEventListener("input", function (e) {
@@ -52,6 +53,7 @@ addressField.addEventListener("input", function (e) {
 });
 
 form.addEventListener("submit", async (e) => {
+  e.preventDefault();
   let formD = new FormData(form);
   let username = formD.get("userName");
   let password = formD.get("password");
@@ -65,7 +67,7 @@ form.addEventListener("submit", async (e) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      register: "Student",
+      register: "Teacher",
       userName: username,
       name: name,
       password: password,
@@ -85,14 +87,14 @@ form.addEventListener("submit", async (e) => {
       // window.location.href = "http://localhost:8080/sis/home.php";
     } else {
       let errors = responseData.errors;
-      // Object.keys(errors).forEach((error) => {
-      //   if (error === "username") userNameField.classList.add("invalid");
-      //   if (error === "name") nameField.classList.add("invalid");
-      //   if (error === "password") passwordField.classList.add("invalid");
-      //   if (error === "address") addressField.classList.add("invalid");
-      //   if (error === "level") levelField.classList.add("invalid");
-      // });
-      // utils.handelErrorDisplay(errors);
+      Object.keys(errors).forEach((error) => {
+        if (error === "username") userNameField.classList.add("invalid");
+        if (error === "name") nameField.classList.add("invalid");
+        if (error === "password") passwordField.classList.add("invalid");
+        if (error === "address") addressField.classList.add("invalid");
+        if (error === "courses") coursesField.classList.add("invalid");
+      });
+      utils.handelErrorDisplay(errors);
       console.log(responseData.message);
     }
   } else {
