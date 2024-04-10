@@ -4,7 +4,7 @@ let usernameField = document.querySelector(".user-name");
 let nameField = document.querySelector(".name");
 let passwordField = document.querySelector(".password");
 let addressField = document.querySelector(".address");
-let courses = document.querySelectorAll(".course");
+let coursesC = document.querySelectorAll(".course");
 let coursesField = document.querySelector(".dropdown");
 let form = document.querySelector("form");
 
@@ -54,6 +54,10 @@ addressField.addEventListener("input", function (e) {
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
+  if (utils.checked(coursesC).length > 0) {
+    coursesField.classList.remove("invalid");
+    coursesField.classList.add("valid");
+  }
   let formD = new FormData(form);
   let username = formD.get("userName");
   let password = formD.get("password");
@@ -87,14 +91,16 @@ form.addEventListener("submit", async (e) => {
       // window.location.href = "http://localhost:8080/sis/home.php";
     } else {
       let errors = responseData.errors;
+      console.log(errors);
       Object.keys(errors).forEach((error) => {
-        if (error === "username") userNameField.classList.add("invalid");
+        console.log(error);
+        if (error === "username")
+          document.querySelector(".user-name").classList.add("invalid");
         if (error === "name") nameField.classList.add("invalid");
         if (error === "password") passwordField.classList.add("invalid");
         if (error === "address") addressField.classList.add("invalid");
         if (error === "courses") coursesField.classList.add("invalid");
       });
-      utils.handelErrorDisplay(errors);
       console.log(responseData.message);
     }
   } else {

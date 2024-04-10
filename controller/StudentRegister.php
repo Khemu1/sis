@@ -37,8 +37,9 @@ if (!empty($errors)) {
   $accountId = intval(Accounts::select(["id"], ["userName" => $data["userName"]])[0]["id"]);
   $student = [$accountId, $data["userName"], $data["name"], $data["address"], $data["level"]];
   Students::insert($student);
+  Enrollment::enroll();
+
 }
-exit();
 
 
 

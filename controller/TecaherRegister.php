@@ -19,11 +19,11 @@ $data = json_decode(trim(file_get_contents("php://input")), true);
 $fields = [$data["userName"] ?? "", $data["name"] ?? "", $data["password"] ?? "", $data["address"] ?? "", $data["courses"] ?? []];
 $errors = Utils::validateTeacherFields($fields);
 if (!empty($errors)) {
-  $jsonE = json_encode($errors); // had to be done because courses is an array of element , it must parsed into json
+  // $jsonE = json_encode($errors); // had to be done because courses is an array of element , it must parsed into json
   $response = [
     "status" => "fail",
     "message" => "login failed",
-    "errors" => $jsonE
+    "errors" => $errors
   ];
   echo json_encode($response);
 } else {
@@ -41,9 +41,8 @@ if (!empty($errors)) {
     $teaches = [$data["userName"], $course];
     Teaches::insert($teaches);
   }
-
+  Enrollment::enroll();
 }
-exit();
 
 
 

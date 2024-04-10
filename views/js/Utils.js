@@ -49,7 +49,7 @@ export function resetLevel(e) {
 export function checked(checkboxes) {
   let checked = [];
   if (checkboxes) {
-    checboxes.forEach((checkbox) => {
+    checkboxes.forEach((checkbox) => {
       if (checkbox.checked) {
         checked.push(checkbox.value);
       }
@@ -57,5 +57,3 @@ export function checked(checkboxes) {
   }
   return checked;
 }
-
-
