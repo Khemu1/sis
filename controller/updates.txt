@@ -5,3 +5,8 @@ completed the API files
 4 / 10 / 2024
 
 there was some minor erros with insertions that has been fixed
+
+
+4 / 11 / 2024 
+
+manged to pass the type of login user to the API

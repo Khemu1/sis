@@ -35,3 +35,7 @@ added an update method for students in Enrollement --> Khemu
 4 / 9 / 2024
 
 made the the Utils class for validations --> Khemu
+
+4 / 11 / 2024 
+
+made the designation method that return of type of user 

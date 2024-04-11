@@ -118,4 +118,10 @@ class Utils
 
         return $errors;
     }
+    public static function designation($id): string
+    {
+        $student = Students::select(["accountId"], ["accountId" => $id]);
+        $teacher = Teachers::select(["accountId"], ["accountId" => $id]);
+        return count($student) > count($teacher) ? "student" : "teacher";
+    }
 }

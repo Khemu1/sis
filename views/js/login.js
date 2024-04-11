@@ -1,10 +1,15 @@
 const form = document.querySelector("form");
 
 form.addEventListener("submit", async (e) => {
+  console.log("eeeeeeeeee");
   e.preventDefault();
   let formD = new FormData(form);
+  let user = document.querySelector('input[name="userType"]:checked');
+  let type = user.value; // disregard that error it doesn't exist
+
   let username = formD.get("username");
   let password = formD.get("password");
+  form.append("type", type);
   let result = await fetch("../../controller/login.php", {
     method: "POST",
     headers: {
@@ -12,8 +17,9 @@ form.addEventListener("submit", async (e) => {
     },
     body: JSON.stringify({
       login: "Joe amama",
-      username: username,
+      userName: username,
       password: password,
+      type: type
     }),
   });
 
@@ -24,7 +30,20 @@ form.addEventListener("submit", async (e) => {
     console.log(responseData);
     console.log(stat);
     if (stat == "success") {
-      window.location.href = "http://localhost:8080/sis/home.php";
+      let setIdResult = await fetch("../../controller/login.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ id: responseData.id }), // Send the user ID to the server
+      });
+      console.log(responseData.id);
+      // Only redirect after the second fetch request completes
+      if (setIdResult.ok) {
+        window.location.href = `http://localhost/sis/views/php/home.php?id=${responseData.id}&type=${responseData.type}`;
+      } else {
+        console.error("Error setting user ID: " + setIdResult.statusText);
+      }
     } else {
       console.log(responseData.message);
     }

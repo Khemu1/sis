@@ -26,18 +26,19 @@ if (!empty($errors)) {
   ];
   echo json_encode($response);
 } else {
-  $response = [
-    "status" => "success",
-    "message" => "login successful"
-  ];
-  echo json_encode($response);
-
   $Account = [$data["userName"], $data["password"]];
   Accounts::insert($Account);
   $accountId = intval(Accounts::select(["id"], ["userName" => $data["userName"]])[0]["id"]);
   $student = [$accountId, $data["userName"], $data["name"], $data["address"], $data["level"]];
   Students::insert($student);
   Enrollment::enroll();
+
+  $response = [
+    "status" => "success",
+    "message" => "login successful",
+  ];
+  echo json_encode($response);
+
 
 }
 
