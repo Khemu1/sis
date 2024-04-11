@@ -16,7 +16,7 @@
     </div>
     <div class="body">
       <form method="post" action="">
-        <input type="text" name="username" class="user-name" placeholder="Username" value="Omar951"><br>
+        <input type="text" name="userName" class="user-name" placeholder="Username" value="Omar951"><br>
         <input type="password" name="password" class="password" placeholder="Password" value="951357"><br>
         <div class="user-type">
           <label><input type="radio" name="userType" value="student" checked> Student</label>
@@ -26,7 +26,7 @@
       </form>
     </div>
     <div class="footer">
-      <p>Powered by Kemet University</p>
+      <p>Powered by Kemet SIS</p>
     </div>
   </div>
 </body>
@@ -34,6 +34,19 @@
 </html>
 
 <?php
+require_once ("../../config/setup.php");
+require_once ("../../models/Accounts.php");
+require_once ("../../models/Courses.php");
+require_once ("../../models/Enrollment.php");
+require_once ("../../models/Students.php");
+require_once ("../../models/Teachers.php");
+require_once ("../../models/Teaches.php");
+require_once ("../../models/Utils.php");
 
+session_start();
+if ($_POST["login"]) {
+  $id = intval(Accounts::select(["id"], ["userName" => $_POST["userName"]])[0]["id"]);
+  $_SESSION["id"] = $id;
+}
 ?>
 <script type="module" src="../js/login.js?t=<?= time() ?>"></script>

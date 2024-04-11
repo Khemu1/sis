@@ -36,7 +36,7 @@ require_once ("../../models/Utils.php");
       </form>
     </div>
     <div class="footer" width="200" height="200">
-      <p style="font-size : 10px">Powerd by Kemet University</p>
+      <p style="font-size : 10px">Powerd by Kemet SIS</p>
     </div>
   </div>
 

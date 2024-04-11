@@ -7,7 +7,7 @@ form.addEventListener("submit", async (e) => {
   let user = document.querySelector('input[name="userType"]:checked');
   let type = user.value; // disregard that error it doesn't exist
 
-  let username = formD.get("username");
+  let username = formD.get("userName");
   let password = formD.get("password");
   form.append("type", type);
   let result = await fetch("../../controller/login.php", {

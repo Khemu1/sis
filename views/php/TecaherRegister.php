@@ -145,7 +145,7 @@ require_once ("../../models/Utils.php");
       </form>
     </div>
     <div class="footer">
-      <p>Powered by Kemet University</p>
+      <p>Powered by Kemet SIS</p>
     </div>
   </div>
 

@@ -14,7 +14,6 @@ header("Content-Type: application/json");
 $data = json_decode(trim(file_get_contents("php://input")), true);
 
 
-
 if ($data["type"] === "student") {
   $userName = $data["userName"] ?? "";
   $password = $data["password"] ?? "";
@@ -30,6 +29,7 @@ if ($data["type"] === "student") {
       "type" => $confirmation
     ];
     echo json_encode($response);
+    $_SESSION["id"] = intval($account[0]["id"]);
 
   } else {
     echo json_encode([
