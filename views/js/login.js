@@ -9,7 +9,16 @@ form.addEventListener("submit", async (e) => {
 
   let username = formD.get("userName");
   let password = formD.get("password");
-  form.append("type", type);
+
+  const hiddenInput = document.createElement("input");
+
+  hiddenInput.type = "hidden";
+
+  hiddenInput.name = "type";
+
+  hiddenInput.value = type;
+
+  form.appendChild(hiddenInput);
   let result = await fetch("../../controller/login.php", {
     method: "POST",
     headers: {
@@ -19,7 +28,7 @@ form.addEventListener("submit", async (e) => {
       login: "Joe amama",
       userName: username,
       password: password,
-      type: type
+      type: type,
     }),
   });
 
@@ -27,23 +36,8 @@ form.addEventListener("submit", async (e) => {
   if (result.ok) {
     let responseData = await result.json();
     let stat = responseData.status;
-    console.log(responseData);
-    console.log(stat);
     if (stat == "success") {
-      let setIdResult = await fetch("../../controller/login.php", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ id: responseData.id }), // Send the user ID to the server
-      });
-      console.log(responseData.id);
-      // Only redirect after the second fetch request completes
-      if (setIdResult.ok) {
-        window.location.href = `http://localhost/sis/views/php/home.php?id=${responseData.id}&type=${responseData.type}`;
-      } else {
-        console.error("Error setting user ID: " + setIdResult.statusText);
-      }
+      window.location.href = `http://sis.test/views/php/home.php`;
     } else {
       console.log(responseData.message);
     }

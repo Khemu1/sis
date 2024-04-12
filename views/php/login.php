@@ -10,13 +10,13 @@
 </head>
 
 <body>
-  <div class="container">
+  <div class="home">
     <div class="head">
       <h2>Login</h2>
     </div>
     <div class="body">
       <form method="post" action="">
-        <input type="text" name="userName" class="user-name" placeholder="Username" value="Omar951"><br>
+        <input type="text" name="userName" class="user-name" placeholder="Username" value="Yasser"><br>
         <input type="password" name="password" class="password" placeholder="Password" value="951357"><br>
         <div class="user-type">
           <label><input type="radio" name="userType" value="student" checked> Student</label>
@@ -43,10 +43,5 @@ require_once ("../../models/Teachers.php");
 require_once ("../../models/Teaches.php");
 require_once ("../../models/Utils.php");
 
-session_start();
-if ($_POST["login"]) {
-  $id = intval(Accounts::select(["id"], ["userName" => $_POST["userName"]])[0]["id"]);
-  $_SESSION["id"] = $id;
-}
 ?>
 <script type="module" src="../js/login.js?t=<?= time() ?>"></script>

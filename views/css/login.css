@@ -10,50 +10,63 @@ form {
   justify-items: center;
 }
 
-.container {
-  position: relative;
-  width: 350px;
+.home {
+  width: 300px;
   margin: 50px auto;
-  text-align: center;
-  border: 1px solid #ffffff;
-  border-radius: 8px;
   padding: 20px;
-  background-color: #ffffff;
-  box-shadow: 5px 0px 12px -1px rgba(0, 0, 0, 0.32);
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
 }
 
-.head h2 {
-  font-size: 24px;
-  font-family: sans-serif;
+.home .head h2 {
+  text-align: center;
   margin-bottom: 20px;
-  color: #333;
 }
-input[type="text"]:focus-visible,
-input[type="password"]:focus-visible {
-  outline: none;
-}
-.body input[type="text"],
-.body input[type="password"],
-.body input[type="submit"] {
-  margin: 10px 0;
-  padding: 10px;
+
+.home .body input[type="text"],
+.home .body input[type="password"] {
   width: calc(100% - 20px);
-  box-sizing: border-box;
-  border: 1px solid #ddd;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
   border-radius: 5px;
 }
 
-.body input[type="submit"] {
+.home .body input[type="radio"] {
+  margin-right: 5px;
+}
+
+.home .body label {
+  font-size: 14px;
+}
+
+.home .body input[type="submit"] {
+  width: calc(100% - 20px);
+  margin: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
   background-color: #0073f7;
   color: white;
-  font-family: sans-serif;
-  border: none;
+  font-weight: bold;
   cursor: pointer;
 }
 
-.footer p {
-  font-size: 12px;
-  font-family: sans-serif;
+.home .body input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.home .body a {
+  text-decoration: none;
+  color: #0073f7;
+}
+
+.home .body a:hover {
+  text-decoration: underline;
+}
+
+.home .footer {
+  text-align: center;
   margin-top: 20px;
-  color: #666;
 }

@@ -6,3 +6,7 @@ added TeacherRegister
 4 / 9 / 2024 
 
 completed the API callings
+
+4 / 12 / 2024
+
+added the home page file

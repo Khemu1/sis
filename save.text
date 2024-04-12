@@ -1,0 +1,11 @@
+      <div class="basic-info">
+        <h2>Student Information</h2>
+        <div class="student-info">
+          <div class="info-item" id="username">Username: </div>
+          <div class="info-item" id="name">Name: </div>
+          <div class="info-item" id="address">Address: </div>
+          <div class="info-item" id="level">Level: </div>
+        </div>
+      </div>
+
+      

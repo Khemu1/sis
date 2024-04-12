@@ -10,6 +10,7 @@ require_once ("../models/Utils.php");
 
 
 header("Content-Type: application/json");
+session_start();
 
 $data = json_decode(trim(file_get_contents("php://input")), true);
 
@@ -20,16 +21,20 @@ if ($data["type"] === "student") {
   $account = Accounts::select(["id", "userName", "Password"], ["userName" => $userName, "password" => $password]);
   $confirmation = Utils::designation(intval($account[0]["id"]));
   if (count($account) > 0 && $confirmation === "student") {
+    $_SESSION["id"] = intval($account[0]["id"]);
+    $_SESSION["userName"] = $account[0]["userName"];
+    $_SESSION["type"] = "student";
 
     $jarr = json_encode($account[0]);
     $response = [
       "status" => "success",
       "message" => "login successful",
       "id" => intval($account[0]["id"]),
-      "type" => $confirmation
+      "type" => "student",
     ];
     echo json_encode($response);
-    $_SESSION["id"] = intval($account[0]["id"]);
+    exit();
+
 
   } else {
     echo json_encode([
@@ -39,13 +44,14 @@ if ($data["type"] === "student") {
     exit();
   }
 } else if ($data["type"] === "teacher") {
-  $userName = $data["username"] ?? "";
+  $userName = $data["userName"] ?? "";
   $password = $data["password"] ?? "";
   $account = Accounts::select(["id", "userName", "Password"], ["userName" => $userName, "password" => $password]);
   $confirmation = Utils::designation(intval($account[0]["id"]));
   if (count($account) > 0 && $confirmation === "teacher") {
     $_SESSION["id"] = intval($account[0]["id"]);
     $_SESSION["userName"] = $account[0]["userName"];
+    $_SESSION["type"] = "teacher";
 
 
     $jarr = json_encode($account[0]);
@@ -53,9 +59,10 @@ if ($data["type"] === "student") {
       "status" => "success",
       "message" => "login successful",
       "id" => intval($account[0]["id"]),
-      "type" => $confirmation
+      "type" => "teacher"
     ];
     echo json_encode($response);
+    exit();
 
   } else {
     echo json_encode([
