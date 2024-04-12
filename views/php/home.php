@@ -44,7 +44,7 @@ session_start();
           </button>
           <?php
         } else { ?>
-          <button id="participants" value="participants">
+          <button id="courses" value="courses">
             <p>participants</p>
           </button>
 
@@ -56,11 +56,9 @@ session_start();
           <p>About</p>
         </button>
       </div>
-      <div type="button" id="logout">
-        <a href="http://sis.test/controller/logout.php">
-          <p>Logout</p>
-        </a>
-      </div>
+      <a id="logout" href="http://sis.test/controller/logout.php">
+        <p>Logout</p>
+      </a>
     </nav>
 
 

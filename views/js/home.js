@@ -4,8 +4,6 @@ let selectedValue = document.querySelector("selected");
 const homeDisplayed = sessionStorage.getItem("homeDisplayed");
 
 let fetchedData;
-let info;
-let courses;
 
 let home1;
 
@@ -124,8 +122,8 @@ async function fetchData() {
 async function fetchDataAndUpdateVariable() {
   try {
     fetchedData = await fetchData();
-    info = fetchedData[1];
-    courses = fetchedData[2];
+    let info = fetchedData[1];
+    let courses = fetchedData[2];
 
     if (fetchedData[0] === "student") {
       home1 = `<div class="basic-info">
@@ -142,16 +140,17 @@ async function fetchDataAndUpdateVariable() {
   <div class="courses-info">
     <div class="course">
       <p>Name</p>
-      <p>Hours</p>
-      <p>Level</p>
+      <p>Course</p>
+      <p>level</p>
     </div>`;
 
       courses.forEach((course) => {
         courses1 += `
     <div class="course">
       <p>${course.name}</p>
-      <p>${course.hours}</p>
+      <p>${course.course}</p>
       <p>${course.level}</p>
+ 
     </div>`;
       });
 
@@ -160,13 +159,37 @@ async function fetchDataAndUpdateVariable() {
 </div>`;
     } else {
       home1 = `<div class="basic-info">
-      <h2>Student Information</h2>
+      <h2>Teacher Information</h2>
       <div class="student-info">
         <div class="info-item" id="username">Username: ${info.userName} </div>
         <div class="info-item" id="name">Name: ${info.name} </div>
         <div class="info-item" id="address">Address: ${info.address} </div> 
       </div>
     </div>`;
+
+      courses1 = `<div class="courses">
+  <h2>Enrolled Courses</h2>
+  <div class="courses-info">
+    <div class="course">
+      <p>Name</p>
+      <p>Course</p>
+      <p>level</p>
+    </div>`;
+
+      courses.forEach((course) => {
+        courses1 += `
+    <div class="course">
+      <p>${course.courseName}</p>
+      <p>${course.courseLevel}</p>
+      <p>${course.courseHours}</p>
+      <p>${course.studentUserName}</p>
+ 
+    </div>`;
+      });
+
+      courses1 += `
+  </div>
+</div>`;
     }
     displayHome();
   } catch (error) {
@@ -180,7 +203,7 @@ function displayContent(buttonValue) {
   let section = document.querySelector("section");
   let basicInfo = document.querySelector(".basic-info");
   let aboutinfo = document.querySelector(".about");
-  let courses = document.querySelector(".courses");
+  let courses = document.querySelector("#courses");
   let footer = document.querySelector("footer");
 
   if (buttonValue === "home" && selected !== "home") {

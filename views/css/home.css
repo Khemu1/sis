@@ -102,11 +102,7 @@ nav .nav-buttons {
   padding: 7px 10px;
   outline: none;
   transition: 0.3s ease-in-out;
-}
-#logout a {
   text-decoration: none;
-  color: #000;
-  transition: 0.3s ease-in-out;
 }
 
 #logout:hover {
