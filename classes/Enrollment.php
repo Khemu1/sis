@@ -123,45 +123,45 @@ class Enrollment
 
 
   /**
-   * Updates an existing enrollment record in the database.
-   *
-   * @param array $columns An associative array containing the new values for the columns to be updated.
-   * @param array $data An associative array containing the data to search for the record to be updated.
-   *
-   * @return bool True if the record is successfully updated, false otherwise.
-   */
-  public static function update(array $columns, array $data): bool
-  {
+ * Updates an existing enrollment record in the database.
+ *
+ * @param array $columns An associative array containing the new values for the columns to be updated.
+ * @param array $data An associative array containing the data to search for the record to be updated.
+ *
+ * @return bool True if the record is successfully updated, false otherwise.
+ */
+public static function update(array $columns, array $data): bool
+{
     // Use the DB class to execute the UPDATE query
     return DB::update(self::$table, $columns, $data);
-  }
+}
 
   /**
-   * Selects records from the enrollment table based on the given columns and data.
-   *
-   * @param array $columns An associative array containing the columns to be selected from the table.
-   * @param array $data An associative array containing the data to search for the records.
-   *
-   * @return array An associative array containing the selected records.
-   */
-  public static function select(array $columns, array $data): array
-  {
+ * Selects records from the enrollment table based on the given columns and data.
+ *
+ * @param array $columns An associative array containing the columns to be selected from the table.
+ * @param array $data An associative array containing the data to search for the records.
+ *
+ * @return array An associative array containing the selected records.
+ */
+public static function select(array $columns, array $data): array
+{
     return DB::select(self::$table, $columns, $data);
-  }
+}
   /**
-   * Selects records from the enrollment table based on the given columns and data,
-   * where the teacherUserName is null.
-   *
-   * @param array $columns An associative array containing the columns to be selected from the table.
-   * @param array $data An associative array containing the data to search for the records.
-   *
-   * @return array An associative array containing the selected records.
-   */
-  public static function selectNull(array $columns, array $data): array
-  {
+ * Selects records from the enrollment table based on the given columns and data,
+ * where the teacherUserName is null.
+ *
+ * @param array $columns An associative array containing the columns to be selected from the table.
+ * @param array $data An associative array containing the data to search for the records.
+ *
+ * @return array An associative array containing the selected records.
+ */
+public static function selectNull(array $columns, array $data): array
+{
     $keys = array_keys($data);
     $placeholders = array_map(function (string $key) {
-      return "$key= :$key";
+        return "$key= :$key";
     }, $keys);
 
     $sql = "SELECT " . implode(", ", $columns) . " FROM " . self::$table . " WHERE teacherUserName is null AND " . implode(" AND ", $placeholders);
@@ -172,10 +172,10 @@ class Enrollment
 
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     if ($result === false) {
-      return [];
+        return [];
     }
     return $result;
-  }
+}
   /**
    * Checks if a record with the given data already exists in the database.
    *

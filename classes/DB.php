@@ -71,24 +71,6 @@ class DB
 
     // Construct the SQL query
     $sql = "SELECT " . implode(", ", $columns) . " FROM $table WHERE " . implode(" AND ", $placeholders);
-<<<<<<< HEAD:classes/DB.php
-    try {
-      // Prepare the SQL statement
-      $stmt = self::$pdo->prepare($sql);
-
-      // Execute the statement
-      $stmt->execute($data);
-
-      // Fetch the result as an associative array
-      $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-      return $result;
-    } catch (\Throwable $th) {
-      echo $th->getMessage();
-      return [];
-    }
-
-
-=======
 
     // Prepare the SQL statement
     $stmt = self::$pdo->prepare($sql);
@@ -102,7 +84,6 @@ class DB
       return [];
     }
     return $result;
->>>>>>> 29515e6b02f42649716980ede401cb7fb18c6ba7:models/DB.php
   }
 
   /**

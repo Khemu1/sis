@@ -1,4 +1,4 @@
 <?php
-require_once ("C:\laragon\www\sis\models\DB.php");
+require_once ("C:\laragon\www\sis\classes\DB.php");
 
 DB::init();

@@ -1,12 +1,12 @@
 <?php
-require_once ("../../config/setup.php");
-require_once ("../../models/Accounts.php");
-require_once ("../../models/Courses.php");
-require_once ("../../models/Enrollment.php");
-require_once ("../../models/Students.php");
-require_once ("../../models/Teachers.php");
-require_once ("../../models/Teaches.php");
-require_once ("../../models/Utils.php");
+require_once ("../config/setup.php");
+require_once ("../classes/Accounts.php");
+require_once ("../classes/Courses.php");
+require_once ("../classes/Enrollment.php");
+require_once ("../classes/Students.php");
+require_once ("../classes/Teachers.php");
+require_once ("../classes/Teaches.php");
+require_once ("../classes/Utils.php");
 
 ?>
 <!DOCTYPE html>
@@ -15,7 +15,7 @@ require_once ("../../models/Utils.php");
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/StudentRegister.css">
+  <link rel="stylesheet" href="../assets/css/StudentRegister.css">
   <title>Kemet Sign Up</title>
 </head>
 
@@ -46,6 +46,18 @@ require_once ("../../models/Utils.php");
 
 <?php
 
+
+if (isset($_Post["register"])) {
+  $userName = $_Post["userName"];
+  $name = $_Post["name"];
+  $password = $_Post["password"];
+  $address = $_Post["address"];
+  $level = $_Post["level"];
+
+  if (count(Accounts::select(["userName"], ["userName" => $userName])) > 0) {
+    echo "invalid username";
+  }
+}
 ?>
 
 <script type="module" src="../js/StudentRegister.js?t=<?= time() ?>"></script>
