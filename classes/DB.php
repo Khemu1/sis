@@ -43,12 +43,9 @@ class DB
     // Construct the SQL query
     $sql = "INSERT INTO $table (" . implode(", ", $keys) . ") VALUES (" . implode(", ", $placeholders) . ")";
 
-<<<<<<< HEAD
-=======
     // Prepare the SQL statement
     $stmt = self::$pdo->prepare($sql);
 
->>>>>>> 6267822f74bd8f51b82a21acf7c9fedcaae04622
     try {
       // Prepare the SQL statement 
       $stmt = self::$pdo->prepare($sql);
@@ -60,9 +57,6 @@ class DB
       return false;
     }
   }
-<<<<<<< HEAD
-  public static function select($table, array $data): array
-=======
 
   /**
    * This function is used to select specific data from a table in the database
@@ -73,112 +67,82 @@ class DB
    * @return array an array of associative arrays where each associative array represents a row of data
    */
   public static function select($table, array $columns, array $data): array // id, user name , password --> [id=>value ,usernmae=>]
->>>>>>> 6267822f74bd8f51b82a21acf7c9fedcaae04622
   {
     $keys = array_keys($data);
     $placeholders = array_map(fn(string $key) => "$key= :$key", $keys);
     $sql = "Select " . implode(", ", $keys) . " from $table where " . implode(" AND ", $placeholders); // id= :id
 
-<<<<<<< HEAD
-    try {
-      $stmt = DB::$pdo->prepare($sql);
-      $stmt->execute($data);
-      $result = $stmt->fetchAll(DB::$pdo::FETCH_ASSOC);
-      return $result;
-    } catch (PDOException $e) {
-      echo $e->getMessage();
-=======
     // Construct the SQL query
     $sql = "SELECT " . implode(", ", $columns) . " FROM $table WHERE " . implode(" AND ", $placeholders);
-
-    // Prepare the SQL statement
-    $stmt = self::$pdo->prepare($sql);
-
-    // Execute the statement
-    $stmt->execute($data);
-
-    // Fetch the result as an associative array
-    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    if ($result === false) {
->>>>>>> 6267822f74bd8f51b82a21acf7c9fedcaae04622
-      return [];
-    }
-  }
-<<<<<<< HEAD
-  public static function selectAll($table, array $columns, array $data): array
-  {
-    $keys = array_keys($data);
-    $placeholders = array_map(fn(string $key) => "$key= :$key", $keys);
-    $sql = "Select " . implode(", ", $columns) . " from $table where " . implode(" AND ", $placeholders); // id= :id
     try {
-      $stmt = DB::$pdo->prepare($sql);
+      // Prepare the SQL statement
+      $stmt = self::$pdo->prepare($sql);
+
+      // Execute the statement
       $stmt->execute($data);
-      $result = $stmt->fetchAll(DB::$pdo::FETCH_ASSOC);
+
+      // Fetch the result as an associative array
+      $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
       return $result;
-    } catch (PDOException $e) {
-      echo $e->getMessage();
+    } catch (\Throwable $th) {
+      echo $th->getMessage();
       return [];
     }
+
+
   }
-=======
 
   /**
-   * This function is used to select all data from a tables in the database
+   * This function is used to select all data from a table in the database.
    *
-   * @param string $table the name of the table to select from
-   * @return array an array of associative arrays where each associative array represents a row of data
+   * @param string $table The name of the table to select from.
+   *
+   * @return array An array of associative arrays where each associative array represents a row of data.
    */
-  /**
- * This function is used to select all data from a table in the database.
- *
- * @param string $table The name of the table to select from.
- *
- * @return array An array of associative arrays where each associative array represents a row of data.
- */
-public static function selectAll(string $table): array
-{
+  public static function selectAll(string $table): array
+  {
     $stmt = self::$pdo->prepare("SELECT * FROM $table");
     $stmt->execute(); // this is used to execute the prepare statement
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
-}
+  }
   /**
- * This function is used to update data in a table in the database.
- *
- * @param string $table The name of the table to update.
- * @param array $data An associative array where the key is the column name and the value is the new value to update.
- * @param array $condition An associative array where the key is the column name and the value is the value to match the rows to be updated.
- *
- * @return bool true if the data was updated successfully, false otherwise.
- */
-public static function update($table, $data, $condition): bool {
+   * This function is used to update data in a table in the database.
+   *
+   * @param string $table The name of the table to update.
+   * @param array $data An associative array where the key is the column name and the value is the new value to update.
+   * @param array $condition An associative array where the key is the column name and the value is the value to match the rows to be updated.
+   *
+   * @return bool true if the data was updated successfully, false otherwise.
+   */
+  public static function update($table, $data, $condition): bool
+  {
     $dataKeys = array_keys($data);
     $conditionKeys = array_keys($condition);
 
     $dataPlaceholders = array_map(function (string $key) {
-        return "$key = :$key";
+      return "$key = :$key";
     }, $dataKeys);
     $conditionPlaceholders = array_map(function (string $key) {
-        return "$key = :$key";
+      return "$key = :$key";
     }, $conditionKeys);
     $sql = "UPDATE $table SET " . implode(", ", $dataPlaceholders) . " WHERE " . implode(" AND ", $conditionPlaceholders);
 
     try {
-        $stmt = self::$pdo->prepare($sql);
+      $stmt = self::$pdo->prepare($sql);
 
-        foreach ($data as $key => $value) {
-            $stmt->bindValue(":$key", $value);
-        }
+      foreach ($data as $key => $value) {
+        $stmt->bindValue(":$key", $value);
+      }
 
-        foreach ($condition as $key => $value) {
-            $stmt->bindValue(":$key", $value);
-        }
+      foreach ($condition as $key => $value) {
+        $stmt->bindValue(":$key", $value);
+      }
 
-        return $stmt->execute();
+      return $stmt->execute();
     } catch (\Throwable $th) {
-        echo $th->getMessage();
-        return false;
+      echo $th->getMessage();
+      return false;
     }
-}
+  }
 
->>>>>>> 6267822f74bd8f51b82a21acf7c9fedcaae04622
 }
