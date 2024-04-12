@@ -9,6 +9,7 @@ require_once ("../../models/Teachers.php");
 require_once ("../../models/Teaches.php");
 require_once ("../../models/Utils.php");
 session_start();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

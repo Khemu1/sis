@@ -8,7 +8,8 @@ require_once ("../models/Students.php");
 require_once ("../models/Teachers.php");
 require_once ("../models/Teaches.php");
 require_once ("../models/Utils.php");
-
+session_abort();
+session_start();
 
 
 
@@ -32,14 +33,16 @@ if (!empty($errors)) {
   $student = [$accountId, $data["userName"], $data["name"], $data["address"], $data["level"]];
   Students::insert($student);
   Enrollment::enroll();
-
+  $_SESSION["id"] = $accountId;
+  $_SESSION["userName"] = $data["userName"];
+  $_SESSION["type"] = "student";
   $response = [
     "status" => "success",
     "message" => "login successful",
   ];
   echo json_encode($response);
 
-
+  exit();
 }
 
 

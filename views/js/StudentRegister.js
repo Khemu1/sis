@@ -93,7 +93,7 @@ form.addEventListener("submit", async (e) => {
     console.log(stat);
     if (stat == "success") {
       console.log("yeeeeeeeeeeeeeees");
-      window.location.href = "http://localhost:3306/sis/home.php";
+      window.location.href = `http://sis.test/views/php/home.php`;
     } else {
       let errors = responseData.errors;
       Object.keys(errors).forEach((error) => {

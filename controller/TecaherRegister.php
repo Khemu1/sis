@@ -8,7 +8,8 @@ require_once ("../models/Students.php");
 require_once ("../models/Teachers.php");
 require_once ("../models/Teaches.php");
 require_once ("../models/Utils.php");
-
+session_abort();
+session_start();
 
 
 
@@ -27,11 +28,6 @@ if (!empty($errors)) {
   ];
   echo json_encode($response);
 } else {
-  $response = [
-    "status" => "success",
-    "message" => "login successful"
-  ];
-  echo json_encode($response);
   $Account = [$data["userName"], $data["password"]];
   Accounts::insert($Account);
   $accountId = intval(Accounts::select(["id"], ["userName" => $data["userName"]])[0]["id"]);
@@ -42,6 +38,16 @@ if (!empty($errors)) {
     Teaches::insert($teaches);
   }
   Enrollment::enroll();
+  $_SESSION["id"] = $accountId;
+  $_SESSION["userName"] = $data["userName"];
+  $_SESSION["type"] = "teacher";
+  $response = [
+    "status" => "success",
+    "message" => "login successful"
+  ];
+  echo json_encode($response);
+
+  exit;
 }
 
 

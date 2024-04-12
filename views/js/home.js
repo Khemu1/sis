@@ -124,10 +124,11 @@ async function fetchData() {
 async function fetchDataAndUpdateVariable() {
   try {
     fetchedData = await fetchData();
-    info = fetchedData[0];
-    courses = fetchedData[1];
+    info = fetchedData[1];
+    courses = fetchedData[2];
 
-    home1 = `<div class="basic-info">
+    if (fetchedData[0] === "student") {
+      home1 = `<div class="basic-info">
       <h2>Student Information</h2>
       <div class="student-info">
         <div class="info-item" id="username">Username: ${info.userName} </div>
@@ -136,7 +137,7 @@ async function fetchDataAndUpdateVariable() {
         <div class="info-item" id="level">Level: ${info.level} </div>
       </div>
     </div>`;
-    courses1 = `<div class="courses">
+      courses1 = `<div class="courses">
   <h2>Enrolled Courses</h2>
   <div class="courses-info">
     <div class="course">
@@ -145,18 +146,28 @@ async function fetchDataAndUpdateVariable() {
       <p>Level</p>
     </div>`;
 
-    courses.forEach((course) => {
-      courses1 += `
+      courses.forEach((course) => {
+        courses1 += `
     <div class="course">
       <p>${course.name}</p>
       <p>${course.hours}</p>
       <p>${course.level}</p>
     </div>`;
-    });
+      });
 
-    courses1 += `
+      courses1 += `
   </div>
 </div>`;
+    } else {
+      home1 = `<div class="basic-info">
+      <h2>Student Information</h2>
+      <div class="student-info">
+        <div class="info-item" id="username">Username: ${info.userName} </div>
+        <div class="info-item" id="name">Name: ${info.name} </div>
+        <div class="info-item" id="address">Address: ${info.address} </div> 
+      </div>
+    </div>`;
+    }
     displayHome();
   } catch (error) {
     console.error("Error:", error);
