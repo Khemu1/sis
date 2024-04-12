@@ -34,27 +34,27 @@ session_start();
 
       </div>
       <div class="nav-buttons">
-        <button class="selected" id="home" value="home">
+        <a href="home.php" class="selected" id="home" value="home">
           <p>Home</p>
-        </button>
+        </a>
         <?php
         if ($_SESSION["type"] === "student") { ?>
-          <button id="courses" value="courses">
+          <a href="home.php?page=courses" id="courses" value="courses">
             <p>Courses</p>
-          </button>
+          </a>
           <?php
         } else { ?>
-          <button id="courses" value="courses">
+          <a href="home.php?page=courses" id="courses" value="courses">
             <p>participants</p>
-          </button>
+          </a>
 
           <?php
         } ?>
 
 
-        <button id="about" value="about">
+        <a href="home.php?page=about" id="about" value="about">
           <p>About</p>
-        </button>
+        </a>
       </div>
       <a id="logout" href="http://sis.test/controller/logout.php">
         <p>Logout</p>

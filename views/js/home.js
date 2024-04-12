@@ -2,12 +2,15 @@ let buttons = document.querySelectorAll("button");
 let logo = document.querySelector(".logo");
 let selectedValue = document.querySelector("selected");
 const homeDisplayed = sessionStorage.getItem("homeDisplayed");
+let homeButton = document.querySelector("#home");
+let coursesButton = document.querySelector("#courses");
+let aboutButton = document.querySelector("#about");
 
 let fetchedData;
 
 let home1;
 
-let about1 = `<div class="about">
+let about = `<div class="about">
           <div class=" about-container">
             <h3>Our Servers</h3>
             <div class="img-container">
@@ -69,7 +72,6 @@ let about1 = `<div class="about">
 let courses1;
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
-    displayContent(button.value);
     changeLogo(button.value);
     buttons.forEach((button) => {
       button.classList.remove("selected");
@@ -90,7 +92,6 @@ logo.addEventListener("click", () => {
   });
   document.querySelector(".main").classList.remove("hide");
   document;
-  document;
   let home = document.querySelector("#home");
   home.classList.add("selected");
 });
@@ -104,6 +105,52 @@ function changeLogo(Buttonvalue) {
     main.classList.remove("hide");
   }
 }
+homeButton.addEventListener("click", () => {
+  if (window.location.href !== "http://sis.test/views/php/home.php") {
+    let section = document.querySelector("section");
+    let footer = document.querySelector("footer");
+    section.removeChild(section.firstElementChild);
+
+    let tempDiv = document.createElement("div");
+    tempDiv.innerHTML = home1;
+    let aboutNode = tempDiv.firstChild;
+    console.log("aboutNode:", aboutNode);
+    section.insertBefore(aboutNode, footer);
+    console.log("adding home");
+  }
+});
+coursesButton.addEventListener("click", () => {
+  if (
+    window.location.href !== "http://sis.test/views/php/home.php?page=courses"
+  ) {
+    let section = document.querySelector("section");
+    let footer = document.querySelector("footer");
+    section.removeChild(section.firstElementChild);
+
+    let tempDiv = document.createElement("div");
+    tempDiv.innerHTML = courses1;
+    let aboutNode = tempDiv.firstChild;
+    console.log("aboutNode:", aboutNode);
+    section.insertBefore(aboutNode, footer);
+    console.log("adding courses");
+  }
+});
+aboutButton.addEventListener("click", () => {
+  if (
+    window.location.href !== "http://sis.test/views/php/home.php?page=about"
+  ) {
+    let section = document.querySelector("section");
+    let footer = document.querySelector("footer");
+    section.removeChild(section.firstElementChild);
+
+    let tempDiv = document.createElement("div");
+    tempDiv.innerHTML = about;
+    let aboutNode = tempDiv.firstChild;
+    console.log("aboutNode:", aboutNode);
+    section.insertBefore(aboutNode, footer);
+    console.log("adding about");
+  }
+});
 
 // Fetch data from the backend
 async function fetchData() {
@@ -139,8 +186,8 @@ async function fetchDataAndUpdateVariable() {
   <h2>Enrolled Courses</h2>
   <div class="courses-info">
     <div class="course">
-      <p>Name</p>
       <p>Course</p>
+      <p>Hours</p>
       <p>level</p>
     </div>`;
 
@@ -148,7 +195,7 @@ async function fetchDataAndUpdateVariable() {
         courses1 += `
     <div class="course">
       <p>${course.name}</p>
-      <p>${course.course}</p>
+      <p>${course.hours}</p>
       <p>${course.level}</p>
  
     </div>`;
@@ -168,17 +215,18 @@ async function fetchDataAndUpdateVariable() {
     </div>`;
 
       courses1 = `<div class="courses">
-  <h2>Enrolled Courses</h2>
-  <div class="courses-info">
-    <div class="course">
-      <p>Name</p>
+  <h2>Enrolled Students</h2>
+  <div class="enrolled-students">
+    <div class="student">
       <p>Course</p>
-      <p>level</p>
+      <p>Level</p>
+      <p>Hours</p>
+      <p>Student Name</p>
     </div>`;
 
       courses.forEach((course) => {
         courses1 += `
-    <div class="course">
+    <div class="student">
       <p>${course.courseName}</p>
       <p>${course.courseLevel}</p>
       <p>${course.courseHours}</p>
@@ -191,64 +239,61 @@ async function fetchDataAndUpdateVariable() {
   </div>
 </div>`;
     }
-    displayHome();
+    displayContent();
   } catch (error) {
     console.error("Error:", error);
   }
 }
 
 // Update UI based on button clicked
-function displayContent(buttonValue) {
-  let selected = document.querySelector(".selected").value;
-  let section = document.querySelector("section");
-  let basicInfo = document.querySelector(".basic-info");
-  let aboutinfo = document.querySelector(".about");
-  let courses = document.querySelector("#courses");
-  let footer = document.querySelector("footer");
-
-  if (buttonValue === "home" && selected !== "home") {
-    if (aboutinfo) section.removeChild(aboutinfo);
-    if (courses) section.removeChild(courses);
+function displayContent() {
+  if (window.location.href === "http://sis.test/views/php/home.php") {
+    console.log("will display home");
+    let section = document.querySelector("section");
+    let footer = document.querySelector("footer");
+    // section.removeChild(section.firstElementChild);
 
     let tempDiv = document.createElement("div");
     tempDiv.innerHTML = home1;
-    let aboutNode = tempDiv.firstChild;
+    let aboutNode = tempDiv.firstElementChild;
     console.log("aboutNode:", aboutNode);
     section.insertBefore(aboutNode, footer);
     console.log("adding home");
   }
-  if (buttonValue === "about" && selected !== "about") {
-    if (basicInfo) section.removeChild(basicInfo);
-    if (courses) section.removeChild(courses);
+  if (
+    window.location.href === "http://sis.test/views/php/home.php?page=courses"
+  ) {
+    console.log("will display courses");
 
-    let tempDiv = document.createElement("div");
-    tempDiv.innerHTML = about1;
-    let aboutNode = tempDiv.firstChild;
-    console.log("aboutNode:", aboutNode);
-    section.insertBefore(aboutNode, footer);
-    console.log("adding home");
-  }
-
-  if (buttonValue === "courses" && selected !== "courses") {
-    if (basicInfo) section.removeChild(basicInfo);
-    if (aboutinfo) section.removeChild(aboutinfo);
+    let section = document.querySelector("section");
+    let footer = document.querySelector("footer");
+    // section.removeChild(section.firstElementChild);
 
     let tempDiv = document.createElement("div");
     tempDiv.innerHTML = courses1;
-    let aboutNode = tempDiv.firstChild;
+    let aboutNode = tempDiv.firstElementChild;
     console.log("aboutNode:", aboutNode);
     section.insertBefore(aboutNode, footer);
-    console.log("adding home");
+    console.log("adding courses");
+  }
+
+  if (
+    window.location.href === "http://sis.test/views/php/home.php?page=about"
+  ) {
+    console.log("will display about");
+
+    let section = document.querySelector("section");
+    let footer = document.querySelector("footer");
+    // section.removeChild(section.firstElementChild);
+
+    let tempDiv = document.createElement("div");
+    tempDiv.innerHTML = about;
+    let aboutNode = tempDiv.firstElementChild;
+    console.log("aboutNode:", aboutNode);
+    section.insertBefore(aboutNode, footer);
+    console.log("adding about");
   }
 }
-function displayHome() {
-  let section = document.querySelector("section");
-  let footer = document.querySelector("footer");
-  let tempDiv = document.createElement("div");
-  tempDiv.innerHTML = home1;
-  let aboutNode = tempDiv.firstChild;
-  console.log("aboutNode:", aboutNode);
-  section.insertBefore(aboutNode, footer);
-}
+
 // Fetch data and update variable
 fetchDataAndUpdateVariable();

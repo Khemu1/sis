@@ -62,7 +62,7 @@ nav .nav-buttons {
   /* margin-left: 100px; */
   gap: 50px;
 }
-.nav-buttons button {
+.nav-buttons a {
   font-weight: bold;
   cursor: pointer;
   display: flex;
@@ -73,8 +73,9 @@ nav .nav-buttons {
   border: 1px solid transparent;
   padding: 5px 5px;
   outline: none;
+  text-decoration: none;
 }
-.nav-buttons button::before {
+.nav-buttons a::before {
   content: "";
   position: absolute;
   height: 3px;
@@ -84,7 +85,7 @@ nav .nav-buttons {
   transition: 0.3s ease-in-out;
 }
 
-.nav-buttons button:hover::before {
+.nav-buttons a:hover::before {
   width: 100%;
 }
 
@@ -155,6 +156,24 @@ section {
   justify-items: center;
 }
 .courses-info :last-child {
+  border: none;
+}
+
+.courses {
+  flex-grow: 1;
+  display: grid;
+  flex-direction: column;
+  gap: 50px;
+  padding: 10px;
+}
+.student {
+  display: grid;
+  grid: repeat(1, auto) / repeat(4, 3fr);
+  border-bottom: 1px solid #33333371;
+  margin-bottom: 5px;
+  justify-items: center;
+}
+.enrolled-students :last-child {
   border: none;
 }
 .about {

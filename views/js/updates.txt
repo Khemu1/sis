@@ -10,3 +10,7 @@ completed the API callings
 4 / 12 / 2024
 
 added the home page file
+
+4 / 13 / 2024
+
+completed navigation part home
