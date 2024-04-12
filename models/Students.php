@@ -39,7 +39,7 @@ public static function select(array $columns, array $data): array
       echo "invalid number of parameters:";
       return false;
     }
-    $arr = array_combine(self::$columns, $data); // making the associative array
+    $arr = array_combine(self::$columns, $data);
 
     return DB::insert(self::$table, $arr);
   }

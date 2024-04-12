@@ -32,7 +32,7 @@ class DB
   /**
    * This function is used to insert data into a tables in the database
    * @param string $table the name of the table to insert into
-   * @param array $data an associative array of key-value pairs where the key is the column name and the value is the value to insert
+   * @param array $data an array of key-value pairs where the key is the column name and the value is the value to insert
    * @return bool true if the data was inserted successfully, false otherwise
    */
   public static function insert(string $table, array $data): bool
@@ -47,8 +47,6 @@ class DB
     $stmt = self::$pdo->prepare($sql);
 
     try {
-      // Prepare the SQL statement 
-      $stmt = self::$pdo->prepare($sql);
       // Execute the statement
       return $stmt->execute($data);
     } catch (PDOException $e) {
@@ -70,10 +68,10 @@ class DB
   {
     $keys = array_keys($data);
     $placeholders = array_map(fn(string $key) => "$key= :$key", $keys);
-    $sql = "Select " . implode(", ", $keys) . " from $table where " . implode(" AND ", $placeholders); // id= :id
 
     // Construct the SQL query
     $sql = "SELECT " . implode(", ", $columns) . " FROM $table WHERE " . implode(" AND ", $placeholders);
+<<<<<<< HEAD:classes/DB.php
     try {
       // Prepare the SQL statement
       $stmt = self::$pdo->prepare($sql);
@@ -90,6 +88,21 @@ class DB
     }
 
 
+=======
+
+    // Prepare the SQL statement
+    $stmt = self::$pdo->prepare($sql);
+
+    // Execute the statement
+    $stmt->execute($data);
+
+    // Fetch the result as an associative array
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    if ($result === false) {
+      return [];
+    }
+    return $result;
+>>>>>>> 29515e6b02f42649716980ede401cb7fb18c6ba7:models/DB.php
   }
 
   /**

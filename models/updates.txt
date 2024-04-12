@@ -4,7 +4,11 @@ Made the Students class along with insert fucntion in DB and the connection of t
 
 3 / 22 / 2024
 
-Added documentation for Students class and the init method in DB class --> Khemu
+Added documentation for Students class and the init method id DB class --> Khemu
+
+3 / 23 / 2024
+
+now the insertion & selection methods works 5 by 5
 
 3 / 23 / 2024
 
@@ -27,4 +31,12 @@ handled the duplications casses for students in Enrollement --> Khemu
 
 handled null courses when there are no teachers --> Khemu
 
+<<<<<<< HEAD:classes/updates.txt
 added an update method for students in Enrollement --> Khemu
+=======
+added an update method for students in Enrollement
+
+4 / 9 / 2024
+
+made the the Utils class for validations
+>>>>>>> 29515e6b02f42649716980ede401cb7fb18c6ba7:models/updates.txt
