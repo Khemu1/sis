@@ -10,7 +10,8 @@ require_once ("../../models/Teaches.php");
 require_once ("../../models/Utils.php");
 
 session_start();
-if (!$_SESSION["id"]) {
+echo $_SESSION["id"];
+if (!isset($_SESSION["id"])) {
   header("Location: login.php");
   exit();
 }
