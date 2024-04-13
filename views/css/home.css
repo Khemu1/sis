@@ -168,7 +168,12 @@ section {
   display: flex;
   flex-direction: column;
   gap: 50px;
-  width: 100%;
+}
+.courses h2 {
+  padding: 10px;
+}
+.courses-info {
+  padding: 10px;
 }
 .course {
   display: grid;
@@ -181,12 +186,6 @@ section {
   border: none;
 }
 
-.courses {
-  display: flex;
-  flex-direction: column;
-  gap: 50px;
-  padding: 10px;
-}
 .students {
   display: flex;
   flex-direction: column;
