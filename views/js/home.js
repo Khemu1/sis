@@ -69,33 +69,6 @@ let about = `<div class="about">
           </div>
         </div>`;
 
-let footer = `<footer>
-        <div class="container">
-          <div class="footer-content">
-            <div class="contact-info">
-              <h3>Contact Us</h3>
-              <p>Email: info@Kemet.com</p>
-              <p>Phone: 123-456-7890</p>
-              <p>Address: 123 shatby, Alexadnria, Egypt</p>
-            </div>
-
-            <div class="site-links">
-              <h3>Quick Links</h3>
-              <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">About Us</a></li>
-                <li><a href="/services">Services</a></li>
-                <li><a href="/blog">Blog</a></li>
-                <li><a href="/contact">Contact Us</a></li>
-              </ul>
-            </div>
-            <div class="copyright">
-              <p>&copy; 2024 Kemet. All rights reserved.</p>
-              <p><a href="/privacy-policy">Privacy Policy</a> | <a href="/terms-of-service">Terms of Service</a></p>
-            </div>
-          </div>
-        </div>
-      </footer>`;
 let courses1;
 
 if (window.location.href === "http://sis.test/views/php/home.php") {
@@ -103,31 +76,7 @@ if (window.location.href === "http://sis.test/views/php/home.php") {
   document.querySelector(".main").classList.add("hide");
 }
 
-// function changeLogo() {
-//   if (window.location.href !== `http://sis.test/views/php/home.php`) {
-//     console.log("changing logo");
-//     let main = document.querySelector("img.main");
-//     main.classList.add("hide");
-//     console.log("logo changed");
-//   } else {
-//     let main = document.querySelector("img.main");
-//     main.classList.remove("hide");
-//   }
-// }
-homeButton.addEventListener("click", () => {
-  // changeLogo();
-  console.log("adding home");
-});
-coursesButton.addEventListener("click", () => {
-  // changeLogo();
-  console.log("adding courses");
-});
-aboutButton.addEventListener("click", () => {
-  // changeLogo();
-  console.log("adding about");
-});
-
-// Fetch data from the backend
+// Fetching data from the backend
 async function fetchData() {
   try {
     const response = await fetch("../../controller/dashboard.php");
@@ -257,5 +206,5 @@ function displayContent() {
   // changeLogo();
 }
 
-// Fetch data and update variable
+// Fetch data and update variables
 fetchDataAndUpdateVariable();
