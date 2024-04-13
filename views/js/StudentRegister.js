@@ -117,6 +117,7 @@ form.addEventListener("submit", async (e) => {
       window.location.href = `http://sis.test/views/php/home.php`;
     } else {
       let errors = responseData.errors;
+      let usesUserName = document.querySelector(".used-username");
       let invalidUserName = document.querySelector(".invalid-user-name");
       let invalidName = document.querySelector(".invalid-name");
       let invalidPassword = document.querySelector(".invalid-password");
@@ -143,6 +144,11 @@ form.addEventListener("submit", async (e) => {
         if (error === "level") {
           levelField.classList.add("invalid");
           invalidLevel.classList.remove("hide");
+        }
+        if (error === "account") {
+          console.log("already used");
+          document.querySelector(".used-username").classList.add("red");
+          usesUserName.classList.remove("hide");
         }
       });
       // utils.handelErrorDisplay(errors);

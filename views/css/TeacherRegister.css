@@ -22,12 +22,34 @@ form {
   box-shadow: 5px 0px 12px -1px rgba(0, 0, 0, 0.32);
 }
 
-.head h2 {
-  font-size: 24px;
-  font-family: sans-serif;
+.head {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  margin: auto;
   margin-bottom: 20px;
-  color: #333;
 }
+.head img {
+  position: absolute;
+  width: 115px;
+  height: 115px;
+  transition: 0.3s ease-in-out;
+}
+
+.main {
+  z-index: 2;
+  transition: 250ms ease-in-out;
+}
+.secondary {
+  z-index: 1;
+}
+.main:hover {
+  opacity: 0;
+}
+
 input[type="text"]:focus-visible,
 input[type="password"]:focus-visible {
   outline: none;
@@ -102,7 +124,8 @@ input[type="password"]:focus-visible {
 .invalid-name,
 .invalid-password,
 .invalid-address,
-.invalid-courses {
+.invalid-courses,
+.used-username {
   color: red;
 }
 .hide {

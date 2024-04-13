@@ -128,12 +128,12 @@ form.addEventListener("submit", async (e) => {
     } else {
       let errors = responseData.errors;
       console.log(errors);
+      let usesUserName = document.querySelector(".used-username");
       let invalidUserName = document.querySelector(".invalid-user-name");
       let invalidName = document.querySelector(".invalid-name");
       let invalidPassword = document.querySelector(".invalid-password");
       let invalidAddress = document.querySelector(".invalid-address");
       let invalidcourses = document.querySelector(".invalid-courses");
-
       Object.keys(errors).forEach((error) => {
         if (error === "username") {
           userNameField.classList.add("invalid");
@@ -155,8 +155,12 @@ form.addEventListener("submit", async (e) => {
           document.querySelector(".dropdown label").classList.add("red");
           invalidcourses.classList.remove("hide");
         }
+        if (error === "account") {
+          console.log("already used");
+          document.querySelector(".used-username").classList.add("red");
+          usesUserName.classList.remove("hide");
+        }
       });
-      console.log(responseData.message);
     }
   } else {
     console.error("Error: " + result.statusText);

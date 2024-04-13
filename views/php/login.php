@@ -12,7 +12,8 @@
 <body>
   <div class="home">
     <div class="head">
-      <h2>Login</h2>
+      <img class="main" src="../../assets/images/kemet-high-resolution-logo-transparent-login.png">
+      <img class="secondary" src="../../assets/images/kemet-high-resolution-logo-black-transparent-login.png">
     </div>
     <div class="body">
       <form method="post" action="">

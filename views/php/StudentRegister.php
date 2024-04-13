@@ -23,13 +23,15 @@ require_once ("../../models/Utils.php");
 
   <div class="container" width="50" height="50" align="center">
     <div class="head">
-      <h2>Student Registration</h2>
+      <img class="main" src="../../assets/images/kemet-high-resolution-logo-transparent-login.png">
+      <img class="secondary" src="../../assets/images/kemet-high-resolution-logo-black-transparent-login.png">
     </div>
-    <div class="body" width="200" height="200">
+    <div class="body">
       <form method="Post">
         <input type="text" name="userName" class="user-name" placeholder="UserName"><br>
         <div class="invalid-user-name hide">Invalid Username: the minimum length must be 6 characters and doesn't
           contain any symbols</div>
+        <div class="used-username hide">This username is already used</div>
         <input type="text" name="name" class="name" placeholder="name"><br>
         <div class="invalid-name hide">Invalid name: the minimum length must be 6 characters and doesn't
           contain any symbols or numbers</div>
@@ -44,12 +46,12 @@ require_once ("../../models/Utils.php");
         <input type="text" name="level" class="level" placeholder="level"><br>
         <div class="invalid-level hide">Invalid level: please enter a value between 1 and 2</div>
 
-        <input type="submit" name="register" placeholder="Register"><br>
+        <input type="submit" name="register" placeholder="Register" value="Register"><br>
         <a href="login.php">Login</a>
       </form>
     </div>
-    <div class="footer" >
-      <p >Powerd by Kemet SIS</p>
+    <div class="footer">
+      <p>Powerd by Kemet SIS</p>
     </div>
   </div>
 

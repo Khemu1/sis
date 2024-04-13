@@ -25,13 +25,15 @@ require_once ("../../models/Utils.php");
 
   <div class="container">
     <div class="head">
-      <h2>Teacher Registration</h2>
+      <img class="main" src="../../assets/images/kemet-high-resolution-logo-transparent-login.png">
+      <img class="secondary" src="../../assets/images/kemet-high-resolution-logo-black-transparent-login.png">
     </div>
     <div class="body">
       <form method="POST">
         <input type="text" name="userName" class="user-name" placeholder="UserName"><br>
         <div class="invalid-user-name hide">Invalid Username: The minimum length must be 6 characters and doesn't
           contain any symbols</div>
+          <div class="used-username hide">This username is already used</div>
         <input type="text" name="name" class="name" placeholder="name"><br>
         <div class="invalid-name hide">Invalid name: The minimum length must be 6 characters and doesn't
           contain any symbols or numbers</div>
