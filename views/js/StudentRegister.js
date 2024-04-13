@@ -8,6 +8,7 @@ let levelField = document.querySelector(".level");
 let form = document.querySelector("form");
 
 userNameField.addEventListener("input", function (e) {
+  let invalidUserName = document.querySelector(".invalid-user-name");
   // console.log(e.target.value);
   if (utils.validUserName(e.target.value)) {
     userNameField.classList.remove("invalid");
@@ -16,9 +17,13 @@ userNameField.addEventListener("input", function (e) {
     userNameField.classList.remove("valid");
     userNameField.classList.add("invalid");
   }
+  if (!invalidUserName.classList.contains("hide"))
+    invalidUserName.classList.add("hide");
 });
 
 nameField.addEventListener("input", function (e) {
+  let invalidName = document.querySelector(".invalid-name");
+
   // console.log(e.target.value);
   if (utils.validName(e.target.value)) {
     nameField.classList.remove("invalid");
@@ -27,10 +32,14 @@ nameField.addEventListener("input", function (e) {
     nameField.classList.remove("valid");
     nameField.classList.add("invalid");
   }
+  if (!invalidName.classList.contains("hide"))
+    invalidName.classList.add("hide");
 });
 
 passwordField.addEventListener("input", function (e) {
   // console.log(e.target.value);
+  let invalidPassword = document.querySelector(".invalid-password");
+
   if (utils.validPassword(e.target.value)) {
     passwordField.classList.remove("invalid");
     passwordField.classList.add("valid");
@@ -38,10 +47,14 @@ passwordField.addEventListener("input", function (e) {
     passwordField.classList.remove("valid");
     passwordField.classList.add("invalid");
   }
+  if (!invalidPassword.classList.contains("hide"))
+    invalidPassword.classList.add("hide");
 });
 
 addressField.addEventListener("input", function (e) {
   // console.log(e.target.value);
+  let invalidAddress = document.querySelector(".invalid-address");
+
   if (utils.validAddress(e.target.value)) {
     addressField.classList.remove("invalid");
     addressField.classList.add("valid");
@@ -49,15 +62,23 @@ addressField.addEventListener("input", function (e) {
     addressField.classList.remove("valid");
     addressField.classList.add("invalid");
   }
+  if (!invalidAddress.classList.contains("hide"))
+    invalidAddress.classList.add("hide");
 });
 
 levelField.addEventListener("input", function (e) {
+  let invalidLevel = document.querySelector(".invalid-level");
+
   if (utils.validLevel(e.target.value)) {
     levelField.classList.remove("invalid");
     levelField.classList.add("valid");
+    if (!invalidLevel.classList.contains("hide"))
+      invalidLevel.classList.add("hide");
   } else {
     levelField.classList.remove("valid");
     levelField.classList.add("invalid");
+    if (invalidLevel.classList.contains("hide"))
+      invalidLevel.classList.remove("hide");
   }
   utils.resetLevel(e);
 });
@@ -96,12 +117,33 @@ form.addEventListener("submit", async (e) => {
       window.location.href = `http://sis.test/views/php/home.php`;
     } else {
       let errors = responseData.errors;
+      let invalidUserName = document.querySelector(".invalid-user-name");
+      let invalidName = document.querySelector(".invalid-name");
+      let invalidPassword = document.querySelector(".invalid-password");
+      let invalidAddress = document.querySelector(".invalid-address");
+      let invalidLevel = document.querySelector(".invalid-level");
+
       Object.keys(errors).forEach((error) => {
-        if (error === "username") userNameField.classList.add("invalid");
-        if (error === "name") nameField.classList.add("invalid");
-        if (error === "password") passwordField.classList.add("invalid");
-        if (error === "address") addressField.classList.add("invalid");
-        if (error === "level") levelField.classList.add("invalid");
+        if (error === "username") {
+          userNameField.classList.add("invalid");
+          invalidUserName.classList.remove("hide");
+        }
+        if (error === "name") {
+          nameField.classList.add("invalid");
+          invalidName.classList.remove("hide");
+        }
+        if (error === "password") {
+          passwordField.classList.add("invalid");
+          invalidPassword.classList.remove("hide");
+        }
+        if (error === "address") {
+          addressField.classList.add("invalid");
+          invalidAddress.classList.remove("hide");
+        }
+        if (error === "level") {
+          levelField.classList.add("invalid");
+          invalidLevel.classList.remove("hide");
+        }
       });
       // utils.handelErrorDisplay(errors);
       console.log(responseData.message);

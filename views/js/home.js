@@ -69,87 +69,62 @@ let about = `<div class="about">
           </div>
         </div>`;
 
+let footer = `<footer>
+        <div class="container">
+          <div class="footer-content">
+            <div class="contact-info">
+              <h3>Contact Us</h3>
+              <p>Email: info@Kemet.com</p>
+              <p>Phone: 123-456-7890</p>
+              <p>Address: 123 shatby, Alexadnria, Egypt</p>
+            </div>
+
+            <div class="site-links">
+              <h3>Quick Links</h3>
+              <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/services">Services</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+              </ul>
+            </div>
+            <div class="copyright">
+              <p>&copy; 2024 Kemet. All rights reserved.</p>
+              <p><a href="/privacy-policy">Privacy Policy</a> | <a href="/terms-of-service">Terms of Service</a></p>
+            </div>
+          </div>
+        </div>
+      </footer>`;
 let courses1;
-buttons.forEach((button) => {
-  button.addEventListener("click", () => {
-    changeLogo(button.value);
-    buttons.forEach((button) => {
-      button.classList.remove("selected");
-    });
-    button.classList.add("selected");
-  });
-});
 
-logo.addEventListener("click", () => {
-  if (document.querySelector(".selected").value !== "home") {
-    document
-      .querySelector("section")
-      .removeChild(document.querySelector("section").firstElementChild); // stick with first element because it there are any whitespaces they will consirded the first child
-    displayHome();
-  }
-  buttons.forEach((button) => {
-    button.classList.remove("selected");
-  });
-  document.querySelector(".main").classList.remove("hide");
-  document;
-  let home = document.querySelector("#home");
-  home.classList.add("selected");
-});
-
-function changeLogo(Buttonvalue) {
-  if (Buttonvalue !== "home") {
-    let main = document.querySelector(".main");
-    main.classList.add("hide");
-  } else {
-    let main = document.querySelector(".main");
-    main.classList.remove("hide");
-  }
+if (window.location.href === "http://sis.test/views/php/home.php") {
+  logo.classList.add("white");
+  document.querySelector(".main").classList.add("hide");
 }
-homeButton.addEventListener("click", () => {
-  if (window.location.href !== "http://sis.test/views/php/home.php") {
-    let section = document.querySelector("section");
-    let footer = document.querySelector("footer");
-    section.removeChild(section.firstElementChild);
 
-    let tempDiv = document.createElement("div");
-    tempDiv.innerHTML = home1;
-    let aboutNode = tempDiv.firstChild;
-    console.log("aboutNode:", aboutNode);
-    section.insertBefore(aboutNode, footer);
-    console.log("adding home");
-  }
+// function changeLogo() {
+//   if (window.location.href !== `http://sis.test/views/php/home.php`) {
+//     console.log("changing logo");
+//     let main = document.querySelector("img.main");
+//     main.classList.add("hide");
+//     console.log("logo changed");
+//   } else {
+//     let main = document.querySelector("img.main");
+//     main.classList.remove("hide");
+//   }
+// }
+homeButton.addEventListener("click", () => {
+  // changeLogo();
+  console.log("adding home");
 });
 coursesButton.addEventListener("click", () => {
-  if (
-    window.location.href !== "http://sis.test/views/php/home.php?page=courses"
-  ) {
-    let section = document.querySelector("section");
-    let footer = document.querySelector("footer");
-    section.removeChild(section.firstElementChild);
-
-    let tempDiv = document.createElement("div");
-    tempDiv.innerHTML = courses1;
-    let aboutNode = tempDiv.firstChild;
-    console.log("aboutNode:", aboutNode);
-    section.insertBefore(aboutNode, footer);
-    console.log("adding courses");
-  }
+  // changeLogo();
+  console.log("adding courses");
 });
 aboutButton.addEventListener("click", () => {
-  if (
-    window.location.href !== "http://sis.test/views/php/home.php?page=about"
-  ) {
-    let section = document.querySelector("section");
-    let footer = document.querySelector("footer");
-    section.removeChild(section.firstElementChild);
-
-    let tempDiv = document.createElement("div");
-    tempDiv.innerHTML = about;
-    let aboutNode = tempDiv.firstChild;
-    console.log("aboutNode:", aboutNode);
-    section.insertBefore(aboutNode, footer);
-    console.log("adding about");
-  }
+  // changeLogo();
+  console.log("adding about");
 });
 
 // Fetch data from the backend
@@ -207,14 +182,14 @@ async function fetchDataAndUpdateVariable() {
     } else {
       home1 = `<div class="basic-info">
       <h2>Teacher Information</h2>
-      <div class="student-info">
+      <div class="teacher-info">
         <div class="info-item" id="username">Username: ${info.userName} </div>
         <div class="info-item" id="name">Name: ${info.name} </div>
         <div class="info-item" id="address">Address: ${info.address} </div> 
       </div>
     </div>`;
 
-      courses1 = `<div class="courses">
+      courses1 = `<div class="students">
   <h2>Enrolled Students</h2>
   <div class="enrolled-students">
     <div class="student">
@@ -247,34 +222,26 @@ async function fetchDataAndUpdateVariable() {
 
 // Update UI based on button clicked
 function displayContent() {
+  let section = document.querySelector("section");
+
   if (window.location.href === "http://sis.test/views/php/home.php") {
     console.log("will display home");
-    let section = document.querySelector("section");
-    let footer = document.querySelector("footer");
-    // section.removeChild(section.firstElementChild);
 
     let tempDiv = document.createElement("div");
     tempDiv.innerHTML = home1;
-    let aboutNode = tempDiv.firstElementChild;
-    console.log("aboutNode:", aboutNode);
-    section.insertBefore(aboutNode, footer);
-    console.log("adding home");
+    let homeNode = tempDiv.firstElementChild;
+    section.appendChild(homeNode);
   }
+
   if (
     window.location.href === "http://sis.test/views/php/home.php?page=courses"
   ) {
     console.log("will display courses");
 
-    let section = document.querySelector("section");
-    let footer = document.querySelector("footer");
-    // section.removeChild(section.firstElementChild);
-
     let tempDiv = document.createElement("div");
     tempDiv.innerHTML = courses1;
-    let aboutNode = tempDiv.firstElementChild;
-    console.log("aboutNode:", aboutNode);
-    section.insertBefore(aboutNode, footer);
-    console.log("adding courses");
+    let coursesNode = tempDiv.firstElementChild;
+    section.appendChild(coursesNode);
   }
 
   if (
@@ -282,17 +249,12 @@ function displayContent() {
   ) {
     console.log("will display about");
 
-    let section = document.querySelector("section");
-    let footer = document.querySelector("footer");
-    // section.removeChild(section.firstElementChild);
-
     let tempDiv = document.createElement("div");
     tempDiv.innerHTML = about;
     let aboutNode = tempDiv.firstElementChild;
-    console.log("aboutNode:", aboutNode);
-    section.insertBefore(aboutNode, footer);
-    console.log("adding about");
+    section.appendChild(aboutNode);
   }
+  // changeLogo();
 }
 
 // Fetch data and update variable

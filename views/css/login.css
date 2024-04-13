@@ -51,22 +51,65 @@ form {
   color: white;
   font-weight: bold;
   cursor: pointer;
+  transition: 0.4s ease-in-out;
 }
 
 .home .body input[type="submit"]:hover {
   background-color: #0056b3;
 }
 
-.home .body a {
-  text-decoration: none;
-  color: #0073f7;
-}
-
-.home .body a:hover {
-  text-decoration: underline;
-}
-
 .home .footer {
   text-align: center;
   margin-top: 20px;
+}
+.footer p {
+  font-size: 12px;
+  font-family: sans-serif;
+  margin-top: 20px;
+  color: #666;
+  transition: 0.4s ease-in-out;
+  cursor: default;
+  font-weight: bold;
+  margin-inline: auto;
+}
+.footer p:hover {
+  color: #007bff;
+}
+.invalid-login {
+  color: red;
+  margin-bottom: 2px;
+}
+.hide {
+  display: none;
+}
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 5px;
+}
+
+.links .link {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  text-decoration: none;
+  color: black;
+  margin: auto;
+  font-weight: bold;
+  transition: 0.4 ease-in-out;
+}
+
+.links a::before {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 0%;
+  bottom: -5px;
+  background-color: #000;
+  transition: 0.3s ease-in-out;
+}
+
+form a:hover::before {
+  width: 100%;
 }

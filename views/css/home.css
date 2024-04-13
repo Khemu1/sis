@@ -2,26 +2,36 @@
   margin: 0;
 }
 body {
-  /* overflow-x: hidden; */
-  height: 100vh;
+  height: 100dvh;
   width: 100dvw;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 .home {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   margin: 0;
   width: 100%;
   height: 100%;
+  overflow-y: scroll;
+  grid: max-content 2fr max-content / 1fr;
 }
 nav {
+  position: sticky;
+  top: 0;
   display: grid;
   grid: 1fr / 0.1fr 1.2fr 0.08fr;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  background-color: #0073f7;
-  height: 100px;
+  background: rgb(2, 71, 77);
+  background: linear-gradient(
+    21deg,
+    rgba(2, 71, 77, 1) 15%,
+    rgba(4, 97, 105, 1) 50%,
+    rgba(33, 123, 126, 1) 75%,
+    rgba(16, 137, 141, 1) 100%
+  );
+  height: 100px !important;
+  flex-grow: 0;
 }
 nav > *,
 .nav-buttons > * {
@@ -29,17 +39,21 @@ nav > *,
   font-size: 18px;
 }
 nav .logo {
+  display: flex;
+  align-items: center;
   width: max-content;
   margin-right: 20px;
-  height: 100px;
+  height: 100%;
+  width: 100px;
   cursor: pointer;
   position: relative;
+  transition: 250ms ease-in-out;
 }
 
 nav .logo img {
   position: absolute;
-  width: 100px;
-  height: 100px;
+  width: 100%;
+  height: 90px;
   transition: 0.3s ease-in-out;
 }
 .main {
@@ -50,11 +64,15 @@ nav .logo img {
 }
 .hide {
   opacity: 0%;
-  transition: 0.3s ease-in-out;
+  transition: 250ms ease-in-out;
 }
-.main.hide:hover {
-  opacity: 100%;
+.logo:hover .main {
+  opacity: 0%;
 }
+.logo:hover {
+  background-color: white;
+}
+
 nav .nav-buttons {
   display: grid;
   grid: 1fr / repeat(3, max-content);
@@ -116,18 +134,18 @@ nav .nav-buttons {
 
 section {
   display: flex;
-  flex-grow: 1;
   flex-direction: column;
   background-color: white;
   font-size: 30px;
   height: 100%;
-  overflow-y: scroll;
 }
 
 .basic-info {
+  display: flex;
   text-align: left;
   padding: 10px;
-  flex-grow: 1;
+  flex-direction: column;
+  height: 100%;
 }
 .basic-info h2 {
   margin-bottom: 20px;
@@ -138,15 +156,19 @@ section {
   grid: repeat(4, auto) / repeat(1, auto);
   height: 100%;
   align-items: center;
+}
+.teacher-info {
+  display: grid;
+  grid: repeat(3, auto) / repeat(1, auto);
   height: 100%;
+  align-items: center;
 }
 
 .courses {
-  flex-grow: 1;
-  display: grid;
+  display: flex;
   flex-direction: column;
   gap: 50px;
-  padding: 10px;
+  width: 100%;
 }
 .course {
   display: grid;
@@ -160,10 +182,23 @@ section {
 }
 
 .courses {
-  flex-grow: 1;
-  display: grid;
+  display: flex;
   flex-direction: column;
   gap: 50px;
+  padding: 10px;
+}
+.students {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  width: 100%;
+}
+.students h2 {
+  padding: 10px;
+}
+.enrolled-students {
+  display: flex;
+  flex-direction: column;
   padding: 10px;
 }
 .student {
@@ -208,7 +243,7 @@ about-container {
 
 /* footer area */
 footer {
-  display: grid;
+  display: flex;
   align-items: center;
   width: 100%;
   background-color: #f0f0f0;
@@ -217,18 +252,14 @@ footer {
   font-weight: bold;
 }
 
-footer .container {
-  display: grid;
-}
-
 .footer-content {
-  max-width: 1200px;
   margin: 0 auto;
-  display: grid;
-  grid: 1fr / repeat(3, auto);
+  display: flex;
   justify-content: space-between;
   padding-block: 10px;
   gap: 150px;
+  width: 100%;
+  padding-inline: 30px;
 }
 
 .contact-info h3 {
@@ -290,4 +321,7 @@ footer .container {
 
 .copyright a:hover {
   color: #007bff;
+}
+.white {
+  background-color: white;
 }

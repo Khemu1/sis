@@ -56,6 +56,12 @@ input[type="password"]:focus-visible {
   font-family: sans-serif;
   margin-top: 20px;
   color: #666;
+  transition: 0.4s ease-in-out;
+  cursor: default;
+  font-weight: bold;
+}
+.footer p:hover {
+  color: #007bff;
 }
 
 .checkbox-content {
@@ -91,4 +97,43 @@ input[type="password"]:focus-visible {
 
 .dropdown:hover {
   box-shadow: 5px 0px 12px -1px #0073f7;
+}
+.invalid-user-name,
+.invalid-name,
+.invalid-password,
+.invalid-address,
+.invalid-courses {
+  color: red;
+}
+.hide {
+  display: none;
+}
+form a {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  text-decoration: none;
+  color: black;
+  margin: auto;
+  margin-top: 5px;
+
+  font-weight: bold;
+  width: max-content;
+}
+
+form a::before {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 0%;
+  bottom: -5px;
+  background-color: #000;
+  transition: 0.3s ease-in-out;
+}
+
+form a:hover::before {
+  width: 100%;
+}
+.red {
+  color: red;
 }

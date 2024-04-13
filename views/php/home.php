@@ -8,7 +8,12 @@ require_once
 require_once ("../../models/Teachers.php");
 require_once ("../../models/Teaches.php");
 require_once ("../../models/Utils.php");
+
 session_start();
+if (!$_SESSION["id"]) {
+  header("Location: login.php");
+  exit();
+}
 
 ?>
 <!DOCTYPE html>
@@ -27,12 +32,12 @@ session_start();
 <body>
   <div class="home">
     <nav>
-      <div class="logo">
+      <a href="home.php" class="logo">
 
-        <img class="main" src="../../assets/images/kemet-logo-zip-file/svg/logo-color.svg">
-        <img class="secondary" src="../../assets/images/kemet-logo-zip-file/svg/logo-black.svg">
+        <img class="main" src="../../assets/images/kemet-high-resolution-logo-transparent.svg">
+        <img class="secondary" src="../../assets/images/kemet-high-resolution-logo-black-transparent.svg">
+      </a>
 
-      </div>
       <div class="nav-buttons">
         <a href="home.php" class="selected" id="home" value="home">
           <p>Home</p>
@@ -62,37 +67,33 @@ session_start();
     </nav>
 
 
-
     <section>
-      <footer>
-        <div class="container">
-          <div class="footer-content">
-            <div class="contact-info">
-              <h3>Contact Us</h3>
-              <p>Email: info@Kemet.com</p>
-              <p>Phone: 123-456-7890</p>
-              <p>Address: 123 shatby, Alexadnria, Egypt</p>
-            </div>
-
-            <div class="site-links">
-              <h3>Quick Links</h3>
-              <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">About Us</a></li>
-                <li><a href="/services">Services</a></li>
-                <li><a href="/blog">Blog</a></li>
-                <li><a href="/contact">Contact Us</a></li>
-              </ul>
-            </div>
-            <div class="copyright">
-              <p>&copy; 2024 Kemet. All rights reserved.</p>
-              <p><a href="/privacy-policy">Privacy Policy</a> | <a href="/terms-of-service">Terms of Service</a></p>
-            </div>
-          </div>
-        </div>
-      </footer>
-
     </section>
+    <footer>
+      <div class="footer-content">
+        <div class="contact-info">
+          <h3>Contact Us</h3>
+          <p>Email: info@Kemet.com</p>
+          <p>Phone: 123-456-7890</p>
+          <p>Address: 123 shatby, Alexadnria, Egypt</p>
+        </div>
+
+        <div class="site-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="copyright">
+          <p>&copy; 2024 Kemet. All rights reserved.</p>
+          <p><a href="/privacy-policy">Privacy Policy</a> | <a href="/terms-of-service">Terms of Service</a></p>
+        </div>
+      </div>
+    </footer>
   </div>
 </body>
 

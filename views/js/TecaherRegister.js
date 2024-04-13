@@ -1,25 +1,29 @@
 // @ts-nocheck
 import * as utils from "./Utils.js";
-let usernameField = document.querySelector(".user-name");
+let userNameField = document.querySelector(".user-name");
 let nameField = document.querySelector(".name");
 let passwordField = document.querySelector(".password");
 let addressField = document.querySelector(".address");
-let coursesC = document.querySelectorAll(".course");
-let coursesField = document.querySelector(".dropdown");
+let courses = document.querySelectorAll(".course");
 let form = document.querySelector("form");
 
-usernameField.addEventListener("input", function (e) {
+userNameField.addEventListener("input", function (e) {
+  let invalidUserName = document.querySelector(".invalid-user-name");
   // console.log(e.target.value);
   if (utils.validUserName(e.target.value)) {
-    usernameField.classList.remove("invalid");
-    usernameField.classList.add("valid");
+    userNameField.classList.remove("invalid");
+    userNameField.classList.add("valid");
   } else {
-    usernameField.classList.remove("valid");
-    usernameField.classList.add("invalid");
+    userNameField.classList.remove("valid");
+    userNameField.classList.add("invalid");
   }
+  if (!invalidUserName.classList.contains("hide"))
+    invalidUserName.classList.add("hide");
 });
 
 nameField.addEventListener("input", function (e) {
+  let invalidName = document.querySelector(".invalid-name");
+
   // console.log(e.target.value);
   if (utils.validName(e.target.value)) {
     nameField.classList.remove("invalid");
@@ -28,10 +32,14 @@ nameField.addEventListener("input", function (e) {
     nameField.classList.remove("valid");
     nameField.classList.add("invalid");
   }
+  if (!invalidName.classList.contains("hide"))
+    invalidName.classList.add("hide");
 });
 
 passwordField.addEventListener("input", function (e) {
   // console.log(e.target.value);
+  let invalidPassword = document.querySelector(".invalid-password");
+
   if (utils.validPassword(e.target.value)) {
     passwordField.classList.remove("invalid");
     passwordField.classList.add("valid");
@@ -39,10 +47,14 @@ passwordField.addEventListener("input", function (e) {
     passwordField.classList.remove("valid");
     passwordField.classList.add("invalid");
   }
+  if (!invalidPassword.classList.contains("hide"))
+    invalidPassword.classList.add("hide");
 });
 
 addressField.addEventListener("input", function (e) {
   // console.log(e.target.value);
+  let invalidAddress = document.querySelector(".invalid-address");
+
   if (utils.validAddress(e.target.value)) {
     addressField.classList.remove("invalid");
     addressField.classList.add("valid");
@@ -50,13 +62,38 @@ addressField.addEventListener("input", function (e) {
     addressField.classList.remove("valid");
     addressField.classList.add("invalid");
   }
+  if (!invalidAddress.classList.contains("hide"))
+    invalidAddress.classList.add("hide");
+});
+
+courses.forEach((course) => {
+  let invalidCourses = document.querySelector(".invalid-courses");
+
+  course.addEventListener("change", () => {
+    if (utils.checked(courses).length > 0) {
+      let courses = document.querySelector(".dropdown label");
+      if (courses.classList.contains("red")) {
+        courses.classList.remove("red");
+        if (!invalidCourses.classList.contains("hide"))
+          invalidCourses.classList.add("hide");
+      }
+    } else {
+      let courses = document.querySelector(".dropdown label");
+      if (!courses.classList.contains("red")) {
+        courses.classList.add("red");
+        if (!invalidCourses.classList.contains("hide"))
+          invalidCourses.classList.add("hide");
+      }
+    }
+  });
 });
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
-  if (utils.checked(coursesC).length > 0) {
-    coursesField.classList.remove("invalid");
-    coursesField.classList.add("valid");
+  let allCourses = document.querySelectorAll(".course");
+  if (utils.checked(allCourses).length > 0) {
+    document.querySelector(".dropdown label").classList.remove("invalid");
+    document.querySelector(".dropdown label").classList.add("valid");
   }
   let formD = new FormData(form);
   let username = formD.get("userName");
@@ -91,14 +128,33 @@ form.addEventListener("submit", async (e) => {
     } else {
       let errors = responseData.errors;
       console.log(errors);
+      let invalidUserName = document.querySelector(".invalid-user-name");
+      let invalidName = document.querySelector(".invalid-name");
+      let invalidPassword = document.querySelector(".invalid-password");
+      let invalidAddress = document.querySelector(".invalid-address");
+      let invalidcourses = document.querySelector(".invalid-courses");
+
       Object.keys(errors).forEach((error) => {
-        console.log(error);
-        if (error === "username")
-          document.querySelector(".user-name").classList.add("invalid");
-        if (error === "name") nameField.classList.add("invalid");
-        if (error === "password") passwordField.classList.add("invalid");
-        if (error === "address") addressField.classList.add("invalid");
-        if (error === "courses") coursesField.classList.add("invalid");
+        if (error === "username") {
+          userNameField.classList.add("invalid");
+          invalidUserName.classList.remove("hide");
+        }
+        if (error === "name") {
+          nameField.classList.add("invalid");
+          invalidName.classList.remove("hide");
+        }
+        if (error === "password") {
+          passwordField.classList.add("invalid");
+          invalidPassword.classList.remove("hide");
+        }
+        if (error === "address") {
+          addressField.classList.add("invalid");
+          invalidAddress.classList.remove("hide");
+        }
+        if (error === "courses") {
+          document.querySelector(".dropdown label").classList.add("red");
+          invalidcourses.classList.remove("hide");
+        }
       });
       console.log(responseData.message);
     }

@@ -11,6 +11,10 @@ header("Content-Type: application/json");
 
 
 session_start();
+if (!$_SESSION["id"]) {
+  header("location:login.php");
+  exit();
+}
 
 if ($_SESSION["type"] == "student") {
 

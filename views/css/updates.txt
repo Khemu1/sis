@@ -1,3 +1,11 @@
 4 / 1 / 2024
 
 added the files for login & TeacherRegister
+
+4 / 10 / 2024
+
+added the design for the home page
+
+4 / 13 / 2004
+
+project is completed

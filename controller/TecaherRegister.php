@@ -8,7 +8,6 @@ require_once ("../models/Students.php");
 require_once ("../models/Teachers.php");
 require_once ("../models/Teaches.php");
 require_once ("../models/Utils.php");
-session_abort();
 session_start();
 
 

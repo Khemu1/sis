@@ -28,15 +28,28 @@ require_once ("../../models/Utils.php");
     <div class="body" width="200" height="200">
       <form method="Post">
         <input type="text" name="userName" class="user-name" placeholder="UserName"><br>
+        <div class="invalid-user-name hide">Invalid Username: the minimum length must be 6 characters and doesn't
+          contain any symbols</div>
         <input type="text" name="name" class="name" placeholder="name"><br>
+        <div class="invalid-name hide">Invalid name: the minimum length must be 6 characters and doesn't
+          contain any symbols or numbers</div>
+
         <input type="password" name="password" class="password" placeholder="Password"><br>
+        <div class="invalid-password hide">Invalid password: the minimum length must be 6 characters </div>
+
         <input type="text" name="address" class="address" placeholder="address"><br>
+        <div class="invalid-address hide">Invalid address : the minimum length must be 6 characters and can contain
+          numbers and sybmols like ",."</div>
+
         <input type="text" name="level" class="level" placeholder="level"><br>
+        <div class="invalid-level hide">Invalid level: please enter a value between 1 and 2</div>
+
         <input type="submit" name="register" placeholder="Register"><br>
+        <a href="login.php">Login</a>
       </form>
     </div>
-    <div class="footer" width="200" height="200">
-      <p style="font-size : 10px">Powerd by Kemet SIS</p>
+    <div class="footer" >
+      <p >Powerd by Kemet SIS</p>
     </div>
   </div>
 
