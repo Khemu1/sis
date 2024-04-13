@@ -325,3 +325,7 @@ footer {
 .white {
   background-color: white;
 }
+a {
+  height: fit-content;
+  width: fit-content;
+}

@@ -81,11 +81,8 @@ if (!$_SESSION["id"]) {
         <div class="site-links">
           <h3>Quick Links</h3>
           <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About Us</a></li>
-            <li><a href="/services">Services</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="/contact">Contact Us</a></li>
+            <li><a href="home.php">Home</a></li>
+            <li><a href="home.php?page=about">About Us</a></li>
           </ul>
         </div>
         <div class="copyright">
