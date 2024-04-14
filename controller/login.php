@@ -32,6 +32,8 @@ if ($data["type"] === "student") {
     $_SESSION["id"] = intval($account[0]["id"]);
     $_SESSION["userName"] = $account[0]["userName"];
     $_SESSION["type"] = "student";
+    $_SESSION["theme"] = $data["theme"];
+
     $jarr = json_encode($account[0]);
     $response = [
       "status" => "success",
@@ -69,6 +71,7 @@ if ($data["type"] === "student") {
     $_SESSION["id"] = intval($account[0]["id"]);
     $_SESSION["userName"] = $account[0]["userName"];
     $_SESSION["type"] = "teacher";
+    $_SESSION["theme"] = $data["theme"];
 
 
     $jarr = json_encode($account[0]);

@@ -29,37 +29,43 @@ if (!isset($_SESSION["id"])) {
 
 </head>
 
-<body>
+<body class="body-dark">
   <div class="home">
-    <nav>
-      <a href="home.php" class="logo">
+    <nav class="nav-dark">
+      <div class="theme-switcher"">
+    <img src=" ../../assets/icons/theme icon.png">
+      </div>
+      <a href="home.php?<?= $_SESSION["theme"] ? "theme=dark" : "theme=white" ?>" class="logo">
 
         <img class="main" src="../../assets/images/kemet-high-resolution-logo-transparent.svg">
         <img class="secondary" src="../../assets/images/kemet-high-resolution-logo-black-transparent.svg">
       </a>
 
       <div class="nav-buttons">
-        <a href="home.php" class="selected" id="home" value="home">
+        <a href="home.php?<?= $_SESSION["theme"] ? "theme=dark" : "theme=white" ?>" class="selected" id="home"
+          value="home">
           <p>Home</p>
         </a>
+
         <?php
         if ($_SESSION["type"] === "student") { ?>
-          <a href="home.php?page=courses" id="courses" value="courses">
+          <a href="home.php?page=courses&<?= $_SESSION["theme"] ? "theme=dark" : "theme=white" ?>" id="courses"
+            value="courses">
             <p>Courses</p>
           </a>
           <?php
         } else { ?>
-          <a href="home.php?page=courses" id="courses" value="courses">
-            <p>participants</p>
+          <a href="home.php?page=courses&<?= $_SESSION["theme"] ? "theme=dark" : "theme=white" ?>" id="courses"
+            value="courses">
+            <p>Participants</p>
           </a>
-
           <?php
         } ?>
 
-
-        <a href="home.php?page=about" id="about" value="about">
+        <a href="home.php?page=about&<?= $_SESSION["theme"] ? "theme=dark" : "theme=white" ?>" id="about" value="about">
           <p>About</p>
         </a>
+
       </div>
       <a id="logout" href="http://sis.test/controller/logout.php">
         <p>Logout</p>
@@ -69,25 +75,27 @@ if (!isset($_SESSION["id"])) {
 
     <section>
     </section>
-    <footer>
+    <footer class="dark-footer">
       <div class="footer-content">
         <div class="contact-info">
-          <h3>Contact Us</h3>
-          <p>Email: info@Kemet.com</p>
-          <p>Phone: 123-456-7890</p>
-          <p>Address: 123 shatby, Alexadnria, Egypt</p>
+          <h3 class="font-dark">Contact Us</h3>
+          <p class="font-dark">Email: info@Kemet.com</p>
+          <p class="font-dark">Phone: 123-456-7890</p>
+          <p class="font-dark">Address: 123 shatby, Alexadnria, Egypt</p>
         </div>
 
         <div class="site-links">
-          <h3>Quick Links</h3>
+          <h3 class="font-dark">Quick Links</h3>
           <ul>
-            <li><a href="home.php">Home</a></li>
-            <li><a href="home.php?page=about">About Us</a></li>
+            <li><a class="font-dark" href="home.php">Home</a></li>
+            <li><a class="font-dark" href="home.php?page=about">About Us</a></li>
           </ul>
         </div>
         <div class="copyright">
-          <p>&copy; 2024 Kemet. All rights reserved.</p>
-          <p><a href="/privacy-policy">Privacy Policy</a> | <a href="/terms-of-service">Terms of Service</a></p>
+          <p class="font-dark">&copy; 2024 Kemet. All rights reserved.</p>
+          <p><a class="font-dark" href="/privacy-policy">Privacy Policy</a> | <a class="font-dark"
+              href="/terms-of-service">Terms of
+              Service</a></p>
         </div>
       </div>
     </footer>

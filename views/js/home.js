@@ -1,4 +1,5 @@
-console.log(theme);
+import * as utils from "./Utils.js";
+
 let buttons = document.querySelectorAll("button");
 let logo = document.querySelector(".logo");
 let selectedValue = document.querySelector("selected");
@@ -6,6 +7,7 @@ const homeDisplayed = sessionStorage.getItem("homeDisplayed");
 let homeButton = document.querySelector("#home");
 let coursesButton = document.querySelector("#courses");
 let aboutButton = document.querySelector("#about");
+let switcher = document.querySelector(".theme-switcher");
 
 let fetchedData;
 
@@ -72,7 +74,11 @@ let about = `<div class="about">
 
 let courses1;
 
-if (window.location.href === "http://sis.test/views/php/home.php") {
+if (
+  window.location.href ==
+  ("http://sis.test/views/php/home.php?theme=white" ||
+    "http://sis.test/views/php/home.php?theme=dark")
+) {
   logo.classList.add("white");
   document.querySelector(".main").classList.add("hide");
 }
@@ -90,6 +96,9 @@ async function fetchData() {
     console.log("Something went wrong with fetching data:", error);
   }
 }
+switcher.addEventListener("click", function (e) {
+  utils.homeThemeSwticher();
+});
 
 async function fetchDataAndUpdateVariable() {
   try {
@@ -122,7 +131,6 @@ async function fetchDataAndUpdateVariable() {
       <p>${course.name}</p>
       <p>${course.hours}</p>
       <p>${course.level}</p>
- 
     </div>`;
       });
 
@@ -173,10 +181,14 @@ async function fetchDataAndUpdateVariable() {
 // Update UI based on button clicked
 function displayContent() {
   let section = document.querySelector("section");
+  let url = window.location.href;
 
-  if (window.location.href === "http://sis.test/views/php/home.php") {
+  if (
+    url === "http://sis.test/views/php/home.php" ||
+    url === "http://sis.test/views/php/home.php?theme=white" ||
+    url === "http://sis.test/views/php/home.php?theme=dark"
+  ) {
     console.log("will display home");
-
     let tempDiv = document.createElement("div");
     tempDiv.innerHTML = home1;
     let homeNode = tempDiv.firstElementChild;
@@ -184,10 +196,11 @@ function displayContent() {
   }
 
   if (
-    window.location.href === "http://sis.test/views/php/home.php?page=courses"
+    url === "http://sis.test/views/php/home.php?page=courses" ||
+    url === "http://sis.test/views/php/home.php?page=courses&theme=white" ||
+    url === "http://sis.test/views/php/home.php?page=courses&theme=dark"
   ) {
     console.log("will display courses");
-
     let tempDiv = document.createElement("div");
     tempDiv.innerHTML = courses1;
     let coursesNode = tempDiv.firstElementChild;
@@ -195,10 +208,11 @@ function displayContent() {
   }
 
   if (
-    window.location.href === "http://sis.test/views/php/home.php?page=about"
+    url === "http://sis.test/views/php/home.php?page=about" ||
+    url === "http://sis.test/views/php/home.php?page=about&theme=white" ||
+    url === "http://sis.test/views/php/home.php?page=about&theme=dark"
   ) {
     console.log("will display about");
-
     let tempDiv = document.createElement("div");
     tempDiv.innerHTML = about;
     let aboutNode = tempDiv.firstElementChild;

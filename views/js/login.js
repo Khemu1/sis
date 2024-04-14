@@ -57,9 +57,6 @@ form.addEventListener("submit", async (e) => {
   hiddenInput.name = "type";
 
   hiddenInput.value = type;
-  let theme = utils.hasDark()
-  module.exports = { theme };
-
   form.appendChild(hiddenInput);
   let result = await fetch("../../controller/login.php", {
     method: "POST",
@@ -80,7 +77,7 @@ form.addEventListener("submit", async (e) => {
     let responseData = await result.json();
     let stat = responseData.status;
     if (stat == "success") {
-      window.location.href = `http://sis.test/views/php/home.php`;
+      window.location.href = `http://sis.test/views/php/home.php?${utils.hasDark()? "dark":"white"}`;
     } else {
       utils.handelErrorDisplay(responseData.errors);
     }

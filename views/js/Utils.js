@@ -147,11 +147,7 @@ export function formthemes(type) {
   if (type === "login") {
     let home = document.querySelector(".home");
     let anchors = document.querySelectorAll("a");
-    let dark = [];
-    if (document.querySelector(".body-dark")) dark.push("body");
-    if (document.querySelector(".container-dark")) dark.push("container");
-    if (document.querySelector("font-dark")) dark.push("fonts");
-    if (dark.length > 0) {
+    if (document.body.classList.contains("body-dark")) {
       document.body.classList.remove("body-dark");
       home.classList.remove("container-dark");
       anchors.forEach((a) => {
@@ -171,11 +167,7 @@ export function formthemes(type) {
   if (type === "student") {
     let home = document.querySelector(".container");
     let anchors = document.querySelectorAll("a");
-    let dark = [];
-    if (document.querySelector(".body-dark")) dark.push("body");
-    if (document.querySelector(".container-dark")) dark.push("container");
-    if (document.querySelector("font-dark")) dark.push("fonts");
-    if (dark.length > 0) {
+    if (document.body.classList.contains("body-dark")) {
       document.body.classList.remove("body-dark");
       home.classList.remove("container-dark");
       anchors.forEach((a) => {
@@ -196,11 +188,7 @@ export function formthemes(type) {
     let home = document.querySelector(".container");
     let anchors = document.querySelectorAll("a");
     let labels = document.querySelectorAll("label");
-    let dark = [];
-    if (document.querySelector(".body-dark")) dark.push("body");
-    if (document.querySelector(".container-dark")) dark.push("container");
-    if (document.querySelector("font-dark")) dark.push("fonts");
-    if (dark.length > 0) {
+    if (document.body.classList.contains("body-dark")) {
       document.body.classList.remove("body-dark");
       home.classList.remove("container-dark");
       anchors.forEach((a) => {
@@ -223,7 +211,44 @@ export function formthemes(type) {
     }
   }
 }
-
+/**
+ * Switches the theme of the home page.
+ * @returns {void} - This method does not return any value.
+ */
+export function homeThemeSwticher() {
+  let nav = document.querySelector("nav");
+  let footer = document.querySelector("footer");
+  let anchors = document.querySelectorAll("a");
+  let headers = document.querySelectorAll("h3");
+  let ps = document.querySelectorAll("p");
+  if (document.body.classList.contains("body-dark")) {
+    document.body.classList.toggle("body-dark");
+    nav.classList.toggle("nav-dark");
+    footer.classList.toggle("dark-footer");
+    anchors.forEach((a) => {
+      a.classList.toggle("font-dark");
+    });
+    headers.forEach((h) => {
+      h.classList.toggle("font-dark");
+    });
+    ps.forEach((p) => {
+      p.classList.toggle("font-dark");
+    });
+  } else {
+    document.body.classList.toggle("body-dark");
+    nav.classList.toggle("nav-dark");
+    footer.classList.toggle("dark-footer");
+    anchors.forEach((a) => {
+      a.classList.toggle("font-dark");
+    });
+    headers.forEach((h) => {
+      h.classList.toggle("font-dark");
+    });
+    ps.forEach((p) => {
+      p.classList.toggle("font-dark");
+    });
+  }
+}
 /**
  * returns the current theme
  * @returns boolean

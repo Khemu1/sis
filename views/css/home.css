@@ -15,6 +15,7 @@ body {
   grid: max-content 2fr max-content / 1fr;
 }
 nav {
+  position: relative;
   position: sticky;
   top: 0;
   display: grid;
@@ -22,16 +23,15 @@ nav {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  background: rgb(2, 71, 77);
+  background: #101a2b; /* fallback for older browsers */
   background: linear-gradient(
-    21deg,
-    rgba(2, 71, 77, 1) 15%,
-    rgba(4, 97, 105, 1) 50%,
-    rgba(33, 123, 126, 1) 75%,
-    rgba(16, 137, 141, 1) 100%
+    15deg,
+    #101a2b 0%,
+    #032c2d 25%,
+    #204c3d 50%,
+    #0a4c5a 75%
   );
   height: 100px !important;
-  flex-grow: 0;
 }
 nav > *,
 .nav-buttons > * {
@@ -129,14 +129,13 @@ nav .nav-buttons {
   background-color: red;
   color: white;
 }
-#logout:hover a {
-  color: white;
+#logout:hover p {
+  color: white !important;
 }
 
 section {
   display: flex;
   flex-direction: column;
-  background-color: white;
   font-size: 30px;
   height: 100%;
 }
@@ -218,7 +217,6 @@ section {
   height: auto;
   width: 100%;
   justify-items: center;
-  color: #333;
 }
 about-container {
   margin-bottom: 10px;
@@ -332,4 +330,27 @@ footer {
 a {
   height: fit-content;
   width: fit-content;
+}
+.nav-dark {
+  background: linear-gradient(15deg, #262424, #171717, #333333, #050505);
+  color: white !important;
+}
+.body-dark {
+  background-color: #171717;
+  color: white;
+}
+.dark-footer {
+  background-color: #262424;
+  color: white;
+}
+.font-dark {
+  color: white !important;
+}
+.theme-switcher {
+  cursor: pointer;
+  position: absolute;
+  right: 200px;
+}
+#logout p {
+  color: #000 !important;
 }

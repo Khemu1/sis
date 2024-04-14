@@ -30,6 +30,6 @@ if ($_SESSION["type"] == "teacher") {
   $data = Teachers::select(["userName", "name", "address"], ["accountId" => $_SESSION["id"]])[0];
 
   $EnrolledCourses = Enrollment::select(["courseName", "courseLevel", "courseHours", "studentUserName"], ["teacherUserName" => $data["userName"]]);
-  echo json_encode(["teacher", $data, $EnrolledCourses]);
+  echo json_encode(["teacher", $data, $EnrolledCourses,$_SESSION["theme"]? "dark":"white"]);
   exit();
 }

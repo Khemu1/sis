@@ -35,6 +35,8 @@ if (!empty($errors)) {
   $_SESSION["id"] = $accountId;
   $_SESSION["userName"] = $data["userName"];
   $_SESSION["type"] = "student";
+  $_SESSION["theme"] = $data["theme"];
+
   $response = [
     "status" => "success",
     "message" => "login successful",

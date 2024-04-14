@@ -178,14 +178,14 @@ a.dark-font:hover::before {
   width: 100%;
 }
 .body-dark {
-  background-color: #101a2b;
+  background-color: #171717;
   color: white !important;
 }
 .container-dark {
-  background-color: #003049;
+  background-color: #262424;
   color: white !important;
   border: none;
-  box-shadow: 5px -6px 12px -1px #003049;
+  box-shadow: 5px -6px 12px -1px #262424;
 }
 .font-dark {
   color: white !important;
