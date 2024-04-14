@@ -10,7 +10,7 @@ class Enrollment
 {
 
   public static $table = "enrollment";
-  public static $columns = ["courseName", "studentUserName", "teacherUserName"];
+  public static $columns = ["courseName", "courseLevel", "courseHours", "studentUserName", "teacherUserName"];
 
   /**
    * - should be called upon any registration process
@@ -26,15 +26,15 @@ class Enrollment
 
     foreach ($students as $student) {
       $studentLevel = $student["level"];
-      $courses = Courses::select(["name"], ["level" => $studentLevel]);
+      $courses = Courses::select(Courses::$columns, ["level" => $studentLevel]);
       $teachers = Teaches::selectWithLevel($studentLevel);
-      $coursesForLevel = Courses::select(["name"], ["level" => $studentLevel]);
+      $coursesForLevel = Courses::select(["name",], ["level" => $studentLevel]);
       $unassinged = true;
       $teacherFound = false;
 
       foreach ($courses as $course) {
         if (empty($teachers)) {
-          self::insert($course["name"], $student["userName"], null);
+          self::insert([$course["name"], $course["level"], $course["hours"], $student["userName"], null]);
           continue;
         }
 
@@ -58,11 +58,11 @@ class Enrollment
 
           if ($teacherFound) {
 
-            self::insert($course["name"], $student["userName"], $teacher["teacherUserName"]);
+            self::insert([$course["name"], $course["level"], $course["hours"], $student["userName"], $teacher["teacherUserName"]]);
             $unassinged = false;
           }
           if (!$teacherFound) {
-            self::insert($course["name"], $student["userName"], null);
+            self::insert([$course["name"], $course["level"], $course["hours"], $student["userName"], null]);
           }
         }
       }
@@ -87,7 +87,6 @@ class Enrollment
                 break;
 
               self::update(["teacherUserName" => $teacher["teacherUserName"]], ["studentUserName" => $student["userName"], "courseName" => $nullCourse["courseName"]]);
-              echo "updated the null value";
               break;
             }
           }
@@ -108,60 +107,58 @@ class Enrollment
    *
    * @return bool True if the record is successfully inserted, false otherwise.
    */
-  public static function insert(string $course = null, string $studentUserName, string $teacherUserName = null): bool
+  public static function insert(array $data): bool
   {
-    $sql = "INSERT INTO " . self::$table . "(courseName, studentUserName, teacherUserName) VALUES (?, ?, ?)";
-
-    try {
-      $stmt = DB::$pdo->prepare($sql);
-      return $stmt->execute([$course, $studentUserName, $teacherUserName]);
-    } catch (\Throwable $th) {
-      echo $th->getMessage();
+    if (count($data) != count(self::$columns)) {
+      echo "invalid number of parameters:";
       return false;
     }
+    $arr = array_combine(self::$columns, $data);
+
+    return DB::insert(self::$table, $arr);
   }
 
 
   /**
- * Updates an existing enrollment record in the database.
- *
- * @param array $columns An associative array containing the new values for the columns to be updated.
- * @param array $data An associative array containing the data to search for the record to be updated.
- *
- * @return bool True if the record is successfully updated, false otherwise.
- */
-public static function update(array $columns, array $data): bool
-{
+   * Updates an existing enrollment record in the database.
+   *
+   * @param array $columns An associative array containing the new values for the columns to be updated.
+   * @param array $data An associative array containing the data to search for the record to be updated.
+   *
+   * @return bool True if the record is successfully updated, false otherwise.
+   */
+  public static function update(array $columns, array $data): bool
+  {
     // Use the DB class to execute the UPDATE query
     return DB::update(self::$table, $columns, $data);
-}
+  }
 
   /**
- * Selects records from the enrollment table based on the given columns and data.
- *
- * @param array $columns An associative array containing the columns to be selected from the table.
- * @param array $data An associative array containing the data to search for the records.
- *
- * @return array An associative array containing the selected records.
- */
-public static function select(array $columns, array $data): array
-{
+   * Selects records from the enrollment table based on the given columns and data.
+   *
+   * @param array $columns An associative array containing the columns to be selected from the table.
+   * @param array $data An associative array containing the data to search for the records.
+   *
+   * @return array An associative array containing the selected records.
+   */
+  public static function select(array $columns, array $data): array
+  {
     return DB::select(self::$table, $columns, $data);
-}
+  }
   /**
- * Selects records from the enrollment table based on the given columns and data,
- * where the teacherUserName is null.
- *
- * @param array $columns An associative array containing the columns to be selected from the table.
- * @param array $data An associative array containing the data to search for the records.
- *
- * @return array An associative array containing the selected records.
- */
-public static function selectNull(array $columns, array $data): array
-{
+   * Selects records from the enrollment table based on the given columns and data,
+   * where the teacherUserName is null.
+   *
+   * @param array $columns An associative array containing the columns to be selected from the table.
+   * @param array $data An associative array containing the data to search for the records.
+   *
+   * @return array An associative array containing the selected records.
+   */
+  public static function selectNull(array $columns, array $data): array
+  {
     $keys = array_keys($data);
     $placeholders = array_map(function (string $key) {
-        return "$key= :$key";
+      return "$key= :$key";
     }, $keys);
 
     $sql = "SELECT " . implode(", ", $columns) . " FROM " . self::$table . " WHERE teacherUserName is null AND " . implode(" AND ", $placeholders);
@@ -172,10 +169,10 @@ public static function selectNull(array $columns, array $data): array
 
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     if ($result === false) {
-        return [];
+      return [];
     }
     return $result;
-}
+  }
   /**
    * Checks if a record with the given data already exists in the database.
    *
@@ -196,4 +193,3 @@ public static function selectNull(array $columns, array $data): array
   }
 
 }
-
