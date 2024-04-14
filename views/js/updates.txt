@@ -16,3 +16,7 @@ added the home page file
 completed navigation part home
 
 project is completed
+
+4 / 14 / 2024
+
+made a from errors display method in utils

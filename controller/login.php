@@ -21,10 +21,11 @@ if ($data["type"] === "student") {
   $account = Accounts::select(["id", "userName", "Password"], ["userName" => $userName, "password" => $password]);
   if (count($account) > 0) {
     $confirmation = Utils::designation(intval($account[0]["id"]));
-    if ($confirmation !== "student"){
+    if ($confirmation !== "student") {
       echo json_encode([
         "status" => "fail",
         "message" => "login failed",
+        "errors" => ["invalid account" => "couldn't find this account"]
       ]);
       exit();
     }
@@ -42,9 +43,11 @@ if ($data["type"] === "student") {
 
 
   } else {
+
     echo json_encode([
       "status" => "fail",
       "message" => "login failed",
+      "errors" => ["invalid account" => "couldn't find this account"]
     ]);
     exit();
   }
@@ -58,6 +61,7 @@ if ($data["type"] === "student") {
       echo json_encode([
         "status" => "fail",
         "message" => "login failed",
+        "errors" => ["invalid account" => "couldn't find this account"]
       ]);
       exit();
     }
@@ -81,6 +85,7 @@ if ($data["type"] === "student") {
     echo json_encode([
       "status" => "fail",
       "message" => "login failed",
+      "errors" => ["invalid account" => "couldn't find this account"]
     ]);
     exit();
   }
@@ -88,6 +93,7 @@ if ($data["type"] === "student") {
   echo json_encode([
     "status" => "fail",
     "message" => "login failed",
+    "errors" => ["invalid account" => "couldn't find this account"]
   ]);
   exit();
 }

@@ -5,11 +5,11 @@ let nameField = document.querySelector(".name");
 let passwordField = document.querySelector(".password");
 let addressField = document.querySelector(".address");
 let courses = document.querySelectorAll(".course");
-let form = document.querySelector("form");
+const form = document.querySelector("form");
 
 userNameField.addEventListener("input", function (e) {
   let invalidUserName = document.querySelector(".invalid-user-name");
-  // console.log(e.target.value);
+
   if (utils.validUserName(e.target.value)) {
     userNameField.classList.remove("invalid");
     userNameField.classList.add("valid");
@@ -24,7 +24,6 @@ userNameField.addEventListener("input", function (e) {
 nameField.addEventListener("input", function (e) {
   let invalidName = document.querySelector(".invalid-name");
 
-  // console.log(e.target.value);
   if (utils.validName(e.target.value)) {
     nameField.classList.remove("invalid");
     nameField.classList.add("valid");
@@ -37,7 +36,6 @@ nameField.addEventListener("input", function (e) {
 });
 
 passwordField.addEventListener("input", function (e) {
-  // console.log(e.target.value);
   let invalidPassword = document.querySelector(".invalid-password");
 
   if (utils.validPassword(e.target.value)) {
@@ -52,7 +50,6 @@ passwordField.addEventListener("input", function (e) {
 });
 
 addressField.addEventListener("input", function (e) {
-  // console.log(e.target.value);
   let invalidAddress = document.querySelector(".invalid-address");
 
   if (utils.validAddress(e.target.value)) {
@@ -102,10 +99,12 @@ form.addEventListener("submit", async (e) => {
   let address = formD.get("address");
   let courses = formD.getAll("courses[]");
   console.log(courses);
+  // starting the AJAX request
   let result = await fetch("../../controller/TecaherRegister.php", {
     method: "POST",
     headers: {
-      "Content-Type": "application/json",
+      // used . The headers object is used to specify the content type of the request body
+      "Content-Type": "application/json", // This means that the data being sent to the server is in JSON forma
     },
     body: JSON.stringify({
       register: "Teacher",
@@ -126,41 +125,7 @@ form.addEventListener("submit", async (e) => {
       console.log("yeeeeeeeeeeeeeees");
       window.location.href = `http://sis.test/views/php/home.php`;
     } else {
-      let errors = responseData.errors;
-      console.log(errors);
-      let usesUserName = document.querySelector(".used-username");
-      let invalidUserName = document.querySelector(".invalid-user-name");
-      let invalidName = document.querySelector(".invalid-name");
-      let invalidPassword = document.querySelector(".invalid-password");
-      let invalidAddress = document.querySelector(".invalid-address");
-      let invalidcourses = document.querySelector(".invalid-courses");
-      Object.keys(errors).forEach((error) => {
-        if (error === "username") {
-          userNameField.classList.add("invalid");
-          invalidUserName.classList.remove("hide");
-        }
-        if (error === "name") {
-          nameField.classList.add("invalid");
-          invalidName.classList.remove("hide");
-        }
-        if (error === "password") {
-          passwordField.classList.add("invalid");
-          invalidPassword.classList.remove("hide");
-        }
-        if (error === "address") {
-          addressField.classList.add("invalid");
-          invalidAddress.classList.remove("hide");
-        }
-        if (error === "courses") {
-          document.querySelector(".dropdown label").classList.add("red");
-          invalidcourses.classList.remove("hide");
-        }
-        if (error === "account") {
-          console.log("already used");
-          document.querySelector(".used-username").classList.add("red");
-          usesUserName.classList.remove("hide");
-        }
-      });
+      utils.handelErrorDisplay(responseData.errors);
     }
   } else {
     console.error("Error: " + result.statusText);

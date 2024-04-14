@@ -1,3 +1,4 @@
+import * as utils from "./Utils.js";
 const form = document.querySelector("form");
 let userNameField = document.querySelector(".user-name");
 let passwordField = document.querySelector(".password");
@@ -22,6 +23,19 @@ passwordField.addEventListener("click", function (e) {
 
   if (!document.querySelector(".invalid-login").classList.contains("hide"))
     document.querySelector(".invalid-login").classList.add("hide");
+});
+
+document.querySelectorAll("input[type=radio]").forEach((radio) => {
+  radio.addEventListener("click", function (e) {
+    if (passwordField.classList.contains("invalid"))
+      passwordField.classList.remove("invalid");
+
+    if (userNameField.classList.contains("invalid"))
+      userNameField.classList.remove("invalid");
+
+    if (!document.querySelector(".invalid-login").classList.contains("hide"))
+      document.querySelector(".invalid-login").classList.add("hide");
+  });
 });
 
 form.addEventListener("submit", async (e) => {
@@ -62,9 +76,7 @@ form.addEventListener("submit", async (e) => {
     if (stat == "success") {
       window.location.href = `http://sis.test/views/php/home.php`;
     } else {
-      userNameField.classList.add("invalid");
-      passwordField.classList.add("invalid");
-      document.querySelector(".invalid-login").classList.remove("hide");
+      utils.handelErrorDisplay(responseData.errors);
     }
   } else {
     console.error("Error: " + result.statusText);

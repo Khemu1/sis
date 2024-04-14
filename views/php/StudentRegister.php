@@ -64,3 +64,4 @@ require_once ("../../models/Utils.php");
 ?>
 
 <script type="module" src="../js/StudentRegister.js?t=<?= time() ?>"></script>
+<script type="module" src="../js/Utils.js?t=<?= time() ?>"></script>

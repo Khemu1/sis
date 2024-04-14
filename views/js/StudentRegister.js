@@ -5,7 +5,7 @@ let nameField = document.querySelector(".name");
 let passwordField = document.querySelector(".password");
 let addressField = document.querySelector(".address");
 let levelField = document.querySelector(".level");
-let form = document.querySelector("form");
+const form = document.querySelector("form");
 
 userNameField.addEventListener("input", function (e) {
   let invalidUserName = document.querySelector(".invalid-user-name");
@@ -116,45 +116,13 @@ form.addEventListener("submit", async (e) => {
       console.log("yeeeeeeeeeeeeeees");
       window.location.href = `http://sis.test/views/php/home.php`;
     } else {
-      let errors = responseData.errors;
-      let usesUserName = document.querySelector(".used-username");
-      let invalidUserName = document.querySelector(".invalid-user-name");
-      let invalidName = document.querySelector(".invalid-name");
-      let invalidPassword = document.querySelector(".invalid-password");
-      let invalidAddress = document.querySelector(".invalid-address");
-      let invalidLevel = document.querySelector(".invalid-level");
 
-      Object.keys(errors).forEach((error) => {
-        if (error === "username") {
-          userNameField.classList.add("invalid");
-          invalidUserName.classList.remove("hide");
-        }
-        if (error === "name") {
-          nameField.classList.add("invalid");
-          invalidName.classList.remove("hide");
-        }
-        if (error === "password") {
-          passwordField.classList.add("invalid");
-          invalidPassword.classList.remove("hide");
-        }
-        if (error === "address") {
-          addressField.classList.add("invalid");
-          invalidAddress.classList.remove("hide");
-        }
-        if (error === "level") {
-          levelField.classList.add("invalid");
-          invalidLevel.classList.remove("hide");
-        }
-        if (error === "account") {
-          console.log("already used");
-          document.querySelector(".used-username").classList.add("red");
-          usesUserName.classList.remove("hide");
-        }
-      });
-      // utils.handelErrorDisplay(errors);
+      utils.handelErrorDisplay(responseData.errors);
       console.log(responseData.message);
     }
   } else {
     console.error("Error: " + result.statusText);
   }
 });
+
+
