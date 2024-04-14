@@ -44,6 +44,7 @@ switcher.addEventListener("click", function (e) {
 });
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
+  if (!localStorage.getItem("theme")) localStorage.setItem("theme", "dark");
   let formD = new FormData(form);
   let user = document.querySelector('input[name="userType"]:checked');
   let type = user.value; // disregard that error it doesn't exist
@@ -78,9 +79,7 @@ form.addEventListener("submit", async (e) => {
     let responseData = await result.json();
     let stat = responseData.status;
     if (stat == "success") {
-      window.location.href = `http://sis.test/views/php/home.php${
-        utils.hasDark() ? "" : "?theme=white"
-      }`;
+      window.location.href = `http://sis.test/views/php/home.php`;
     } else {
       utils.handelErrorDisplay(responseData.errors);
     }

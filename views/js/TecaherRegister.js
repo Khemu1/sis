@@ -94,6 +94,7 @@ switcher.addEventListener("click", function (e) {
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
+  if (!localStorage.getItem("theme")) localStorage.setItem("theme", "dark");
   let allCourses = document.querySelectorAll(".course");
   if (utils.checked(allCourses).length > 0) {
     document.querySelector(".dropdown label").classList.remove("invalid");

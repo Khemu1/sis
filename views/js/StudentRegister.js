@@ -92,6 +92,8 @@ switcher.addEventListener("click", function (e) {
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
+  if (!localStorage.getItem("theme"))
+    localStorage.setItem("theme", "dark");
   let formD = new FormData(form);
   let username = formD.get("userName");
   let password = formD.get("password");

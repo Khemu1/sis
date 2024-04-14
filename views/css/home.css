@@ -5,6 +5,7 @@ body {
   height: 100dvh;
   width: 100dvw;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: #000;
 }
 .home {
   display: grid;
@@ -342,6 +343,9 @@ a {
 .dark-footer {
   background-color: #262424;
   color: white;
+}
+.black {
+  color: #000;
 }
 .font-dark {
   color: white !important;

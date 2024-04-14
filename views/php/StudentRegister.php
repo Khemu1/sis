@@ -30,6 +30,7 @@ require_once ("../../models/Utils.php");
       <img class="secondary" src="../../assets/images/kemet-high-resolution-logo-black-transparent-login.png">
     </div>
     <div class="body">
+      <h3>Student Registertion Form</h3>
       <form method="Post">
         <input type="text" name="userName" class="user-name" placeholder="UserName"><br>
         <div class="invalid-user-name hide">Invalid Username: the minimum length must be 6 characters and doesn't
