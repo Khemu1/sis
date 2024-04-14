@@ -337,7 +337,7 @@ export function checkFormTheme(theme, type){
     let home = document.querySelector(".container");
     let anchors = document.querySelectorAll("a");
     let labels = document.querySelectorAll("label");
-    if (theme="white") {
+    if (theme==="white") {
       document.body.classList.remove("body-dark");
       home.classList.remove("container-dark");
       anchors.forEach((a) => {
@@ -347,7 +347,7 @@ export function checkFormTheme(theme, type){
         l.classList.remove("font-dark");
       });
       document.querySelector("p").classList.remove("font-dark");
-    } else if (theme="dark") {
+    } else if (theme==="dark") {
       document.body.classList.add("body-dark");
       home.classList.add("container-dark");
       anchors.forEach((a) => {
