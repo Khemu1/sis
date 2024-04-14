@@ -1,5 +1,7 @@
 // @ts-nocheck
 import * as utils from "./Utils.js";
+utils.checkFormTheme(localStorage.getItem("theme"), "student");
+
 let userNameField = document.querySelector(".user-name");
 let nameField = document.querySelector(".name");
 let passwordField = document.querySelector(".password");

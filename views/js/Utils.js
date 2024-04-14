@@ -154,6 +154,7 @@ export function formthemes(type) {
         a.classList.remove("font-dark");
       });
       document.querySelector("p").classList.remove("font-dark");
+      localStorage.setItem("theme", "white");
     } else {
       document.body.classList.add("body-dark");
       home.classList.add("container-dark");
@@ -161,6 +162,7 @@ export function formthemes(type) {
         a.classList.add("font-dark");
       });
       document.querySelector("p").classList.add("font-dark");
+      localStorage.setItem("theme", "dark");
     }
   }
 
@@ -174,6 +176,7 @@ export function formthemes(type) {
         a.classList.remove("font-dark");
       });
       document.querySelector("p").classList.remove("font-dark");
+      localStorage.setItem("theme", "white");
     } else {
       document.body.classList.add("body-dark");
       home.classList.add("container-dark");
@@ -181,6 +184,7 @@ export function formthemes(type) {
         a.classList.add("font-dark");
       });
       document.querySelector("p").classList.add("font-dark");
+      localStorage.setItem("theme", "white");
     }
   }
 
@@ -198,6 +202,7 @@ export function formthemes(type) {
         l.classList.remove("font-dark");
       });
       document.querySelector("p").classList.remove("font-dark");
+      localStorage.setItem("theme", "white");
     } else {
       document.body.classList.add("body-dark");
       home.classList.add("container-dark");
@@ -208,6 +213,7 @@ export function formthemes(type) {
         l.classList.add("font-dark");
       });
       document.querySelector("p").classList.add("font-dark");
+      localStorage.setItem("theme", "dark");
     }
   }
 }
@@ -221,6 +227,7 @@ export function homeThemeSwticher() {
   let anchors = document.querySelectorAll("a");
   let headers = document.querySelectorAll("h3");
   let ps = document.querySelectorAll("p");
+  let theme = window.location.href.split("theme=");
   if (document.body.classList.contains("body-dark")) {
     document.body.classList.toggle("body-dark");
     nav.classList.toggle("nav-dark");
@@ -234,6 +241,7 @@ export function homeThemeSwticher() {
     ps.forEach((p) => {
       p.classList.toggle("font-dark");
     });
+    localStorage.setItem("theme", "white");
   } else {
     document.body.classList.toggle("body-dark");
     nav.classList.toggle("nav-dark");
@@ -247,6 +255,7 @@ export function homeThemeSwticher() {
     ps.forEach((p) => {
       p.classList.toggle("font-dark");
     });
+    localStorage.setItem("theme", "dark");
   }
 }
 /**
@@ -255,4 +264,99 @@ export function homeThemeSwticher() {
  */
 export function hasDark() {
   return document.body.classList.contains("body-dark");
+}
+
+export function checkHomeTheme(theme) {
+  let nav = document.querySelector("nav");
+  let footer = document.querySelector("footer");
+  let anchors = document.querySelectorAll("a");
+  let headers = document.querySelectorAll("h3");
+  let ps = document.querySelectorAll("p");
+  if (theme !== "dark") {
+    document.body.classList.toggle("body-dark");
+    nav.classList.toggle("nav-dark");
+    footer.classList.toggle("dark-footer");
+    anchors.forEach((a) => {
+      a.classList.toggle("font-dark");
+    });
+    headers.forEach((h) => {
+      h.classList.toggle("font-dark");
+    });
+    ps.forEach((p) => {
+      p.classList.toggle("font-dark");
+    });
+    localStorage.setItem("theme", "white");
+  }
+  console.log(theme);
+}
+
+export function checkFormTheme(theme, type){
+  
+  if (type === "login") {
+    let home = document.querySelector(".home");
+    let anchors = document.querySelectorAll("a"); 
+    if (theme ==="white") {
+      document.body.classList.remove("body-dark");
+      home.classList.remove("container-dark");
+      anchors.forEach((a) => {
+        a.classList.remove("font-dark");
+      });
+      document.querySelector("p").classList.remove("font-dark");
+      localStorage.setItem("theme", "white");
+    } else if (theme="dark") {
+      document.body.classList.add("body-dark");
+      home.classList.add("container-dark");
+      anchors.forEach((a) => {
+        a.classList.add("font-dark");
+      });
+      document.querySelector("p").classList.add("font-dark");
+    }
+  }
+
+  if (type === "student") {
+    let home = document.querySelector(".container");
+    let anchors = document.querySelectorAll("a");
+    if (theme ==="white") {
+      document.body.classList.remove("body-dark");
+      home.classList.remove("container-dark");
+      anchors.forEach((a) => {
+        a.classList.remove("font-dark");
+      });
+      document.querySelector("p").classList.remove("font-dark");
+    } else if (theme="dark")  {
+      document.body.classList.add("body-dark");
+      home.classList.add("container-dark");
+      anchors.forEach((a) => {
+        a.classList.add("font-dark");
+      });
+      document.querySelector("p").classList.add("font-dark");
+    }
+  }
+
+  if (type === "teacher") {
+    let home = document.querySelector(".container");
+    let anchors = document.querySelectorAll("a");
+    let labels = document.querySelectorAll("label");
+    if (theme="white") {
+      document.body.classList.remove("body-dark");
+      home.classList.remove("container-dark");
+      anchors.forEach((a) => {
+        a.classList.remove("font-dark");
+      });
+      labels.forEach((l) => {
+        l.classList.remove("font-dark");
+      });
+      document.querySelector("p").classList.remove("font-dark");
+    } else if (theme="dark") {
+      document.body.classList.add("body-dark");
+      home.classList.add("container-dark");
+      anchors.forEach((a) => {
+        a.classList.add("font-dark");
+      });
+      labels.forEach((l) => {
+        l.classList.add("font-dark");
+      });
+      document.querySelector("p").classList.add("font-dark");
+    }
+  } 
 }

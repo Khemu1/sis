@@ -14,7 +14,6 @@ if (!isset($_SESSION["id"])) {
   header("Location: login.php");
   exit();
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,37 +31,37 @@ if (!isset($_SESSION["id"])) {
 <body class="body-dark">
   <div class="home">
     <nav class="nav-dark">
-      <div class="theme-switcher"">
-    <img src=" ../../assets/icons/theme icon.png">
+
+      <div class="theme-switcher""> 
+
+        <img src=" ../../assets/icons/theme icon.png">
+
       </div>
-      <a href="home.php?<?= $_SESSION["theme"] ? "theme=dark" : "theme=white" ?>" class="logo">
+      <a href="home.php" class="logo">
 
         <img class="main" src="../../assets/images/kemet-high-resolution-logo-transparent.svg">
         <img class="secondary" src="../../assets/images/kemet-high-resolution-logo-black-transparent.svg">
       </a>
 
       <div class="nav-buttons">
-        <a href="home.php?<?= $_SESSION["theme"] ? "theme=dark" : "theme=white" ?>" class="selected" id="home"
-          value="home">
+        <a href="home.php" class="selected" id="home" value="home">
           <p>Home</p>
         </a>
 
         <?php
         if ($_SESSION["type"] === "student") { ?>
-          <a href="home.php?page=courses&<?= $_SESSION["theme"] ? "theme=dark" : "theme=white" ?>" id="courses"
-            value="courses">
+          <a href="home.php?page=courses" id="courses" value="courses">
             <p>Courses</p>
           </a>
           <?php
         } else { ?>
-          <a href="home.php?page=courses&<?= $_SESSION["theme"] ? "theme=dark" : "theme=white" ?>" id="courses"
-            value="courses">
+          <a href="home.php?page=courses" id="courses" value="courses">
             <p>Participants</p>
           </a>
           <?php
         } ?>
 
-        <a href="home.php?page=about&<?= $_SESSION["theme"] ? "theme=dark" : "theme=white" ?>" id="about" value="about">
+        <a href="home.php?page=about" id="about" value="about">
           <p>About</p>
         </a>
 

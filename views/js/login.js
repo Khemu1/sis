@@ -1,4 +1,5 @@
 import * as utils from "./Utils.js";
+utils.checkFormTheme(localStorage.getItem("theme"), "login");
 const form = document.querySelector("form");
 let userNameField = document.querySelector(".user-name");
 let passwordField = document.querySelector(".password");
@@ -68,7 +69,7 @@ form.addEventListener("submit", async (e) => {
       userName: username,
       password: password,
       type: type,
-      theme: utils.hasDark()
+      theme: utils.hasDark(),
     }),
   });
 
@@ -77,7 +78,9 @@ form.addEventListener("submit", async (e) => {
     let responseData = await result.json();
     let stat = responseData.status;
     if (stat == "success") {
-      window.location.href = `http://sis.test/views/php/home.php?${utils.hasDark()? "dark":"white"}`;
+      window.location.href = `http://sis.test/views/php/home.php${
+        utils.hasDark() ? "" : "?theme=white"
+      }`;
     } else {
       utils.handelErrorDisplay(responseData.errors);
     }
@@ -85,5 +88,3 @@ form.addEventListener("submit", async (e) => {
     console.error("Error: " + result.statusText);
   }
 });
-
-

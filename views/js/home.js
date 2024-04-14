@@ -1,4 +1,5 @@
 import * as utils from "./Utils.js";
+utils.checkHomeTheme(localStorage.getItem("theme"));
 
 let buttons = document.querySelectorAll("button");
 let logo = document.querySelector(".logo");
