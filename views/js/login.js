@@ -2,6 +2,7 @@ import * as utils from "./Utils.js";
 const form = document.querySelector("form");
 let userNameField = document.querySelector(".user-name");
 let passwordField = document.querySelector(".password");
+let switcher = document.querySelector(".theme-switcher");
 
 userNameField.addEventListener("click", function (e) {
   if (userNameField.classList.contains("invalid"))
@@ -37,7 +38,9 @@ document.querySelectorAll("input[type=radio]").forEach((radio) => {
       document.querySelector(".invalid-login").classList.add("hide");
   });
 });
-
+switcher.addEventListener("click", function (e) {
+  utils.formthemes("login");
+});
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
   let formD = new FormData(form);
@@ -54,6 +57,8 @@ form.addEventListener("submit", async (e) => {
   hiddenInput.name = "type";
 
   hiddenInput.value = type;
+  let theme = utils.hasDark()
+  module.exports = { theme };
 
   form.appendChild(hiddenInput);
   let result = await fetch("../../controller/login.php", {
@@ -66,6 +71,7 @@ form.addEventListener("submit", async (e) => {
       userName: username,
       password: password,
       type: type,
+      theme: utils.hasDark()
     }),
   });
 
@@ -82,3 +88,5 @@ form.addEventListener("submit", async (e) => {
     console.error("Error: " + result.statusText);
   }
 });
+
+

@@ -20,6 +20,7 @@ body {
   background-color: #ecebeb;
 }
 .container {
+  position: relative;
   width: 350px;
   margin: 50px auto;
   text-align: center;
@@ -124,4 +125,38 @@ form a::before {
 
 form a:hover::before {
   width: 100%;
+}
+
+a.font-dark:before {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 0%;
+  bottom: -5px;
+  background-color: white;
+  transition: 0.3s ease-in-out;
+}
+
+a:hover::before {
+  width: 100%;
+}
+a.dark-font:hover::before {
+  width: 100%;
+}
+.body-dark {
+  background-color: #101a2b;
+  color: white !important;
+}
+.font-dark {
+  color: white !important;
+}
+.container-dark {
+  background-color: #003049;
+  color: white !important;
+  border: none;
+  box-shadow: 5px -6px 12px -1px #003049;
+}
+.theme-switcher {
+  cursor: pointer;
+  position: absolute;
 }

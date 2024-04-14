@@ -19,9 +19,12 @@ require_once ("../../models/Utils.php");
   <title>Kemet Sign Up</title>
 </head>
 
-<body>
+<body class="body-dark">
 
-  <div class="container" width="50" height="50" align="center">
+  <div class="container container-dark">
+    <div class="theme-switcher"">
+    <img src=" ../../assets/icons/theme icon.png">
+    </div>
     <div class="head">
       <img class="main" src="../../assets/images/kemet-high-resolution-logo-transparent-login.png">
       <img class="secondary" src="../../assets/images/kemet-high-resolution-logo-black-transparent-login.png">
@@ -47,11 +50,11 @@ require_once ("../../models/Utils.php");
         <div class="invalid-level hide">Invalid level: please enter a value between 1 and 2</div>
 
         <input type="submit" name="register" placeholder="Register" value="Register"><br>
-        <a href="login.php">Login</a>
+        <a class="font-dark" href="login.php">Login</a>
       </form>
     </div>
     <div class="footer">
-      <p>Powerd by Kemet SIS</p>
+      <p class="font-dark">Powerd by Kemet SIS</p>
     </div>
   </div>
 

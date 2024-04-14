@@ -1,3 +1,4 @@
+console.log(theme);
 let buttons = document.querySelectorAll("button");
 let logo = document.querySelector(".logo");
 let selectedValue = document.querySelector("selected");

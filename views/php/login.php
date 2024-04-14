@@ -9,8 +9,11 @@
   <title>login</title>
 </head>
 
-<body>
-  <div class="home">
+<body class="body-dark">
+  <div class="home container-dark">
+    <div class="theme-switcher"">
+    <img src=" ../../assets/icons/theme icon.png">
+    </div>
     <div class="head">
       <img class="main" src="../../assets/images/kemet-high-resolution-logo-transparent-login.png">
       <img class="secondary" src="../../assets/images/kemet-high-resolution-logo-black-transparent-login.png">
@@ -26,19 +29,19 @@
         </div>
         <input type="submit" name="login" class="submit" value="Login"><br>
         <div class="links">
-          <a class="link" href="StudentRegister.php">
+          <a class="link font-dark" href="StudentRegister.php">
             Register as a Student
           </a>
-          <a class="link" href="TecaherRegister.php">
+          <a class="link font-dark" href="TecaherRegister.php">
             Register as a Teacher
           </a>
         </div>
       </form>
     </div>
     <div class="footer">
-      <p>Powered by Kemet SIS</p>
+      <p class="font-dark">Powered by Kemet SIS</p>
     </div>
-    <a href="about.php">About us</a>
+    <a href="about.php" class="font-dark">About us</a>
   </div>
 </body>
 

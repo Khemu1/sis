@@ -6,6 +6,7 @@ let passwordField = document.querySelector(".password");
 let addressField = document.querySelector(".address");
 let levelField = document.querySelector(".level");
 const form = document.querySelector("form");
+let switcher = document.querySelector(".theme-switcher");
 
 userNameField.addEventListener("input", function (e) {
   let invalidUserName = document.querySelector(".invalid-user-name");
@@ -83,6 +84,10 @@ levelField.addEventListener("input", function (e) {
   utils.resetLevel(e);
 });
 
+switcher.addEventListener("click", function (e) {
+  utils.formthemes("student");
+});
+
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
   let formD = new FormData(form);
@@ -103,6 +108,7 @@ form.addEventListener("submit", async (e) => {
       password: password,
       address: address,
       level: level,
+      theme: utils.hasDark(),
     }),
   });
 
@@ -116,7 +122,6 @@ form.addEventListener("submit", async (e) => {
       console.log("yeeeeeeeeeeeeeees");
       window.location.href = `http://sis.test/views/php/home.php`;
     } else {
-
       utils.handelErrorDisplay(responseData.errors);
       console.log(responseData.message);
     }

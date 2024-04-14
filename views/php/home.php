@@ -95,5 +95,4 @@ if (!isset($_SESSION["id"])) {
 </body>
 
 </html>
-
 <script type="module" src="../js/home.js?t=<?= time() ?>"></script>

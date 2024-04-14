@@ -138,3 +138,96 @@ export function handelErrorDisplay(errors) {
     }
   });
 }
+
+/**
+ * used to switch themes in forms
+ * @param {String} type
+ */
+export function formthemes(type) {
+  if (type === "login") {
+    let home = document.querySelector(".home");
+    let anchors = document.querySelectorAll("a");
+    let dark = [];
+    if (document.querySelector(".body-dark")) dark.push("body");
+    if (document.querySelector(".container-dark")) dark.push("container");
+    if (document.querySelector("font-dark")) dark.push("fonts");
+    if (dark.length > 0) {
+      document.body.classList.remove("body-dark");
+      home.classList.remove("container-dark");
+      anchors.forEach((a) => {
+        a.classList.remove("font-dark");
+      });
+      document.querySelector("p").classList.remove("font-dark");
+    } else {
+      document.body.classList.add("body-dark");
+      home.classList.add("container-dark");
+      anchors.forEach((a) => {
+        a.classList.add("font-dark");
+      });
+      document.querySelector("p").classList.add("font-dark");
+    }
+  }
+
+  if (type === "student") {
+    let home = document.querySelector(".container");
+    let anchors = document.querySelectorAll("a");
+    let dark = [];
+    if (document.querySelector(".body-dark")) dark.push("body");
+    if (document.querySelector(".container-dark")) dark.push("container");
+    if (document.querySelector("font-dark")) dark.push("fonts");
+    if (dark.length > 0) {
+      document.body.classList.remove("body-dark");
+      home.classList.remove("container-dark");
+      anchors.forEach((a) => {
+        a.classList.remove("font-dark");
+      });
+      document.querySelector("p").classList.remove("font-dark");
+    } else {
+      document.body.classList.add("body-dark");
+      home.classList.add("container-dark");
+      anchors.forEach((a) => {
+        a.classList.add("font-dark");
+      });
+      document.querySelector("p").classList.add("font-dark");
+    }
+  }
+
+  if (type === "teacher") {
+    let home = document.querySelector(".container");
+    let anchors = document.querySelectorAll("a");
+    let labels = document.querySelectorAll("label");
+    let dark = [];
+    if (document.querySelector(".body-dark")) dark.push("body");
+    if (document.querySelector(".container-dark")) dark.push("container");
+    if (document.querySelector("font-dark")) dark.push("fonts");
+    if (dark.length > 0) {
+      document.body.classList.remove("body-dark");
+      home.classList.remove("container-dark");
+      anchors.forEach((a) => {
+        a.classList.remove("font-dark");
+      });
+      labels.forEach((l) => {
+        l.classList.remove("font-dark");
+      });
+      document.querySelector("p").classList.remove("font-dark");
+    } else {
+      document.body.classList.add("body-dark");
+      home.classList.add("container-dark");
+      anchors.forEach((a) => {
+        a.classList.add("font-dark");
+      });
+      labels.forEach((l) => {
+        l.classList.add("font-dark");
+      });
+      document.querySelector("p").classList.add("font-dark");
+    }
+  }
+}
+
+/**
+ * returns the current theme
+ * @returns boolean
+ */
+export function hasDark() {
+  return document.body.classList.contains("body-dark");
+}

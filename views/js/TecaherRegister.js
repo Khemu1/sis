@@ -6,6 +6,7 @@ let passwordField = document.querySelector(".password");
 let addressField = document.querySelector(".address");
 let courses = document.querySelectorAll(".course");
 const form = document.querySelector("form");
+let switcher = document.querySelector(".theme-switcher");
 
 userNameField.addEventListener("input", function (e) {
   let invalidUserName = document.querySelector(".invalid-user-name");
@@ -85,6 +86,10 @@ courses.forEach((course) => {
   });
 });
 
+switcher.addEventListener("click", function (e) {
+  utils.formthemes("teacher");
+});
+
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
   let allCourses = document.querySelectorAll(".course");
@@ -113,6 +118,7 @@ form.addEventListener("submit", async (e) => {
       password: password,
       address: address,
       courses: courses,
+      theme: utils.hasDark(),
     }),
   });
 

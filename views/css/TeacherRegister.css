@@ -160,3 +160,40 @@ form a:hover::before {
 .red {
   color: red;
 }
+
+a.font-dark:before {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 0%;
+  bottom: -5px;
+  background-color: white;
+  transition: 0.3s ease-in-out;
+}
+
+a:hover::before {
+  width: 100%;
+}
+a.dark-font:hover::before {
+  width: 100%;
+}
+.body-dark {
+  background-color: #101a2b;
+  color: white !important;
+}
+.container-dark {
+  background-color: #003049;
+  color: white !important;
+  border: none;
+  box-shadow: 5px -6px 12px -1px #003049;
+}
+.font-dark {
+  color: white !important;
+}
+.checkbox-content label {
+  color: #000 !important;
+}
+.theme-switcher {
+  cursor: pointer;
+  position: absolute;
+}

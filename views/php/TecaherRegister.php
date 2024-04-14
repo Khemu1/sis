@@ -21,9 +21,11 @@ require_once ("../../models/Utils.php");
   <title>Teacher Registration</title>
 </head>
 
-<body>
-
-  <div class="container">
+<body class="body-dark">
+  <div class="container container-dark">
+    <div class="theme-switcher"">
+    <img src=" ../../assets/icons/theme icon.png">
+    </div>
     <div class="head">
       <img class="main" src="../../assets/images/kemet-high-resolution-logo-transparent-login.png">
       <img class="secondary" src="../../assets/images/kemet-high-resolution-logo-black-transparent-login.png">
@@ -45,7 +47,7 @@ require_once ("../../models/Utils.php");
         <div class="invalid-address hide">Invalid address : The minimum length must be 6 characters and can contain
           numbers and sybmols like ",."</div>
         <div class="dropdown">
-          <label>Choose Courses</label>
+          <label class="font-dark">Choose Courses</label>
           <div class="dropdown-content">
             <div class="checkbox-content">
               <label>
@@ -154,7 +156,7 @@ require_once ("../../models/Utils.php");
         </div>
         <div class="invalid-courses hide">Invalid number of courses : Please choose atleast one course </div>
         <input type="submit" name="register" value="Register"><br>
-        <a href="login.php">Login</a>
+        <a class="font-dark" href="login.php">Login</a>
 
 
       </form>
