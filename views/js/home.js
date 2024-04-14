@@ -88,8 +88,7 @@ let courses1;
 
 if (
   window.location.href ==
-  ("http://sis.test/views/php/home.php?theme=white" ||
-    "http://sis.test/views/php/home.php?theme=dark")
+  ("http://sis.test/views/php/home.php")
 ) {
   logo.classList.add("white");
   document.querySelector(".main").classList.add("hide");
