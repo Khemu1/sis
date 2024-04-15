@@ -100,7 +100,7 @@ form.addEventListener("submit", async (e) => {
   let name = formD.get("name");
   let address = formD.get("address");
   let level = formD.get("level");
-  let result = await fetch("../../controller/StudentRegister.php", {
+  let result = await fetch("../../controllers/StudentRegister.php", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

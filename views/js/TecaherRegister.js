@@ -108,7 +108,7 @@ form.addEventListener("submit", async (e) => {
   let courses = formD.getAll("courses[]");
   console.log(courses);
   // starting the AJAX request
-  let result = await fetch("../../controller/TecaherRegister.php", {
+  let result = await fetch("../../controllers/TecaherRegister.php", {
     method: "POST",
     headers: {
       // used . The headers object is used to specify the content type of the request body

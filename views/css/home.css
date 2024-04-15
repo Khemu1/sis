@@ -61,10 +61,6 @@ nav .logo img {
   opacity: 0%;
   transition: 50ms ease-in-out;
 }
-.logo:hover .main {
-  opacity: 0%;
-}
-
 nav .nav-buttons {
   display: grid;
   grid: 1fr / repeat(3, max-content);

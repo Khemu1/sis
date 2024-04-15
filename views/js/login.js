@@ -60,7 +60,7 @@ form.addEventListener("submit", async (e) => {
 
   hiddenInput.value = type;
   form.appendChild(hiddenInput);
-  let result = await fetch("../../controller/login.php", {
+  let result = await fetch("../../controllers/login.php", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

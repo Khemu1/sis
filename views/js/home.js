@@ -87,13 +87,12 @@ let about = `<div class="about">
 let courses1;
 
 if (window.location.href == "http://sis.test/views/php/home.php") {
-  logo.classList.add("white");
 }
 
 // Fetching data from the backend
 async function fetchData() {
   try {
-    const response = await fetch("../../controller/dashboard.php");
+    const response = await fetch("../../controllers/dashboard.php");
     if (!response.ok) {
       throw new Error("Something is wrong with the response");
     }

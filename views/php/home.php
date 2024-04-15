@@ -65,11 +65,11 @@ if (!isset($_SESSION["id"])) {
 
 
         <input type="checkbox" id="switch" class="theme-switcher">
-        <label  for="switch"></label>
+        <label for="switch"></label>
 
         <!-- <div class="circle"> </div> -->
 
-        <a id="logout" href="http://sis.test/controller/logout.php">
+        <a id="logout" href="http://sis.test/controllers/logout.php">
           <p>Logout</p>
         </a>
       </div>
