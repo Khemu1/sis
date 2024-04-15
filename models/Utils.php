@@ -55,18 +55,6 @@ class Utils
      * @param array $checkboxes
      * @return array
      */
-    public static function checked($checkboxes)
-    {
-        $checked = [];
-        if ($checkboxes) {
-            foreach ($checkboxes as $checkbox) {
-                if ($checkbox['checked']) {
-                    $checked[] = $checkbox['value'];
-                }
-            }
-        }
-        return $checked;
-    }
 
     public static function validateStudentFields($fields): array
     {
