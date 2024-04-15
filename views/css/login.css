@@ -50,7 +50,6 @@ body {
   z-index: 1;
 }
 
-
 .home .body input[type="text"],
 .home .body input[type="password"] {
   width: calc(100% - 20px);
@@ -191,7 +190,7 @@ a.dark-font:hover::before {
   /* top: 0;
   left: 0; */
   background: linear-gradient(180deg, #777, #3a3a3a);
-
+  outline: 1px solid #3a3a3a;
   border-radius: 35px;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
   transition: 0.3s;
@@ -199,6 +198,7 @@ a.dark-font:hover::before {
 
 #theme-switcher:checked + label:after {
   background: linear-gradient(180deg, #ffcc89, #d8860b);
+  outline: 1px solid #d8860b;
 }
 #theme-switcher:checked + label {
   justify-content: right;

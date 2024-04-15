@@ -241,6 +241,8 @@ export function homeThemeSwticher() {
   let anchors = document.querySelectorAll("a");
   let headers = document.querySelectorAll("h3");
   let students = document.querySelectorAll(".student");
+  let courses = document.querySelectorAll(".course");
+
   let ps = document.querySelectorAll("p");
   if (document.body.classList.contains("body-dark")) {
     document.body.classList.toggle("body-dark");
@@ -258,32 +260,38 @@ export function homeThemeSwticher() {
     students.forEach((student) => {
       student.classList.toggle("student-dark");
     });
+    courses.forEach((course) => {
+      course.classList.toggle("course-dark");
+    });
     section.classList.remove("section-dark");
     document.querySelector(".main").classList.toggle("hide");
     document.querySelector("input.theme-switcher").checked = true;
     localStorage.setItem("theme", "white");
-  } else {
-    document.body.classList.toggle("body-dark");
-    nav.classList.toggle("nav-dark");
-    footer.classList.toggle("dark-footer");
-    anchors.forEach((a) => {
-      a.classList.toggle("font-dark");
-    });
-    headers.forEach((h) => {
-      h.classList.toggle("font-dark");
-    });
-    ps.forEach((p) => {
-      p.classList.toggle("font-dark");
-    });
-    students.forEach((student) => {
-      student.classList.toggle("student-dark");
-    });
-    section.classList.toggle("section-dark");
-    document.querySelector(".main").classList.toggle("hide");
-    document.querySelector("input.theme-switcher").checked = false;
-
-    localStorage.setItem("theme", "dark");
+    return;
   }
+  document.body.classList.toggle("body-dark");
+  nav.classList.toggle("nav-dark");
+  footer.classList.toggle("dark-footer");
+  anchors.forEach((a) => {
+    a.classList.toggle("font-dark");
+  });
+  headers.forEach((h) => {
+    h.classList.toggle("font-dark");
+  });
+  ps.forEach((p) => {
+    p.classList.toggle("font-dark");
+  });
+  students.forEach((student) => {
+    student.classList.toggle("student-dark");
+  });
+  courses.forEach((course) => {
+    course.classList.toggle("course-dark");
+  });
+  section.classList.toggle("section-dark");
+  document.querySelector(".main").classList.toggle("hide");
+  document.querySelector("input.theme-switcher").checked = false;
+
+  localStorage.setItem("theme", "dark");
 }
 /**
  * returns the current theme
@@ -301,6 +309,7 @@ export function checkHomeTheme(theme) {
   let headers = document.querySelectorAll("h3");
   let ps = document.querySelectorAll("p");
   let students = document.querySelectorAll(".student");
+  let courses = document.querySelectorAll(".course");
 
   if (theme !== "dark") {
     document.body.classList.toggle("body-dark");
@@ -317,6 +326,9 @@ export function checkHomeTheme(theme) {
     });
     students.forEach((student) => {
       student.classList.toggle("student-dark");
+    });
+    courses.forEach((course) => {
+      course.classList.toggle("course-dark");
     });
     section.classList.toggle("section-dark");
     document.querySelector(".main").classList.toggle("hide");
