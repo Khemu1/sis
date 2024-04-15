@@ -248,14 +248,20 @@ section {
   padding: 10px;
 }
 .courses-info {
+  display: flex;
+  flex-direction: column;
   padding: 10px;
+  gap: 15px;
 }
 .course {
   display: grid;
   grid: repeat(1, auto) / repeat(3, 3fr);
-  border-bottom: 1px solid #33333371;
+  border-bottom: 1px solid transparent;
   margin-bottom: 5px;
   justify-items: center;
+  background-color: #f0f0f0;
+  padding: 5px;
+  border-radius: 15px;
 }
 .courses-info :last-child {
   border: none;
@@ -436,7 +442,9 @@ nav.nav-dark {
 .student-dark {
   background: #18242f;
 }
-
+.course-dark {
+  background: #18242f;
+}
 .info-dark {
   background: #18242f;
   padding: 20px;

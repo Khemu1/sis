@@ -323,7 +323,6 @@ export function checkHomeTheme(theme) {
     localStorage.setItem("theme", "white");
     document.querySelector("input.theme-switcher").checked = true;
   }
-  console.log(theme);
 }
 
 export function checkFormTheme(theme, type) {
@@ -343,9 +342,6 @@ export function checkFormTheme(theme, type) {
     }
     document.body.classList.add("body-dark");
     home.classList.add("container-dark");
-    // anchors.forEach((a) => {
-    //   a.classList.toggle("font-dark");
-    // });
     document.querySelector("p").classList.add("font-dark");
     document.querySelector("input.theme-switcher").checked = false;
     localStorage.setItem("theme", "black");

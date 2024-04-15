@@ -179,7 +179,11 @@ function studentContent(info, courses) {
   courses1 = `<div class="courses">
   <h2>Enrolled Courses</h2>
   <div class="courses-info">
-    <div class="course">
+    <div  ${
+      localStorage.getItem("theme") === "dark"
+        ? "class='course course-dark'"
+        : "class= course"
+    }>
       <p class="${
         localStorage.getItem("theme") === "dark" ? "font-dark" : ""
       }">Course</p>
@@ -193,7 +197,11 @@ function studentContent(info, courses) {
 
   courses.forEach((course) => {
     courses1 += `
-    <div class="course">
+    <div ${
+      localStorage.getItem("theme") === "dark"
+        ? "class='course course-dark'"
+        : "class= course"
+    }>
       <p class="${
         localStorage.getItem("theme") === "dark" ? "font-dark" : ""
       }">${course.name}</p>
@@ -288,9 +296,3 @@ function teacherContent(info, courses) {
 
 // Fetch data and update variables
 fetchDataAndUpdateVariable();
-
-document.querySelector("input").addEventListener("click", function () {
-  if (document.querySelector("input").checked) {
-    console.log("checked");
-  }
-});
