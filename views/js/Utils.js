@@ -154,16 +154,21 @@ export function formthemes(type) {
         a.classList.remove("font-dark");
       });
       document.querySelector("p").classList.remove("font-dark");
+      document.querySelector(".main").classList.toggle("hide");
+      document.querySelector("input.theme-switcher").checked = true;
       localStorage.setItem("theme", "white");
-    } else {
-      document.body.classList.add("body-dark");
-      home.classList.add("container-dark");
-      anchors.forEach((a) => {
-        a.classList.add("font-dark");
-      });
-      document.querySelector("p").classList.add("font-dark");
-      localStorage.setItem("theme", "dark");
+      return;
     }
+
+    document.body.classList.add("body-dark");
+    home.classList.add("container-dark");
+    anchors.forEach((a) => {
+      a.classList.add("font-dark");
+    });
+    document.querySelector("p").classList.add("font-dark");
+    document.querySelector("input.theme-switcher").checked = false;
+    document.querySelector(".main").classList.toggle("hide");
+    localStorage.setItem("theme", "dark");
   }
 
   if (type === "student") {
@@ -176,16 +181,20 @@ export function formthemes(type) {
         a.classList.remove("font-dark");
       });
       document.querySelector("p").classList.remove("font-dark");
+      document.querySelector("input.theme-switcher").checked = true;
+      document.querySelector(".main").classList.toggle("hide");
       localStorage.setItem("theme", "white");
-    } else {
-      document.body.classList.add("body-dark");
-      home.classList.add("container-dark");
-      anchors.forEach((a) => {
-        a.classList.add("font-dark");
-      });
-      document.querySelector("p").classList.add("font-dark");
-      localStorage.setItem("theme", "dark");
+      return;
     }
+    document.body.classList.add("body-dark");
+    home.classList.add("container-dark");
+    anchors.forEach((a) => {
+      a.classList.add("font-dark");
+    });
+    document.querySelector("p").classList.add("font-dark");
+    document.querySelector("input.theme-switcher").checked = false;
+    document.querySelector(".main").classList.toggle("hide");
+    localStorage.setItem("theme", "dark");
   }
 
   if (type === "teacher") {
@@ -202,19 +211,23 @@ export function formthemes(type) {
         l.classList.remove("font-dark");
       });
       document.querySelector("p").classList.remove("font-dark");
+      document.querySelector("input.theme-switcher").checked = true;
+      document.querySelector(".main").classList.toggle("hide");
       localStorage.setItem("theme", "white");
-    } else {
-      document.body.classList.add("body-dark");
-      home.classList.add("container-dark");
-      anchors.forEach((a) => {
-        a.classList.add("font-dark");
-      });
-      labels.forEach((l) => {
-        l.classList.add("font-dark");
-      });
-      document.querySelector("p").classList.add("font-dark");
-      localStorage.setItem("theme", "dark");
+      return;
     }
+    document.body.classList.add("body-dark");
+    home.classList.add("container-dark");
+    anchors.forEach((a) => {
+      a.classList.add("font-dark");
+    });
+    labels.forEach((l) => {
+      l.classList.add("font-dark");
+    });
+    document.querySelector("p").classList.add("font-dark");
+    document.querySelector("input.theme-switcher").checked = false;
+    document.querySelector(".main").classList.toggle("hide");
+    localStorage.setItem("theme", "dark");
   }
 }
 /**
@@ -223,9 +236,11 @@ export function formthemes(type) {
  */
 export function homeThemeSwticher() {
   let nav = document.querySelector("nav");
+  let section = document.querySelector("section");
   let footer = document.querySelector("footer");
   let anchors = document.querySelectorAll("a");
   let headers = document.querySelectorAll("h3");
+  let students = document.querySelectorAll(".student");
   let ps = document.querySelectorAll("p");
   if (document.body.classList.contains("body-dark")) {
     document.body.classList.toggle("body-dark");
@@ -240,6 +255,12 @@ export function homeThemeSwticher() {
     ps.forEach((p) => {
       p.classList.toggle("font-dark");
     });
+    students.forEach((student) => {
+      student.classList.toggle("student-dark");
+    });
+    section.classList.remove("section-dark");
+    document.querySelector(".main").classList.toggle("hide");
+    document.querySelector("input.theme-switcher").checked = true;
     localStorage.setItem("theme", "white");
   } else {
     document.body.classList.toggle("body-dark");
@@ -254,6 +275,13 @@ export function homeThemeSwticher() {
     ps.forEach((p) => {
       p.classList.toggle("font-dark");
     });
+    students.forEach((student) => {
+      student.classList.toggle("student-dark");
+    });
+    section.classList.toggle("section-dark");
+    document.querySelector(".main").classList.toggle("hide");
+    document.querySelector("input.theme-switcher").checked = false;
+
     localStorage.setItem("theme", "dark");
   }
 }
@@ -267,10 +295,13 @@ export function hasDark() {
 
 export function checkHomeTheme(theme) {
   let nav = document.querySelector("nav");
+  let section = document.querySelector("section");
   let footer = document.querySelector("footer");
   let anchors = document.querySelectorAll("a");
   let headers = document.querySelectorAll("h3");
   let ps = document.querySelectorAll("p");
+  let students = document.querySelectorAll(".student");
+
   if (theme !== "dark") {
     document.body.classList.toggle("body-dark");
     nav.classList.toggle("nav-dark");
@@ -284,7 +315,13 @@ export function checkHomeTheme(theme) {
     ps.forEach((p) => {
       p.classList.toggle("font-dark");
     });
+    students.forEach((student) => {
+      student.classList.toggle("student-dark");
+    });
+    section.classList.toggle("section-dark");
+    document.querySelector(".main").classList.toggle("hide");
     localStorage.setItem("theme", "white");
+    document.querySelector("input.theme-switcher").checked = true;
   }
   console.log(theme);
 }
@@ -297,18 +334,21 @@ export function checkFormTheme(theme, type) {
       document.body.classList.remove("body-dark");
       home.classList.remove("container-dark");
       anchors.forEach((a) => {
-        a.classList.remove("font-dark");
+        a.classList.toggle("font-dark");
       });
-      document.querySelector("p").classList.remove("font-dark");
+      document.querySelector(".main").classList.toggle("hide");
       localStorage.setItem("theme", "white");
-    } else if ((theme = "dark")) {
-      document.body.classList.add("body-dark");
-      home.classList.add("container-dark");
-      anchors.forEach((a) => {
-        a.classList.add("font-dark");
-      });
-      document.querySelector("p").classList.add("font-dark");
+      document.querySelector("input.theme-switcher").checked = true;
+      return;
     }
+    document.body.classList.add("body-dark");
+    home.classList.add("container-dark");
+    // anchors.forEach((a) => {
+    //   a.classList.toggle("font-dark");
+    // });
+    document.querySelector("p").classList.add("font-dark");
+    document.querySelector("input.theme-switcher").checked = false;
+    localStorage.setItem("theme", "black");
   }
 
   if (type === "student") {
@@ -321,14 +361,17 @@ export function checkFormTheme(theme, type) {
         a.classList.remove("font-dark");
       });
       document.querySelector("p").classList.remove("font-dark");
-    } else if ((theme = "dark")) {
-      document.body.classList.add("body-dark");
-      home.classList.add("container-dark");
-      anchors.forEach((a) => {
-        a.classList.add("font-dark");
-      });
-      document.querySelector("p").classList.add("font-dark");
+      document.querySelector(".main").classList.toggle("hide");
+      document.querySelector("input.theme-switcher").checked = true;
+      return;
     }
+    document.body.classList.add("body-dark");
+    home.classList.add("container-dark");
+    anchors.forEach((a) => {
+      a.classList.add("font-dark");
+    });
+    document.querySelector("p").classList.add("font-dark");
+    document.querySelector("input.theme-switcher").checked = false;
   }
 
   if (type === "teacher") {
@@ -345,16 +388,19 @@ export function checkFormTheme(theme, type) {
         l.classList.remove("font-dark");
       });
       document.querySelector("p").classList.remove("font-dark");
-    } else if (theme === "dark") {
-      document.body.classList.add("body-dark");
-      home.classList.add("container-dark");
-      anchors.forEach((a) => {
-        a.classList.add("font-dark");
-      });
-      labels.forEach((l) => {
-        l.classList.add("font-dark");
-      });
-      document.querySelector("p").classList.add("font-dark");
+      document.querySelector(".main").classList.toggle("hide");
+      document.querySelector("input.theme-switcher").checked = true;
+      return;
     }
+    document.body.classList.add("body-dark");
+    home.classList.add("container-dark");
+    anchors.forEach((a) => {
+      a.classList.add("font-dark");
+    });
+    labels.forEach((l) => {
+      l.classList.add("font-dark");
+    });
+    document.querySelector("p").classList.add("font-dark");
+    document.querySelector("input.theme-switcher").checked = false;
   }
 }

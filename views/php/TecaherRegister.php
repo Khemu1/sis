@@ -23,12 +23,11 @@ require_once ("../../models/Utils.php");
 
 <body class="body-dark">
   <div class="container container-dark">
-    <div class="theme-switcher"">
-    <img src=" ../../assets/icons/theme icon.png">
-    </div>
+    <input type="checkbox" id="theme-switcher" class="theme-switcher">
+    <label class="switch" for="theme-switcher"></label>
     <div class="head">
-      <img class="main" src="../../assets/images/kemet-high-resolution-logo-transparent-login.png">
-      <img class="secondary" src="../../assets/images/kemet-high-resolution-logo-black-transparent-login.png">
+      <img class="main hide" src="../../assets/images/kemet-high-resolution-logo-transparent.svg">
+      <img class="secondary" src="../../assets/images/kemet-high-resolution-logo-black-transparent.svg">
     </div>
     <div class="body">
       <h3>Teacher Registertion Form</h3>

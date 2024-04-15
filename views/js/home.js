@@ -86,12 +86,8 @@ let about = `<div class="about">
 
 let courses1;
 
-if (
-  window.location.href ==
-  ("http://sis.test/views/php/home.php")
-) {
+if (window.location.href == "http://sis.test/views/php/home.php") {
   logo.classList.add("white");
-  document.querySelector(".main").classList.add("hide");
 }
 
 // Fetching data from the backend
@@ -244,7 +240,11 @@ function teacherContent(info, courses) {
   courses1 = `<div class="students">
   <h2>Enrolled Students</h2>
   <div class="enrolled-students">
-    <div class="student">
+    <div ${
+      localStorage.getItem("theme") === "dark"
+        ? "class='student student-dark'"
+        : "class= student "
+    }>
       <p ${
         localStorage.getItem("theme") === "dark" ? "class='font-dark'" : ""
       }>Course</p>
@@ -261,7 +261,11 @@ function teacherContent(info, courses) {
 
   courses.forEach((course) => {
     courses1 += `
-    <div class="student">
+    <div ${
+      localStorage.getItem("theme") === "dark"
+        ? "class='student student-dark'"
+        : "class= student "
+    }>
       <p ${
         localStorage.getItem("theme") === "dark" ? "class='font-dark'" : ""
       }>${course.courseName}</p>
@@ -284,3 +288,9 @@ function teacherContent(info, courses) {
 
 // Fetch data and update variables
 fetchDataAndUpdateVariable();
+
+document.querySelector("input").addEventListener("click", function () {
+  if (document.querySelector("input").checked) {
+    console.log("checked");
+  }
+});

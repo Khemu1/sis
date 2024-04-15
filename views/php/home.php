@@ -32,47 +32,51 @@ if (!isset($_SESSION["id"])) {
   <div class="home">
     <nav class="nav-dark">
 
-      <div class="theme-switcher""> 
-
-        <img src=" ../../assets/icons/theme icon.png">
-
-      </div>
       <a href="home.php" class="logo">
 
-        <img class="main" src="../../assets/images/kemet-high-resolution-logo-transparent.svg">
+        <img class="main hide" src="../../assets/images/kemet-high-resolution-logo-transparent.svg">
         <img class="secondary" src="../../assets/images/kemet-high-resolution-logo-black-transparent.svg">
       </a>
 
       <div class="nav-buttons">
-        <a href="home.php" class="selected" id="home" value="home">
-          <p>Home</p>
+        <a class="font-dark" href="home.php" id="home" value="home">
+          <p class="font-dark">Home</p>
         </a>
 
         <?php
         if ($_SESSION["type"] === "student") { ?>
-          <a href="home.php?page=courses" id="courses" value="courses">
-            <p>Courses</p>
+          <a class="font-dark" href="home.php?page=courses" id="courses" value="courses">
+            <p class="font-dark">Courses</p>
           </a>
           <?php
         } else { ?>
-          <a href="home.php?page=courses" id="courses" value="courses">
-            <p>Participants</p>
+          <a class="font-dark" href="home.php?page=courses" id="courses" value="courses">
+            <p class="font-dark">Participants</p>
           </a>
           <?php
         } ?>
 
-        <a href="home.php?page=about" id="about" value="about">
-          <p>About</p>
+        <a class="font-dark" href="home.php?page=about" id="about" value="about">
+          <p class="font-dark">About</p>
         </a>
 
       </div>
-      <a id="logout" href="http://sis.test/controller/logout.php">
-        <p>Logout</p>
-      </a>
+      <div class="right">
+
+
+        <input type="checkbox" id="switch" class="theme-switcher">
+        <label  for="switch"></label>
+
+        <!-- <div class="circle"> </div> -->
+
+        <a id="logout" href="http://sis.test/controller/logout.php">
+          <p>Logout</p>
+        </a>
+      </div>
     </nav>
 
 
-    <section>
+    <section class="section-dark">
     </section>
     <footer class="dark-footer">
       <div class="footer-content">
