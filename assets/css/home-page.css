@@ -1,0 +1,228 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'open Sans', sans-serif;
+  }
+  
+  body {
+    height: 100dvh;
+    background-color: #000;
+    background-image: url('../assets/84a4ec0c6c5a805770cb7bff5bae6591.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .nav-links li {  
+    list-style: none; 
+    display: inline-block; 
+   /* display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 2rem;
+   
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    transition: 50.5s; */
+    margin-right: 2rem;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+  }
+  
+  a:hover {
+    color: orange;
+  }
+  
+  header {
+    position: relative;
+    padding: 0 2rem;
+  }
+  
+  .navbar {
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .navbar .logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+   
+  }
+
+  .navbar .toggle_btn {
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;/*From line 65 to 80 by an extension*/
+    display: none; 
+  }
+  .action-btn {
+    background-color: orange;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale 0.5s ease;
+  }
+  
+  .action-btn:hover {
+    background-color: #fff;
+    color: orange;
+  }
+  .action-btn:active{
+    scale: 0.95;
+  }
+/*   
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    width: 200px;
+    height: 0px;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .dropdown-menu li { i took this from extension also
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  } */
+
+  .dropdown-menu{
+    position: relative;
+    right: 0;
+    top: 60px;
+    height: 0;
+    width: 300px;
+    background-color: rgba(255, 255, 255,0.1);
+    backdrop-filter:blur(15px);
+    border-radius: 10px;
+    display: none;
+    transition: height .2s cubic-bezier(0.075, 0.82, 0.165, 1) ;
+    overflow: hidden;
+}
+
+  .dropdown-menu.open{
+    height: auto;
+  }
+
+
+
+  .dropdown-menu li {
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+
+  } 
+
+.dropdown-menu .action-btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+}
+  /* responsive  */
+
+
+@media (max-width: 992px) {
+  .navbar .nav-links,
+  .navbar .action-btn {
+    display: none; /* Hide navigation links and action button on small screens */
+  }
+  .navbar .toggle-btn {
+    display: block; /* Show toggle button on small screens */
+  }
+  .dropdown-menu {
+    display: block; /* Ensure dropdown is visible on small screens */
+  }
+}
+
+footer {
+  background-color: #343434;
+  padding-top: 50px;
+}
+
+.footer-form {
+  width: 1140px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.footer {
+  width: 33%;
+}
+
+h3 {
+  font-size: 30px;
+  margin-bottom: 15px;
+  text-align: center;
+  color: #fff;
+  margin-left:40px ;
+}
+
+.footer-content p {
+  width: 1140px;
+  margin: auto;
+  padding: 7px;
+  color: #fff;
+}
+
+.footer-content ul {
+  text-align: center;
+  list-style: none;
+  padding: 0;
+}
+
+.footer-content ul li {
+  margin-bottom: 10px;
+}
+
+.footer-content ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-content ul li a:hover {
+  color: #ccc;
+}
+
+.socials {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.socials li {
+  margin-right: 10px;
+}
+
+.socials li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.bottom-bar {
+  text-align: center;
+  color: #ccc;
+  margin-top: 30px;
+}
