@@ -1,13 +1,12 @@
 <?php
 require_once ("../config/setup.php");
-require_once ("../classes/Accounts.php");
-require_once ("../classes/Courses.php");
-require_once ("../classes/Enrollment.php");
-require_once ("../classes/Students.php");
-require_once ("../classes/Teachers.php");
-require_once ("../classes/Teaches.php");
-require_once ("../classes/Utils.php");
-
+require_once ("../models/Accounts.php");
+require_once ("../models/Courses.php");
+require_once ("../models/Enrollment.php");
+require_once ("../models/Students.php");
+require_once ("../models/Teachers.php");
+require_once ("../models/Teaches.php");
+require_once ("../models/Utils.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">

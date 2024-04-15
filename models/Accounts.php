@@ -36,6 +36,4 @@ class Accounts
   {
     return DB::select(self::$table, $columns, $data);
   }
-
-
 }
