@@ -8,8 +8,12 @@ class Teachers
 
 
   /**
-   * Returns all the specified columns of the table
-   * @return array an associative array of rows
+   * Selects rows from the Teachers table based on the provided columns and data.
+   *
+   * @param array $columns An array of columns to be selected from the table.
+   * @param array $data An associative array of data to be used for filtering or sorting the results.
+   *
+   * @return array An associative array of rows matching the provided criteria.
    */
   public static function select(array $columns, array $data): array
   {
