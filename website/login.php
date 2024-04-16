@@ -26,8 +26,9 @@
                     <input type="radio" id="Student" name="yes" value="student" required>
                     <label for="student">Student</label>
                 </div>
-
-                <input type="submit" value="Login">
+                <div class="submit">
+                    <input type="submit" value="Login">
+                </div>
                 <div class="copyright">
                     <a href="#">Don't have Account?</a>
                     <p>Powered by kemet</p>

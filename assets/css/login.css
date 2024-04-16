@@ -55,7 +55,7 @@ body {
 
 .radio-group {
   display: flex;
-  justify-content: center;
+  justify-content: left;
   gap: 18px;
 }
 
