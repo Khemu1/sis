@@ -45,7 +45,6 @@ require_once ("../models/Utils.php");
 
 <?php
 
-
 if (isset($_Post["register"])) {
   $userName = $_Post["userName"];
   $name = $_Post["name"];
@@ -54,7 +53,10 @@ if (isset($_Post["register"])) {
   $level = $_Post["level"];
 
   if (count(Accounts::select(["userName"], ["userName" => $userName])) > 0) {
-    echo "invalid username";
+    echo "Used username";
+  }else{
+    Accounts::insert(["userName" => $userName]);
+    Enrollment::enroll();
   }
 }
 ?>
