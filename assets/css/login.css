@@ -13,9 +13,9 @@ body {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  height: 100vh;
-  padding: 20px;
-  border-radius: 8px;
+
+
+
   width: 350px;
 }
 
