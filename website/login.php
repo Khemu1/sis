@@ -18,7 +18,7 @@
 
             <input type="text" placeholder="Username" required>
             <input type="password" placeholder="Password" required>
-            <div>
+            <div class=child-login>
                 <div class="radio-group">
                     <input type="radio" id="Teacher" name="yes" value="Teacher" required>
                     <label for="Teacher">Teacher</label>
