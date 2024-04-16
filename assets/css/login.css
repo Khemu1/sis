@@ -1,38 +1,37 @@
 body {
-  font-family: Arial, sans-serif;
 
+  display: flex;
+  align-items: center;
+  height: 100vh;
   background: linear-gradient(to bottom right, #90938b, #f1f0df);
+  justify-content: center;
 }
 
-.login-form {
+
+
+.login form {
   display: flex;
   justify-content: center;
-
-  align-items: center;
-
   height: 100vh;
-
+  padding: 20px;
+  border-radius: 8px;
 }
-
 
 .parent-login {
   background: linear-gradient(to bottom right, #f5f5f5, #e7d8ca);
-  ;
   padding: 30px;
   border-radius: 8px;
   height: 35%;
-
 }
+
 
 .parent-login form {
   display: flex;
   flex-direction: column;
-
 }
 
 .parent-login input[type="text"],
 .parent-login input[type="password"] {
-
   padding: 10px;
   margin-bottom: 30px;
   border: none;
@@ -42,8 +41,12 @@ body {
 
 }
 
-.parent-login input[type="submit"] {
+.parent-login input[type="radio-group"] {
+  display: inline-block;
+  margin-right: 10px;
+}
 
+.parent-login input[type="submit"] {
   padding: 10px;
   background: linear-gradient(to right, #4CAF50, #45a049);
   color: white;
@@ -53,19 +56,12 @@ body {
   margin: 10px;
 }
 
-.parent-login input[type="radio-group"] {
-  display: inline-block;
-  margin-right: 10px;
-}
-
 .parent-login input[type="submit"]:hover {
-  background: linear-gradient(to right, #45a049, #4CAF50);
-
+  background: blue;
 }
 
 .parent-login a {
   border-bottom: 2px solid #4CAF50;
-  display: inline-block;
   padding-bottom: 5px;
   margin-bottom: 10px;
 }
