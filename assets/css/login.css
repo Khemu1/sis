@@ -12,9 +12,11 @@ body {
 .login form {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   height: 100vh;
   padding: 20px;
   border-radius: 8px;
+  width: 350px;
 }
 
 .parent-login {
@@ -24,6 +26,16 @@ body {
   height: 35%;
 }
 
+.h1 {
+  margin-inline: auto;
+
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
 
 .parent-login form {
   display: flex;
