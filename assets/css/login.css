@@ -54,8 +54,9 @@ div {
 }
 
 .parent-login input[type="radio-group"] {
-  display: inline-block;
-  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
 }
 
 .parent-login input[type="submit"] {
@@ -80,5 +81,11 @@ div {
   border-bottom: 3px solid #4CAF50;
   padding-bottom: 5px;
   margin-bottom: 10px;
+  text-align: center;
+}
+
+.parent-login input[type="copyright"] {
+  display: flex;
+  flex-direction: column;
   text-align: center;
 }
