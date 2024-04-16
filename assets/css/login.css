@@ -56,7 +56,7 @@ body {
   cursor: pointer;
   margin: 10px;
   text-align: center;
-  justify-content: center;
+  align-items: center;
 }
 
 .parent-login input[type="submit"]:hover {
