@@ -26,7 +26,7 @@ body {
 
 
 .parent-login form {
-
+  display: flex;
   flex-direction: column;
 }
 
@@ -52,7 +52,7 @@ body {
   background: linear-gradient(to right, #4CAF50, #45a049);
   color: white;
   border: none;
-  border-radius: 3px;
+  border-radius: 4px;
   cursor: pointer;
   width: 80%;
   margin: 10px;
