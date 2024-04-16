@@ -48,7 +48,7 @@ body {
 
 .parent-login input[type="submit"] {
   padding: 10px;
-  padding-right: 40px;
+  padding-right: 80px;
   background: linear-gradient(to right, #4CAF50, #45a049);
   color: white;
   border: none;
