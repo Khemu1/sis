@@ -55,6 +55,7 @@ if (isset($_POST["register"])) {
         <input type="text" name="userName" class="user-name" placeholder="UserName"><br>
         <?php
         echo $arr["userName"] ?? " ";
+        echo $arr["account"] ?? " ";
         ?>
         <input type="text" name="name" class="name" placeholder="name"><br>
         <?php
