@@ -53,7 +53,7 @@ div {
 
 }
 
-.parent-login input[type="radio-group"] {
+.radio-group {
   display: flex;
   justify-content: center;
   gap: 18px;
