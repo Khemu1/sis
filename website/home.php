@@ -17,10 +17,9 @@
     <nav>
       <div class="logo"><a href="#">kemet</a></div>
       <div class="nav-links">
-        <li><a href="main">Home</a></li>
-        <li><a href="about">About</a></li>
-        <li><a href="support">Support</a></li>
-        <li><a href="contact us">Contact</a></li>
+        <li><a href="home.php">Home</a></li>
+        <li><a href="home.php?page=courses">courses</a></li>
+        <li><a href="home.php?page=about">about</a></li>
       </div>
       <a href="#" class="logout">logout</a>
     </nav>
@@ -29,7 +28,7 @@
     
       <div class="about">
           <div class=" about-container">
-            <h3  </h3>
+            <h3></h3>
             <div class="img-container">
               <img src="../assets/images/dedicated-server-bg.jpg">
             </div>
