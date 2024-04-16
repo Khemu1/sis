@@ -1,7 +1,5 @@
 import * as utils from "./Utils.js";
 
-if (!localStorage.getItem("theme")) localStorage.setItem("theme", "dark");
-
 utils.checkHomeTheme(localStorage.getItem("theme"));
 
 let buttons = document.querySelectorAll("button");

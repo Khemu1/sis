@@ -312,6 +312,8 @@ export function checkHomeTheme(theme) {
   let courses = document.querySelectorAll(".course");
 
   if (theme !== "dark") {
+    console.log(theme);
+    console.log("switcing");
     document.body.classList.toggle("body-dark");
     nav.classList.toggle("nav-dark");
     footer.classList.toggle("dark-footer");
@@ -356,7 +358,7 @@ export function checkFormTheme(theme, type) {
     home.classList.add("container-dark");
     document.querySelector("p").classList.add("font-dark");
     document.querySelector("input.theme-switcher").checked = false;
-    localStorage.setItem("theme", "black");
+    localStorage.setItem("theme", "dark");
   }
 
   if (type === "student") {
