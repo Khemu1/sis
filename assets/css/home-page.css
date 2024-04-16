@@ -2,12 +2,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "open Sans", sans-serif;
+  font-family: "open Sans", 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 body {
   height: 100vh;
-  background-color: #000;
+  background-color: #eee;
   background-image: url("../assets/84a4ec0c6c5a805770cb7bff5bae6591.jpg");
   background-size: cover;
   background-position: center;
@@ -172,3 +172,45 @@ footer {
   text-align: center;
   color: #ccc;
 }
+ h2 {
+  font-size: 35px;
+  color: rgb(228, 78, 18);
+  padding: 20px;
+  }
+.student-table-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
+.students {
+  display: flex;
+  justify-content: space-between;
+  width: 100%; 
+  background-color: #f2f2f2;
+  padding: 10px;
+  border-radius: 15px;
+  font-size: 23px;
+  text-align: center;
+}
+
+.students > div {
+  /* Remove inline styles and set flex-grow for potential overflow */
+  flex: 1; /* Allow titles to grow and fill available space */
+}
+
+.student-table {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /*4 ==> columns that we need  */
+  grid-gap: 10px; /* the spaces between cells */
+  margin-top: 10px; 
+  max-width: 800px;
+}
+.students > div {
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ddd;
+   border-radius: 15px;
+}
+
+

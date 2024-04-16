@@ -26,7 +26,7 @@
 
     <section>
     
-      <div class="about">
+      <!-- <div class="about">
           <div class=" about-container">
             <h3></h3>
             <div class="img-container">
@@ -84,7 +84,66 @@
               for students, teachers, and administrators alike. </p>
           </div>
         </div>
-    </section>
+    </section> -->
+    <h2>Enrolled Student</h2>
+<div class="student-table-container">
+  <div class="students">
+    <div class="">Course</div>
+    <div class="">Level</div>
+    <div class="">Hours</div>
+    <div class="">Student Name</div>
+  </div>
+    <div class="students">
+    <div class="">Course</div>
+    <div class="">Level</div>
+    <div class="">Hours</div>
+    <div class="">Student Name</div>
+  </div>
+    <div class="students">
+    <div class="">Course</div>
+    <div class="">Level</div>
+    <div class="">Hours</div>
+    <div class="">Student Name</div>
+  </div>
+    <div class="students">
+    <div class="">Course</div>
+    <div class="">Level</div>
+    <div class="">Hours</div>
+    <div class="">Student Name</div>
+  </div>
+      <div class="students">
+    <div class="">Course</div>
+    <div class="">Level</div>
+    <div class="">Hours</div>
+    <div class="">Student Name</div>
+  </div>
+      <div class="students">
+    <div class="">Course</div>
+    <div class="">Level</div>
+    <div class="">Hours</div>
+    <div class="">Student Name</div>
+  </div>
+      <div class="students">
+    <div class="">Course</div>
+    <div class="">Level</div>
+    <div class="">Hours</div>
+    <div class="">Student Name</div>
+  </div>
+      <div class="students">
+    <div class="">Course</div>
+    <div class="">Level</div>
+    <div class="">Hours</div>
+    <div class="">Student Name</div>
+  </div>
+      <div class="students">
+    <div class="">Course</div>
+    <div class="">Level</div>
+    <div class="">Hours</div>
+    <div class="">Student Name</div>
+  </div>
+</div>
+
+
 
     <footer>
       <div class="footer-contents">
