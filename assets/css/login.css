@@ -1,37 +1,23 @@
 body {
-  font-family: Arial, sans-serif; /* Set the font family for the entire page */
+  font-family: Arial, sans-serif;
+
   background: linear-gradient(to bottom right, #90938b, #f1f0df);
 }
 
 .login-form {
   display: flex;
-  justify-content: center;/* for horizontal center */
-  align-items: center; /* for vertical center */
-  height: 100vh; /* login form container takes up 100% of the viewport height, making it responsive to different screen sizes. */
-}/* Center the login form vertically and horizontally on the page */
+  justify-content: center;
 
-/* .parent-description {
-  margin-right: 30px;
-  border-radius: 30px;
-  background: linear-gradient(to bottom right, #f5f5f5, #e7d8ca); 
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
-  padding: 20px;
-  } */
-  
-  /* Add box shadow *//* cool gradient background */
-/*
-.description ul {
-  list-style-type: square;
-  padding-left: 20px;
+  align-items: center;
+
+  height: 100vh;
+
 }
 
-.description ol {
-  list-style-type: decimal-leading-zero;
-  padding-left: 33px;
-}*/
 
 .parent-login {
-  background: linear-gradient(to bottom right, #f5f5f5, #e7d8ca); ;
+  background: linear-gradient(to bottom right, #f5f5f5, #e7d8ca);
+  ;
   padding: 30px;
   border-radius: 8px;
   height: 35%;
@@ -40,37 +26,46 @@ body {
 
 .parent-login form {
   display: flex;
-  flex-direction: column; /* Arrange form vertically */
+  flex-direction: column;
+
 }
 
 .parent-login input[type="text"],
-.parent-login input[type="password"] { /* for styling username and password  */
+.parent-login input[type="password"] {
+
   padding: 10px;
   margin-bottom: 30px;
   border: none;
   border-radius: 3px;
   border: 1px solid #ccc;
-  background: linear-gradient(to right, #d2d7d6, #c4c1c1); /* Apply gradient background to text inputs */
+  background: linear-gradient(to right, #d2d7d6, #c4c1c1);
+
 }
 
-.parent-login input[type="submit"] { /* for styling login button */
+.parent-login input[type="submit"] {
+
   padding: 10px;
-  background: linear-gradient(to right, #4CAF50, #45a049); /* Apply gradient background to submit button */
+  background: linear-gradient(to right, #4CAF50, #45a049);
   color: white;
   border: none;
   border-radius: 3px;
   cursor: pointer;
-  margin: 10px  ;
+  margin: 10px;
+}
+
+.parent-login input[type="radio-group"] {
+  display: inline-block;
+  margin-right: 10px;
 }
 
 .parent-login input[type="submit"]:hover {
-  background: linear-gradient(to right, #45a049, #4CAF50); /* Apply gradient background to submit button on hover */
+  background: linear-gradient(to right, #45a049, #4CAF50);
+
 }
 
-/* .parent-login h1,*/ .parent-login a { 
-  border-bottom: 2px solid #4CAF50; /* Add bottom border to headings and links */
+.parent-login a {
+  border-bottom: 2px solid #4CAF50;
   display: inline-block;
   padding-bottom: 5px;
-  margin-bottom: 10px; /* Adjust margin and padding for headings and links */
-
+  margin-bottom: 10px;
 }
