@@ -1,5 +1,8 @@
 // @ts-nocheck
 import * as utils from "./Utils.js";
+console.log(localStorage.getItem("theme"));
+if (!localStorage.getItem("theme")) localStorage.setItem("theme", "dark");
+
 utils.checkFormTheme(localStorage.getItem("theme"), "teacher");
 
 let userNameField = document.querySelector(".user-name");
@@ -94,7 +97,6 @@ switcher.addEventListener("click", function (e) {
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
-  if (!localStorage.getItem("theme")) localStorage.setItem("theme", "dark");
   let allCourses = document.querySelectorAll(".course");
   if (utils.checked(allCourses).length > 0) {
     document.querySelector(".dropdown label").classList.remove("invalid");

@@ -1,5 +1,10 @@
 import * as utils from "./Utils.js";
+
+console.log(localStorage.getItem("theme"));
+if (!localStorage.getItem("theme")) localStorage.setItem("theme", "dark");
+
 utils.checkFormTheme(localStorage.getItem("theme"), "login");
+
 const form = document.querySelector("form");
 let userNameField = document.querySelector(".user-name");
 let passwordField = document.querySelector(".password");

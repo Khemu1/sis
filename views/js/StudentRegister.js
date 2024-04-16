@@ -1,5 +1,7 @@
 // @ts-nocheck
 import * as utils from "./Utils.js";
+if (!localStorage.getItem("theme")) localStorage.setItem("theme", "dark");
+
 utils.checkFormTheme(localStorage.getItem("theme"), "student");
 
 let userNameField = document.querySelector(".user-name");
@@ -92,8 +94,6 @@ switcher.addEventListener("click", function (e) {
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
-  if (!localStorage.getItem("theme"))
-    localStorage.setItem("theme", "dark");
   let formD = new FormData(form);
   let username = formD.get("userName");
   let password = formD.get("password");
@@ -135,5 +135,3 @@ form.addEventListener("submit", async (e) => {
     console.error("Error: " + result.statusText);
   }
 });
-
-
