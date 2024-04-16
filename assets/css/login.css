@@ -84,7 +84,7 @@ div {
   text-align: center;
 }
 
-.parent-login input[type="copyright"] {
+.copyright {
   display: flex;
   flex-direction: column;
   text-align: center;
