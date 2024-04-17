@@ -11,10 +11,14 @@ let fetchedData;
 let home1;
 
 let about = `<div class="about">
-          <div class=" about-container">
+          <div class=" ${
+            localStorage.getItem("theme") === "dark"
+              ? "about-container about-container-dark"
+              : "about-container"
+          }">
             <h3 ${
               localStorage.getItem("theme") === "dark" ? "class= font-dark" : ""
-            } </h3>
+            }> Our Reliable Connection </h3>
             <div class="img-container">
               <img src="../../assets/images/dedicated-server-bg.jpg">
             </div>
@@ -29,7 +33,11 @@ let about = `<div class="about">
               Our commitment to utilizing dedicated servers underscores our dedication to safeguarding your data and
               delivering optimal performance at all times </p>
           </div>
-          <div class=" about-container">
+          <div   class=" ${
+            localStorage.getItem("theme") === "dark"
+              ? "about-container about-container-dark"
+              : "about-container"
+          }">
             <h3 ${
               localStorage.getItem("theme") === "dark" ? "class= font-dark" : ""
             }>Our Security System</h3>
@@ -47,7 +55,11 @@ let about = `<div class="about">
               detection systems, and real-time threat intelligence, we mitigate risks and maintain the integrity of our
               platform. Rest assured, your information is in safe hands with <b>Kemet</b> </p>
           </div>
-          <div class="about-container">
+          <div class=" ${
+            localStorage.getItem("theme") === "dark"
+              ? "about-container about-container-dark"
+              : "about-container"
+          }">
             <h3 ${
               localStorage.getItem("theme") === "dark" ? "class= font-dark" : ""
             }>Stable Connection</h3>
@@ -64,7 +76,11 @@ let about = `<div class="about">
               dedication to facilitating smooth communication, efficient collaboration, and uninterrupted access to
               essential educational resources.</p>
           </div>
-          <div class="about-container">
+          <div class=" ${
+            localStorage.getItem("theme") === "dark"
+              ? "about-container about-container-dark"
+              : "about-container"
+          }">
             <h3 ${
               localStorage.getItem("theme") === "dark" ? "class= font-dark" : ""
             }>Maintenance</h3>

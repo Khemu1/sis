@@ -242,6 +242,7 @@ export function homeThemeSwticher() {
   let headers = document.querySelectorAll("h3");
   let students = document.querySelectorAll(".student");
   let courses = document.querySelectorAll(".course");
+  let aboutContainers = document.querySelectorAll(".about-container");
 
   let ps = document.querySelectorAll("p");
   if (document.body.classList.contains("body-dark")) {
@@ -264,6 +265,9 @@ export function homeThemeSwticher() {
       course.classList.toggle("course-dark");
     });
     section.classList.remove("section-dark");
+    aboutContainers.forEach((aboutContainer) => {
+      aboutContainer.classList.toggle("about-container-dark");
+    });
     document.querySelector(".main").classList.toggle("hide");
     document.querySelector("input.theme-switcher").checked = true;
     localStorage.setItem("theme", "white");
@@ -288,6 +292,9 @@ export function homeThemeSwticher() {
     course.classList.toggle("course-dark");
   });
   section.classList.toggle("section-dark");
+  aboutContainers.forEach((aboutContainer) => {
+    aboutContainer.classList.toggle("about-container-dark");
+  });
   document.querySelector(".main").classList.toggle("hide");
   document.querySelector("input.theme-switcher").checked = false;
 
@@ -310,6 +317,7 @@ export function checkHomeTheme(theme) {
   let ps = document.querySelectorAll("p");
   let students = document.querySelectorAll(".student");
   let courses = document.querySelectorAll(".course");
+  let aboutContainers = document.querySelectorAll(".about-container");
 
   if (theme !== "dark") {
     console.log(theme);
@@ -331,6 +339,9 @@ export function checkHomeTheme(theme) {
     });
     courses.forEach((course) => {
       course.classList.toggle("course-dark");
+    });
+    aboutContainers.forEach((aboutContainer) => {
+      aboutContainer.classList.toggle("about-container-dark");
     });
     section.classList.toggle("section-dark");
     document.querySelector(".main").classList.toggle("hide");
