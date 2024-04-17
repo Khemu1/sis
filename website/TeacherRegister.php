@@ -151,4 +151,3 @@ if (isset($_POST["register"])) {
 
 </html>
 <script type="module" src="../js/TeacherRegister.js?t=<?= time() ?>"></script>
-<script type="module" src="../js/Utils.js?t=<?= time() ?>"></script>
