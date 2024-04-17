@@ -20,7 +20,7 @@ require_once ("../models/Utils.php");
 
 <body>
 
-  <div class="container" width="50" height="50" align="center">
+  <div class="container">
     <div class="head">
       <h2>SignUp</h2>
     </div>
@@ -34,8 +34,8 @@ require_once ("../models/Utils.php");
         <input type="submit" name="register" placeholder="Register"><br>
       </form>
     </div>
-    <div class="footer" width="200" height="200">
-      <p style="font-size : 10px">Powerd by Kemet SIS</p>
+    <div class="footer">
+      <p>Powerd by Kemet SIS</p>
     </div>
   </div>
 
