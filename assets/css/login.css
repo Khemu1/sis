@@ -74,6 +74,7 @@ body {
   margin: 10px;
   text-align: center;
   align-items: center;
+  transition-duration: 250ms;
 }
 
 .parent-login input[type="submit"]:hover {
