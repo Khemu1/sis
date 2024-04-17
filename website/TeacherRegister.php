@@ -10,7 +10,7 @@ require_once ("../models/Utils.php");
 session_start();
 $arr = [];
 if (isset($_POST["register"])) {
-  $arr = Utils::validateStudentFields([
+  $arr = Utils::validateTeacherFields([
     $_POST["userName"],
     $_POST["name"],
     $_POST["password"],
@@ -32,14 +32,15 @@ if (isset($_POST["register"])) {
     $_SESSION["type"] = "teacher";
   }
 
- for($i - 0;$i < count($courses);i++) 
- {$teaches = [$userName], $course];
+ for($i - 0;$i < count($courses);$i++) 
+ {$teaches = [$userName, $course];
   Teaches::insert($teaches);}
   // saving the courses of teachers
- Enrollment::enroll();
+ 
 
-}?>
-
+}
+Enrollment::enroll();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -63,10 +64,11 @@ if (isset($_POST["register"])) {
         <?php echo $arr["userName"] ?? " "; echo $arr["account"] ?? " ";?>
         <input type="text" name="name" class="name" placeholder="name"><br>
         <?php echo $arr["name"] ?? " ";?>
-        <input type="text" name="password" class="password" placeholder="Password"><br>
+        <input type="password" name="password" class="password" placeholder="Password"><br>
         <?php echo $arr["password"] ?? " ";?>
         <input type="text" name="address" class="address" placeholder="address"><br>
         <?php echo $arr["address"] ?? " ";?>
+
         <div class="dropdown">
           <button>Choose courses<i class="uil uil-angle-down"></i></button>
           
@@ -121,11 +123,12 @@ if (isset($_POST["register"])) {
           </div>
           
        
+            
           
             </div>
-          </div><?php echo $arr["courses"] ?? " ";?>
+          </div> <?php echo $arr["courses"] ?? " ";?>
           <div class="invalid-courses hide"> </div><br>
-          <input type="submit" name="register" value="Register"><br>
+          <input id="register" type="submit" name="register" value="Register"><br>
           <a class="font-dark" href="login.php">Login</a>
   
         </form>
@@ -143,6 +146,5 @@ if (isset($_POST["register"])) {
 </html>
 <script type="module" src="../js/TeacherRegister.js?t=<?= time() ?>"></script>
 <script type="module" src="../js/Utils.js?t=<?= time() ?>"></script>
-
 
 
