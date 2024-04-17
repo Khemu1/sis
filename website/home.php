@@ -85,7 +85,7 @@
           </div>
         </div>
     </section> -->
-    <h2>Enrolled Student</h2>
+    <h2>Enrolled Students </h2>
 <div class="student-table-container">
   <div class="students">
     <div class="">Course</div>
