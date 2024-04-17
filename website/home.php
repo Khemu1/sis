@@ -1,3 +1,17 @@
+<?php
+
+require_once ("../config/setup.php");
+require_once ("../models/Accounts.php");
+require_once ("../models/Courses.php");
+require_once ("../models/Enrollment.php");
+require_once ("../models/Students.php");
+require_once ("../models/Teachers.php");
+require_once ("../models/Teaches.php");
+require_once ("../models/Utils.php");
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

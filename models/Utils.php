@@ -113,9 +113,16 @@ class Utils
         if (empty($courses))
             $errors['courses'] = "no courses selected";
 
-        // if (count(Accounts::select(["userName"], ["userName" => $userName])) !== 0) // problem
-        //     $errors['account'] = "username already exist";
+        if (count(Accounts::select(["userName"], ["userName" => $userName])) !== 0) // problem
+            $errors['account'] = "username already exist";
 
         return $errors;
+    }
+
+    public static function designation($id): string
+    {
+        $student = Students::select(["accountId"], ["accountId" => $id]);
+        $teacher = Teachers::select(["accountId"], ["accountId" => $id]);
+        return count($student) > count($teacher) ? "student" : "teacher";
     }
 }
