@@ -79,7 +79,7 @@ if (isset($_POST["register"])) {
         echo $arr["level"] ?? " ";
         ?>
         <input type="submit" name="register" placeholder="Register"><br>
-        <a class="font-dark" href="login.php">Login</a>
+        <a class="login" href="login.php">Login</a>
 
       </form>
     </div>
