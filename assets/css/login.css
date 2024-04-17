@@ -41,6 +41,7 @@ body {
 .parent-login form {
   display: flex;
   flex-direction: column;
+  text-align: center;
 }
 
 .parent-login input[type="text"],
