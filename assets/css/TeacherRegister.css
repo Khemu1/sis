@@ -18,6 +18,8 @@
   
   body {
     background-color: #ecebeb;
+    width:"200" ;
+    height:"200";
   }
 
 
@@ -42,11 +44,14 @@
   display: inline;
 }
 .dropdown label{
-  display: block;
+  display:grid;
   color: #333;
   text-decoration: none;
   padding: 10px 15px;
-  grid-row: auto;
+  grid-template-columns: repeat(23 , 250px);
+
+  
+ 
  
 
 } 
@@ -60,7 +65,10 @@
   box-shadow:2px 2px 5px black ;
   overflow:scroll;
   height:200px ;
-  grid-row: auto;
+  width: 400px;
+  font-size: 15px;
+
+  
 
   
   
@@ -117,7 +125,7 @@ input[tupe="chackbox"]{
     font-size: 24px;
     font-family: sans-serif;
     margin-bottom: 20px;
-    color: #333;
+    color: #2d4795;
   }
   
   .body input[type="text"],
@@ -139,8 +147,14 @@ input[tupe="chackbox"]{
   }
   
   .footer p {
-    font-size: 12px;
+    font-size: 13px;
     font-family: sans-serif;
     margin-top: 20px;
     color: #666;
+  }
+  .footer{
+    position: fixed;
+    width:"200" ;
+    height:"200";
+    bottom: 0;
   }
