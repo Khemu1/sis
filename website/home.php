@@ -33,7 +33,7 @@ session_start();
       <li><a href="home.php?page=courses">courses</a></li>
       <li><a href="home.php?page=about">about</a></li>
     </div>
-    <a href="#" class="logout">logout</a>
+    <a href="../controllers/logout.php" class="logout">logout</a>
   </nav>
 
   <section>
