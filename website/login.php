@@ -2,14 +2,14 @@
 
 use function PHPSTORM_META\type;
 
-require_once ("../config/setup.php");
-require_once ("../models/Accounts.php");
-require_once ("../models/Courses.php");
-require_once ("../models/Enrollment.php");
-require_once ("../models/Students.php");
-require_once ("../models/Teachers.php");
-require_once ("../models/Teaches.php");
-require_once ("../models/Utils.php");
+require_once("../config/setup.php");
+require_once("../models/Accounts.php");
+require_once("../models/Courses.php");
+require_once("../models/Enrollment.php");
+require_once("../models/Students.php");
+require_once("../models/Teachers.php");
+require_once("../models/Teaches.php");
+require_once("../models/Utils.php");
 
 session_start();
 
@@ -27,7 +27,6 @@ if (isset($_POST["login"])) {
             var_dump($_SESSION);
             header("location: home.php");
             exit();
-
         } else if ($_POST["type"] === "teacher" && $type === "teacher") {
             $account = Teachers::select(["id", "userName"], ["accountId" => $id]);
             $_SESSION["id"] = $id;
@@ -57,23 +56,25 @@ if (isset($_POST["login"])) {
             <input type="text" name="userName" placeholder="Username" value="Yasser">
             <input type="password" name="password" placeholder="Password" value="Yasser">
             <div class=child-login>
-                <div class="radio-group">
+                <div class="radio-Teacher">
                     <input type="radio" id="Teacher" name="type" value="teacher" checked>
                     <label for="Teacher">Teacher</label>
-
+                </div>
+                <div class=radio-Student>
                     <input type="radio" id="Student" name="type" value="student">
                     <label for="student">Student</label>
                 </div>
+            </div>
 
-                <?php echo $account["account"] ?? ""; ?>
+            <?php echo $account["account"] ?? ""; ?>
 
-                <div class="submit">
-                    <input type="submit" value="Login" name="login">
-                </div>
-                <div class="copyright">
-                    <a href="#">Don't have Account?</a>
-                    <p>Powered by kemet</p>
-                </div>
+            <div class="submit">
+                <input type="submit" value="Login" name="login">
+            </div>
+            <div class="copyright">
+                <a href="#">Don't have Account?</a>
+                <p>Powered by kemet</p>
+            </div>
         </form>
     </div>
 </div>
