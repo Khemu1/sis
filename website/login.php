@@ -73,7 +73,7 @@ if (isset($_POST["login"])) {
                     <a class="link font-dark" href="StudentRegister.php">
                         Register as a Student
                     </a>
-                    <a class="link font-dark" href="TecaherRegister.php">
+                    <a class="link font-dark" href="TeacherRegister.php">
                         Register as a Teacher
                     </a>
                 </div>

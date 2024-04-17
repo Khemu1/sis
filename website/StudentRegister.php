@@ -79,13 +79,11 @@ if (isset($_POST["register"])) {
         echo $arr["level"] ?? " ";
         ?>
         <input type="submit" name="register" placeholder="Register"><br>
+        <a class="font-dark" href="login.php">Login</a>
+
       </form>
     </div>
-<<<<<<< HEAD
     <div class="footer">
-=======
-    <div class="footer" >
->>>>>>> 856e6fe3ab3184cb405de783cc967bab97129c6e
       <p>Powerd by Kemet SIS</p>
     </div>
   </div>

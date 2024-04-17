@@ -10,6 +10,8 @@ require_once ("../models/Teaches.php");
 require_once ("../models/Utils.php");
 session_start();
 
+if(isset($_SESSION))
+var_dump($_SESSION);
 ?>
 
 <!DOCTYPE html>
