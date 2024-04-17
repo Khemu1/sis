@@ -219,3 +219,40 @@ h2 {
   border: 1px solid #ddd;
   border-radius: 15px;
 }
+.about {
+  display: grid;
+  grid: repeat(3, auto) / 1fr;
+  flex-grow: 1;
+  height: auto;
+  width: 100%;
+  justify-items: center;
+}
+.about:first-child {
+  margin-top: 15px;
+}
+about-container {
+  margin-bottom: 10px;
+}
+.about-container h3 {
+  margin-bottom: 10px;
+}
+.about > div {
+  margin-bottom: 50px;
+  padding: 10px;
+  width: 1000px;
+}
+.about div img {
+  width: 100%;
+  height: 100%;
+  transition: 250ms ease-in-out;
+  border: none;
+  border-radius: 15px;
+}
+.about div img:hover {
+  transform: scale(1.05);
+}
+.img-container {
+  width: 1000px;
+  height: 500px;
+  margin-bottom: 10px;
+}
