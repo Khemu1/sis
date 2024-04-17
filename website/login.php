@@ -2,14 +2,14 @@
 
 use function PHPSTORM_META\type;
 
-require_once("../config/setup.php");
-require_once("../models/Accounts.php");
-require_once("../models/Courses.php");
-require_once("../models/Enrollment.php");
-require_once("../models/Students.php");
-require_once("../models/Teachers.php");
-require_once("../models/Teaches.php");
-require_once("../models/Utils.php");
+require_once ("../config/setup.php");
+require_once ("../models/Accounts.php");
+require_once ("../models/Courses.php");
+require_once ("../models/Enrollment.php");
+require_once ("../models/Students.php");
+require_once ("../models/Teachers.php");
+require_once ("../models/Teaches.php");
+require_once ("../models/Utils.php");
 
 session_start();
 
@@ -23,7 +23,7 @@ if (isset($_POST["login"])) {
             $account = Students::select(["id", "userName"], ["accountId" => $id]);
             $_SESSION["id"] = $id;
             $_SESSION["userName"] = $account[0]["userName"];
-            $_SESSION["type"] = "student";
+            $_SESSION["userType"] = "student";
             var_dump($_SESSION);
             header("location: home.php");
             exit();
@@ -31,7 +31,7 @@ if (isset($_POST["login"])) {
             $account = Teachers::select(["id", "userName"], ["accountId" => $id]);
             $_SESSION["id"] = $id;
             $_SESSION["userName"] = $account[0]["userName"];
-            $_SESSION["type"] = "teacher";
+            $_SESSION["userType"] = "teacher";
             var_dump($_SESSION);
             header("location: home.php");
             exit();
@@ -46,35 +46,43 @@ if (isset($_POST["login"])) {
 
 <head>
     <meta charset="UTF-8">
-    <title>Login Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/login.css">
+    <title>login</title>
 </head>
-<div class="login-form">
-    <div class="parent-login">
-        <form method="POST">
-            <h1>Login</h1>
-            <input type="text" name="userName" placeholder="Username" value="Yasser">
-            <input type="password" name="password" placeholder="Password" value="Yasser">
-            <div class=child-login>
-                <div class="radio-group">
-                    <input type="radio" id="Teacher" name="type" value="teacher" checked>
-                    <label for="Teacher">Teacher</label>
 
-                    <input type="radio" id="Student" name="type" value="student">
-                    <label for="student">Student</label>
+<body>
+    <div class="home">
+        <div class="head">
+            <h2>Login</h2>
+        </div>
+        <div class="body">
+            <form method="post" action="">
+                <input type="text" name="userName" class="user-name" placeholder="Username" value="Yasser"><br>
+                <input type="password" name="password" class="password" placeholder="Password" value="951357"><br>
+                <div class="invalid-login hide">Invalid Account</div>
+                <?php
+                echo $account["account"] ?? "";
+                ?>
+                <div class="user-type">
+                    <label><input type="radio" name="userType" value="student" checked> Student</label>
+                    <label><input type="radio" name="userType" value="teacher"> Teacher</label>
                 </div>
-
-                <?php echo $account["account"] ?? ""; ?>
-
-                <div class="submit">
-                    <input type="submit" value="Login" name="login">
+                <input type="submit" name="login" class="submit" value="Login"><br>
+                <div class="links">
+                    <a class="link font-dark" href="StudentRegister.php">
+                        Register as a Student
+                    </a>
+                    <a class="link font-dark" href="TecaherRegister.php">
+                        Register as a Teacher
+                    </a>
                 </div>
-                <div class="copyright">
-                    <a href="#">Don't have Account?</a>
-                    <p>Powered by kemet</p>
-                </div>
-        </form>
+            </form>
+        </div>
+        <div class="footer">
+            <p class="font-dark">Powered by Kemet SIS</p>
+        </div>
     </div>
-</div>
+</body>
 
 </html>
