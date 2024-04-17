@@ -56,25 +56,23 @@ if (isset($_POST["login"])) {
             <input type="text" name="userName" placeholder="Username" value="Yasser">
             <input type="password" name="password" placeholder="Password" value="Yasser">
             <div class=child-login>
-                <div class="radio-Teacher">
+                <div class="radio-group">
                     <input type="radio" id="Teacher" name="type" value="teacher" checked>
                     <label for="Teacher">Teacher</label>
-                </div>
-                <div class=radio-Student>
+
                     <input type="radio" id="Student" name="type" value="student">
                     <label for="student">Student</label>
                 </div>
-            </div>
 
-            <?php echo $account["account"] ?? ""; ?>
+                <?php echo $account["account"] ?? ""; ?>
 
-            <div class="submit">
-                <input type="submit" value="Login" name="login">
-            </div>
-            <div class="copyright">
-                <a href="#">Don't have Account?</a>
-                <p>Powered by kemet</p>
-            </div>
+                <div class="submit">
+                    <input type="submit" value="Login" name="login">
+                </div>
+                <div class="copyright">
+                    <a href="#">Don't have Account?</a>
+                    <p>Powered by kemet</p>
+                </div>
         </form>
     </div>
 </div>
