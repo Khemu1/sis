@@ -70,10 +70,10 @@ if (isset($_POST["login"])) {
                 </div>
                 <input type="submit" name="login" class="submit" value="Login"><br>
                 <div class="links">
-                    <a class="link font-dark" href="StudentRegister.php">
+                    <a class="link" href="StudentRegister.php">
                         Register as a Student
                     </a>
-                    <a class="link font-dark" href="TeacherRegister.php">
+                    <a class="link" href="TeacherRegister.php">
                         Register as a Teacher
                     </a>
                 </div>

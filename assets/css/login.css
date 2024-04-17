@@ -114,6 +114,23 @@ body {
   gap: 15px;
   margin-top: 5px;
 }
+.link {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.link::before {
+  content: "";
+  width: 0%;
+  height: 4px;
+  background-color: #000;
+  bottom: -5px;
+  transition: 250ms ease-in-out;
+}
+.link:hover::before {
+  width: 100%;
+  transform: scale(1, 0.5);
+}
 
 a {
   display: flex;
