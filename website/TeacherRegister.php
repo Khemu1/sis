@@ -40,7 +40,7 @@ if (isset($_POST["register"])) {
     header("location: home.php");
     exit();
   }
-  exit();
+
 }
 ?>
 <!DOCTYPE html>
@@ -70,7 +70,7 @@ if (isset($_POST["register"])) {
         <input type="password" name="password" class="password" placeholder="Password"><br>
         <?php echo $arr["password"] ?? " "; ?>
         <input type="text" name="address" class="address" placeholder="address"><br>
-        <?php echo $arr["address"] ?? " "; ?>
+        <?php echo $arr["address"] ?? " "; ?> <br>
 
         <div class="dropdown">
           <button>Choose courses<i class="uil uil-angle-down"></i></button>
@@ -133,10 +133,10 @@ if (isset($_POST["register"])) {
 
         </div>
     </div>
-    <?php echo $arr["courses"] ?? " "; ?>
+    <?php echo $arr["courses"] ?? " "; ?>  <br>
     <input id="register" type="submit" name="register" value="Register">
     <br><br>
-    <a class="font-dark" href="login.php">Login</a>
+    <a class="log" href="login.php">Login</a>
 
     </form>
   </div>
