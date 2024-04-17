@@ -116,8 +116,6 @@ text-decoration: none;
 }
 .footer {
   position: fixed;
-  width: "200";
-  height: "200";
   bottom: 0;
 }
 #register {

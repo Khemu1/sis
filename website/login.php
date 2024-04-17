@@ -79,9 +79,9 @@ if (isset($_POST["login"])) {
                 </div>
             </form>
         </div>
-        <div class="footer">
-            <p class="font-dark">Powered by Kemet SIS</p>
-        </div>
+    </div>
+    <div class="footer">
+        <p>Powered by Kemet SIS</p>
     </div>
 </body>
 
