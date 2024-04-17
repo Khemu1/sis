@@ -64,7 +64,7 @@ body {
 .radio-Student {
   display: flex;
   justify-content: center;
-
+  gap: 18px;
 }
 
 .parent-login input[type="submit"] {
