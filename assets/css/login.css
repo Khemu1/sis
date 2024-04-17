@@ -58,7 +58,7 @@ body {
 .radio-group {
   display: flex;
   justify-content: center;
-  gap: 12px;
+  gap: 8px;
 }
 
 .parent-login input[type="submit"] {
