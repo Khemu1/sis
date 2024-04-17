@@ -7,6 +7,32 @@ require_once ("../models/Students.php");
 require_once ("../models/Teachers.php");
 require_once ("../models/Teaches.php");
 require_once ("../models/Utils.php");
+$arr = [];
+if (isset($_POST["register"])) {
+  $arr = Utils::validateStudentFields([
+    $_POST["userName"],
+    $_POST["name"],
+    $_POST["password"],
+    $_POST["address"],
+    $_POST["level"]
+  ]);
+  $userName = $_POST["userName"];
+  $name = $_POST["name"];
+  $password = $_POST["password"];
+  $address = $_POST["address"];
+  $level = $_POST["level"];
+  if (empty($arr)) {
+    $Account = [$userName, $password];
+    Accounts::insert($Account);
+    $accountId = intval(Accounts::select(["id"], ["userName" => $userName])[0]["id"]);
+    $student = [$accountId, $userName, $name, $address, $level];
+    Students::insert($student);
+    Enrollment::enroll();
+    $_SESSION["id"] = $accountId;
+    $_SESSION["userName"] = $userName;
+    $_SESSION["type"] = "student";
+  }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,17 +50,42 @@ require_once ("../models/Utils.php");
     <div class="head">
       <h2>SignUp</h2>
     </div>
-    <div class="body" width="200" height="200">
+    <div class="body">
       <form method="Post">
         <input type="text" name="userName" class="user-name" placeholder="UserName"><br>
+        <?php
+        echo $arr["userName"] ?? " ";
+        echo $arr["account"] ?? " ";
+        ?>
         <input type="text" name="name" class="name" placeholder="name"><br>
+        <?php
+        echo $arr["name"] ?? " ";
+        ?>
         <input type="text" name="password" class="password" placeholder="Password"><br>
+        <?php
+
+
+        echo $arr["password"] ?? " ";
+        ?>
         <input type="text" name="address" class="address" placeholder="address"><br>
+        <?php
+        echo $arr["address"] ?? " ";
+        ?>
+
         <input type="text" name="level" class="level" placeholder="level"><br>
+        <?php
+
+
+        echo $arr["level"] ?? " ";
+        ?>
         <input type="submit" name="register" placeholder="Register"><br>
       </form>
     </div>
+<<<<<<< HEAD
     <div class="footer">
+=======
+    <div class="footer" >
+>>>>>>> 856e6fe3ab3184cb405de783cc967bab97129c6e
       <p>Powerd by Kemet SIS</p>
     </div>
   </div>
@@ -42,21 +93,4 @@ require_once ("../models/Utils.php");
 </body>
 
 </html>
-
-<?php
-
-
-if (isset($_Post["register"])) {
-  $userName = $_Post["userName"];
-  $name = $_Post["name"];
-  $password = $_Post["password"];
-  $address = $_Post["address"];
-  $level = $_Post["level"];
-
-  if (count(Accounts::select(["userName"], ["userName" => $userName])) > 0) {
-    echo "invalid username";
-  }
-}
-?>
-
 <script type="module" src="../js/StudentRegister.js?t=<?= time() ?>"></script>
