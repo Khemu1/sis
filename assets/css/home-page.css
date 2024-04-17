@@ -13,7 +13,7 @@ body {
   background-size: cover;
   background-position: center;
   display: grid;
-  grid: max-content 2fr max-content / 1fr;
+  grid: max-content 2fr  / 1fr;
 }
 
 .nav-links li {
@@ -42,6 +42,8 @@ a:hover {
 }
 
 nav {
+  position: static;
+  top: 0;
   display: grid;
   grid: 1fr / 2fr 11fr 0.8fr;
   width: 100%;
@@ -50,10 +52,13 @@ nav {
   justify-content: space-between;
   background-color: gray;
   color: #000;
-  padding: 10px;
+  padding-block: 20px;
 }
 nav > * {
   color: #000 !important;
+}
+nav .logo {
+  margin-left: 20px;
 }
 
 nav .logo a {

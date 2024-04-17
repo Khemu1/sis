@@ -1,32 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="../assets/css/home-page.css" />
-  </head>
-  <body>
-    <nav>
-      <div class="logo"><a href="#">kemet</a></div>
-      <div class="nav-links">
-        <li><a href="home.php">Home</a></li>
-        <li><a href="home.php?page=courses">courses</a></li>
-        <li><a href="home.php?page=about">about</a></li>
-      </div>
-      <a href="#" class="logout">logout</a>
-    </nav>
 
-    <section>
-    
-      <!-- <div class="about">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="../assets/css/home-page.css" />
+</head>
+
+<body>
+  <nav>
+    <div class="logo"><a href="#">kemet</a></div>
+    <div class="nav-links">
+      <li><a href="home.php">Home</a></li>
+      <li><a href="home.php?page=courses">courses</a></li>
+      <li><a href="home.php?page=about">about</a></li>
+    </div>
+    <a href="#" class="logout">logout</a>
+  </nav>
+
+  <section>
+
+    <!-- <div class="about">
           <div class=" about-container">
             <h3></h3>
             <div class="img-container">
@@ -86,62 +84,134 @@
         </div>
     </section> -->
     <h2>Enrolled Students </h2>
-<div class="student-table-container">
-  <div class="students">
-    <div class="">Course</div>
-    <div class="">Level</div>
-    <div class="">Hours</div>
-    <div class="">Student Name</div>
-  </div>
-    <div class="students">
-    <div class="">Course</div>
-    <div class="">Level</div>
-    <div class="">Hours</div>
-    <div class="">Student Name</div>
-  </div>
-    <div class="students">
-    <div class="">Course</div>
-    <div class="">Level</div>
-    <div class="">Hours</div>
-    <div class="">Student Name</div>
-  </div>
-    <div class="students">
-    <div class="">Course</div>
-    <div class="">Level</div>
-    <div class="">Hours</div>
-    <div class="">Student Name</div>
-  </div>
+    <div class="student-table-container">
       <div class="students">
-    <div class="">Course</div>
-    <div class="">Level</div>
-    <div class="">Hours</div>
-    <div class="">Student Name</div>
-  </div>
+        <div class="">Course</div>
+        <div class="">Level</div>
+        <div class="">Hours</div>
+        <div class="">Student Name</div>
+      </div>
       <div class="students">
-    <div class="">Course</div>
-    <div class="">Level</div>
-    <div class="">Hours</div>
-    <div class="">Student Name</div>
-  </div>
+        <div class="">Course</div>
+        <div class="">Level</div>
+        <div class="">Hours</div>
+        <div class="">Student Name</div>
+      </div>
       <div class="students">
-    <div class="">Course</div>
-    <div class="">Level</div>
-    <div class="">Hours</div>
-    <div class="">Student Name</div>
-  </div>
+        <div class="">Course</div>
+        <div class="">Level</div>
+        <div class="">Hours</div>
+        <div class="">Student Name</div>
+      </div>
       <div class="students">
-    <div class="">Course</div>
-    <div class="">Level</div>
-    <div class="">Hours</div>
-    <div class="">Student Name</div>
-  </div>
+        <div class="">Course</div>
+        <div class="">Level</div>
+        <div class="">Hours</div>
+        <div class="">Student Name</div>
+      </div>
       <div class="students">
-    <div class="">Course</div>
-    <div class="">Level</div>
-    <div class="">Hours</div>
-    <div class="">Student Name</div>
-  </div>
-</div>
+        <div class="">Course</div>
+        <div class="">Level</div>
+        <div class="">Hours</div>
+        <div class="">Student Name</div>
+      </div>
+      <div class="students">
+        <div class="">Course</div>
+        <div class="">Level</div>
+        <div class="">Hours</div>
+        <div class="">Student Name</div>
+      </div>
+      <div class="students">
+        <div class="">Course</div>
+        <div class="">Level</div>
+        <div class="">Hours</div>
+        <div class="">Student Name</div>
+      </div>
+      <div class="students">
+        <div class="">Course</div>
+        <div class="">Level</div>
+        <div class="">Hours</div>
+        <div class="">Student Name</div>
+      </div>
+      <div class="students">
+        <div class="">Course</div>
+        <div class="">Level</div>
+        <div class="">Hours</div>
+        <div class="">Student Name</div>
+      </div>
+      <div class="students">
+        <div class="">Course</div>
+        <div class="">Level</div>
+        <div class="">Hours</div>
+        <div class="">Student Name</div>
+      </div>
+      <div class="students">
+        <div class="">Course</div>
+        <div class="">Level</div>
+        <div class="">Hours</div>
+        <div class="">Student Name</div>
+      </div>
+      <div class="students">
+        <div class="">Course</div>
+        <div class="">Level</div>
+        <div class="">Hours</div>
+        <div class="">Student Name</div>
+      </div>
+      <div class="students">
+        <div class="">Course</div>
+        <div class="">Level</div>
+        <div class="">Hours</div>
+        <div class="">Student Name</div>
+      </div>
+      <div class="students">
+        <div class="">Course</div>
+        <div class="">Level</div>
+        <div class="">Hours</div>
+        <div class="">Student Name</div>
+      </div>
+      <div class="students">
+        <div class="">Course</div>
+        <div class="">Level</div>
+        <div class="">Hours</div>
+        <div class="">Student Name</div>
+      </div>
+      <div class="students">
+        <div class="">Course</div>
+        <div class="">Level</div>
+        <div class="">Hours</div>
+        <div class="">Student Name</div>
+      </div>
+      <div class="students">
+        <div class="">Course</div>
+        <div class="">Level</div>
+        <div class="">Hours</div>
+        <div class="">Student Name</div>
+      </div>
+      <div class="students">
+        <div class="">Course</div>
+        <div class="">Level</div>
+        <div class="">Hours</div>
+        <div class="">Student Name</div>
+      </div>
+      <div class="students">
+        <div class="">Course</div>
+        <div class="">Level</div>
+        <div class="">Hours</div>
+        <div class="">Student Name</div>
+      </div>
+      <div class="students">
+        <div class="">Course</div>
+        <div class="">Level</div>
+        <div class="">Hours</div>
+        <div class="">Student Name</div>
+      </div>
+      <div class="students">
+        <div class="">Course</div>
+        <div class="">Level</div>
+        <div class="">Hours</div>
+        <div class="">Student Name</div>
+      </div>
+    </div>
 
 
 
@@ -177,5 +247,6 @@
         </div>
       </div>
     </footer>
-  </body>
+</body>
+
 </html>
