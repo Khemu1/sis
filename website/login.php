@@ -38,6 +38,7 @@ if (isset($_POST["login"])) {
             exit();
         }
     }
+    $account["account"] = "Invalid Account";
 }
 
 ?>
@@ -63,9 +64,9 @@ if (isset($_POST["login"])) {
                     <input type="radio" id="Student" name="type" value="student">
                     <label for="student">Student</label>
                 </div>
-                <?php
-                echo empty($account) ? "invalid account" : "";
-                ?>
+
+                <?php echo $account["account"] ?? ""; ?>
+
                 <div class="submit">
                     <input type="submit" value="Login" name="login">
                 </div>
