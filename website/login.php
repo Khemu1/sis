@@ -19,7 +19,7 @@ if (isset($_POST["login"])) {
     if (!empty($data)) {
         $id = $data[0]["id"];
         $type = Utils::designation($id);
-        if ($_POST["type"] === "student" && $type === "student") {
+        if ($_POST["userType"] === "student" && $type === "student") {
             $account = Students::select(["id", "userName"], ["accountId" => $id]);
             $_SESSION["id"] = $id;
             $_SESSION["userName"] = $account[0]["userName"];
@@ -27,7 +27,7 @@ if (isset($_POST["login"])) {
             var_dump($_SESSION);
             header("location: home.php");
             exit();
-        } else if ($_POST["type"] === "teacher" && $type === "teacher") {
+        } else if ($_POST["userType"] === "teacher" && $type === "teacher") {
             $account = Teachers::select(["id", "userName"], ["accountId" => $id]);
             $_SESSION["id"] = $id;
             $_SESSION["userName"] = $account[0]["userName"];
