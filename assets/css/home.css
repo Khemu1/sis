@@ -20,7 +20,7 @@ nav {
   position: sticky;
   top: 0;
   display: grid;
-  grid: 1fr / 0.1fr 1.2fr 0.08fr;
+  grid: 1fr / 0.1fr 0.85fr 0.08fr;
   justify-content: space-between;
   align-items: center;
   width: 100%;
@@ -90,7 +90,7 @@ nav .nav-buttons {
   height: 3px;
   width: 0%;
   bottom: 0;
-  background-color: white;
+  background-color: #000;
   transition: 0.3s ease-in-out;
 }
 
@@ -102,8 +102,9 @@ nav .nav-buttons {
 .right {
   display: flex;
   width: 400px;
-  justify-content: space-around;
+  justify-content: right;
   align-items: center;
+  margin-right: 25px;
 }
 
 #logout {
