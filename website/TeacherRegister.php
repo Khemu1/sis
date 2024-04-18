@@ -17,7 +17,6 @@ if (isset($_POST["register"])) {
     $_POST["address"],
     $_POST["course"] ?? []
   ]);
-  var_dump($arr);
   if (empty($arr)) {
     $courses = $_POST["course"];
     $userName = $_POST["userName"];
