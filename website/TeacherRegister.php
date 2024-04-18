@@ -135,7 +135,7 @@ if (isset($_POST["register"])) {
     <?php echo $arr["courses"] ?? " "; ?>  <br>
     <input id="register" type="submit" name="register" value="Register">
     <br><br>
-    <a class="log" href="login.php">Login</a>
+    <a class="log" href="index.php">Login</a>
 
     </form>
   </div>
