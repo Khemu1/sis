@@ -165,6 +165,17 @@ const isNameSecure = (name) => {
   return re.test(name);
 };
 
+function checkedCourses() {
+  let courses = document.querySelectorAll("input:checked") ?? [];
+  if (courses.length === 0) {
+    document.querySelector(".courseError").classList.remove("hide");
+    document.getElementById("courses").style.outline = "1px solid red";
+  } else {
+    document.getElementById("courses").style.outline = "1px solid green";
+    document.querySelector(".courseError").classList.add("hide");
+  }
+}
+
 // registerButton.addEventListener('submit', function (e) {
 //     // prevent the form from submitting
 //     e.preventDefault();
@@ -223,5 +234,6 @@ form.addEventListener(
         checkLevel();
         break;
     }
+    checkedCourses();
   })
 );

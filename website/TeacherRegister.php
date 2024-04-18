@@ -17,6 +17,7 @@ if (isset($_POST["register"])) {
     $_POST["address"],
     $_POST["course"] ?? []
   ]);
+  var_dump($arr);
   if (empty($arr)) {
     $courses = $_POST["course"];
     $userName = $_POST["userName"];
@@ -60,19 +61,40 @@ if (isset($_POST["register"])) {
       <h2>SignUp</h2>
     </div>
     <div class="body">
-      <form method="Post">
-        <input type="text" name="userName" class="user-name" placeholder="UserName"><br>
-        <?php echo $arr["username"] ?? " ";
-        echo $arr["account"] ?? " "; ?>
-        <input type="text" name="name" class="name" placeholder="name"><br>
-        <?php echo $arr["name"] ?? " "; ?>
-        <input type="password" name="password" class="password" placeholder="Password"><br>
-        <?php echo $arr["password"] ?? " "; ?>
-        <input type="text" name="address" class="address" placeholder="address"><br>
-        <?php echo $arr["address"] ?? " "; ?> <br>
-
+      <form method="Post" id="register">
+        <div>
+          <input type="text" name="userName" id="user-name" placeholder="UserName" required><br>
+          <small class="error-msg"></small><br>
+          <?php
+          echo $arr["username"] ?? " ";
+          echo $arr["account"] ?? " ";
+          ?>
+        </div>
+        <div>
+          <input type="text" name="name" id="name" placeholder="Name" required><br>
+          <small class="error-msg"></small><br>
+          <?php
+          echo $arr["name"] ?? " ";
+          ?>
+        </div>
+        <div>
+          <input type="password" name="password" id="password" placeholder="Password" required><br>
+          <small class="error-msg"></small><br>
+          <?php
+          echo $arr["password"] ?? " ";
+          ?>
+        </div>
+        <div>
+          <input type="text" name="address" id="address" placeholder="Address" required><br>
+          <small class="error-msg"></small><br>
+          <?php
+          echo $arr["address"] ?? " " . "<br>";
+          ?>
+        </div>
         <div class="dropdown">
-          <button>Choose courses<i class="uil uil-angle-down"></i></button>
+          <button id="courses">Choose courses<i class="uil uil-angle-down"></i></button><br>
+          <small class="courseError hide">Please choose atleast one coruse</small><br>
+
 
           <div class="content">
 
@@ -132,7 +154,7 @@ if (isset($_POST["register"])) {
 
         </div>
     </div>
-    <?php echo $arr["courses"] ?? " "; ?>  <br>
+    <?php echo $arr["courses"] ?? " "; ?> <br>
     <input id="register" type="submit" name="register" value="Register">
     <br><br>
     <a class="log" href="index.php">Login</a>
@@ -150,4 +172,4 @@ if (isset($_POST["register"])) {
 </body>
 
 </html>
-<script type="module" src="../js/TeacherRegister.js?t=<?= time() ?>"></script>
+<script src="..\assets\js\TeacherRegister.js"></script>
