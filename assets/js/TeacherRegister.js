@@ -165,15 +165,23 @@ const isNameSecure = (name) => {
   return re.test(name);
 };
 
+/**
+ * responsible for displaying errors message when there aren't any selected courses
+ */
 function checkedCourses() {
-  let courses = document.querySelectorAll("input:checked") ?? [];
-  if (courses.length === 0) {
-    document.querySelector(".courseError").classList.remove("hide");
-    document.getElementById("courses").style.outline = "1px solid red";
-  } else {
-    document.getElementById("courses").style.outline = "1px solid green";
-    document.querySelector(".courseError").classList.add("hide");
-  }
+  let checkBoxes = document.querySelectorAll("input[type=checkbox]");
+  checkBoxes.forEach((checkBox) => {
+    checkBox.addEventListener("change", () => {
+      let courses = document.querySelectorAll("input:checked") ?? [];
+      if (courses.length === 0) {
+        document.querySelector(".courseError").classList.remove("hide");
+        document.getElementById("courses").style.outline = "1px solid red";
+      } else {
+        document.getElementById("courses").style.outline = "1px solid green";
+        document.querySelector(".courseError").classList.add("hide");
+      }
+    });
+  });
 }
 
 // registerButton.addEventListener('submit', function (e) {
@@ -234,6 +242,6 @@ form.addEventListener(
         checkLevel();
         break;
     }
-    checkedCourses();
   })
 );
+checkedCourses();
