@@ -57,7 +57,7 @@ $_SESSION["type"] = "student"
 
     </div>
     <div class="right">
-      <a id="logout" href="http://sis.test/controllers/logout.php">
+      <a id="logout" href="../controllers/logout.php">
         <p>Logout</p>
       </a>
     </div>
