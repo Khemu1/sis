@@ -1,12 +1,12 @@
 <?php
-require_once("../config/setup.php");
-require_once("../models/Accounts.php");
-require_once("../models/Courses.php");
-require_once("../models/Enrollment.php");
-require_once("../models/Students.php");
-require_once("../models/Teachers.php");
-require_once("../models/Teaches.php");
-require_once("../models/Utils.php");
+require_once ("../config/setup.php");
+require_once ("../models/Accounts.php");
+require_once ("../models/Courses.php");
+require_once ("../models/Enrollment.php");
+require_once ("../models/Students.php");
+require_once ("../models/Teachers.php");
+require_once ("../models/Teaches.php");
+require_once ("../models/Utils.php");
 $arr = [];
 if (isset($_POST["register"])) {
     $arr = Utils::validateStudentFields([
@@ -41,7 +41,7 @@ if (isset($_POST["register"])) {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kemet Sign Up</title>
-    <link rel="stylesheet" href="C:\Users\ASUS\Downloads\sis-main (2)\sis-main\assets\css\StudentRegister.css">
+    <link rel="stylesheet" href="..\assets\css\StudentRegister.css">
 </head>
 
 <body>
@@ -97,7 +97,7 @@ if (isset($_POST["register"])) {
         <p>Powered by Kemet SIS</p>
     </div>
 
-    <script src="C:\Users\ASUS\Downloads\sis-main (2)\sis-main\assets\js\signup.js"></script>
+    <script src="..\assets\js\StudentRegister.js"></script>
 </body>
 
 </html>
