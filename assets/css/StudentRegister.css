@@ -70,5 +70,9 @@ body {
 .login {
   display: flex;
   justify-content: center;
+  background: none;
+  width: max-content;
+  color: #000;
+  margin-top: 15px;
   margin: auto;
 }
