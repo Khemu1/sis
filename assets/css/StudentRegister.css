@@ -40,7 +40,7 @@ body {
 .body input[type="text"],
 .body input[type="password"],
 .body input[type="submit"],
-.login {
+#login {
   margin: 10px 0;
   padding: 10px;
   width: calc(100% - 20px);
@@ -50,7 +50,7 @@ body {
   text-decoration: none;
 }
 .body input[type="submit"],
-.login {
+#login {
   background-color: #0073f7;
   color: white;
   font-family: sans-serif;
@@ -75,4 +75,20 @@ body {
   color: #000;
   margin-top: 15px;
   margin: auto;
+}
+.form input:focus {
+  outline: none;
+}
+
+.form {
+  border: var(--error-color);
+}
+
+.form.success input {
+  border-color: var(--success-color);
+}
+
+  
+.form small {
+  color: var(--error-color);
 }
