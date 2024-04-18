@@ -9,7 +9,8 @@ require_once ("../models/Teachers.php");
 require_once ("../models/Teaches.php");
 require_once ("../models/Utils.php");
 session_start();
-?>
+$_SESSION["type"] = "student"
+  ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,13 +27,40 @@ session_start();
 
 <body>
   <nav>
-    <div class="logo"><a href="#">kemet</a></div>
-    <div class="nav-links">
-      <li><a href="home.php">Home</a></li>
-      <li><a href="home.php?page=courses">courses</a></li>
-      <li><a href="home.php?page=about">about</a></li>
+
+    <a href="home.php" class="logo">
+
+      <img class="main" src="../../assets/images/kemet-high-resolution-logo-transparent.svg">
+    </a>
+
+    <div class="nav-buttons">
+      <a href="home.php" id="home" value="home">
+        <p>Home</p>
+      </a>
+
+      <?php
+      if ($_SESSION["type"] === "student") { ?>
+        <a href="home.php?page=courses" id="courses" value="courses">
+          <p>Courses</p>
+        </a>
+        <?php
+      } else { ?>
+        <a href="home.php?page=courses" id="courses" value="courses">
+          <p>Participants</p>
+        </a>
+        <?php
+      } ?>
+
+      <a href="home.php?page=about" id="about" value="about">
+        <p>About</p>
+      </a>
+
     </div>
-    <a href="../controllers/logout.php" class="logout">logout</a>
+    <div class="right">
+      <a id="logout" href="../controllers/logout.php">
+        <p>Logout</p>
+      </a>
+    </div>
   </nav>
 
   <section>
