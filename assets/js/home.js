@@ -65,9 +65,7 @@ let courses1;
 // Fetching data from the backend
 async function fetchData() {
   try {
-    const response = await fetch(
-      "http://localhost/sis/controllers/dashboard.php"
-    );
+    const response = await fetch("../../controllers/dashboard.php");
     if (!response.ok) {
       throw new Error("Something is wrong with the response");
     }
@@ -100,7 +98,7 @@ async function fetchDataAndUpdateVariable() {
     let footer = document.querySelector("footer");
     let url = window.location.href;
 
-    if (url === "http://localhost/sis/website/home.php") {
+    if (url === "http://sis.test/website/home.php") {
       console.log("will display home");
       let tempDiv = document.createElement("div");
       tempDiv.innerHTML = home1;
@@ -108,7 +106,7 @@ async function fetchDataAndUpdateVariable() {
       section.insertBefore(homeNode, footer);
     }
 
-    if (url === "http://localhost/sis/website/home.php?page=courses") {
+    if (url === "http://sis.test/website/home.php?page=courses") {
       console.log("will display courses");
       let tempDiv = document.createElement("div");
       tempDiv.innerHTML = courses1;
@@ -116,7 +114,7 @@ async function fetchDataAndUpdateVariable() {
       section.insertBefore(coursesNode, footer);
     }
 
-    if (url === "http://localhost/sis/website/home.php?page=about") {
+    if (url === "http://sis.test/website/home.php?page=about") {
       console.log("will display about");
       let tempDiv = document.createElement("div");
       tempDiv.innerHTML = about;
@@ -142,8 +140,8 @@ function studentContent(info, courses) {
 </div>`;
 
   courses1 = `<div class="student-table-container">
-  <h2>Enrolled Students</h2>
-  <div class="enrolled-students">
+  <h2>students</h2>
+  <div>
     <div class="students">
       <div>Course</div>
       <div>Level</div>

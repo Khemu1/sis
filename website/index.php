@@ -58,8 +58,8 @@ if (isset($_POST["login"])) {
         </div>
         <div class="body">
             <form method="post" action="">
-                <input type="text" name="userName" class="user-name" placeholder="Username" value="Yasser"><br>
-                <input type="password" name="password" class="password" placeholder="Password" value="951357"><br>
+                <input type="text" name="userName" class="user-name" placeholder="Username" value="Omar"><br>
+                <input type="password" name="password" class="password" placeholder="Password" value="Omar"><br>
                 <div class="invalid-login hide">Invalid Account</div>
                 <?php
                 echo $account["account"] ?? "";
