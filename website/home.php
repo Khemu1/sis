@@ -64,39 +64,39 @@ session_start();
     </nav>
 
     <section>
+      <footer>
+        <div class="footer-contents">
+          <div class="footer-content">
+            <h5>Contact Us</h5>
+            <p>email: 6Cjz8@example.com</p>
+            <p>phone: 01000000000</p>
+            <p>address: kemet street 123</p>
+          </div>
+          <div class="footer-content">
+            <h5>Quick Links</h5>
+            <br />
+            <ul class="list-footer">
+              <li><a href="main">Home</a></li>
+              <li><a href="about">About</a></li>
+              <li><a href="support">Support</a></li>
+              <li><a href="contact us">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-content">
+            <br />
+            <h5>Follow Us</h5>
+            <ul class="socials">
+              <li>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+              </li>
+            </ul>
+          </div>
+          <div class="bottom-bar">
+            <p>&copy; 2024 Kemet all rights reserved</p>
+          </div>
+        </div>
+      </footer>
     </section>
-    <footer>
-      <div class="footer-contents">
-        <div class="footer-content">
-          <h5>Contact Us</h5>
-          <p>email: 6Cjz8@example.com</p>
-          <p>phone: 01000000000</p>
-          <p>address: kemet street 123</p>
-        </div>
-        <div class="footer-content">
-          <h5>Quick Links</h5>
-          <br />
-          <ul class="list-footer">
-            <li><a href="main">Home</a></li>
-            <li><a href="about">About</a></li>
-            <li><a href="support">Support</a></li>
-            <li><a href="contact us">Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer-content">
-          <br />
-          <h5>Follow Us</h5>
-          <ul class="socials">
-            <li>
-              <a href="#"><i class="fa-brands fa-facebook"></i></a>
-            </li>
-          </ul>
-        </div>
-        <div class="bottom-bar">
-          <p>&copy; 2024 Kemet all rights reserved</p>
-        </div>
-      </div>
-    </footer>
   </main>
 </body>
 
