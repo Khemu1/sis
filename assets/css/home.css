@@ -255,21 +255,33 @@ footer {
   color: #ccc;
 }
 h2 {
-  font-size: 35px;
+  font-size: 40px;
   color: rgb(228, 78, 18);
   padding: 20px;
 }
 .student-table-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .students {
-  display: flex;
+  display: grid;
+  grid: auto/ repeat(3, 1fr);
   justify-content: space-between;
   width: 100%;
-  background-color: #f2f2f2;
+  background-color: transparent;
+  padding: 10px;
+  border-radius: 15px;
+  font-size: 23px;
+  text-align: center;
+  gap: 20px;
+}
+.teacher-students {
+  display: grid;
+  grid: auto/ repeat(4, 1fr);
+  justify-content: space-between;
+  width: 100%;
+  background-color: transparent;
   padding: 10px;
   border-radius: 15px;
   font-size: 23px;
@@ -277,23 +289,19 @@ h2 {
   gap: 20px;
 }
 
-.students > div {
-  /* Remove inline styles and set flex-grow for potential overflow */
-  flex: 1; /* Allow titles to grow and fill available space */
-}
-
 .student-table {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /*4 ==> columns that we need  */
+  grid: repeat(1, auto) / repeat(1, 1fr); /*4 ==> columns that we need  */
   grid-gap: 10px; /* the spaces between cells */
   margin-top: 10px;
-  max-width: 800px;
+  width: 100%;
 }
-.students > div {
+.students > *,.teacher-students >* {
   padding: 10px;
   font-size: 1em;
   border: 1px solid #ddd;
   border-radius: 15px;
+  background: white;
 }
 .about {
   display: grid;

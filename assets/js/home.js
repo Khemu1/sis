@@ -143,7 +143,7 @@ function studentContent(info, courses) {
 
   courses1 = `<div class="student-table-container">
   <h2>students</h2>
-  <div class="student-table-container">
+  <div class="student-table">
     <div class="students">
       <div>Course</div>
       <div>Level</div>
@@ -167,30 +167,30 @@ function teacherContent(info, courses) {
   home1 = `<div class="basic-info">
   <h2>Teacher Information</h2>
   <div class="teacher-info">
-    <p id="username">Username: ${info.userName} </p>
-    <p id="name">Name: ${info.name} </p>
-    <p id="address">Address: ${info.address} </p> 
+    <div id="username">Username: ${info.userName} </div>
+    <div id="name">Name: ${info.name} </div>
+    <div id="address">Address: ${info.address} </div> 
   </div>
 </div>`;
 
   courses1 = `<div class=""student-table-container>
   <h2>Enrolled Students</h2>
   <div class="enrolled-students">
-    <div class="students">
-      <p>Course</p>
-      <p>Level</p>
-      <p>Hours</p>
-      <p>Student Name</p>
+    <div class="teacher-students">
+      <div>Course</div>
+      <div>Level</div>
+      <div>Hours</div>
+      <div>Student Name</div>
       </div> 
     `;
 
   courses.forEach((course) => {
     courses1 += `
-    <div class="students">
-      <p>${course.courseName}</p>
-      <p>${course.courseLevel}</p>
-      <p>${course.courseHours}</p>
-      <p>${course.studentUserName}</p>
+    <div class="teacher-students">
+      <div>${course.courseName}</div>
+      <div>${course.courseLevel}</div>
+      <div>${course.courseHours}</div>
+      <div>${course.studentUserName}</div>
     </div>`;
   });
   courses1 += `
