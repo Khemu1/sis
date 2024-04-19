@@ -83,6 +83,7 @@ form {
 }
 .register-link {
   text-decoration: none;
+  transition-duration: 0.3s;
   text-align: center;
   font-family: sans-serif;
   color: rgb(0, 0, 0);
@@ -95,6 +96,7 @@ form {
 }
 .register-link1 {
   text-decoration: none;
+  transition-duration: 0.3s;
   text-align: center;
   font-family: sans-serif;
   color: rgb(0, 0, 0);
