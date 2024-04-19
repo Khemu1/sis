@@ -9,7 +9,7 @@ require_once ("../models/Teachers.php");
 require_once ("../models/Teaches.php");
 require_once ("../models/Utils.php");
 session_start();
-$_SESSION["type"] = "student"
+var_dump($_SESSION)
   ?>
 
 <!DOCTYPE html>
@@ -39,7 +39,7 @@ $_SESSION["type"] = "student"
       </a>
 
       <?php
-      if ($_SESSION["type"] === "student") { ?>
+      if ($_SESSION["userType"] === "student") { ?>
         <a href="home.php?page=courses" id="courses" value="courses">
           <p>Courses</p>
         </a>
@@ -64,138 +64,6 @@ $_SESSION["type"] = "student"
   </nav>
 
   <section>
-    <h2>Enrolled Students </h2>
-    <div class="student-table-container">
-      <div class="students">
-        <div class="">Course</div>
-        <div class="">Level</div>
-        <div class="">Hours</div>
-        <div class="">Student Name</div>
-      </div>
-      <div class="students">
-        <div class="">Course</div>
-        <div class="">Level</div>
-        <div class="">Hours</div>
-        <div class="">Student Name</div>
-      </div>
-      <div class="students">
-        <div class="">Course</div>
-        <div class="">Level</div>
-        <div class="">Hours</div>
-        <div class="">Student Name</div>
-      </div>
-      <div class="students">
-        <div class="">Course</div>
-        <div class="">Level</div>
-        <div class="">Hours</div>
-        <div class="">Student Name</div>
-      </div>
-      <div class="students">
-        <div class="">Course</div>
-        <div class="">Level</div>
-        <div class="">Hours</div>
-        <div class="">Student Name</div>
-      </div>
-      <div class="students">
-        <div class="">Course</div>
-        <div class="">Level</div>
-        <div class="">Hours</div>
-        <div class="">Student Name</div>
-      </div>
-      <div class="students">
-        <div class="">Course</div>
-        <div class="">Level</div>
-        <div class="">Hours</div>
-        <div class="">Student Name</div>
-      </div>
-      <div class="students">
-        <div class="">Course</div>
-        <div class="">Level</div>
-        <div class="">Hours</div>
-        <div class="">Student Name</div>
-      </div>
-      <div class="students">
-        <div class="">Course</div>
-        <div class="">Level</div>
-        <div class="">Hours</div>
-        <div class="">Student Name</div>
-      </div>
-      <div class="students">
-        <div class="">Course</div>
-        <div class="">Level</div>
-        <div class="">Hours</div>
-        <div class="">Student Name</div>
-      </div>
-      <div class="students">
-        <div class="">Course</div>
-        <div class="">Level</div>
-        <div class="">Hours</div>
-        <div class="">Student Name</div>
-      </div>
-      <div class="students">
-        <div class="">Course</div>
-        <div class="">Level</div>
-        <div class="">Hours</div>
-        <div class="">Student Name</div>
-      </div>
-      <div class="students">
-        <div class="">Course</div>
-        <div class="">Level</div>
-        <div class="">Hours</div>
-        <div class="">Student Name</div>
-      </div>
-      <div class="students">
-        <div class="">Course</div>
-        <div class="">Level</div>
-        <div class="">Hours</div>
-        <div class="">Student Name</div>
-      </div>
-      <div class="students">
-        <div class="">Course</div>
-        <div class="">Level</div>
-        <div class="">Hours</div>
-        <div class="">Student Name</div>
-      </div>
-      <div class="students">
-        <div class="">Course</div>
-        <div class="">Level</div>
-        <div class="">Hours</div>
-        <div class="">Student Name</div>
-      </div>
-      <div class="students">
-        <div class="">Course</div>
-        <div class="">Level</div>
-        <div class="">Hours</div>
-        <div class="">Student Name</div>
-      </div>
-      <div class="students">
-        <div class="">Course</div>
-        <div class="">Level</div>
-        <div class="">Hours</div>
-        <div class="">Student Name</div>
-      </div>
-      <div class="students">
-        <div class="">Course</div>
-        <div class="">Level</div>
-        <div class="">Hours</div>
-        <div class="">Student Name</div>
-      </div>
-      <div class="students">
-        <div class="">Course</div>
-        <div class="">Level</div>
-        <div class="">Hours</div>
-        <div class="">Student Name</div>
-      </div>
-      <div class="students">
-        <div class="">Course</div>
-        <div class="">Level</div>
-        <div class="">Hours</div>
-        <div class="">Student Name</div>
-      </div>
-    </div>
-
-
-
     <footer>
       <div class="footer-contents">
         <div class="footer-content">
@@ -233,4 +101,4 @@ $_SESSION["type"] = "student"
 
 </html>
 
-<!-- <script type="module" src="../assets/js/home.js?t=<?= time() ?>"></script> -->
+<script type="module" src="../assets/js/home.js?t=<?= time() ?>"></script>

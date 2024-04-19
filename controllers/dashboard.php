@@ -17,7 +17,7 @@ if (!$_SESSION["id"]) {
   exit();
 }
 
-if ($_SESSION["type"] == "student") {
+if ($_SESSION["userType"] === "student") {
 
   $data = Students::select(["userName", "name", "address", "level"], ["accountId" => $_SESSION["id"]])[0];
 
@@ -26,7 +26,7 @@ if ($_SESSION["type"] == "student") {
   exit();
 }
 
-if ($_SESSION["type"] == "teacher") {
+if ($_SESSION["userType"] === "teacher") {
 
   $data = Teachers::select(["userName", "name", "address"], ["accountId" => $_SESSION["id"]])[0];
 

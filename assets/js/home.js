@@ -1,3 +1,4 @@
+console.log(window.location.href);
 let fetchedData;
 let home1;
 let about = `<div class="about">
@@ -61,15 +62,17 @@ let about = `<div class="about">
 
 let courses1;
 
-
 // Fetching data from the backend
 async function fetchData() {
   try {
-    const response = await fetch("../../controllers/dashboard.php");
+    const response = await fetch(
+      "http://localhost/sis/controllers/dashboard.php"
+    );
     if (!response.ok) {
       throw new Error("Something is wrong with the response");
     }
     const data = await response.json();
+    console.log(data);
     return data;
   } catch (error) {
     console.log("Something went wrong with fetching data:", error);
@@ -82,9 +85,9 @@ async function fetchDataAndUpdateVariable() {
     let info = fetchedData[1];
     let courses = fetchedData[2];
     if (fetchedData[0] === "student") {
-      // studentContent(info, courses);
+      studentContent(info, courses);
     } else {
-      teacherContent(info, courses);
+      // teacherContent(info, courses);
     }
     await displayContent();
   } catch (error) {
@@ -94,18 +97,18 @@ async function fetchDataAndUpdateVariable() {
   // Update UI based on button clicked
   async function displayContent() {
     let section = document.querySelector("section");
-    let footer = document.querySelector("fotter");
+    let footer = document.querySelector("footer");
     let url = window.location.href;
 
-    if (url === "http://sis.test/views/php/home.php") {
+    if (url === "http://localhost/sis/website/home.php") {
       console.log("will display home");
       let tempDiv = document.createElement("div");
       tempDiv.innerHTML = home1;
       let homeNode = tempDiv.firstElementChild;
-      section.insertBefore(homeNode,footer);
+      section.insertBefore(homeNode, footer);
     }
 
-    if (url === "http://sis.test/views/php/home.php?page=courses") {
+    if (url === "http://localhost/sis/website/home.php?page=courses") {
       console.log("will display courses");
       let tempDiv = document.createElement("div");
       tempDiv.innerHTML = courses1;
@@ -113,7 +116,7 @@ async function fetchDataAndUpdateVariable() {
       section.insertBefore(coursesNode, footer);
     }
 
-    if (url === "http://sis.test/views/php/home.php?page=about") {
+    if (url === "http://localhost/sis/website/home.php?page=about") {
       console.log("will display about");
       let tempDiv = document.createElement("div");
       tempDiv.innerHTML = about;
@@ -128,10 +131,10 @@ async function fetchDataAndUpdateVariable() {
  * @param {Object} info
  * @param {Object} courses
  */
-function teacherContent(info, courses) {
+function studentContent(info, courses) {
   home1 = `<div class="basic-info">
   <h2>Teacher Information</h2>
-  <div class="teacher-info">
+  <div class="student-info">
     <p id="username">Username: ${info.userName} </p>
     <p id="name">Name: ${info.name} </p>
     <p id="address">Address: ${info.address} </p> 
@@ -145,19 +148,16 @@ function teacherContent(info, courses) {
       <div>Course</div>
       <div>Level</div>
       <div>Hours</div>
-      <div>Student Name</div>
     </div>`;
 
   courses.forEach((course) => {
     courses1 += `
     <div class="students">
-      <p>${course.courseName}</p>
-      <p>${course.courseLevel}</p>
-      <p>${course.courseHours}</p>
-      <p>${course.studentUserName}</p>
+      <p>${course.name}</p>
+      <p>${course.level}</p>
+      <p>${course.hours}</p>
     </div>`;
   });
-
   courses1 += `
   </div>
 </div>`;
