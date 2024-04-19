@@ -14,6 +14,34 @@ body {
   background-position: center;
   display: grid;
   grid: max-content 2fr / 1fr;
+<<<<<<< Updated upstream
+=======
+}
+
+.nav-links li {
+  list-style: none;
+  display: inline-block;
+  /* display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 2rem;
+   
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    transition: 50.5s; */
+  margin-right: 2rem;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+}
+
+a:hover {
+  color: orange;
+>>>>>>> Stashed changes
 }
 
 nav {
