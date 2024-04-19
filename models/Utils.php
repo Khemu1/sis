@@ -8,7 +8,7 @@ class Utils
      */
     public static function validUserName($username)
     {
-        return preg_match('/^[a-zA-Z0-9 ]{2,12}$/', $username);
+        return preg_match('/^[a-zA-Z0-9 ]{3,12}$/', $username);
     }
 
     /**
@@ -17,7 +17,7 @@ class Utils
      */
     public static function validName($name)
     {
-        return preg_match("/^[a-zA-Z ]{2,12}$/", $name);
+        return preg_match("/^[a-zA-Z ]{3,12}$/", $name);
     }
 
     /**
@@ -26,7 +26,7 @@ class Utils
      */
     public static function validPassword($password)
     {
-        return preg_match("/^[a-zA-Z0-9 ]{2,12}$/", $password);
+        return preg_match("/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/", $password);
     }
 
     /**
@@ -35,7 +35,7 @@ class Utils
      */
     public static function validAddress($address)
     {
-        return preg_match("/^[a-zA-Z0-9,. ]{2,12}$/", $address);
+        return preg_match("/^[a-zA-Z0-9,. ]{2,30}$/", $address);
     }
 
     /**
@@ -103,7 +103,7 @@ class Utils
         $courses = $fields[4];
 
         if (Utils::validUserName($userName) != 1)
-            $errors['username'] = "invalid name";
+            $errors['username'] = "invalid  username";
         if (Utils::validName($name) != 1)
             $errors['name'] = "invalid name";
         if (Utils::validPassword($password) != 1)

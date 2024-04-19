@@ -159,11 +159,15 @@ nav .nav-buttons {
 .student-info > p {
   font-size: 35px;
 }
-.s .teacher-info {
+.teacher-info {
   display: grid;
   grid: repeat(3, auto) / repeat(1, auto);
   height: 100%;
   align-items: center;
+  padding-inline: 20px;
+}
+.teacher-info > div {
+  font-size: 35px;
 }
 
 /* responsive  */
@@ -296,7 +300,8 @@ h2 {
   margin-top: 10px;
   width: 100%;
 }
-.students > *,.teacher-students >* {
+.students > *,
+.teacher-students > * {
   padding: 10px;
   font-size: 1em;
   border: 1px solid #ddd;

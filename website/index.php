@@ -19,12 +19,13 @@ if (isset($_POST["login"])) {
     if (!empty($data)) {
         $id = $data[0]["id"];
         $type = Utils::designation($id);
+        echo $_POST["userType"];
         if ($_POST["userType"] === "student" && $type === "student") {
             $account = Students::select(["id", "userName"], ["accountId" => $id]);
             $_SESSION["id"] = $id;
             $_SESSION["userName"] = $account[0]["userName"];
             $_SESSION["userType"] = "student";
-            var_dump($_SESSION);
+            echo "done";
             header("location: home.php");
             exit();
         } else if ($_POST["userType"] === "teacher" && $type === "teacher") {
@@ -32,7 +33,7 @@ if (isset($_POST["login"])) {
             $_SESSION["id"] = $id;
             $_SESSION["userName"] = $account[0]["userName"];
             $_SESSION["userType"] = "teacher";
-            var_dump($_SESSION);
+            echo "done";
             header("location: home.php");
             exit();
         }
@@ -47,41 +48,46 @@ if (isset($_POST["login"])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
     <link rel="stylesheet" href="../assets/css/login.css">
-    <title>login</title>
 </head>
 
 <body>
-    <div class="home">
-        <div class="head">
-            <h2>Login</h2>
-        </div>
-        <div class="body">
-            <form method="post" action="">
-                <input type="text" name="userName" class="user-name" placeholder="Username" value="Omar"><br>
-                <input type="password" name="password" class="password" placeholder="Password" value="Omar"><br>
-                <div class="invalid-login hide">Invalid Account</div>
+    <div class="container">
+        <h2>Login</h2>
+        <form method="POST">
+            <div class="form-group">
+                <input type="text" name="userName" class="user-name" placeholder="Username">
                 <?php
                 echo $account["account"] ?? "";
                 ?>
-                <div class="user-type">
-                    <label><input type="radio" name="userType" value="student" checked> Student</label>
-                    <label><input type="radio" name="userType" value="teacher"> Teacher</label>
-                </div>
-                <input type="submit" name="login" class="submit" value="Login"><br>
-                <div class="links">
-                    <a class="link" href="StudentRegister.php">
-                        Register as a Student
-                    </a>
-                    <a class="link" href="TeacherRegister.php">
-                        Register as a Teacher
-                    </a>
-                </div>
-            </form>
-        </div>
-    </div>
-    <div class="footer">
-        <p>Powered by Kemet SIS</p>
+            </div>
+            <div class="form-group">
+                <input type="password" name="password" class="password" placeholder="Password">
+                <?php
+                echo $account["account"] ?? "";
+                ?>
+            </div>
+            <div class="radio-group">
+                <input type="radio" id="Teacher" name="userType" value="teacher" required checked>
+                <label for="Teacher">Teacher</label>
+                <input type="radio" id="Student" name="userType" value="student" required>
+                <label for="Student">Student</label>
+            </div>
+            <div class="form-group">
+                <input type="submit" name="login" value="login">
+            </div>
+            <div class="register-links">
+                <a href="StudentRegister.php" class="register-link">Register as a Student</a><br>
+            </div>
+            <div class="register-links1">
+
+                <a href="TeacherRegister.php" class="register-link">Register as a Teacher</a>
+            </div>
+            <div class="footer">
+                <label>Powered By Kemet Team</label>
+            </div>
+        </form>
     </div>
 </body>
 
