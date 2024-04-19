@@ -19,12 +19,13 @@ if (isset($_POST["login"])) {
     if (!empty($data)) {
         $id = $data[0]["id"];
         $type = Utils::designation($id);
+        echo $_POST["userType"];
         if ($_POST["userType"] === "student" && $type === "student") {
             $account = Students::select(["id", "userName"], ["accountId" => $id]);
             $_SESSION["id"] = $id;
             $_SESSION["userName"] = $account[0]["userName"];
             $_SESSION["userType"] = "student";
-            var_dump($_SESSION);
+            echo "done";
             header("location: home.php");
             exit();
         } else if ($_POST["userType"] === "teacher" && $type === "teacher") {
@@ -32,7 +33,7 @@ if (isset($_POST["login"])) {
             $_SESSION["id"] = $id;
             $_SESSION["userName"] = $account[0]["userName"];
             $_SESSION["userType"] = "teacher";
-            var_dump($_SESSION);
+            echo "done";
             header("location: home.php");
             exit();
         }
@@ -43,16 +44,18 @@ if (isset($_POST["login"])) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Form</title>
-   <link rel="stylesheet" href="../assets/css/login.css">
+    <link rel="stylesheet" href="../assets/css/login.css">
 </head>
+
 <body>
     <div class="container">
         <h2>Login</h2>
-        <form >
+        <form method="POST">
             <div class="form-group">
                 <input type="text" name="userName" class="user-name" placeholder="Username">
                 <?php
@@ -60,15 +63,15 @@ if (isset($_POST["login"])) {
                 ?>
             </div>
             <div class="form-group">
-                <input type="password"  name="password" class="password" placeholder="Password" >
+                <input type="password" name="password" class="password" placeholder="Password">
                 <?php
                 echo $account["account"] ?? "";
                 ?>
             </div>
             <div class="radio-group">
-                <input type="radio" id="Teacher" name="userType" value="Teacher" required>
+                <input type="radio" id="Teacher" name="userType" value="teacher" required checked>
                 <label for="Teacher">Teacher</label>
-                <input type="radio" id="Student" name="userType" value="Student" required>
+                <input type="radio" id="Student" name="userType" value="student" required>
                 <label for="Student">Student</label>
             </div>
             <div class="form-group">
@@ -78,13 +81,14 @@ if (isset($_POST["login"])) {
                 <a href="StudentRegister.php" class="register-link">Register as a Student</a><br>
             </div>
             <div class="register-links1">
-              
+
                 <a href="TeacherRegister.php" class="register-link">Register as a Teacher</a>
             </div>
             <div class="footer">
-              <label>Powered By Kemet Team</label>
+                <label>Powered By Kemet Team</label>
             </div>
         </form>
     </div>
 </body>
+
 </html>
