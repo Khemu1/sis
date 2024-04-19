@@ -66,13 +66,13 @@ if (isset($_POST["login"])) {
                 ?>
             </div>
             <div class="radio-group">
-                <input type="radio" id="Teacher" name="role" value="Teacher" required>
+                <input type="radio" id="Teacher" name="userType" value="Teacher" required>
                 <label for="Teacher">Teacher</label>
-                <input type="radio" id="Student" name="role" value="Student" required>
+                <input type="radio" id="Student" name="userType" value="Student" required>
                 <label for="Student">Student</label>
             </div>
             <div class="form-group">
-                <input type="submit"></input>
+                <input type="submit" name="login" value="login">
             </div>
             <div class="register-links">
                 <a href="StudentRegister.php" class="register-link">Register as a Student</a><br>
