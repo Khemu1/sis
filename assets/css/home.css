@@ -14,34 +14,6 @@ body {
   background-position: center;
   display: grid;
   grid: max-content 2fr / 1fr;
-<<<<<<< Updated upstream
-=======
-}
-
-.nav-links li {
-  list-style: none;
-  display: inline-block;
-  /* display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-left: 2rem;
-   
-    margin-bottom: 0.5rem;
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-    transition: 50.5s; */
-  margin-right: 2rem;
-}
-
-a {
-  text-decoration: none;
-  color: #fff;
-  font-size: 1rem;
-}
-
-a:hover {
-  color: orange;
->>>>>>> Stashed changes
 }
 
 nav {
@@ -158,6 +130,40 @@ nav .nav-buttons {
 }
 #logout:hover p {
   color: white !important;
+}
+
+.basic-info {
+  display: flex;
+  text-align: left;
+  padding: 10px;
+  flex-direction: column;
+  height: 100%;
+}
+.basic-info h2 {
+  font-size: 40px;
+}
+.info-item {
+  padding: 20px;
+  border-radius: 10px;
+  width: max-content;
+}
+
+.student-info {
+  display: grid;
+  grid: repeat(4, auto) / repeat(1, auto);
+  height: 100%;
+  align-items: center;
+  padding-inline: 20px;
+  margin-left: 5px;
+}
+.student-info > p {
+  font-size: 35px;
+}
+.s .teacher-info {
+  display: grid;
+  grid: repeat(3, auto) / repeat(1, auto);
+  height: 100%;
+  align-items: center;
 }
 
 /* responsive  */

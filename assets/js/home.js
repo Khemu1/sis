@@ -131,11 +131,13 @@ async function fetchDataAndUpdateVariable() {
  */
 function studentContent(info, courses) {
   home1 = `<div class="basic-info">
-  <h2>Teacher Information</h2>
+  <h2>Student Information</h2>
   <div class="student-info">
     <p id="username">Username: ${info.userName} </p>
     <p id="name">Name: ${info.name} </p>
     <p id="address">Address: ${info.address} </p> 
+    <p id="address">Level: ${info.level} </p> 
+
   </div>
 </div>`;
 
