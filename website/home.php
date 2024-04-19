@@ -25,44 +25,46 @@ session_start();
 </head>
 
 <body>
-  <nav>
+  <main>
+    <nav>
 
-    <a href="home.php" class="logo">
+      <a href="home.php" class="logo">
 
-      <img class="main" src="../../assets/images/kemet-high-resolution-logo-transparent.svg">
-    </a>
-
-    <div class="nav-buttons">
-      <a href="home.php" id="home" value="home">
-        <p>Home</p>
+        <img class="main" src="../../assets/images/kemet-high-resolution-logo-transparent.svg">
       </a>
 
-      <?php
-      if ($_SESSION["userType"] === "student") { ?>
-        <a href="home.php?page=courses" id="courses" value="courses">
-          <p>Courses</p>
+      <div class="nav-buttons">
+        <a href="home.php" id="home" value="home">
+          <p>Home</p>
         </a>
+
         <?php
-      } else { ?>
-        <a href="home.php?page=courses" id="courses" value="courses">
-          <p>Participants</p>
+        if ($_SESSION["userType"] === "student") { ?>
+          <a href="home.php?page=courses" id="courses" value="courses">
+            <p>Courses</p>
+          </a>
+          <?php
+        } else { ?>
+          <a href="home.php?page=courses" id="courses" value="courses">
+            <p>Participants</p>
+          </a>
+          <?php
+        } ?>
+
+        <a href="home.php?page=about" id="about" value="about">
+          <p>About</p>
         </a>
-        <?php
-      } ?>
 
-      <a href="home.php?page=about" id="about" value="about">
-        <p>About</p>
-      </a>
+      </div>
+      <div class="right">
+        <a id="logout" href="../controllers/logout.php">
+          <p>Logout</p>
+        </a>
+      </div>
+    </nav>
 
-    </div>
-    <div class="right">
-      <a id="logout" href="../controllers/logout.php">
-        <p>Logout</p>
-      </a>
-    </div>
-  </nav>
-
-  <section>
+    <section>
+    </section>
     <footer>
       <div class="footer-contents">
         <div class="footer-content">
@@ -95,7 +97,7 @@ session_start();
         </div>
       </div>
     </footer>
-  </section>
+  </main>
 </body>
 
 </html>

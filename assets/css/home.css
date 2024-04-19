@@ -7,13 +7,16 @@
 }
 
 body {
-  height: 100vh;
   background-color: #eee;
-  background-image: url("../assets/84a4ec0c6c5a805770cb7bff5bae6591.jpg");
-  background-size: cover;
   background-position: center;
   display: grid;
-  grid: max-content 2fr / 1fr;
+}
+
+main {
+  width: 100%;
+  height: 100dvh;
+  display: grid;
+  grid: max-content 2fr max-content/1fr;
 }
 
 nav {

@@ -103,7 +103,7 @@ async function fetchDataAndUpdateVariable() {
       let tempDiv = document.createElement("div");
       tempDiv.innerHTML = home1;
       let homeNode = tempDiv.firstElementChild;
-      section.insertBefore(homeNode, footer);
+      section.appendChild(homeNode);
     }
 
     if (url === "http://sis.test/website/home.php?page=courses") {
@@ -111,7 +111,7 @@ async function fetchDataAndUpdateVariable() {
       let tempDiv = document.createElement("div");
       tempDiv.innerHTML = courses1;
       let coursesNode = tempDiv.firstElementChild;
-      section.insertBefore(coursesNode, footer);
+      section.appendChild(coursesNode);
     }
 
     if (url === "http://sis.test/website/home.php?page=about") {
@@ -119,7 +119,7 @@ async function fetchDataAndUpdateVariable() {
       let tempDiv = document.createElement("div");
       tempDiv.innerHTML = about;
       let aboutNode = tempDiv.firstElementChild;
-      section.insertBefore(aboutNode, footer);
+      section.appendChild(aboutNode);
     }
   }
 }
