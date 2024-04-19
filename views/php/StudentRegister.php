@@ -50,7 +50,7 @@ require_once ("../../models/Utils.php");
         <div class="invalid-level hide">Invalid level: please enter a value between 1 and 2</div>
 
         <input type="submit" name="register" placeholder="Register" value="Register"><br>
-        <a class="font-dark" href="login.php">Login</a>
+        <a class="font-dark" href="index.php">Login</a>
       </form>
     </div>
     <div class="footer">

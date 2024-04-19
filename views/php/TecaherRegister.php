@@ -156,7 +156,7 @@ require_once ("../../models/Utils.php");
         </div>
         <div class="invalid-courses hide">Invalid number of courses : Please choose atleast one course </div>
         <input type="submit" name="register" value="Register"><br>
-        <a class="font-dark" href="login.php">Login</a>
+        <a class="font-dark" href="index.php">Login</a>
 
 
       </form>
