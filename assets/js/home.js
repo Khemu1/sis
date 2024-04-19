@@ -85,7 +85,7 @@ async function fetchDataAndUpdateVariable() {
     if (fetchedData[0] === "student") {
       studentContent(info, courses);
     } else {
-      // teacherContent(info, courses);
+      teacherContent(info, courses);
     }
     await displayContent();
   } catch (error) {
@@ -143,7 +143,7 @@ function studentContent(info, courses) {
 
   courses1 = `<div class="student-table-container">
   <h2>students</h2>
-  <div>
+  <div class="student-table-container">
     <div class="students">
       <div>Course</div>
       <div>Level</div>
@@ -153,9 +153,44 @@ function studentContent(info, courses) {
   courses.forEach((course) => {
     courses1 += `
     <div class="students">
-      <p>${course.name}</p>
-      <p>${course.level}</p>
-      <p>${course.hours}</p>
+      <div>${course.name}</div>
+      <div>${course.level}</div>
+      <div>${course.hours}</div>
+    </div>`;
+  });
+  courses1 += `
+  </div>
+</div>`;
+}
+
+function teacherContent(info, courses) {
+  home1 = `<div class="basic-info">
+  <h2>Teacher Information</h2>
+  <div class="teacher-info">
+    <p id="username">Username: ${info.userName} </p>
+    <p id="name">Name: ${info.name} </p>
+    <p id="address">Address: ${info.address} </p> 
+  </div>
+</div>`;
+
+  courses1 = `<div class=""student-table-container>
+  <h2>Enrolled Students</h2>
+  <div class="enrolled-students">
+    <div class="students">
+      <p>Course</p>
+      <p>Level</p>
+      <p>Hours</p>
+      <p>Student Name</p>
+      </div> 
+    `;
+
+  courses.forEach((course) => {
+    courses1 += `
+    <div class="students">
+      <p>${course.courseName}</p>
+      <p>${course.courseLevel}</p>
+      <p>${course.courseHours}</p>
+      <p>${course.studentUserName}</p>
     </div>`;
   });
   courses1 += `
