@@ -2,7 +2,7 @@ console.log(window.location.href);
 let fetchedData;
 let home1;
 let about = `<div class="about">
-          <div class=" about-container">
+          <div class="about-container">
             <h3>Our Reliabile Connection</h3>
             <div class="img-container">
               <img src="../../assets/images/dedicated-server-bg.jpg">
@@ -16,7 +16,7 @@ let about = `<div class="about">
               Our commitment to utilizing dedicated servers underscores our dedication to safeguarding your data and
               delivering optimal performance at all times </p>
           </div>
-          <div class=" about-container">
+          <div class="about-container">
             <h3>Our Security System</h3>
             <div class="img-container">
               <img src="../../assets/images/security.webp">
