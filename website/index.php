@@ -43,46 +43,48 @@ if (isset($_POST["login"])) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/css/login.css">
-    <title>login</title>
+    <title>Login Form</title>
+   <link rel="stylesheet" href="../assets/css/login.css">
 </head>
-
 <body>
-    <div class="home">
-        <div class="head">
-            <h2>Login</h2>
-        </div>
-        <div class="body">
-            <form method="post" action="">
-                <input type="text" name="userName" class="user-name" placeholder="Username" value="Yasser"><br>
-                <input type="password" name="password" class="password" placeholder="Password" value="951357"><br>
-                <div class="invalid-login hide">Invalid Account</div>
+    <div class="container">
+        <h2>Login</h2>
+        <form >
+            <div class="form-group">
+                <input type="text" name="userName" class="user-name" placeholder="Username">
                 <?php
                 echo $account["account"] ?? "";
                 ?>
-                <div class="user-type">
-                    <label><input type="radio" name="userType" value="student" checked> Student</label>
-                    <label><input type="radio" name="userType" value="teacher"> Teacher</label>
-                </div>
-                <input type="submit" name="login" class="submit" value="Login"><br>
-                <div class="links">
-                    <a class="link" href="StudentRegister.php">
-                        Register as a Student
-                    </a>
-                    <a class="link" href="TeacherRegister.php">
-                        Register as a Teacher
-                    </a>
-                </div>
-            </form>
-        </div>
-    </div>
-    <div class="footer">
-        <p>Powered by Kemet SIS</p>
+            </div>
+            <div class="form-group">
+                <input type="password"  name="password" class="password" placeholder="Password" >
+                <?php
+                echo $account["account"] ?? "";
+                ?>
+            </div>
+            <div class="radio-group">
+                <input type="radio" id="Teacher" name="role" value="Teacher" required>
+                <label for="Teacher">Teacher</label>
+                <input type="radio" id="Student" name="role" value="Student" required>
+                <label for="Student">Student</label>
+            </div>
+            <div class="form-group">
+                <input type="submit"></input>
+            </div>
+            <div class="register-links">
+                <a href="StudentRegister.php" class="register-link">Register as a Student</a><br>
+            </div>
+            <div class="register-links1">
+              
+                <a href="TeacherRegister.php" class="register-link">Register as a Teacher</a>
+            </div>
+            <div class="footer">
+              <label>Powered By Kemet Team</label>
+            </div>
+        </form>
     </div>
 </body>
-
 </html>

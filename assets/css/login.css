@@ -1,20 +1,14 @@
-.invalid {
-  box-shadow: 0px 0px 5px 5px red;
-}
-
-.valid {
-  box-shadow: 0px 0px 5px 5px green;
-}
-form {
-  display: grid;
-  justify-items: center;
+form input:focus-within {
+  outline: none;
 }
 body {
-  background-color: #ecebeb;
+  background-color: #ecebeb;}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
-
-.home {
-  position: relative;
+.container {
   width: 350px;
   margin: 50px auto;
   text-align: center;
@@ -24,150 +18,90 @@ body {
   background-color: #ffffff;
   box-shadow: 5px -6px 12px -1px rgba(0, 0, 0, 0.32);
 }
-
-.home .head {
-  display: flex;
-  justify-content: center;
-  position: relative;
-  width: 100px;
-  height: 100px;
-  text-align: center;
-  margin: auto;
+.container h2 {
+  font-size: 24px;
+  font-family: sans-serif;
   margin-bottom: 20px;
+  color: #333;
 }
-.home .head img {
-  position: absolute;
-  width: 110px;
-  height: 115px;
-  transition: 0.3s ease-in-out;
-}
-
-.main {
-  z-index: 2;
-  transition: 250ms ease-in-out;
-}
-.secondary {
-  z-index: 1;
-}
-
-.home .body input[type="text"],
-.home .body input[type="password"] {
-  width: calc(100% - 20px);
-  margin: 10px;
-  padding: 10px;
-  border: 1px solid #ccc;
+.container input[type="text"],
+.container input[type="password"],
+.container input[type="submit"],
+#login {
+  margin: 5px 0;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
   border-radius: 5px;
-}
-
-.home .body input[type="radio"] {
-  margin-right: 5px;
-}
-
-.home .body label {
-  font-size: 14px;
-}
-
-.home .body input[type="submit"] {
-  width: calc(100% - 20px);
-  margin: 10px;
+  text-decoration: none;
   padding: 10px;
-  border: none;
-  border-radius: 5px;
+  width: calc(100% - 20px);
+}
+.container input[type="submit"],
+#login {
   background-color: #0073f7;
   color: white;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.4s ease-in-out;
-}
-
-.home .body input[type="submit"]:hover {
-  background-color: #0056b3;
-}
-
-.home .footer {
-  text-align: center;
-  margin-top: 20px;
-}
-.footer p {
-  font-size: 12px;
   font-family: sans-serif;
-  margin-top: 20px;
-  color: #666;
-  transition: 0.4s ease-in-out;
-  cursor: default;
-  font-weight: bold;
-  margin-inline: auto;
+  border: none;
+  cursor: pointer;
 }
-.footer p:hover {
-  color: #007bff;
-}
-.invalid-login {
-  color: red;
-  margin-bottom: 2px;
-}
-.hide {
-  display: none;
-}
-.links {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin-top: 5px;
-}
-.link {
-  position: relative;
-  display: flex;
-  justify-content: center;
-}
-.link::before {
-  content: "";
-  width: 0%;
-  height: 4px;
-  background-color: #000;
-  bottom: -5px;
-  transition: 250ms ease-in-out;
-}
-.link:hover::before {
-  width: 100%;
-  transform: scale(1, 0.5);
-}
-
-a {
-  display: flex;
-  justify-content: center;
-  position: relative;
-  text-decoration: none;
-  color: black;
-  margin: auto;
-  font-weight: bold;
-  width: max-content;
-}
-
-a::before {
-  content: "";
-  position: absolute;
-  height: 3px;
-  width: 0%;
-  bottom: -5px;
-  background-color: #000;
-  transition: 0.3s ease-in-out;
-}
-
-a.font-dark:before {
-  content: "";
-  position: absolute;
-  height: 3px;
-  width: 0%;
-  bottom: -5px;
-  background-color: white;
-  transition: 0.3s ease-in-out;
-}
-
-a:hover::before {
-  width: 100%;
-}
-.footer {
+.footer footer{
   position: fixed;
   bottom: 0;
 }
-
+.footer footer {
+  font-size: 12px;
+  font-family: sans-serif;
+  margin-top: 20px;
+  color: #888888;
+}
+.radio-group {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #555;
+}
+.form-group input {
+  width: calc(100% - 30px);
+  padding: 15px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+  font-size: 16px;
+  transition: border-color 0.3s ease-in-out;
+}
+.form-group input:focus {
+  border-color: #0077cc;
+}
+.register-links {
+  margin-top: 20px;
+}
+.register-link {
+  text-decoration: none;
+  text-align: center;
+  font-family: sans-serif;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  font-size: 16px;
+}
+.register-link:hover {
+  text-decoration: underline;
+  color: #0077ff;
+}
+.register-link1 {
+  text-decoration: none;
+  text-align: center;
+  font-family: sans-serif;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  font-size: 16px;
+}
+.register-link1:hover {
+  text-decoration: underline;
+  color: #0077ff;
+}
