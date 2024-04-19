@@ -44,15 +44,15 @@ form {
   border: none;
   cursor: pointer;
 }
-.footer footer{
+.footer {
   position: fixed;
   bottom: 0;
 }
-.footer footer {
+.footer p {
   font-size: 12px;
   font-family: sans-serif;
   margin-top: 20px;
-  color: #888888;
+  color: #666;
 }
 .radio-group {
   display: flex;

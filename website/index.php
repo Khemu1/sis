@@ -84,10 +84,11 @@ if (isset($_POST["login"])) {
 
                 <a href="TeacherRegister.php" class="register-link">Register as a Teacher</a>
             </div>
-            <div class="footer">
-                <label>Powered By Kemet Team</label>
-            </div>
         </form>
+           <div class="footer">
+        <p>Powered by Kemet SIS</p>
+    </div>
+
     </div>
 </body>
 
