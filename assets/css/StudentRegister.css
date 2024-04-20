@@ -68,6 +68,7 @@ body {
   color: #666;
 }
 .login {
+  text-decoration: none;
   display: flex;
   justify-content: center;
   background: none;
@@ -75,6 +76,12 @@ body {
   color: #000;
   margin-top: 15px;
   margin: auto;
+  font-weight: bold;
+  transition: 0.3s ease-in-out;
+}
+.login:hover {
+  text-decoration: underline;
+  color: #0077ff;
 }
 .form input:focus {
   outline: none;

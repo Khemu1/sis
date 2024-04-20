@@ -44,16 +44,7 @@ form {
   border: none;
   cursor: pointer;
 }
-.footer footer{
-  position: fixed;
-  bottom: 0;
-}
-.footer footer {
-  font-size: 12px;
-  font-family: sans-serif;
-  margin-top: 20px;
-  color: #888888;
-}
+
 .radio-group {
   display: flex;
   justify-content: center;
@@ -79,31 +70,31 @@ form {
   border-color: #0077cc;
 }
 .register-links {
+  display: flex;
+  flex-direction: column;
   margin-top: 20px;
 }
 .register-link {
   text-decoration: none;
-  transition-duration: 0.3s;
+  transition: 0.3s ease-in-out;
   text-align: center;
   font-family: sans-serif;
   color: rgb(0, 0, 0);
   font-weight: bold;
-  font-size: 16px;
+  font-size: 14px;
 }
 .register-link:hover {
   text-decoration: underline;
   color: #0077ff;
 }
-.register-link1 {
-  text-decoration: none;
-  transition-duration: 0.3s;
-  text-align: center;
-  font-family: sans-serif;
-  color: rgb(0, 0, 0);
-  font-weight: bold;
-  font-size: 16px;
+.footer p{
+  position: fixed;
+  bottom: 0;
 }
-.register-link1:hover {
-  text-decoration: underline;
-  color: #0077ff;
+.footer p {
+  font-size: 12px;
+  font-family: sans-serif;
+  margin-top: 20px;
+  color: #888888;
+  text-align: left;
 }
