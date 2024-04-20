@@ -11,6 +11,8 @@ form {
 }
 body {
   background-color: #ecebeb;
+  background-image: url(../../assets/images/wallpaperflare.com_wallpaper.jpg);
+  background-repeat: no-repeat;
 }
 
 .home {
@@ -21,8 +23,10 @@ body {
   border: 1px solid #ffffff;
   border-radius: 8px;
   padding: 20px;
-  background-color: #ffffff;
+  background-color: transparent;
   box-shadow: 5px -6px 12px -1px rgba(0, 0, 0, 0.32);
+  margin: 0;
+  transition: 250ms ease-in-out;
 }
 
 .home .head {
@@ -155,12 +159,17 @@ a.dark-font:hover::before {
 .body-dark {
   background-color: #131d26;
   color: white !important;
+  background-image: url(../../assets/images/wallpaperflare.com_wallpaper\ dark.jpg);
+  background-repeat: no-repeat;
 }
 .container-dark {
-  background-color: #111a26;
+  background-color: transparent;
   color: white !important;
   border: none;
   box-shadow: 5px -6px 12px -1px #111a26;
+  backdrop-filter: blur(5px);
+  margin: 150px;
+  transition: 250ms ease-in-out;
 }
 .font-dark {
   color: white !important;
