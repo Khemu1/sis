@@ -200,7 +200,7 @@ section {
 }
 
 footer {
-  background-color: #343434;
+  background-color: royalblue;
 }
 
 .footer-contents {
@@ -245,6 +245,8 @@ footer {
 .footer-content ul li a {
   color: #fff;
   text-decoration: none;
+  font-size: 20px;
+  margin: 10px;
 }
 
 .footer-content ul li a:hover {
