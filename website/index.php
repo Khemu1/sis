@@ -19,7 +19,6 @@ if (isset($_POST["login"])) {
     if (!empty($data)) {
         $id = $data[0]["id"];
         $type = Utils::designation($id);
-        echo $_POST["userType"];
         if ($_POST["userType"] === "student" && $type === "student") {
             $account = Students::select(["id", "userName"], ["accountId" => $id]);
             $_SESSION["id"] = $id;
