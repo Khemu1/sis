@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "open Sans", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+  font-family: 'open Sans', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
     sans-serif;
 }
 
@@ -91,7 +91,7 @@ nav .nav-buttons {
   color: #000;
 }
 .nav-buttons a::before {
-  content: "";
+  content: '';
   position: absolute;
   height: 3px;
   width: 0%;

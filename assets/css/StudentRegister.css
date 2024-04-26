@@ -18,7 +18,7 @@ form input:focus-within {
 
 body {
   background-color: #ecebeb;
-  background-image: url("../images/student.jpg");
+  background-image: url('../images/student.jpg');
 }
 .container {
   width: 350px;
@@ -39,9 +39,9 @@ body {
   color: #fafafa;
 }
 
-.body input[type="text"],
-.body input[type="password"],
-.body input[type="submit"],
+.body input[type='text'],
+.body input[type='password'],
+.body input[type='submit'],
 #login {
   margin: 10px 0;
   padding: 10px;
@@ -51,7 +51,7 @@ body {
   border-radius: 5px;
   text-decoration: none;
 }
-.body input[type="submit"],
+.body input[type='submit'],
 #login {
   background-color: #0073f7;
   color: white;
@@ -97,7 +97,6 @@ body {
   border-color: var(--success-color);
 }
 
-  
 .form small {
   color: var(--error-color);
 }
