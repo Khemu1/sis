@@ -25,11 +25,8 @@ form {
 .move {
   transform: translateY(50%);
 }
-.move .container h2 {
-  font-size: 24px;
-  font-family: sans-serif;
-  margin-bottom: 20px;
-  color: #ffffff;
+h2 {
+  color: white;
 }
 .container input[type="text"],
 .container input[type="password"],
