@@ -40,7 +40,7 @@ body {
 
 .log:hover {
   text-decoration: underline;
-  color: #0077ff;
+  color:  #0077ff;
 }
 
 .dropdown button {
@@ -80,7 +80,7 @@ body {
 }
 
 .dropdown:hover button {
-  background-color: #333;
+  background-color: #8b8b8b;
 }
 .dropdown label:hover {
   background-color: #554d4d61;
@@ -101,7 +101,7 @@ body {
   font-size: 24px;
   font-family: sans-serif;
   margin-bottom: 20px;
-  color: #2d4795;
+  color: #000000;
 }
 
 .body input[type="text"],
@@ -126,14 +126,13 @@ body {
   bottom: 0;
 }
 #register:not(form) {
-  background-color: #0077ff;
+  background-color: #0073f7;
   border-radius: 8px;
   border-style: none;
   box-sizing: border-box;
   color: #ffffff;
   cursor: pointer;
-  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial,
-    sans-serif;
+  font-family: sans-serif;
   font-size: 14px;
   height: 40px;
   padding: 10px 16px;
