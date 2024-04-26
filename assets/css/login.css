@@ -3,7 +3,6 @@ form input:focus-within {
 }
 body {
   background-color: #ecebeb;
-  background-image: url("../images/college.jpg");
 }
 
 form {
@@ -26,7 +25,7 @@ form {
   transform: translateY(35%);
 }
 h2 {
-  color: white;
+  color: #0077ff;
 }
 .container input[type="text"],
 .container input[type="password"],
@@ -54,7 +53,7 @@ h2 {
   justify-content: center;
   gap: 10px;
   margin: 10px 0;
-  color: #ffffff;
+  color: #777777;
 }
 .form-group label {
   display: block;
@@ -72,7 +71,7 @@ h2 {
   transition: border-color 0.3s ease-in-out;
 }
 .form-group input:focus {
-  border-color: #0077cc;
+  border-color: #4790c4;
 }
 .register-links {
   display: flex;
@@ -84,7 +83,7 @@ h2 {
   transition: 0.3s ease-in-out;
   text-align: center;
   font-family: sans-serif;
-  color: rgb(255, 255, 255);
+  color: #5798e2;
   font-weight: bold;
   font-size: 14px;
 }
@@ -100,6 +99,6 @@ h2 {
   font-size: 12px;
   font-family: sans-serif;
   margin-top: 20px;
-  color: #ffffff;
+color: #0077ff;
   text-align: left;
 }

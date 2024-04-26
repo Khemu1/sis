@@ -40,8 +40,9 @@ if (isset($_POST["register"])) {
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kemet Sign Up</title>
+    <title>Student Sign Up</title>
     <link rel="stylesheet" href="..\assets\css\StudentRegister.css">
+    <link rel="stylesheet" href="../assets/css/condition.css">
 </head>
 
 <body>

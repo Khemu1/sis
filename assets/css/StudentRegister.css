@@ -18,7 +18,6 @@ form input:focus-within {
 
 body {
   background-color: #ecebeb;
-  background-image: url("../images/student.jpg");
 }
 .container {
   width: 350px;
@@ -40,7 +39,7 @@ body {
   font-size: 24px;
   font-family: sans-serif;
   margin-bottom: 20px;
-  color: #fafafa;
+  color: #0077ff;
 }
 
 .body input[type="text"],
@@ -63,23 +62,14 @@ body {
   border: none;
   cursor: pointer;
 }
-.footer {
-  position: fixed;
-  bottom: 0;
-}
-.footer p {
-  font-size: 12px;
-  font-family: sans-serif;
-  margin-top: 20px;
-  color: #ffffff;
-}
+
 .login {
   text-decoration: none;
   display: flex;
   justify-content: center;
   background: none;
   width: max-content;
-  color: #ffffff;
+  color: #5798e2;
   margin-top: 15px;
   margin: auto;
   font-weight: bold;
@@ -103,4 +93,15 @@ body {
 
 .form small {
   color: var(--error-color);
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+}
+.footer p {
+  font-size: 12px;
+  font-family: sans-serif;
+  margin-top: 20px;
+  color: #0077ff;
 }
