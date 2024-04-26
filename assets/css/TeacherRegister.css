@@ -18,6 +18,7 @@ form input:focus-within {
 
 body {
   background-color: #ecebeb;
+  background-image: url("../images/teach.jpg");
 }
 
 .log {
@@ -25,7 +26,7 @@ body {
   justify-content: center;
   background: none;
   width: max-content;
-  color: #000;
+  color: #ffffff;
   margin-top: 15px;
   margin: auto;
   cursor: pointer;
@@ -93,15 +94,17 @@ body {
   border: 1px solid #ffffff;
   border-radius: 8px;
   padding: 20px;
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
   box-shadow: 5px -6px 12px -1px rgba(0, 0, 0, 0.32);
+  backdrop-filter: blur(10px);
+
 }
 
 .head h2 {
   font-size: 24px;
   font-family: sans-serif;
   margin-bottom: 20px;
-  color: #000000;
+  color: #ffffff;
 }
 
 .body input[type="text"],
@@ -119,7 +122,7 @@ body {
   font-size: 13px;
   font-family: sans-serif;
   margin-top: 20px;
-  color: #666;
+  color: #fdfdfd;
 }
 .footer {
   position: fixed;
