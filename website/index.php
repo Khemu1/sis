@@ -78,8 +78,7 @@ if (isset($_POST["login"])) {
                 <input type="submit" name="login" value="login">
             </div>
             <div class="register-links">
-                <a href="StudentRegister.php" class="register-link">Register as a Student</a><br>
-
+                <a href="StudentRegister.php" class="register-link">Register as a Student</a>
                 <a href="TeacherRegister.php" class="register-link">Register as a Teacher</a>
             </div>
         </form>
