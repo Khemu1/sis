@@ -2,7 +2,10 @@ form input:focus-within {
   outline: none;
 }
 body {
-  background-color: #ecebeb;}
+  background-color: #ecebeb;
+  background-image: url("../images/college.jpg");
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -17,6 +20,7 @@ form {
   padding: 20px;
   background-color: #ffffff;
   box-shadow: 5px -6px 12px -1px rgba(0, 0, 0, 0.32);
+  backdrop-filter: blur(10px);
 }
 .container h2 {
   font-size: 24px;
@@ -95,6 +99,6 @@ form {
   font-size: 12px;
   font-family: sans-serif;
   margin-top: 20px;
-  color: #888888;
+  color: #000000;
   text-align: left;
 }
