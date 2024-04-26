@@ -161,7 +161,7 @@ if (isset($_POST["register"])) {
     </form>
   </div>
   <div class="footer">
-    <p>Powerd by Kemet University</p>
+    <p>Powered by Kemet SIS</p>
   </div>
   </div>
   </div>
