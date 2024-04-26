@@ -80,14 +80,21 @@ if (isset($_POST["login"])) {
             <div class="register-links">
                 <a href="StudentRegister.php" class="register-link">Register as a Student</a><br>
 
-                  <a href="TeacherRegister.php" class="register-link">Register as a Teacher</a>
+                <a href="TeacherRegister.php" class="register-link">Register as a Teacher</a>
             </div>
         </form>
 
     </div>
-                <div class="footer">
-                <p>Powered By Kemet SIS</p>
-            </div>
+    <div class="footer">
+        <p>Powered By Kemet SIS</p>
+    </div>
 </body>
 
 </html>
+
+<script>
+    setTimeout(function () {
+        document.querySelector(".container").classList.add("move");
+    }, 250);
+
+</script>

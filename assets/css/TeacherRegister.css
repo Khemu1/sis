@@ -18,7 +18,7 @@ form input:focus-within {
 
 body {
   background-color: #ecebeb;
-  background-image: url('../images/teach.jpg');
+  background-image: url("../images/teach.jpg");
 }
 
 .log {
@@ -97,6 +97,10 @@ body {
   /* background-color: #ffffff; */
   box-shadow: 5px -6px 12px -1px rgba(0, 0, 0, 0.32);
   backdrop-filter: blur(10px);
+  transition: 250ms ease-in-out;
+}
+.move {
+  transform: translate(380px, 0%);
 }
 
 .head h2 {
@@ -106,9 +110,9 @@ body {
   color: #ffffff;
 }
 
-.body input[type='text'],
-.body input[type='password'],
-.body input[type='submit'] {
+.body input[type="text"],
+.body input[type="password"],
+.body input[type="submit"] {
   margin: 10px 0;
   padding: 10px;
   width: calc(100% - 20px);
