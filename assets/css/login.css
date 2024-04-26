@@ -19,11 +19,11 @@ form {
   border-radius: 8px;
   padding: 20px;
   box-shadow: 5px -6px 12px -1px rgba(0, 0, 0, 0.32);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(5px);
   transition: 250ms ease-in-out;
 }
 .move {
-  transform: translateY(50%);
+  transform: translateY(35%);
 }
 h2 {
   color: white;
