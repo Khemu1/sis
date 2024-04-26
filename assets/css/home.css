@@ -30,7 +30,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  background: #ffffff;
+  background: #0077ff;
 
   height: 100px !important;
 }
@@ -85,10 +85,10 @@ nav .nav-buttons {
   padding: 5px 5px;
   outline: none;
   text-decoration: none;
-  color: #000;
+  color: #ffffff;
 }
 .nav-buttons a p {
-  color: #000;
+  color: #ffffff;
 }
 .nav-buttons a::before {
   content: '';
@@ -96,7 +96,7 @@ nav .nav-buttons {
   height: 3px;
   width: 0%;
   bottom: 0;
-  background-color: #000;
+  background-color: #ffffff;
   transition: 0.3s ease-in-out;
 }
 
@@ -142,7 +142,7 @@ section {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  font-size: 30px;
+  font-size: 20px;
   height: 100%;
   overflow-y: scroll;
 }
@@ -200,7 +200,7 @@ section {
 }
 
 footer {
-  background-color: royalblue;
+  background-color: #0077ff;
 }
 
 .footer-contents {
@@ -271,12 +271,12 @@ footer {
 
 .bottom-bar {
   height: max-content;
-  text-align: center;
-  color: #ccc;
+  /* text-align: center; */
+  color: #fcfcfc;
 }
 h2 {
   font-size: 40px;
-  color: rgb(228, 78, 18);
+  color: rgb(0, 0, 0);
   padding: 20px;
 }
 .student-table-container {

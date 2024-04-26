@@ -30,7 +30,7 @@ session_start();
 
       <a href="home.php" class="logo">
 
-        <img class="main" src="../../assets/images/kemet-high-resolution-logo-transparent.svg">
+        <img class="main" src="../../assets/images/kemet-high-resolution-logo-black-transparent.svg">
       </a>
 
       <div class="nav-buttons">
