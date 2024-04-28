@@ -1,15 +1,146 @@
+:root {
+  --body-light: #eee;
+  --nav-light: #0077ff;
+  --nav-buttons-light: white;
+  --nav-buttons-hover-light: #000;
+  --about-container-light: #ffffff;
+  --about-container-text-light: #000;
+  --course-container-light: white;
+  --course-color-dark: #000;
+  --course-h2-light: #000;
+  --course-border-light: 1px solid transparent;
+  --footer-light: #0077ff;
+  --footer-a-light: #fff;
+  --bottom-bar-light: #fcfcfc;
+
+  --body-dark: #111a26;
+  --nav-dark: #18242f;
+  --nav-buttons-dark: white;
+  --nav-buttons-hover-dark: white;
+  --basic-info-text-dark: white;
+  --about-container-dark: #18242f;
+  --about-container-text-dark: white;
+  --course-container-dark: #18242f;
+  --course-color-dark: white;
+  --course-border-dark: 1px solid transparent;
+  --course-h2-dark: white;
+  --footer-dark: ##18242f;
+  --footer-a-dark: white;
+  --bottom-bar-dark: white;
+}
+
+@media (prefers-color-scheme: light) {
+  * {
+    color-scheme: white;
+  }
+  body {
+    background-color: var(--body-light);
+  }
+  nav {
+    background-color: var(--nav-light);
+    border: var(--form-light);
+  }
+  nav > *,
+  .nav-buttons a {
+    font-size: 18px;
+    color: --var(--nav-buttons-dark);
+  }
+  .nav-buttons a::before {
+    content: "";
+    background-color: var(--nav-buttons-hover-light);
+    position: absolute;
+    height: 3px;
+    width: 0%;
+    bottom: 0;
+    transition: 0.3s ease-in-out;
+  }
+  footer {
+    background-color: var(--footer-light);
+  }
+  .about-container {
+    background-color: var(--about-container-light);
+    color: var(--about-container-text-light);
+  }
+  .students > *,
+  .teacher-students > * {
+    background-color: var(--course-container-light);
+    border: var(--course-border-light);
+    color: var(--course-color-light);
+  }
+  h2 {
+    color: var(--course-h2);
+  }
+  .footer-content ul li a {
+    color: var(--footer-a-light);
+  }
+  .bottom-bar {
+    color: var(--bottom-bar-light);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  * {
+    color-scheme: dark;
+  }
+  body {
+    background-color: var(--body-dark);
+  }
+  nav {
+    background-color: var(--nav-dark);
+    border: var(--form-light);
+  }
+  nav > *,
+  .nav-buttons a {
+    font-size: 18px;
+    color: --var(--nav-buttons-dark);
+  }
+  .nav-buttons a::before {
+    content: "";
+    background-color: var(--nav-buttons-hover-dark);
+    position: absolute;
+    height: 3px;
+    width: 0%;
+    bottom: 0;
+    transition: 0.3s ease-in-out;
+  }
+  .student-info > * {
+    color: var(--basic-info-text-dark);
+  }
+  h2 {
+    color: var(--course-h2-dark);
+  }
+  .students > *,
+  .teacher-students > * {
+    background-color: var(--course-container-dark);
+    border: var(--course-border-dark);
+    color: var(--course-color-dark);
+  }
+  .about-container {
+    background-color: var(--about-container-dark);
+    color: var(--about-container-text-dark);
+  }
+  footer {
+    background-color: var(--footer-dark);
+  }
+  .footer-content ul li a {
+    color: var(--footer-a-dark);
+  }
+  .bottom-bar {
+    color: var(--bottom-bar-dark);
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'open Sans', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+  font-family: "open Sans", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
     sans-serif;
 }
 
 body {
   width: 100dvw;
   height: 100dvh;
-  background-color: #eee;
   background-position: center;
   overflow-x: hidden;
 }
@@ -30,8 +161,6 @@ nav {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  background: #0077ff;
-
   height: 100px !important;
 }
 nav > *,
@@ -87,16 +216,13 @@ nav .nav-buttons {
   text-decoration: none;
   color: #ffffff;
 }
-.nav-buttons a p {
-  color: #ffffff;
-}
+
 .nav-buttons a::before {
-  content: '';
+  content: "";
   position: absolute;
   height: 3px;
   width: 0%;
   bottom: 0;
-  background-color: #ffffff;
   transition: 0.3s ease-in-out;
 }
 
@@ -184,25 +310,6 @@ section {
   font-size: 35px;
 }
 
-/* responsive  */
-
-@media (max-width: 992px) {
-  .navbar .nav-links,
-  .navbar .action-btn {
-    display: none; /* Hide navigation links and action button on small screens */
-  }
-  .navbar .toggle-btn {
-    display: block; /* Show toggle button on small screens */
-  }
-  .dropdown-menu {
-    display: block; /* Ensure dropdown is visible on small screens */
-  }
-}
-
-footer {
-  background-color: #0077ff;
-}
-
 .footer-contents {
   display: flex;
   justify-content: space-around;
@@ -271,12 +378,9 @@ footer {
 
 .bottom-bar {
   height: max-content;
-  /* text-align: center; */
-  color: #fcfcfc;
 }
 h2 {
   font-size: 40px;
-  color: rgb(0, 0, 0);
   padding: 20px;
 }
 .student-table-container {
@@ -320,9 +424,7 @@ h2 {
 .teacher-students > * {
   padding: 10px;
   font-size: 1em;
-  border: 1px solid #ddd;
   border-radius: 15px;
-  background: white;
 }
 .about {
   display: grid;
@@ -339,7 +441,6 @@ h2 {
 .about-container {
   display: flex;
   flex-direction: column;
-  background-color: #ffffff;
   padding: 15px;
   border-radius: 15px;
   gap: 15px;

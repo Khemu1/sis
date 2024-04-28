@@ -13,7 +13,7 @@ header("Content-Type: application/json");
 
 session_start();
 if (!$_SESSION["id"]) {
-  header("location:login.php");
+  header("location:index.php");
   exit();
 }
 

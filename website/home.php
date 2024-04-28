@@ -9,6 +9,10 @@ require_once ("../models/Teachers.php");
 require_once ("../models/Teaches.php");
 require_once ("../models/Utils.php");
 session_start();
+if (!$_SESSION["id"]) {
+  header("location:index.php");
+  exit();
+}
 ?>
 
 <!DOCTYPE html>
@@ -17,6 +21,8 @@ session_start();
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="light" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="dark" />
   <title>Home</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
