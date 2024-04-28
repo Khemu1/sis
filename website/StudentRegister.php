@@ -53,7 +53,7 @@ if (isset($_POST["register"])) {
             <h2>SignUp</h2>
         </div>
         <div class="body">
-            <form id="register">
+            <form id="register" method="Post">
                 <div>
                     <input type="text" name="userName" id="user-name" placeholder="UserName" required><br>
                     <small class="error-msg"></small><br>
@@ -90,7 +90,7 @@ if (isset($_POST["register"])) {
                     echo $arr["level"] ?? " ";
                     ?>
                 </div>
-                <input type="submit" value="Register">
+                <input type="submit" name="register" value="Register">
                 <a class="login" href="index.php">Login</a>
             </form>
         </div>
