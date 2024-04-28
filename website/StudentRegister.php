@@ -30,7 +30,9 @@ if (isset($_POST["register"])) {
         Enrollment::enroll();
         $_SESSION["id"] = $accountId;
         $_SESSION["userName"] = $userName;
-        $_SESSION["type"] = "student";
+        $_SESSION["userType"] = "student";
+        header("location: home.php");
+        exit();
     }
 }
 ?>

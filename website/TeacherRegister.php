@@ -30,7 +30,7 @@ if (isset($_POST["register"])) {
     Teachers::insert($teacher);
     $_SESSION["id"] = $accountId;
     $_SESSION["userName"] = $userName;
-    $_SESSION["type"] = "teacher";
+    $_SESSION["userType"] = "teacher";
 
     for ($i = 0; $i < count($courses); $i++) {
       $teaches = [$userName, $courses[$i]];
