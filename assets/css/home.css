@@ -265,8 +265,8 @@ nav .nav-buttons {
 }
 
 section {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid: 2fr max-content / 1fr;
   gap: 20px;
   font-size: 20px;
   height: 100%;
