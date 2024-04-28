@@ -6,4 +6,5 @@
 
 .success {
   color : green;
+  transform: translate(50%,50%);
 }

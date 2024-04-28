@@ -54,6 +54,8 @@ if (isset($_POST["login"])) {
 
 <body>
     <div class="container">
+        <input type="checkbox" id="theme-switcher" class="theme-switcher">
+        <label class="switch" for="theme-switcher"></label>
         <h2>Login</h2>
         <form method="POST">
             <div class="form-group">
@@ -90,10 +92,5 @@ if (isset($_POST["login"])) {
 </body>
 
 </html>
-
-<script>
-    setTimeout(function () {
-        document.querySelector(".container").classList.add("move");
-    }, 250);
-
-</script>
+<script type="module" src="../assets/js/index.js?t=<?= time() ?>"></script>
+<script type="module" src="../assets/js/Utils.js?t=<?= time() ?>"></script>

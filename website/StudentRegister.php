@@ -48,6 +48,8 @@ if (isset($_POST["register"])) {
 <body>
     <div class="container">
         <div class="head">
+            <input type="checkbox" id="theme-switcher" class="theme-switcher">
+            <label class="switch" for="theme-switcher"></label>
             <h2>SignUp</h2>
         </div>
         <div class="body">
@@ -98,7 +100,8 @@ if (isset($_POST["register"])) {
         <p>Powered by Kemet SIS</p>
     </div>
 
-    <script src="..\assets\js\StudentRegister.js"></script>
 </body>
 
 </html>
+<script src="..\assets\js\StudentRegister.js"></script>
+<script type="module" src="../assets/js/Utils.js?t=<?= time() ?>"></script>
