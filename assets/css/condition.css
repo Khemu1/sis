@@ -1,10 +1,6 @@
-.error {
-
-  color : red
-
+.error-msg {
+  color: red;
 }
-
-.success {
-  color : green;
-  transform: translate(50%,50%);
+.courseError{
+  color: red;
 }

@@ -95,7 +95,7 @@ if (isset($_POST["register"])) {
         </div>
         <div class="dropdown">
           <button id="courses">Choose courses<i class="uil uil-angle-down"></i></button><br>
-          <small class="courseError hide">Please choose atleast one coruse</small><br>
+          <small class="courseError">Please choose atleast one coruse</small><br>
 
 
           <div class="content">
@@ -151,16 +151,13 @@ if (isset($_POST["register"])) {
             <label>Network Labs<input type="checkbox" name="course[]" value="Network Labs" /></label>
 
             <label>Enterpreneurship<input type="checkbox" name="course[]" value="Enterpreneurship" /></label>
-
           </div>
-
         </div>
     </div>
     <?php echo $arr["courses"] ?? " "; ?> <br>
     <input id="register" type="submit" name="register" value="Register">
     <br><br>
     <a class="log" href="index.php">Login</a>
-
     </form>
   </div>
   <div class="footer">
