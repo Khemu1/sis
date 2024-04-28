@@ -1,12 +1,12 @@
-.invalid {
-  box-shadow: 0px 0px 5px 5px red;
-
-  transition: all 250ms ease-in-out;
-}
-.valid {
-  box-shadow: 0px 0px 5px 5px green;
-
-  transition: all 250ms ease-in-out;
+:root {
+  --body-white: #ececec;
+  --form-white: white;
+  --from-white-border: 1px solid #ffffff;
+  --form-text-white: #000;
+  --body-dark: #111a26;
+  --form-dark: #18242f;
+  --from-dark-border: 1px solid #18242f;
+  --form-text-dark: white;
 }
 
 form input {
@@ -17,8 +17,12 @@ form input:focus-within {
 }
 
 body {
-   background-color: #ececec;
+  background-color: #ececec;
 }
+.body-dark {
+  background-color: var(--body-dark);
+}
+
 .container {
   width: 350px;
   margin: 50px auto;
@@ -28,16 +32,66 @@ body {
   padding: 20px;
   box-shadow: 5px -6px 12px -1px rgba(0, 0, 0, 0.32);
   transition: 250ms ease-in-out;
-  background: white;
+  background: var(--form-white);
+}
+.container-dark {
+  background: var(--form-dark);
+  border: var(--from-dark-border);
+}
+.switch {
+  cursor: pointer;
+  position: relative;
+  border-radius: 15px;
+  display: flex;
+  justify-content: left;
+  transition: 250ms ease-in-out;
+  box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.4),
+    inset 0px -5px 15px rgba(255, 255, 255, 0.4);
+  background: #ebebeb;
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  width: 80px;
+  height: 30px;
+}
+.switch:after {
+  content: "";
+  width: 40%;
+  height: 100%;
+  position: absolute;
+  /* top: 0;
+  left: 0; */
+  background: linear-gradient(180deg, #ffcc89, #d8860b);
+  outline: 1px solid #d8860b;
+  border-radius: 35px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
 }
 
+#theme-switcher:checked + label:after {
+  background: linear-gradient(180deg, #777, #3a3a3a);
+  outline: 1px solid #3a3a3a;
+}
+#theme-switcher:checked + label {
+  justify-content: right;
+}
+.switch:active:after {
+  width: 100%;
+}
+#theme-switcher {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
 .head h2 {
   font-size: 24px;
   font-family: sans-serif;
   margin-bottom: 20px;
   color: #0077ff;
 }
-
+.head h2.font-dark {
+  color: var(--form-text-dark);
+}
 .body input[type="text"],
 .body input[type="password"],
 .body input[type="submit"],
@@ -71,6 +125,9 @@ body {
   font-weight: bold;
   transition: 0.3s ease-in-out;
 }
+.login.font-dark {
+  color: var(--form-text-dark);
+}
 .login:hover {
   text-decoration: underline;
   color: #0077ff;
@@ -96,8 +153,14 @@ body {
   bottom: 0;
 }
 .footer p {
+  position: fixed;
+  bottom: 0;
   font-size: 12px;
   font-family: sans-serif;
   margin-top: 20px;
   color: #0077ff;
+  text-align: left;
+}
+.footer p.font-dark {
+  color: var(--form-text-dark);
 }

@@ -6,3 +6,5 @@ added TeacherRegister
 4 / 9 / 2024 
 
 completed the API callings
+
+4 / 28 / 2024 added dark theme for the forms --> khemu

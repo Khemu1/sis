@@ -1,3 +1,5 @@
+import * as utils from "./Utils.js";
+
 const usernameEl = document.querySelector("#user-name");
 const nameEl = document.querySelector("#name");
 const passwordEl = document.querySelector("#password");
@@ -5,6 +7,16 @@ const addressEl = document.querySelector("#address");
 const levelEl = document.querySelector("#level");
 const form = document.querySelector("form");
 const registerButton = document.querySelector('input[type="submit"]');
+let switcher = document.querySelector(".theme-switcher");
+
+console.log(localStorage.getItem("theme"));
+if (!localStorage.getItem("theme")) localStorage.setItem("theme", "white");
+
+utils.checkFormTheme(localStorage.getItem("theme"), "student");
+
+switcher.addEventListener("click", function (e) {
+  utils.formthemes("login");
+});
 
 const checkUsername = () => {
   let valid = false;

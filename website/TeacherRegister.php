@@ -58,6 +58,8 @@ if (isset($_POST["register"])) {
 
   <div class="container">
     <div class="head">
+      <input type="checkbox" id="theme-switcher" class="theme-switcher">
+      <label class="switch" for="theme-switcher"></label>
       <h2>SignUp</h2>
     </div>
     <div class="body">
@@ -172,6 +174,6 @@ if (isset($_POST["register"])) {
 </body>
 
 </html>
-<script type="module" src="../assets/js/Utils.js?t=<?= time() ?>"></script>
+<script type="module" src="../assets/js/TeacherRegister.js?t=<?= time() ?>"></script>
 
 <script type="module" src="../assets/js/Utils.js?t=<?= time() ?>"></script>

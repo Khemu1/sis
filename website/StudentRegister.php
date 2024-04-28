@@ -103,5 +103,5 @@ if (isset($_POST["register"])) {
 </body>
 
 </html>
-<script src="..\assets\js\StudentRegister.js"></script>
+<script type="module" src="..\assets\js\StudentRegister.js"></script>
 <script type="module" src="../assets/js/Utils.js?t=<?= time() ?>"></script>

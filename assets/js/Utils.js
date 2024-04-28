@@ -47,36 +47,45 @@ export function formthemes(type) {
   }
 
   if (type === "student") {
-    let home = document.querySelector(".container");
+    let form = document.querySelector(".container");
     let anchors = document.querySelectorAll("a");
     let ps = document.querySelectorAll("p");
-
-    if (document.body.classList.contains("body-dark")) {
-      document.body.classList.remove("body-dark");
-      home.classList.remove("container-dark");
-      anchors.forEach((a) => {
-        a.classList.remove("font-dark");
-      });
+    let h2 = document.querySelectorAll("h2");
+    if (!document.body.classList.contains("body-dark")) {
+      console.log("going dark");
+      document.body.classList.toggle("body-dark");
+      form.classList.toggle("container-dark");
       ps.forEach((p) => {
-        p.classList.remove("font-dark");
+        p.classList.toggle("font-dark");
       });
-      document.querySelector("p").classList.remove("font-dark");
+      anchors.forEach((a) => {
+        a.classList.toggle("font-dark");
+      });
+      document.querySelector("p").classList.toggle("font-dark");
+      ps.forEach((p) => {
+        p.classList.toggle("font-dark");
+      });
+      h2.forEach((h) => {
+        h.classList.toggle("font-dark");
+      });
       document.querySelector("input.theme-switcher").checked = true;
-      document.querySelector(".main").classList.toggle("hide");
-      localStorage.setItem("theme", "white");
+      localStorage.setItem("theme", "dark");
       return;
     }
-    document.body.classList.add("body-dark");
-    home.classList.add("container-dark");
+    console.log("going white");
+    document.body.classList.toggle("body-dark");
+    form.classList.toggle("container-dark");
     anchors.forEach((a) => {
-      a.classList.add("font-dark");
+      a.classList.toggle("font-dark");
     });
     ps.forEach((p) => {
-      p.classList.add("font-dark");
+      p.classList.toggle("font-dark");
+    });
+    h2.forEach((h) => {
+      h.classList.toggle("font-dark");
     });
     document.querySelector("input.theme-switcher").checked = false;
-    document.querySelector(".main").classList.toggle("hide");
-    localStorage.setItem("theme", "dark");
+    localStorage.setItem("theme", "white");
   }
 
   if (type === "teacher") {
@@ -99,7 +108,7 @@ export function formthemes(type) {
       });
       document.querySelector("p").classList.remove("font-dark");
       document.querySelector("input.theme-switcher").checked = true;
-      document.querySelector(".main").classList.toggle("hide");
+
       localStorage.setItem("theme", "white");
       return;
     }
@@ -265,55 +274,50 @@ export function checkFormTheme(theme, type) {
   }
 
   if (type === "student") {
-    let home = document.querySelector(".container");
+    let from = document.querySelector(".container");
     let anchors = document.querySelectorAll("a");
-    if (theme === "white") {
-      document.body.classList.remove("body-dark");
-      home.classList.remove("container-dark");
-      anchors.forEach((a) => {
-        a.classList.remove("font-dark");
+    let h2 = document.querySelectorAll("h2");
+    let ps = document.querySelectorAll("p");
+    if (theme === "dark") {
+      document.body.classList.toggle("body-dark");
+      from.classList.toggle("container-dark");
+      h2.forEach((h2) => {
+        h2.classList.toggle("font-dark");
       });
-      document.querySelector("p").classList.remove("font-dark");
-      document.querySelector(".main").classList.toggle("hide");
-      document.querySelector("input.theme-switcher").checked = false;
+      anchors.forEach((a) => {
+        a.classList.toggle("font-dark");
+      });
+      ps.forEach((p) => {
+        p.classList.toggle("font-dark");
+      });
+      localStorage.setItem("theme", "dark");
+      document.querySelector("input.theme-switcher").checked = true;
       return;
     }
-    document.body.classList.add("body-dark");
-    home.classList.add("container-dark");
-    anchors.forEach((a) => {
-      a.classList.add("font-dark");
-    });
-    document.querySelector("p").classList.add("font-dark");
-    document.querySelector("input.theme-switcher").checked = true;
+    localStorage.setItem("theme", "white");
   }
 
   if (type === "teacher") {
-    let home = document.querySelector(".container");
+    let from = document.querySelector(".container");
     let anchors = document.querySelectorAll("a");
-    let labels = document.querySelectorAll("label");
-    if (theme === "white") {
-      document.body.classList.remove("body-dark");
-      home.classList.remove("container-dark");
+    let h2 = document.querySelectorAll("h2");
+    let ps = document.querySelectorAll("p");
+    if (theme === "dark") {
+      document.body.classList.toggle("body-dark");
+      from.classList.toggle("container-dark");
+      h2.forEach((h2) => {
+        h2.classList.toggle("font-dark");
+      });
       anchors.forEach((a) => {
-        a.classList.remove("font-dark");
+        a.classList.toggle("font-dark");
       });
-      labels.forEach((l) => {
-        l.classList.remove("font-dark");
+      ps.forEach((p) => {
+        p.classList.toggle("font-dark");
       });
-      document.querySelector("p").classList.remove("font-dark");
-      document.querySelector(".main").classList.toggle("hide");
-      document.querySelector("input.theme-switcher").checked = false;
+      localStorage.setItem("theme", "dark");
+      document.querySelector("input.theme-switcher").checked = true;
       return;
     }
-    document.body.classList.add("body-dark");
-    home.classList.add("container-dark");
-    anchors.forEach((a) => {
-      a.classList.add("font-dark");
-    });
-    labels.forEach((l) => {
-      l.classList.add("font-dark");
-    });
-    document.querySelector("p").classList.add("font-dark");
-    document.querySelector("input.theme-switcher").checked = true;
+    localStorage.setItem("theme", "white");
   }
 }
