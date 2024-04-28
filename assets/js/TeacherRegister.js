@@ -7,16 +7,6 @@ const addressEl = document.querySelector("#address");
 const levelEl = document.querySelector("#level");
 const form = document.querySelector("form");
 const registerButton = document.querySelector('input[type="submit"]');
-let switcher = document.querySelector(".theme-switcher");
-
-console.log(localStorage.getItem("theme"));
-
-utils.checkFormTheme();
-
-switcher.addEventListener("click", function (e) {
-  utils.formthemes();
-});
-
 const checkUsername = () => {
   let valid = false;
 
@@ -194,30 +184,6 @@ function checkedCourses() {
     });
   });
 }
-
-// registerButton.addEventListener('submit', function (e) {
-//     // prevent the form from submitting
-//     e.preventDefault();
-
-//     // validate fields
-//     let isUsernameValid = checkUsername(),
-//         isNamevalid = checkName();
-//         isAddressValid = checkAddress(),
-//         isPasswordValid = checkPassword(),
-//         isLevelValid = checkLevel();
-
-//     let isFormValid = isUsernameValid &&
-//         isNamevalid &&
-//         isAddressValid &&
-//         isPasswordValid &&
-//         isLevelValid;
-
-//     // submit to the server if the form is valid
-//     if (isFormValid) {
-//         form.submit();
-//     }
-// });
-
 const debounce = (fn, delay = 500) => {
   let timeoutId;
   return (...args) => {
@@ -256,7 +222,3 @@ form.addEventListener(
   })
 );
 checkedCourses();
-
-setTimeout(function () {
-  document.querySelector(".container").classList.add("move");
-}, 250);

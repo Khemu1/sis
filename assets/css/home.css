@@ -2,7 +2,7 @@
   --body-light: #eee;
   --nav-light: #0077ff;
   --nav-buttons-light: white;
-  --nav-buttons-hover-light: #000;
+  --nav-buttons-hover-light: white;
   --about-container-light: #ffffff;
   --about-container-text-light: #000;
   --course-container-light: white;
@@ -24,7 +24,7 @@
   --course-color-dark: white;
   --course-border-dark: 1px solid transparent;
   --course-h2-dark: white;
-  --footer-dark: ##18242f;
+  --footer-dark: #18242f;
   --footer-a-dark: white;
   --bottom-bar-dark: white;
 }

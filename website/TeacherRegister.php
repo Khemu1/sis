@@ -58,8 +58,6 @@ if (isset($_POST["register"])) {
 
   <div class="container">
     <div class="head">
-      <input type="checkbox" id="theme-switcher" class="theme-switcher">
-      <label class="switch" for="theme-switcher"></label>
       <h2>SignUp</h2>
     </div>
     <div class="body">
@@ -69,45 +67,45 @@ if (isset($_POST["register"])) {
           <small class="error-msg"></small><br>
 
           <div class="error-msg">
-          <?php
-          echo $arr["username"] ?? " ";
-          echo $arr["account"] ?? " ";
-          ?>
-            </div>
+            <?php
+            echo $arr["username"] ?? " ";
+            echo $arr["account"] ?? " ";
+            ?>
+          </div>
         </div>
         <div>
           <input type="text" name="name" id="name" placeholder="Name" required><br>
           <small class="error-msg"></small><br>
 
-            <div class="error-msg">
-          <?php
-          echo $arr["name"] ?? " ";
-          ?>
-            </div>
+          <div class="error-msg">
+            <?php
+            echo $arr["name"] ?? " ";
+            ?>
+          </div>
         </div>
         <div>
           <input type="password" name="password" id="password" placeholder="Password" required><br>
           <small class="error-msg"></small><br>
 
-            <div class="error-msg">
-          <?php
-          echo $arr["password"] ?? " ";
-          ?>
-            </div>
+          <div class="error-msg">
+            <?php
+            echo $arr["password"] ?? " ";
+            ?>
+          </div>
         </div>
         <div>
           <input type="text" name="address" id="address" placeholder="Address" required><br>
           <small class="error-msg"></small><br>
 
           <div class="error-msg">
-          <?php
-          echo $arr["address"] ?? " " . "<br>";
-          ?>
+            <?php
+            echo $arr["address"] ?? " " . "<br>";
+            ?>
           </div>
         </div>
         <div class="dropdown">
           <button id="courses">Choose courses<i class="uil uil-angle-down"></i></button><br>
-          <small class="courseError">Please choose atleast one coruse</small><br>
+          <small class="courseError hide">Please choose atleast one coruse</small><br>
 
 
           <div class="content">
@@ -166,9 +164,9 @@ if (isset($_POST["register"])) {
           </div>
         </div>
     </div>
-      <div class="error-msg">
-        <?php echo $arr["courses"] ?? " "; ?> <br>
-        </div>
+    <div class="error-msg">
+      <?php echo $arr["courses"] ?? " "; ?> <br>
+    </div>
     <input id="register" type="submit" name="register" value="Register">
     <br><br>
     <a class="log" href="index.php">Login</a>

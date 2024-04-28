@@ -12,6 +12,52 @@
   --a-dark: white;
 }
 
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--body-dark);
+  }
+  .container {
+    background-color: var(--form-dark);
+    border: var(--form-dark);
+  }
+  .register-link {
+    color: var(--a-dark);
+  }
+  h2 {
+    color: var(--form-text-dark);
+  }
+  .footer p {
+    color: var(--a-dark);
+  }
+  .log {
+    color: var(--a-dark);
+  }
+}
+@media (prefers-color-scheme: light) {
+  * {
+    color-scheme: white;
+  }
+  body {
+    background-color: var(--body-light);
+  }
+  .container {
+    background-color: var(--form-light);
+    border: var(--form-light);
+  }
+  .register-link {
+    color: var(--a-light);
+  }
+  h2 {
+    color: var(--form-text-light);
+  }
+  .footer p {
+    color: var(--a-light);
+  }
+  .log {
+    color: var(--a-light);
+  }
+}
+
 form input {
   width: 150px;
 }
@@ -29,51 +75,6 @@ form input:focus-within {
   transition: 250ms ease-in-out;
 }
 
-.switch {
-  cursor: pointer;
-  position: relative;
-  border-radius: 15px;
-  display: flex;
-  justify-content: left;
-  transition: 250ms ease-in-out;
-  box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.4),
-    inset 0px -5px 15px rgba(255, 255, 255, 0.4);
-  background: #ebebeb;
-  width: 100%;
-  height: 100%;
-  border-radius: 25px;
-  width: 80px;
-  height: 30px;
-}
-.switch:after {
-  content: "";
-  width: 40%;
-  height: 100%;
-  position: absolute;
-  /* top: 0;
-  left: 0; */
-  background: linear-gradient(180deg, #ffcc89, #d8860b);
-  outline: 1px solid #d8860b;
-  border-radius: 35px;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
-}
-
-#theme-switcher:checked + label:after {
-  background: linear-gradient(180deg, #777, #3a3a3a);
-  outline: 1px solid #3a3a3a;
-}
-#theme-switcher:checked + label {
-  justify-content: right;
-}
-.switch:active:after {
-  width: 100%;
-}
-#theme-switcher {
-  width: 0;
-  height: 0;
-  visibility: hidden;
-}
 .head h2 {
   font-size: 24px;
   font-family: sans-serif;
@@ -99,6 +100,7 @@ form input:focus-within {
   cursor: pointer;
 }
 .dropdown {
+  position: relative;
   display: inline;
 }
 .dropdown label {
@@ -118,8 +120,11 @@ form input:focus-within {
   box-shadow: 2px 2px 5px black;
   overflow: scroll;
   height: 200px;
-  width: 400px;
+  width: 390px;
   font-size: 15px;
+  top: 29px;
+  transform: translateX(-5%);
+  overflow-x: hidden;
 }
 .dropdown:hover .content {
   display: block;
@@ -184,46 +189,4 @@ form input:focus-within {
 
 .hide {
   visibility: hidden;
-}
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: var(--body-dark);
-  }
-  .container {
-    background-color: var(--form-dark);
-    border: var(--form-dark);
-  }
-  .register-link {
-    color: var(--a-dark);
-  }
-  h2 {
-    color: var(--form-text-dark);
-  }
-  .footer p {
-    color: var(--a-dark);
-  }
-  .log {
-    color: var(--a-dark);
-  }
-}
-@media (prefers-color-scheme: light) {
-  body {
-    background-color: var(--body-light);
-  }
-  .container {
-    background-color: var(--form-light);
-    border: var(--form-light);
-  }
-  .register-link {
-    color: var(--a-light);
-  }
-  h2 {
-    color: var(--form-text-light);
-  }
-  .footer p {
-    color: var(--a-light);
-  }
-  .log {
-    color: var(--a-light);
-  }
 }

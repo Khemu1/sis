@@ -56,8 +56,6 @@ if (isset($_POST["login"])) {
 
 <body>
     <div class="container">
-        <input type="checkbox" id="theme-switcher" class="theme-switcher">
-        <label class="switch" for="theme-switcher"></label>
         <h2>Login</h2>
         <form method="POST">
             <div class="form-group">
@@ -79,7 +77,7 @@ if (isset($_POST["login"])) {
                 <label for="Student">Student</label>
             </div>
             <div class="form-group">
-                <input type="submit" name="login" value="login">
+                <input type="submit" name="login" value="Login">
             </div>
             <div class="register-links">
                 <a href="StudentRegister.php" class="register-link">Register as a Student</a>

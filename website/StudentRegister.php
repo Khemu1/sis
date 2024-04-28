@@ -48,8 +48,6 @@ if (isset($_POST["register"])) {
 <body>
     <div class="container">
         <div class="head">
-            <input type="checkbox" id="theme-switcher" class="theme-switcher">
-            <label class="switch" for="theme-switcher"></label>
             <h2>SignUp</h2>
         </div>
         <div class="body">
@@ -58,49 +56,49 @@ if (isset($_POST["register"])) {
                     <input type="text" name="userName" id="user-name" placeholder="UserName" required><br>
                     <small class="error-msg"></small><br>
                     <div class="error-msg">
-                    <?php
-                    echo $arr["userName"] ?? " ";
-                    echo $arr["account"] ?? " ";
-                    ?>
+                        <?php
+                        echo $arr["userName"] ?? " ";
+                        echo $arr["account"] ?? " ";
+                        ?>
                     </div>
                 </div>
                 <div>
                     <input type="text" name="name" id="name" placeholder="Name" required><br>
                     <small class="error-msg"></small><br>
                     <div class="error-msg">
-                    <?php
-                    echo $arr["name"] ?? " ";
-                    ?>
+                        <?php
+                        echo $arr["name"] ?? " ";
+                        ?>
                     </div>
                 </div>
                 <div>
                     <input type="password" name="password" id="password" placeholder="Password" required><br>
                     <small class="error-msg"></small><br>
 
-                                        <div class="error-msg">
-                    <?php
-                    echo $arr["password"] ?? " ";
-                    ?>
+                    <div class="error-msg">
+                        <?php
+                        echo $arr["password"] ?? " ";
+                        ?>
                     </div>
                 </div>
                 <div>
                     <input type="text" name="address" id="address" placeholder="Address" required><br>
                     <small class="error-msg"></small><br>
 
-                                        <div class="error-msg">
-                    <?php
-                    echo $arr["address"] ?? " ";
-                    ?>
+                    <div class="error-msg">
+                        <?php
+                        echo $arr["address"] ?? " ";
+                        ?>
                     </div>
                 </div>
                 <div>
                     <input type="text" name="level" id="level" placeholder="Level" required><br>
 
-                                        <div class="error-msg">
-                    <small class="error-msg"></small><br>
-                    <?php
-                    echo $arr["level"] ?? " ";
-                    ?>
+                    <div class="error-msg">
+                        <small class="error-msg"></small><br>
+                        <?php
+                        echo $arr["level"] ?? " ";
+                        ?>
                     </div>
                 </div>
                 <input type="submit" name="register" value="Register">
