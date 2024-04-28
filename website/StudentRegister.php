@@ -57,38 +57,51 @@ if (isset($_POST["register"])) {
                 <div>
                     <input type="text" name="userName" id="user-name" placeholder="UserName" required><br>
                     <small class="error-msg"></small><br>
+                    <div class="error-msg">
                     <?php
                     echo $arr["userName"] ?? " ";
                     echo $arr["account"] ?? " ";
                     ?>
+                    </div>
                 </div>
                 <div>
                     <input type="text" name="name" id="name" placeholder="Name" required><br>
                     <small class="error-msg"></small><br>
+                    <div class="error-msg">
                     <?php
                     echo $arr["name"] ?? " ";
                     ?>
+                    </div>
                 </div>
                 <div>
                     <input type="password" name="password" id="password" placeholder="Password" required><br>
                     <small class="error-msg"></small><br>
+
+                                        <div class="error-msg">
                     <?php
                     echo $arr["password"] ?? " ";
                     ?>
+                    </div>
                 </div>
                 <div>
                     <input type="text" name="address" id="address" placeholder="Address" required><br>
                     <small class="error-msg"></small><br>
+
+                                        <div class="error-msg">
                     <?php
                     echo $arr["address"] ?? " ";
                     ?>
+                    </div>
                 </div>
                 <div>
                     <input type="text" name="level" id="level" placeholder="Level" required><br>
+
+                                        <div class="error-msg">
                     <small class="error-msg"></small><br>
                     <?php
                     echo $arr["level"] ?? " ";
                     ?>
+                    </div>
                 </div>
                 <input type="submit" name="register" value="Register">
                 <a class="login" href="index.php">Login</a>

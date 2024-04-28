@@ -67,31 +67,43 @@ if (isset($_POST["register"])) {
         <div>
           <input type="text" name="userName" id="user-name" placeholder="UserName" required><br>
           <small class="error-msg"></small><br>
+
+          <div class="error-msg">
           <?php
           echo $arr["username"] ?? " ";
           echo $arr["account"] ?? " ";
           ?>
+            </div>
         </div>
         <div>
           <input type="text" name="name" id="name" placeholder="Name" required><br>
           <small class="error-msg"></small><br>
+
+            <div class="error-msg">
           <?php
           echo $arr["name"] ?? " ";
           ?>
+            </div>
         </div>
         <div>
           <input type="password" name="password" id="password" placeholder="Password" required><br>
           <small class="error-msg"></small><br>
+
+            <div class="error-msg">
           <?php
           echo $arr["password"] ?? " ";
           ?>
+            </div>
         </div>
         <div>
           <input type="text" name="address" id="address" placeholder="Address" required><br>
           <small class="error-msg"></small><br>
+
+          <div class="error-msg">
           <?php
           echo $arr["address"] ?? " " . "<br>";
           ?>
+          </div>
         </div>
         <div class="dropdown">
           <button id="courses">Choose courses<i class="uil uil-angle-down"></i></button><br>
@@ -154,7 +166,9 @@ if (isset($_POST["register"])) {
           </div>
         </div>
     </div>
-    <?php echo $arr["courses"] ?? " "; ?> <br>
+      <div class="error-msg">
+        <?php echo $arr["courses"] ?? " "; ?> <br>
+        </div>
     <input id="register" type="submit" name="register" value="Register">
     <br><br>
     <a class="log" href="index.php">Login</a>
