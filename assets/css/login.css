@@ -1,23 +1,41 @@
 :root {
-  --body-white: #ececec;
-  --form-white: white;
-  --from-white-border: 1px solid #ffffff;
-  --form-text-white: #000;
-  --body-dark: #111a26;
-  --form-dark: #18242f;
-  --from-dark-border: 1px solid #18242f;
-  --form-text-dark: white;
+  --body: #ececec;
+  --form: white;
+  --form-border: 1px solid #ffffff;
+  --form-text: #0077ff;
+  --a: #4790c4;
+}
+:root.dark {
+  --form-border: 1px solid #18242f;
+  --body: #111a26;
+  --form: #18242f;
+  --form-text: white;
+  --a: white;
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--body);
+  }
+  .container {
+    background-color: var(--form-dark);
+    border: var(--form-dark);
+  }
+  .register-link {
+    color: var(--a);
+  }
+  h2 {
+    color: var(--form-text);
+  }
+  .footer p {
+    color: var(--a);
+  }
 }
 
 form input:focus-within {
   outline: none;
 }
 body {
-  background-color: var(--body-white);
-}
-.body-dark {
-  background-color: var(--body-dark);
-  color: var(--form-text-white);
+  background-color: var(--body);
 }
 
 form {
@@ -29,18 +47,15 @@ form {
   width: 350px;
   margin: 50px auto;
   text-align: center;
-  border: var(--from-white-border);
+  border: var(--form-border);
   border-radius: 8px;
   padding: 20px;
   box-shadow: 5px -6px 12px -1px rgba(0, 0, 0, 0.32);
   transition: 250ms ease-in-out;
   transform: translateY(30%);
-  background: var(--form-white);
+  background: var(--form);
 }
-.container-dark {
-  background-color: var(--from-dark-border);
-  border: var(--from-dark-border);
-}
+
 .switch {
   cursor: pointer;
   position: relative;
@@ -88,11 +103,9 @@ form {
 }
 
 h2 {
-  color: #0077ff;
+  color: var(--form-text);
 }
-h2.font-dark {
-  color: var(--form-text-dark);
-}
+
 .container input[type="text"],
 .container input[type="password"],
 .container input[type="submit"],
@@ -149,12 +162,9 @@ h2.font-dark {
   transition: 0.3s ease-in-out;
   text-align: center;
   font-family: sans-serif;
-  color: #5798e2;
+  color: var(--a);
   font-weight: bold;
   font-size: 14px;
-}
-.register-link.font-dark {
-  color: var(--form-text-dark);
 }
 .register-link:hover {
   text-decoration: underline;
@@ -166,9 +176,6 @@ h2.font-dark {
   font-size: 12px;
   font-family: sans-serif;
   margin-top: 20px;
-  color: #0077ff;
+  color: var(--a);
   text-align: left;
-}
-.footer p.font-dark {
-  color: var(--form-text-dark);
 }

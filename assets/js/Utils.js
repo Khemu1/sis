@@ -1,131 +1,30 @@
 /**
  * used to switch themes in forms
- * @param {String} type
  */
-export function formthemes(type) {
-  if (type === "login") {
-    console.log("login");
-    let form = document.querySelector(".container");
-    let anchors = document.querySelectorAll("a");
-    let ps = document.querySelectorAll("p");
-    let h2 = document.querySelectorAll("h2");
-    if (!document.body.classList.contains("body-dark")) {
-      console.log("going dark");
-      document.body.classList.toggle("body-dark");
-      form.classList.toggle("container-dark");
-      ps.forEach((p) => {
-        p.classList.toggle("font-dark");
-      });
-      anchors.forEach((a) => {
-        a.classList.toggle("font-dark");
-      });
-      document.querySelector("p").classList.toggle("font-dark");
-      ps.forEach((p) => {
-        p.classList.toggle("font-dark");
-      });
-      h2.forEach((h) => {
-        h.classList.toggle("font-dark");
-      });
-      document.querySelector("input.theme-switcher").checked = true;
-      localStorage.setItem("theme", "dark");
-      return;
-    }
-    console.log("going white");
-    document.body.classList.toggle("body-dark");
-    form.classList.toggle("container-dark");
-    anchors.forEach((a) => {
-      a.classList.toggle("font-dark");
-    });
-    ps.forEach((p) => {
-      p.classList.toggle("font-dark");
-    });
-    h2.forEach((h) => {
-      h.classList.toggle("font-dark");
-    });
-    document.querySelector("input.theme-switcher").checked = false;
-    localStorage.setItem("theme", "white");
-  }
-
-  if (type === "student") {
-    let form = document.querySelector(".container");
-    let anchors = document.querySelectorAll("a");
-    let ps = document.querySelectorAll("p");
-    let h2 = document.querySelectorAll("h2");
-    if (!document.body.classList.contains("body-dark")) {
-      console.log("going dark");
-      document.body.classList.toggle("body-dark");
-      form.classList.toggle("container-dark");
-      ps.forEach((p) => {
-        p.classList.toggle("font-dark");
-      });
-      anchors.forEach((a) => {
-        a.classList.toggle("font-dark");
-      });
-      document.querySelector("p").classList.toggle("font-dark");
-      ps.forEach((p) => {
-        p.classList.toggle("font-dark");
-      });
-      h2.forEach((h) => {
-        h.classList.toggle("font-dark");
-      });
-      document.querySelector("input.theme-switcher").checked = true;
-      localStorage.setItem("theme", "dark");
-      return;
-    }
-    console.log("going white");
-    document.body.classList.toggle("body-dark");
-    form.classList.toggle("container-dark");
-    anchors.forEach((a) => {
-      a.classList.toggle("font-dark");
-    });
-    ps.forEach((p) => {
-      p.classList.toggle("font-dark");
-    });
-    h2.forEach((h) => {
-      h.classList.toggle("font-dark");
-    });
-    document.querySelector("input.theme-switcher").checked = false;
-    localStorage.setItem("theme", "white");
-  }
-
-  if (type === "teacher") {
-    let home = document.querySelector(".container");
-    let anchors = document.querySelectorAll("a");
-    let labels = document.querySelectorAll("label");
-    let ps = document.querySelectorAll("p");
-
-    if (document.body.classList.contains("body-dark")) {
-      document.body.classList.remove("body-dark");
-      home.classList.remove("container-dark");
-      anchors.forEach((a) => {
-        a.classList.remove("font-dark");
-      });
-      labels.forEach((l) => {
-        l.classList.remove("font-dark");
-      });
-      ps.forEach((p) => {
-        p.classList.remove("font-dark");
-      });
-      document.querySelector("p").classList.remove("font-dark");
-      document.querySelector("input.theme-switcher").checked = true;
-
-      localStorage.setItem("theme", "white");
-      return;
-    }
-    document.body.classList.add("body-dark");
-    home.classList.add("container-dark");
-    anchors.forEach((a) => {
-      a.classList.add("font-dark");
-    });
-    labels.forEach((l) => {
-      l.classList.add("font-dark");
-    });
-    ps.forEach((p) => {
-      p.classList.add("font-dark");
-    });
-    document.querySelector("input.theme-switcher").checked = false;
-    document.querySelector(".main").classList.toggle("hide");
+export function formthemes() {
+  if (document.documentElement.classList.contains("light")) {
+    document.documentElement.classList.remove("light");
+    document.documentElement.classList.add("dark");
     localStorage.setItem("theme", "dark");
+    document.querySelector("input.theme-switcher").checked = true;
+  } else if (document.documentElement.classList.contains("dark")) {
+    document.documentElement.classList.remove("dark");
+    document.documentElement.classList.add("light");
+    localStorage.setItem("theme", "white");
+    document.querySelector("input.theme-switcher").checked = false;
+  } else {
+    if (
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+    ) {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+      document.querySelector("input.theme-switcher").checked = true;
+    } else {
+      document.documentElement.classList.add("light");
+      localStorage.setItem("theme", "white");
+      document.querySelector("input.theme-switcher").checked = false;
+    }
   }
 }
 /**
@@ -248,76 +147,16 @@ export function checkHomeTheme(theme) {
   }
 }
 
-export function checkFormTheme(theme, type) {
-  if (type === "login") {
-    let from = document.querySelector(".container");
-    let anchors = document.querySelectorAll("a");
-    let h2 = document.querySelectorAll("h2");
-    let ps = document.querySelectorAll("p");
-    if (theme === "dark") {
-      document.body.classList.toggle("body-dark");
-      from.classList.toggle("container-dark");
-      h2.forEach((h2) => {
-        h2.classList.toggle("font-dark");
-      });
-      anchors.forEach((a) => {
-        a.classList.toggle("font-dark");
-      });
-      ps.forEach((p) => {
-        p.classList.toggle("font-dark");
-      });
-      localStorage.setItem("theme", "dark");
-      document.querySelector("input.theme-switcher").checked = true;
-      return;
-    }
-    localStorage.setItem("theme", "white");
+export function checkFormTheme() {
+  if (localStorage.getItem("theme") == "white") {
+    document.documentElement.classList.remove("dark");
+    document.documentElement.classList.add("light");
+    document.querySelector("input.theme-switcher").checked = false;
+    return;
   }
-
-  if (type === "student") {
-    let from = document.querySelector(".container");
-    let anchors = document.querySelectorAll("a");
-    let h2 = document.querySelectorAll("h2");
-    let ps = document.querySelectorAll("p");
-    if (theme === "dark") {
-      document.body.classList.toggle("body-dark");
-      from.classList.toggle("container-dark");
-      h2.forEach((h2) => {
-        h2.classList.toggle("font-dark");
-      });
-      anchors.forEach((a) => {
-        a.classList.toggle("font-dark");
-      });
-      ps.forEach((p) => {
-        p.classList.toggle("font-dark");
-      });
-      localStorage.setItem("theme", "dark");
-      document.querySelector("input.theme-switcher").checked = true;
-      return;
-    }
-    localStorage.setItem("theme", "white");
-  }
-
-  if (type === "teacher") {
-    let from = document.querySelector(".container");
-    let anchors = document.querySelectorAll("a");
-    let h2 = document.querySelectorAll("h2");
-    let ps = document.querySelectorAll("p");
-    if (theme === "dark") {
-      document.body.classList.toggle("body-dark");
-      from.classList.toggle("container-dark");
-      h2.forEach((h2) => {
-        h2.classList.toggle("font-dark");
-      });
-      anchors.forEach((a) => {
-        a.classList.toggle("font-dark");
-      });
-      ps.forEach((p) => {
-        p.classList.toggle("font-dark");
-      });
-      localStorage.setItem("theme", "dark");
-      document.querySelector("input.theme-switcher").checked = true;
-      return;
-    }
-    localStorage.setItem("theme", "white");
-  }
+  document.documentElement.classList.remove("light");
+  document.documentElement.classList.add("dark");
+  localStorage.setItem("theme", "dark");
+  document.querySelector("input.theme-switcher").checked = true;
+  return;
 }
