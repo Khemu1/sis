@@ -11,6 +11,51 @@
   --form-text-dark: white;
   --a-dark: white;
 }
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--body-dark);
+  }
+  .container {
+    background-color: var(--form-dark);
+    border: var(--form-dark);
+  }
+  .register-link {
+    color: var(--a-dark);
+  }
+  h2 {
+    color: var(--form-text-dark);
+  }
+  .footer p {
+    color: var(--a-dark);
+  }
+}
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: var(--body-light);
+  }
+  .container {
+    background-color: var(--form-light);
+    border: var(--form-light);
+  }
+  .register-link {
+    color: var(--a-light);
+  }
+  h2 {
+    color: var(--form-text-light);
+  }
+  .footer p {
+    color: var(--a-light);
+  }
+}
+body {
+  width: 100dvw;
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
 form input:focus-within {
   outline: none;
 }
@@ -21,18 +66,14 @@ form {
   gap: 16px;
 }
 .container {
-  width: 350px;
-  margin: 50px auto;
+  width: max-content;
+  height: max-content;
   text-align: center;
   border-radius: 8px;
   padding: 20px;
   box-shadow: 5px -6px 12px -1px rgba(0, 0, 0, 0.32);
   transition: 250ms ease-in-out;
   transform: translateY(30%);
-}
-
-h2 {
-  color: var(--form-text);
 }
 
 .container input[type="text"],
@@ -98,6 +139,11 @@ h2 {
   text-decoration: underline;
   color: #0077ff;
 }
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
 .footer p {
   position: fixed;
   bottom: 0;
@@ -105,41 +151,4 @@ h2 {
   font-family: sans-serif;
   margin-top: 20px;
   text-align: left;
-}
-
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: var(--body-dark);
-  }
-  .container {
-    background-color: var(--form-dark);
-    border: var(--form-dark);
-  }
-  .register-link {
-    color: var(--a-dark);
-  }
-  h2 {
-    color: var(--form-text-dark);
-  }
-  .footer p {
-    color: var(--a-dark);
-  }
-}
-@media (prefers-color-scheme: light) {
-  body {
-    background-color: var(--body-light);
-  }
-  .container {
-    background-color: var(--form-light);
-    border: var(--form-light);
-  }
-  .register-link {
-    color: var(--a-light);
-  }
-  h2 {
-    color: var(--form-text-light);
-  }
-  .footer p {
-    color: var(--a-light);
-  }
 }

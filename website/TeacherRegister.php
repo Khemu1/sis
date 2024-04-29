@@ -51,6 +51,8 @@ if (isset($_POST["register"])) {
   <link rel="stylesheet" href="../assets/css/TeacherRegister.css">
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
   <link rel="stylesheet" href="../assets/css/condition.css">
+  <link rel="stylesheet" href="../assets/css/responsiveForms.css">
+
   <title>Teacher Sign Up</title>
 </head>
 

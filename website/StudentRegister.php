@@ -45,6 +45,8 @@ if (isset($_POST["register"])) {
     <title>Student Sign Up</title>
     <link rel="stylesheet" href="..\assets\css\StudentRegister.css">
     <link rel="stylesheet" href="../assets/css/condition.css">
+    <link rel="stylesheet" href="../assets/css/responsiveForms.css">
+
 </head>
 
 <body>
@@ -116,5 +118,5 @@ if (isset($_POST["register"])) {
 </body>
 
 </html>
-<script type="module" src="..\assets\js\StudentRegister.js"></script>
+<script type="module" src="../assets/js/StudentRegister.js"></script>
 <script type="module" src="../assets/js/Utils.js?t=<?= time() ?>"></script>

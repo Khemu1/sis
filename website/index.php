@@ -52,6 +52,8 @@ if (isset($_POST["login"])) {
     <title>Login</title>
     <link rel="stylesheet" href="../assets/css/login.css">
     <link rel="stylesheet" href="../assets/css/condition.css">
+    <link rel="stylesheet" href="../assets/css/responsiveForms.css">
+
 </head>
 
 <body>

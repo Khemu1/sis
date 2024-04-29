@@ -1,0 +1,12 @@
+/* Small devices (phones, 320px and up) */
+@media only screen and (min-width: 842px) {
+  background-color: red;
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+}
+
+/* Large devices (laptops/desktops, 1024px and up) */
+@media only screen and (min-width: 1024px) {
+}
