@@ -1,12 +1,78 @@
 /* Small devices (phones, 320px and up) */
-@media only screen and (min-width: 842px) {
-  background-color: red;
+@media only screen and (width <= 842px) {
+  .student-table-container h2 {
+    font-size: 30px;
+  }
+  .students {
+    grid-template-columns: repeat(
+      3,
+      minmax(200px, 0.5fr)
+    ); /* Adjust the width as needed */
+    grid-auto-rows: auto;
+    justify-items: center;
+    align-content: center;
+    padding: 0px;
+    gap: 0px;
+  }
+  .students :not(:first-child) {
+    text-wrap: wrap;
+    width: 200px;
+    height: max-content;
+    padding: 10px 10px;
+    font-size: 12px;
+  }
+  .students :first-child {
+    width: 230px;
+    font-size: 12px;
+  }
 }
 
 /* Medium devices (tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
+@media only screen and (width<= 767px) {
+  .students {
+    grid-template-columns: repeat(3, auto);
+    grid-auto-rows: auto;
+    justify-items: center;
+    align-content: center;
+    justify-content: space-around;
+    padding: 0px;
+    gap: 0px;
+  }
+  .students :not(:first-child) {
+    text-wrap: wrap;
+    width: 80px;
+    height: max-content;
+    padding: 10px 10px;
+    font-size: 12px;
+  }
+  .students :first-child {
+    width: 211px;
+    font-size: 12px;
+  }
 }
 
-/* Large devices (laptops/desktops, 1024px and up) */
-@media only screen and (min-width: 1024px) {
+@media only screen and (width <= 547px) {
+  nav .nav-buttons {
+    display: none;
+  }
+  .students {
+    grid-template-columns: repeat(3, 134px);
+    justify-content: unset;
+    grid-auto-rows: auto;
+    justify-items: center;
+    align-content: center;
+    padding: 0px;
+    gap: 0px;
+  }
+  .students :not(:first-child) {
+    text-wrap: wrap;
+    width: 50px;
+    height: max-content;
+    padding: 10px 10px;
+    font-size: 12px;
+  }
+  .students :first-child {
+    width: 120px;
+    font-size: 10px;
+  }
 }

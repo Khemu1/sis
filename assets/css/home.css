@@ -233,7 +233,6 @@ nav .nav-buttons {
 
 .right {
   display: flex;
-  width: 400px;
   justify-content: right;
   align-items: center;
   margin-right: 25px;
@@ -391,7 +390,6 @@ h2 {
 .students {
   display: grid;
   grid: auto/ repeat(3, 1fr);
-  justify-content: space-between;
   width: 100%;
   background-color: transparent;
   padding: 10px;
