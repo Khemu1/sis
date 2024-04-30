@@ -69,6 +69,42 @@ if (!$_SESSION["id"]) {
           <p>Logout</p>
         </a>
       </div>
+      <div class="menu">
+        <div class="burger">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="options hide-options">
+          <div class="nav-buttons">
+            <a href="home.php" id="home" value="home">
+              <p>Home</p>
+            </a>
+
+            <?php
+            if ($_SESSION["userType"] === "student") { ?>
+              <a href="home.php?page=courses" id="courses" value="courses">
+                <p>Courses</p>
+              </a>
+              <?php
+            } else { ?>
+              <a href="home.php?page=courses" id="courses" value="courses">
+                <p>Participants</p>
+              </a>
+              <?php
+            } ?>
+
+            <a href="home.php?page=about" id="about" value="about">
+              <p>About</p>
+            </a>
+
+          </div>
+          <div class="right">
+            <a id="logout" href="../controllers/logout.php">
+              <p>Logout</p>
+            </a>
+          </div </div>
+        </div>
     </nav>
 
     <section>
@@ -82,7 +118,6 @@ if (!$_SESSION["id"]) {
           </div>
           <div class="footer-content">
             <h5>Quick Links</h5>
-            <br />
             <ul class="list-footer">
               <li><a href="main">Home</a></li>
               <li><a href="about">About</a></li>
@@ -91,7 +126,6 @@ if (!$_SESSION["id"]) {
             </ul>
           </div>
           <div class="footer-content">
-            <br />
             <h5>Follow Us</h5>
             <ul class="socials">
               <li>

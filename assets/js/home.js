@@ -1,6 +1,7 @@
 console.log(window.location.href);
 let fetchedData;
 let home1;
+let courses1;
 let about = `<div class="about">
           <div class="about-container">
             <h3>Our Reliabile Connection</h3>
@@ -60,8 +61,9 @@ let about = `<div class="about">
           </div>
         </div>`;
 
-let courses1;
-
+document.querySelector(".menu").addEventListener("click", () => {
+  document.querySelector(".options").classList.toggle("hide-options");
+});
 // Fetching data from the backend
 async function fetchData() {
   try {

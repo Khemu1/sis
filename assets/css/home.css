@@ -3,6 +3,8 @@
   --nav-light: #0077ff;
   --nav-buttons-light: white;
   --nav-buttons-hover-light: white;
+  --nav-burger-color-light: white;
+  --nav-burger-options-light: #0077ff;
   --about-container-light: #ffffff;
   --about-container-text-light: #000;
   --course-container-light: white;
@@ -17,6 +19,8 @@
   --nav-dark: #18242f;
   --nav-buttons-dark: white;
   --nav-buttons-hover-dark: white;
+  --nav-burger-color-dark: white;
+  --nav-burger-options-dark: #18242f;
   --basic-info-text-dark: white;
   --about-container-dark: #18242f;
   --about-container-text-dark: white;
@@ -54,6 +58,12 @@
     bottom: 0;
     transition: 0.3s ease-in-out;
   }
+  .burger > * {
+    background-color: var(--nav-burger-color-light);
+  }
+  .options {
+    background-color: var(--nav-burger-options-light);
+  }
   footer {
     background-color: var(--footer-light);
   }
@@ -69,6 +79,15 @@
   }
   h2 {
     color: var(--course-h2);
+  }
+  footer h5 {
+    color: white;
+  }
+  .footer-content p {
+    color: white;
+  }
+  .footer-content ul li:hover a {
+    color: #ccc;
   }
   .footer-content ul li a {
     color: var(--footer-a-light);
@@ -103,6 +122,12 @@
     bottom: 0;
     transition: 0.3s ease-in-out;
   }
+  .burger > * {
+    background-color: var(--nav-burger-color-dark);
+  }
+  .options {
+    background-color: var(--nav-burger-options-dark);
+  }
   .student-info > * {
     color: var(--basic-info-text-dark);
   }
@@ -121,6 +146,9 @@
   }
   footer {
     background-color: var(--footer-dark);
+  }
+  .footer-content ul li:hover a {
+    color: #ccc;
   }
   .footer-content ul li a {
     color: var(--footer-a-dark);
@@ -262,7 +290,50 @@ nav .nav-buttons {
 #logout:hover p {
   color: white !important;
 }
-
+.menu {
+  position: relative;
+  display: none;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.burger {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.burger > * {
+  width: 50px;
+  height: 5px;
+  border-radius: 5px;
+}
+.options {
+  position: absolute;
+  display: flex;
+  gap: 10px;
+  z-index: 1;
+  flex-direction: column;
+  left: -66px;
+  top: 42px;
+  padding: 13px;
+  overflow: hidden;
+  height: max-content;
+  transition: 250ms ease-in-out;
+}
+.options .nav-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0px;
+}
+.options .right {
+  margin: 0;
+  justify-content: left;
+}
+.hide-options {
+  display: none;
+  height: 0px;
+  transition: 250ms ease-in-out;
+}
 section {
   display: grid;
   grid: 2fr max-content / 1fr;
@@ -308,55 +379,60 @@ section {
 .teacher-info > div {
   font-size: 35px;
 }
-
-.footer-contents {
+.students > *,
+.teacher-students > * {
   display: flex;
-  justify-content: space-around;
   align-items: center;
-  width: 100%;
-  padding: 10px 5px;
+  justify-content: center;
+}
+.footer-contents {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(4, auto);
+  gap: 5px;
+  padding: 5px 5px;
 }
 .footer-content {
-  height: max-content;
+  display: grid;
+  justify-content: start;
+}
+
+.footer-contents :nth-child(2).footer-content {
+  gap: 10px;
+}
+.footer-contents :nth-child(1).footer-content {
+  gap: 10px;
 }
 .footer-content p {
   font-size: 14px;
+  padding: 0px !important;
 }
 
 .footer-content h5 {
   display: flex;
   text-align: center;
-  color: #fff;
-}
-
-.footer-content p {
-  margin: auto;
-  padding: 7px;
-  color: #fff;
 }
 .list-footer {
   display: grid;
-  grid: repeat(1, max-content) / 1fr 1fr;
+  grid: repeat(1, auto) / repeat(2, auto);
 }
 .footer-content ul {
   text-align: center;
   list-style: none;
   padding: 0;
+  gap: 10px;
 }
 
 .footer-content ul li {
-  margin-bottom: 10px;
+  display: flex;
+  margin: 0px;
 }
 
 .footer-content ul li a {
-  color: #fff;
   text-decoration: none;
   font-size: 20px;
-  margin: 10px;
-}
-
-.footer-content ul li a:hover {
-  color: #ccc;
 }
 
 .socials {
@@ -371,12 +447,12 @@ section {
 }
 
 .socials li a {
-  color: #fff;
   text-decoration: none;
 }
 
 .bottom-bar {
-  height: max-content;
+  display: flex;
+  justify-content: center;
 }
 h2 {
   font-size: 40px;
@@ -398,6 +474,12 @@ h2 {
   text-align: center;
   gap: 20px;
 }
+.enrolled-students {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+}
 .teacher-students {
   display: grid;
   grid: auto/ repeat(4, 1fr);
@@ -417,6 +499,7 @@ h2 {
   grid-gap: 10px; /* the spaces between cells */
   margin-top: 10px;
   width: 100%;
+  height: 100%;
 }
 .students > *,
 .teacher-students > * {
@@ -443,7 +526,7 @@ h2 {
   border-radius: 15px;
   gap: 15px;
   width: 1100px;
-  align-items: center;
+  align-items: start;
 }
 .about-container h3 {
   margin-bottom: 10px;
@@ -461,5 +544,6 @@ h2 {
 .img-container {
   width: 1000px;
   height: 500px;
+  margin: auto;
   margin-bottom: 10px;
 }

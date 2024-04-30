@@ -1,13 +1,24 @@
-/* Small devices (phones, 320px and up) */
-@media only screen and (width <= 842px) {
-  .student-table-container h2 {
+@media only screen and (width >= 900px) and (width <= 1024px) {
+  body {
+  }
+  .nav-buttons a {
     font-size: 30px;
   }
+  #logout {
+    font-size: 30px;
+  }
+  .basic-info h2 {
+    font-size: 40px;
+  }
+  .student-info > p {
+    font-size: 35px;
+  }
+  .teacher-info > div {
+    font-size: 35px;
+  }
   .students {
-    grid-template-columns: repeat(
-      3,
-      minmax(200px, 0.5fr)
-    ); /* Adjust the width as needed */
+    grid-template-columns: repeat(3, auto);
+    justify-content: unset;
     grid-auto-rows: auto;
     justify-items: center;
     align-content: center;
@@ -16,19 +27,188 @@
   }
   .students :not(:first-child) {
     text-wrap: wrap;
-    width: 200px;
+    width: 100px;
+    height: max-content;
+    padding: 10px 10px;
+    font-size: 30px;
+  }
+  .students :first-child {
+    width: 500px;
+    font-size: 30px;
+  }
+
+  .teacher-students {
+    grid-template-columns: repeat(4, auto);
+    grid-auto-rows: auto;
+    justify-items: center;
+    align-content: center;
+    padding: 0px;
+    gap: 0px;
+  }
+  .teacher-students > * {
+    padding: 0px;
+    font-size: unset;
+  }
+  .teacher-students :not(:first-child) {
+    text-wrap: wrap;
+    width: 100px;
+    height: max-content;
+    padding: 10px 10px;
+    font-size: 14px;
+  }
+
+  .teacher-students :first-child {
+    width: 230px;
+    font-size: 16px;
+  }
+  .about-container h3 {
+    font-size: 30px;
+  }
+  .about-container {
+    width: 900px;
+  }
+  .about-container p {
+    font-size: 30px;
+  }
+  .img-container {
+    width: 100%;
+  }
+  .footer-contents :nth-child(1).footer-content {
+    gap: 5px;
+  }
+  .footer-contents :nth-child(2).footer-content {
+    gap: 3px;
+  }
+  .footer-content ul {
+    gap: 3px;
+  }
+  .footer-content p {
+    font-size: 18px;
+  }
+  .footer-content h5 {
+    font-size: 20px;
+  }
+  .footer-content ul li {
+    gap: 3px;
+  }
+  .footer-content ul li a {
+    font-size: 18px;
+  }
+  .bottom-bar {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (width <= 768px) {
+  .nav-buttons a {
+    font-size: 30px;
+  }
+  #logout {
+    font-size: 30px;
+  }
+  .basic-info h2 {
+    font-size: 40px;
+  }
+  .student-info > p {
+    font-size: 35px;
+  }
+  .teacher-info > div {
+    font-size: 35px;
+  }
+  .students {
+    grid-template-columns: repeat(3, auto);
+    justify-content: unset;
+    grid-auto-rows: auto;
+    justify-items: center;
+    align-content: center;
+    padding: 0px;
+    gap: 0px;
+  }
+  .students :not(:first-child) {
+    text-wrap: wrap;
+    width: 100px;
+    height: max-content;
+    padding: 10px 10px;
+    font-size: 30px;
+  }
+  .students :first-child {
+    width: 500px;
+    font-size: 30px;
+  }
+
+  .teacher-students {
+    grid-template-columns: repeat(4, auto);
+    grid-auto-rows: auto;
+    justify-items: center;
+    align-content: center;
+    padding: 0px;
+    gap: 0px;
+  }
+  .teacher-students > * {
+    padding: 0px;
+    font-size: unset;
+  }
+  .teacher-students :not(:first-child) {
+    text-wrap: wrap;
+    width: 70px;
     height: max-content;
     padding: 10px 10px;
     font-size: 12px;
   }
-  .students :first-child {
-    width: 230px;
+
+  .teacher-students :first-child {
+    width: 180px;
     font-size: 12px;
+  }
+  .about-container h3 {
+    font-size: 30px;
+  }
+  .about-container {
+    width: 900px;
+  }
+  .about-container p {
+    font-size: 30px;
+  }
+  .img-container {
+    width: 100%;
+  }
+  .footer-contents :nth-child(1).footer-content {
+    gap: 5px;
+  }
+  .footer-contents :nth-child(2).footer-content {
+    gap: 3px;
+  }
+  .footer-content ul {
+    gap: 3px;
+  }
+  .footer-content p {
+    font-size: 18px;
+  }
+  .footer-content h5 {
+    font-size: 20px;
+  }
+  .footer-content ul li {
+    gap: 3px;
+  }
+  .footer-content ul li a {
+    font-size: 18px;
+  }
+  .bottom-bar {
+    font-size: 16px;
   }
 }
 
 /* Medium devices (tablets, 768px and up) */
-@media only screen and (width<= 767px) {
+@media only screen and (width <= 850px) {
+  .basic-info h2 {
+    font-size: 25px;
+  }
+  .student-info > p {
+    font-size: 20px;
+  }
+  .teacher-info > div {
+    font-size: 20px;
+  }
   .students {
     grid-template-columns: repeat(3, auto);
     grid-auto-rows: auto;
@@ -49,14 +229,85 @@
     width: 211px;
     font-size: 12px;
   }
+
+  .teacher-students {
+    grid-template-columns: repeat(4, auto);
+    grid-auto-rows: auto;
+    justify-items: center;
+    align-content: center;
+    padding: 0px;
+    gap: 0px;
+  }
+  .teacher-students > * {
+    padding: 0px;
+    font-size: unset;
+  }
+  .teacher-students :not(:first-child) {
+    text-wrap: wrap;
+    width: 110px;
+    height: max-content;
+    padding: 10px 10px;
+    font-size: 12px;
+  }
+
+  .teacher-students :first-child {
+    width: 211px;
+    font-size: 12px;
+  }
+  .about-container h3 {
+    font-size: 45px;
+  }
+  .about-container {
+    width: 700px;
+  }
+  .about-container p {
+    font-size: 35px;
+  }
+  .img-container {
+    width: 600px;
+  }
+
+  .footer-content p {
+    font-size: 12px;
+  }
+  .footer-content h5 {
+    font-size: 16px;
+  }
+  .footer-content ul li {
+    height: max-content;
+    margin: 0px;
+  }
+  .footer-content ul li a {
+    font-size: 12px;
+    margin: 0px;
+  }
+  .bottom-bar {
+    font-size: 12px;
+  }
 }
 
 @media only screen and (width <= 547px) {
-  nav .nav-buttons {
+  nav {
+    grid-template-columns: repeat(2, auto);
+  }
+  nav > .nav-buttons,
+  nav > .right {
     display: none;
   }
+  .menu {
+    display: flex;
+  }
+  .basic-info h2 {
+    font-size: 25px;
+  }
+  .student-info > p {
+    font-size: 20px;
+  }
+  .teacher-info > div {
+    font-size: 20px;
+  }
   .students {
-    grid-template-columns: repeat(3, 134px);
+    grid-template-columns: repeat(3, auto);
     justify-content: unset;
     grid-auto-rows: auto;
     justify-items: center;
@@ -72,7 +323,170 @@
     font-size: 12px;
   }
   .students :first-child {
-    width: 120px;
+    width: 180px;
     font-size: 10px;
+  }
+
+  .teacher-students {
+    grid-template-columns: repeat(4, auto);
+    grid-auto-rows: auto;
+    justify-items: center;
+    align-content: center;
+    padding: 0px;
+    gap: 0px;
+  }
+  .teacher-students > * {
+    padding: 0px;
+    font-size: unset;
+  }
+  .teacher-students :not(:first-child) {
+    text-wrap: wrap;
+    width: 60px;
+    height: max-content;
+    padding: 10px 10px;
+    font-size: 12px;
+  }
+
+  .teacher-students :first-child {
+    width: 180px;
+    font-size: 10px;
+  }
+  .about-container h3 {
+    font-size: 35px;
+  }
+  .about-container {
+    width: 400px;
+  }
+  .about-container p {
+    font-size: 25px;
+  }
+  .img-container {
+    width: 350px;
+  }
+
+  .footer-contents :nth-child(1).footer-content {
+    gap: 5px;
+  }
+  .footer-contents :nth-child(2).footer-content {
+    gap: 3px;
+  }
+  .footer-content ul {
+    gap: 0px;
+  }
+  .footer-content p {
+    font-size: 10px;
+  }
+  .footer-content h5 {
+    font-size: 12px;
+  }
+  .footer-content ul li {
+    height: max-content;
+  }
+  .footer-content ul li a {
+    font-size: 10px;
+  }
+  .bottom-bar {
+    font-size: 10px;
+  }
+}
+@media only screen and (width <= 400px) {
+  nav {
+    grid-template-columns: repeat(2, auto);
+  }
+  nav > .nav-buttons,
+  nav > .right {
+    display: none;
+  }
+  .menu {
+    display: flex;
+  }
+  .basic-info h2 {
+    font-size: 25px;
+  }
+  .student-info > p {
+    font-size: 20px;
+  }
+  .teacher-info > div {
+    font-size: 20px;
+  }
+  .students {
+    grid-template-columns: repeat(3, auto);
+    justify-content: unset;
+    grid-auto-rows: auto;
+    justify-items: center;
+    align-content: center;
+    padding: 0px;
+    gap: 0px;
+  }
+  .students :not(:first-child) {
+    text-wrap: wrap;
+    width: 50px;
+    height: max-content;
+    padding: 10px 10px;
+    font-size: 12px;
+  }
+  .students :first-child {
+    width: 180px;
+    font-size: 10px;
+  }
+
+  .teacher-students {
+    grid-template-columns: repeat(4, auto);
+    grid-auto-rows: auto;
+    justify-items: center;
+    align-content: center;
+    padding: 0px;
+    gap: 0px;
+  }
+  .teacher-students > * {
+    padding: 0px;
+    font-size: unset;
+  }
+  .teacher-students :not(:first-child) {
+    text-wrap: wrap;
+    width: 50px;
+    height: max-content;
+    padding: 10px 10px;
+    font-size: 12px;
+  }
+
+  .teacher-students :first-child {
+    width: 160px;
+    font-size: 10px;
+  }
+
+  .about-container {
+    width: 350px;
+  }
+  .about-container p {
+    font-size: 20px;
+  }
+  .img-container {
+    width: 100%;
+  }
+
+  .footer-contents :nth-child(1).footer-content {
+    gap: 5px;
+  }
+  .footer-contents :nth-child(2).footer-content {
+    gap: 3px;
+  }
+  .footer-content ul {
+    gap: 0px;
+  }
+  .footer-content p {
+    font-size: 10px;
+  }
+  .footer-content h5 {
+    font-size: 12px;
+  }
+  .footer-content ul li {
+    height: max-content;
+  }
+  .footer-content ul li a {
+    font-size: 10px;
+  }
+  .bottom-bar {
+    font-size: 8px;
   }
 }
