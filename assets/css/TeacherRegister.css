@@ -92,7 +92,7 @@ form input:focus-within {
   border-radius: 5px;
 }
 
-.dropdown button {
+.dropdown div {
   background-color: #ededed;
   color: #000000;
   padding: 10px 15px;
@@ -101,7 +101,13 @@ form input:focus-within {
 }
 .dropdown {
   position: relative;
-  display: inline;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+#courses {
+  width: max-content;
+  margin: auto;
 }
 .dropdown label {
   display: grid;
@@ -112,7 +118,7 @@ form input:focus-within {
 }
 
 .dropdown .content {
-  display: none;
+  display: grid;
   position: absolute;
   background-color: #ffffff;
   color: #ffffff;
@@ -120,19 +126,18 @@ form input:focus-within {
   box-shadow: 2px 2px 5px black;
   overflow: scroll;
   height: 200px;
-  width: 390px;
+  width: 100%;
   font-size: 15px;
-  top: 29px;
-  transform: translateX(-5%);
-  overflow-x: hidden;
+  top: 43px;
+  transform: translateX(-3%);
 }
-.dropdown:hover .content {
+.hide {
   display: block;
   align-items: center;
   justify-content: space-between;
 }
 
-.dropdown:hover button {
+#courses:hover {
   background-color: #afaeae;
 }
 .dropdown label:hover {

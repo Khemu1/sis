@@ -331,7 +331,6 @@ nav .nav-buttons {
 }
 .hide-options {
   display: none;
-  height: 0px;
   transition: 250ms ease-in-out;
 }
 section {

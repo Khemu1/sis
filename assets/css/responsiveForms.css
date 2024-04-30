@@ -1,7 +1,7 @@
 /* Small devices (phones, 320px and up) */
 @media only screen and (min-width: 320px) {
   .container {
-    width: 217px;
+    width: 270px;
   }
 }
 
@@ -14,7 +14,34 @@
 
 /* Large devices (laptops/desktops, 1024px and up) */
 @media only screen and (min-width: 1024px) {
+  h2 {
+    font-size: 40px;
+  }
   .container {
-    width: 350px;
+    width: 450px;
+  }
+  .container input[type="text"],
+  .container input[type="password"],
+  .radio-group {
+    font-size: 30px;
+  }
+  input[type="radio"] {
+    width: 21px;
+  }
+  .container input[type="submit"],
+  #courses {
+    font-size: 20px;
+  }
+  #login {
+    font-size: 30px;
+  }
+  #register:not(form) {
+    font-size: 30px;
+    height: max-content;
+  }
+  .register-link,
+  .log,
+  .login {
+    font-size: 25px;
   }
 }

@@ -1,6 +1,4 @@
 @media only screen and (width >= 900px) and (width <= 1024px) {
-  body {
-  }
   .nav-buttons a {
     font-size: 30px;
   }
@@ -36,7 +34,9 @@
     width: 500px;
     font-size: 30px;
   }
-
+  .enrolled-students {
+    gap: 20px;
+  }
   .teacher-students {
     grid-template-columns: repeat(4, auto);
     grid-auto-rows: auto;
@@ -51,15 +51,15 @@
   }
   .teacher-students :not(:first-child) {
     text-wrap: wrap;
-    width: 100px;
+    width: 170px;
     height: max-content;
     padding: 10px 10px;
-    font-size: 14px;
+    font-size: 24px;
   }
 
   .teacher-students :first-child {
-    width: 230px;
-    font-size: 16px;
+    width: 300px;
+    font-size: 24px;
   }
   .about-container h3 {
     font-size: 30px;
@@ -89,117 +89,17 @@
     font-size: 20px;
   }
   .footer-content ul li {
-    gap: 3px;
-  }
-  .footer-content ul li a {
-    font-size: 18px;
-  }
-  .bottom-bar {
-    font-size: 16px;
-  }
-}
-
-@media only screen and (width <= 768px) {
-  .nav-buttons a {
-    font-size: 30px;
-  }
-  #logout {
-    font-size: 30px;
-  }
-  .basic-info h2 {
-    font-size: 40px;
-  }
-  .student-info > p {
-    font-size: 35px;
-  }
-  .teacher-info > div {
-    font-size: 35px;
-  }
-  .students {
-    grid-template-columns: repeat(3, auto);
-    justify-content: unset;
-    grid-auto-rows: auto;
-    justify-items: center;
-    align-content: center;
-    padding: 0px;
-    gap: 0px;
-  }
-  .students :not(:first-child) {
-    text-wrap: wrap;
-    width: 100px;
-    height: max-content;
-    padding: 10px 10px;
-    font-size: 30px;
-  }
-  .students :first-child {
-    width: 500px;
-    font-size: 30px;
-  }
-
-  .teacher-students {
-    grid-template-columns: repeat(4, auto);
-    grid-auto-rows: auto;
-    justify-items: center;
-    align-content: center;
-    padding: 0px;
-    gap: 0px;
-  }
-  .teacher-students > * {
-    padding: 0px;
-    font-size: unset;
-  }
-  .teacher-students :not(:first-child) {
-    text-wrap: wrap;
-    width: 70px;
-    height: max-content;
-    padding: 10px 10px;
-    font-size: 12px;
-  }
-
-  .teacher-students :first-child {
-    width: 180px;
-    font-size: 12px;
-  }
-  .about-container h3 {
-    font-size: 30px;
-  }
-  .about-container {
-    width: 900px;
-  }
-  .about-container p {
-    font-size: 30px;
-  }
-  .img-container {
-    width: 100%;
-  }
-  .footer-contents :nth-child(1).footer-content {
     gap: 5px;
   }
-  .footer-contents :nth-child(2).footer-content {
-    gap: 3px;
-  }
-  .footer-content ul {
-    gap: 3px;
-  }
-  .footer-content p {
-    font-size: 18px;
-  }
-  .footer-content h5 {
-    font-size: 20px;
-  }
-  .footer-content ul li {
-    gap: 3px;
-  }
   .footer-content ul li a {
     font-size: 18px;
   }
   .bottom-bar {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 
-/* Medium devices (tablets, 768px and up) */
-@media only screen and (width <= 850px) {
+@media only screen and (width <= 820px) {
   .basic-info h2 {
     font-size: 25px;
   }
@@ -220,16 +120,18 @@
   }
   .students :not(:first-child) {
     text-wrap: wrap;
-    width: 80px;
+    width: 105px;
     height: max-content;
     padding: 10px 10px;
-    font-size: 12px;
+    font-size: 25px;
   }
   .students :first-child {
-    width: 211px;
-    font-size: 12px;
+    width: 416px;
+    font-size: 25px;
   }
-
+  .enrolled-students {
+    gap: 15px;
+  }
   .teacher-students {
     grid-template-columns: repeat(4, auto);
     grid-auto-rows: auto;
@@ -244,15 +146,15 @@
   }
   .teacher-students :not(:first-child) {
     text-wrap: wrap;
-    width: 110px;
+    width: 90px;
     height: max-content;
     padding: 10px 10px;
-    font-size: 12px;
+    font-size: 25px;
   }
 
   .teacher-students :first-child {
-    width: 211px;
-    font-size: 12px;
+    width: 390px;
+    font-size: 20px;
   }
   .about-container h3 {
     font-size: 45px;
@@ -317,14 +219,14 @@
   }
   .students :not(:first-child) {
     text-wrap: wrap;
-    width: 50px;
+    width: 100px;
     height: max-content;
     padding: 10px 10px;
-    font-size: 12px;
+    font-size: 16px;
   }
   .students :first-child {
-    width: 180px;
-    font-size: 10px;
+    width: 280px;
+    font-size: 16px;
   }
 
   .teacher-students {
@@ -341,15 +243,15 @@
   }
   .teacher-students :not(:first-child) {
     text-wrap: wrap;
-    width: 60px;
+    width: 80px;
     height: max-content;
     padding: 10px 10px;
-    font-size: 12px;
+    font-size: 16px;
   }
 
   .teacher-students :first-child {
-    width: 180px;
-    font-size: 10px;
+    width: 250px;
+    font-size: 16px;
   }
   .about-container h3 {
     font-size: 35px;
@@ -389,6 +291,109 @@
     font-size: 10px;
   }
 }
+
+@media only screen and (width <= 430px) {
+  nav {
+    grid-template-columns: repeat(2, auto);
+  }
+  nav > .nav-buttons,
+  nav > .right {
+    display: none;
+  }
+  .menu {
+    display: flex;
+  }
+  .basic-info h2 {
+    font-size: 25px;
+  }
+  .student-info > p {
+    font-size: 20px;
+  }
+  .teacher-info > div {
+    font-size: 20px;
+  }
+  .students {
+    grid-template-columns: repeat(3, auto);
+    justify-content: unset;
+    grid-auto-rows: auto;
+    justify-items: center;
+    align-content: center;
+    padding: 0px;
+    gap: 0px;
+  }
+  .students :not(:first-child) {
+    text-wrap: wrap;
+    width: 70px;
+    height: max-content;
+    padding: 10px 10px;
+    font-size: 14px;
+  }
+  .students :first-child {
+    width: 240px;
+    font-size: 14px;
+  }
+
+  .teacher-students {
+    grid-template-columns: repeat(4, auto);
+    grid-auto-rows: auto;
+    justify-items: center;
+    align-content: center;
+    padding: 0px;
+    gap: 0px;
+  }
+  .teacher-students > * {
+    padding: 0px;
+    font-size: unset;
+  }
+  .teacher-students :not(:first-child) {
+    text-wrap: wrap;
+    width: 60px;
+    height: max-content;
+    padding: 10px 10px;
+    font-size: 13px;
+  }
+
+  .teacher-students :first-child {
+    width: 195px;
+    font-size: 13px;
+  }
+
+  .about-container {
+    width: 350px;
+  }
+  .about-container p {
+    font-size: 20px;
+  }
+  .img-container {
+    width: 100%;
+  }
+
+  .footer-contents :nth-child(1).footer-content {
+    gap: 5px;
+  }
+  .footer-contents :nth-child(2).footer-content {
+    gap: 3px;
+  }
+  .footer-content ul {
+    gap: 0px;
+  }
+  .footer-content p {
+    font-size: 10px;
+  }
+  .footer-content h5 {
+    font-size: 12px;
+  }
+  .footer-content ul li {
+    height: max-content;
+  }
+  .footer-content ul li a {
+    font-size: 10px;
+  }
+  .bottom-bar {
+    font-size: 10px;
+  }
+}
+
 @media only screen and (width <= 400px) {
   nav {
     grid-template-columns: repeat(2, auto);

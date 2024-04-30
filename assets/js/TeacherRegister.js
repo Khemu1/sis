@@ -184,6 +184,13 @@ function checkedCourses() {
     });
   });
 }
+
+document.querySelector("#courses").addEventListener("click", (e) => {
+  e.preventDefault;
+  console.log("hi");
+  document.querySelector(".content").classList.toggle("hide");
+});
+
 const debounce = (fn, delay = 500) => {
   let timeoutId;
   return (...args) => {

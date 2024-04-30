@@ -9,7 +9,7 @@ require_once ("../models/Teaches.php");
 require_once ("../models/Utils.php");
 session_start();
 $arr = [];
-if (isset($_POST["register"])) {
+if (isset($_POST["submit"])) {
   $arr = Utils::validateTeacherFields([
     $_POST["userName"],
     $_POST["name"],
@@ -65,7 +65,7 @@ if (isset($_POST["register"])) {
     <div class="body">
       <form method="Post" id="register">
         <div>
-          <input type="text" name="userName" id="user-name" placeholder="UserName" required><br>
+          <input type="text" name="userName" id="user-name" placeholder="UserName"><br>
           <small class="error-msg"></small><br>
 
           <div class="error-msg">
@@ -76,7 +76,7 @@ if (isset($_POST["register"])) {
           </div>
         </div>
         <div>
-          <input type="text" name="name" id="name" placeholder="Name" required><br>
+          <input type="text" name="name" id="name" placeholder="Name"><br>
           <small class="error-msg"></small><br>
 
           <div class="error-msg">
@@ -86,7 +86,7 @@ if (isset($_POST["register"])) {
           </div>
         </div>
         <div>
-          <input type="password" name="password" id="password" placeholder="Password" required><br>
+          <input type="password" name="password" id="password" placeholder="Password"><br>
           <small class="error-msg"></small><br>
 
           <div class="error-msg">
@@ -96,7 +96,7 @@ if (isset($_POST["register"])) {
           </div>
         </div>
         <div>
-          <input type="text" name="address" id="address" placeholder="Address" required><br>
+          <input type="text" name="address" id="address" placeholder="Address"><br>
           <small class="error-msg"></small><br>
 
           <div class="error-msg">
@@ -106,11 +106,11 @@ if (isset($_POST["register"])) {
           </div>
         </div>
         <div class="dropdown">
-          <button id="courses">Choose courses<i class="uil uil-angle-down"></i></button><br>
+          <div id="courses">Choose courses<i class="uil uil-angle-down"></i></div><br>
           <small class="courseError hide">Please choose atleast one coruse</small><br>
 
 
-          <div class="content">
+          <div class="content hide">
 
             <label>Electronics<input type="checkbox" name="course[]" value="Electronics"></label>
 
@@ -165,14 +165,14 @@ if (isset($_POST["register"])) {
             <label>Enterpreneurship<input type="checkbox" name="course[]" value="Enterpreneurship" /></label>
           </div>
         </div>
+        <div class="error-msg">
+          <?php echo $arr["courses"] ?? " "; ?> <br>
+        </div>
+        <input id="register" type="submit" name="submit" value="Register">
+        <br><br>
+        <a class="log" href="index.php">Login</a>
+      </form>
     </div>
-    <div class="error-msg">
-      <?php echo $arr["courses"] ?? " "; ?> <br>
-    </div>
-    <input id="register" type="submit" name="register" value="Register">
-    <br><br>
-    <a class="log" href="index.php">Login</a>
-    </form>
   </div>
   <div class="footer">
     <p>Powered by Kemet SIS</p>
