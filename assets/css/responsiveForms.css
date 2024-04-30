@@ -23,25 +23,25 @@
   .container input[type="text"],
   .container input[type="password"],
   .radio-group {
-    font-size: 30px;
+    font-size: 25px;
   }
   input[type="radio"] {
-    width: 21px;
+    width: 18px;
   }
   .container input[type="submit"],
   #courses {
     font-size: 20px;
   }
   #login {
-    font-size: 30px;
+    font-size: 25px;
   }
   #register:not(form) {
-    font-size: 30px;
+    font-size: 25px;
     height: max-content;
   }
   .register-link,
   .log,
   .login {
-    font-size: 25px;
+    font-size: 18px;
   }
 }

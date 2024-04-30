@@ -169,15 +169,13 @@ form input:focus-within {
 .footer {
   position: fixed;
   bottom: 0;
+  left: 6px;
 }
 .footer p {
   font-size: 12px;
   font-family: sans-serif;
   margin-top: 20px;
   text-align: left;
-}
-.footer p.font-dark {
-  color: var(--form-text-dark);
 }
 #register:not(form) {
   background-color: #0073f7;

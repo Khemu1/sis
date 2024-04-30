@@ -11,6 +11,50 @@
   --form-text-dark: white;
   --a-dark: white;
 }
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--body-dark);
+  }
+  .container {
+    background-color: var(--form-dark);
+    border: var(--form-dark);
+  }
+  .register-link {
+    color: var(--a-dark);
+  }
+  h2 {
+    color: var(--form-text-dark);
+  }
+  .footer p {
+    color: var(--a-dark);
+  }
+  .login {
+    color: var(--a-dark);
+  }
+}
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: var(--body-light);
+  }
+  .container {
+    background-color: var(--form-light);
+    border: var(--form-light);
+  }
+  .register-link {
+    color: var(--a-light);
+  }
+  h2 {
+    color: var(--form-text-light);
+  }
+  .footer p {
+    color: var(--a-light);
+  }
+  .login {
+    color: var(--a-light);
+  }
+}
+
 form input {
   width: 150px;
 }
@@ -96,51 +140,5 @@ form input:focus-within {
   font-size: 12px;
   font-family: sans-serif;
   margin-top: 20px;
-  color: var(--a);
   text-align: left;
-}
-.footer p.font-dark {
-  color: var(--form-text-dark);
-}
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: var(--body-dark);
-  }
-  .container {
-    background-color: var(--form-dark);
-    border: var(--form-dark);
-  }
-  .register-link {
-    color: var(--a-dark);
-  }
-  h2 {
-    color: var(--form-text-dark);
-  }
-  .footer p {
-    color: var(--a-dark);
-  }
-  .login {
-    color: var(--a-dark);
-  }
-}
-@media (prefers-color-scheme: light) {
-  body {
-    background-color: var(--body-light);
-  }
-  .container {
-    background-color: var(--form-light);
-    border: var(--form-light);
-  }
-  .register-link {
-    color: var(--a-light);
-  }
-  h2 {
-    color: var(--form-text-light);
-  }
-  .footer p {
-    color: var(--a-light);
-  }
-  .login {
-    color: var(--a-light);
-  }
 }

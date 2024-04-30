@@ -133,7 +133,7 @@ form {
   text-align: center;
   font-family: sans-serif;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 18px;
 }
 .register-link:hover {
   text-decoration: underline;
@@ -142,7 +142,7 @@ form {
 .footer {
   position: fixed;
   bottom: 0;
-  left: 0;
+  left: 6px;
 }
 .footer p {
   position: fixed;
