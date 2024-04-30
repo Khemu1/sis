@@ -111,20 +111,25 @@ form input:focus-within {
 }
 .dropdown label {
   display: grid;
+  grid: 1fr / 2fr 1fr;
+  padding: 10px 15px;
+  height: max-content;
   color: #333;
   text-decoration: none;
-  padding: 10px 15px;
-  grid-template-columns: repeat(23, 250px);
+  overflow: hidden;
 }
 
 .dropdown .content {
   display: grid;
+  grid: repeat(23, 1fr) / auto;
+  gap: 10px;
   position: absolute;
   background-color: #ffffff;
   color: #ffffff;
   min-width: 50px;
   box-shadow: 2px 2px 5px black;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
   height: 200px;
   width: 100%;
   font-size: 15px;

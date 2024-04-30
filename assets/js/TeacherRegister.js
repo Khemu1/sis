@@ -1,5 +1,3 @@
-import * as utils from "./Utils.js";
-
 const usernameEl = document.querySelector("#user-name");
 const nameEl = document.querySelector("#name");
 const passwordEl = document.querySelector("#password");
