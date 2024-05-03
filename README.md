@@ -8,24 +8,29 @@ The Student Information System (SIS) is designed to manage student data and faci
 **Teacher Assignment:** Upon registration, students are assigned to teachers based on the courses they choose. If no teacher is available for a particular course, the student will remain unassigned until a teacher registers for that course.
 
 **Course Enrollment:** Students can enroll in courses from a selection of 23 available courses. The system ensures that students are only assigned to courses for which a teacher is available.
+
 **Teacher Registration:** Teachers register for the system, providing their credentials and indicating the courses they are qualified to teach.
 
-**Course Management:** Teachers can manage enrolled students, track student progress, and communicate with students through the system.
+**Course Management:** Teachers can see enrolled students
 
 **Responsive Design:** The system is designed to be responsive, adapting to various screen sizes and devices for a seamless user experience.
 
 # **Technologies Used**
 **Frontend:** HTML, CSS, JavaScript
 **Backend:** PHP, MySQL
-Getting Started
-[Insert instructions here on how to set up and run the project locally, if applicable]
+
+# **Getting Started**
+
+Download any program that can make a local server then insert the database and run the project
 
 
-Role --> Team Leader
+# My Contribution
 
-My Contribution
+**Role --> Team Leader**
 
-  Collaborated on backend development, contributing to the creation of essential classes, insertion methods, and Enroll method along with its dependencies.
+
+  Collaborated on backend development, contributing to the creation of essential classes, insertion methods, and Enroll     
+  method along with its dependencies.
   
   Linked the backend with the login page on the frontend.
   
