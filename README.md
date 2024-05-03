@@ -2,7 +2,7 @@
 **Student Information System (SIS)**
 # **Overview**
 
-The Student Information System (SIS) is designed to manage students and teachers data. The system provides features for course enrollment, teacher assignment.
+The Student Information System (SIS) is designed to manage students and teachers data. The system provides features for course enrollment , teacher assignment and student assignment.
 
 # **How it Works**
 **User Registration:** Students register for the system, providing basic information such as username, name, address, and desired courses.
