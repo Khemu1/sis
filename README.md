@@ -1,6 +1,8 @@
-Project Idea: Student Information System (SIS)
-Overview
-The Student Information System (SIS) is designed to manage student data and facilitate communication between students and teachers. The system provides features for course enrollment, teacher assignment, and course management.
+# **Project Idea**
+**Student Information System (SIS)**
+# **Overview**
+
+The Student Information System (SIS) is designed to manage students and teachers data. The system provides features for course enrollment, teacher assignment.
 
 # **How it Works**
 **User Registration:** Students register for the system, providing basic information such as username, name, address, and desired courses.
@@ -17,6 +19,7 @@ The Student Information System (SIS) is designed to manage student data and faci
 
 # **Technologies Used**
 **Frontend:** HTML, CSS, JavaScript
+
 **Backend:** PHP, MySQL
 
 # **Getting Started**
@@ -45,5 +48,3 @@ Download any program that can make a local server then insert the database and r
   Implemented responsive design principles to ensure a seamless user experience across various devices.
   
   Introduced dynamic color themes to enhance visual aesthetics and user engagement.
-  
-  This project was a team effort. No frameworks or libraries were used.
