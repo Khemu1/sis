@@ -31,12 +31,8 @@ handled the duplications casses for students in Enrollement --> Khemu
 
 handled null courses when there are no teachers --> Khemu
 
-<<<<<<< HEAD:classes/updates.txt
-added an update method for students in Enrollement --> Khemu
-=======
-added an update method for students in Enrollement
+added an update method for students in Enrollement --> khemu
 
 4 / 9 / 2024
 
-made the the Utils class for validations
->>>>>>> 29515e6b02f42649716980ede401cb7fb18c6ba7:models/updates.txt
+made the the Utils class for backend validations --> khemu
