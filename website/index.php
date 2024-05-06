@@ -95,4 +95,3 @@ if (isset($_POST["login"])) {
 
 </html>
 <script type="module" src="../assets/js/index.js?t=<?= time() ?>"></script>
-<script type="module" src="../assets/js/Utils.js?t=<?= time() ?>"></script>
