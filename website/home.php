@@ -121,7 +121,15 @@ if (!$_SESSION["id"]) {
             <ul class="list-footer">
               <li><a href="home.php">Home</a></li>
               <li><a href="home.php?page=about">About</a></li>
-              <li><a href="home.php?page=courses">Courses</a></li>
+              <li><a href="home.php?page=courses"><?php
+              if ($_SESSION["userType"] === "student") { ?>
+                    Courses
+                    <?php
+              } else { ?>
+
+                    Participants
+                    <?php
+              } ?></a></li>
             </ul>
           </div>
           <div class="footer-content">
