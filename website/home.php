@@ -103,7 +103,7 @@ if (!$_SESSION["id"]) {
             <a id="logout" href="../controllers/logout.php">
               <p>Logout</p>
             </a>
-          </div </div>
+          </div>
         </div>
     </nav>
 
@@ -119,10 +119,9 @@ if (!$_SESSION["id"]) {
           <div class="footer-content">
             <h5>Quick Links</h5>
             <ul class="list-footer">
-              <li><a href="main">Home</a></li>
-              <li><a href="about">About</a></li>
-              <li><a href="support">Support</a></li>
-              <li><a href="contact us">Contact</a></li>
+              <li><a href="home.php">Home</a></li>
+              <li><a href="home.php?page=about">About</a></li>
+              <li><a href="home.php?page=courses">Courses</a></li>
             </ul>
           </div>
           <div class="footer-content">
