@@ -22,7 +22,13 @@ if ($_SESSION["userType"] === "student") {
   $data = Students::select(["userName", "name", "address", "level"], ["accountId" => $_SESSION["id"]])[0];
 
   $EnrolledCourses = Courses::select(["name", "level", "hours"], ["level" => $data["level"]]);
-  echo json_encode(["student", $data, $EnrolledCourses]);
+  $response = [
+    "status" => "success",
+    "type" => "student",
+    "data" => $data,
+    "courses" => $EnrolledCourses
+  ];
+  echo json_encode($response);
   exit();
 }
 
@@ -31,6 +37,19 @@ if ($_SESSION["userType"] === "teacher") {
   $data = Teachers::select(["userName", "name", "address"], ["accountId" => $_SESSION["id"]])[0];
 
   $EnrolledCourses = Enrollment::select(["courseName", "courseLevel", "courseHours", "studentUserName"], ["teacherUserName" => $data["userName"]]);
-  echo json_encode(["teacher", $data, $EnrolledCourses]);
+  $response = [
+    "status" => "success",
+    "type" => "teacher",
+    "data" => $data,
+    "courses" => $EnrolledCourses
+  ];
+  echo json_encode($response);
   exit();
 }
+
+$response =[
+  "status" => "error",
+  "message" => "invalid user type"
+];
+echo json_encode($response);
+exit();

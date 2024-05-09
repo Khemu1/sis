@@ -1,4 +1,3 @@
-console.log(window.location.href);
 let fetchedData;
 let home1;
 let courses1;
@@ -72,7 +71,6 @@ async function fetchData() {
       throw new Error("Something is wrong with the response");
     }
     const data = await response.json();
-    console.log(data);
     return data;
   } catch (error) {
     console.log("Something went wrong with fetching data:", error);
@@ -82,9 +80,9 @@ async function fetchData() {
 async function fetchDataAndUpdateVariable() {
   try {
     fetchedData = await fetchData();
-    let info = fetchedData[1];
-    let courses = fetchedData[2];
-    if (fetchedData[0] === "student") {
+    let info = fetchedData.data;
+    let courses = fetchedData.courses;
+    if (fetchedData.type === "student") {
       studentContent(info, courses);
     } else {
       teacherContent(info, courses);
@@ -144,7 +142,7 @@ function studentContent(info, courses) {
 </div>`;
 
   courses1 = `<div class="student-table-container">
-  <h2>students</h2>
+  <h2>Enrolled Courses</h2>
   <div class="student-table">
     <div class="students">
       <div>Course</div>
