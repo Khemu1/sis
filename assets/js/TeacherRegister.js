@@ -191,7 +191,7 @@ document.body.addEventListener("click", (e) => {
   }
 });
 
-menuButton.addEventListener("click", (e) => {
+menuButton.addEventListener("click", () => {
   menu.classList.toggle("hide");
 });
 
