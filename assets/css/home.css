@@ -314,7 +314,7 @@ nav .nav-buttons {
   justify-content: right;
   gap: 10px;
   z-index: 1;
-  right: -9px;
+  right: 2px;
   top: 100px;
   width: 150px;
   padding-block: 13px;
