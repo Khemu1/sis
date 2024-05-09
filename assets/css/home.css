@@ -340,6 +340,7 @@ section {
   font-size: 20px;
   height: 100%;
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 .basic-info {
   display: flex;
@@ -383,6 +384,14 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.teacher-students {
+  align-items: center;
+  justify-items: center;
+}
+.teacher-students :first-child {
+  height: max-content;
+  padding: 10px;
 }
 .footer-contents {
   display: grid;
