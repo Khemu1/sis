@@ -7,6 +7,7 @@ require_once ("../models/Students.php");
 require_once ("../models/Teachers.php");
 require_once ("../models/Teaches.php");
 require_once ("../models/Utils.php");
+session_start();
 $arr = [];
 if (isset($_POST["register"])) {
     $arr = Utils::validateStudentFields([
@@ -31,6 +32,9 @@ if (isset($_POST["register"])) {
         $_SESSION["id"] = $accountId;
         $_SESSION["userName"] = $userName;
         $_SESSION["userType"] = "student";
+
+        Enrollment::enroll();
+
         header("location: home.php");
         exit();
     }
@@ -119,4 +123,3 @@ if (isset($_POST["register"])) {
 
 </html>
 <script type="module" src="../assets/js/StudentRegister.js"></script>
-<script type="module" src="../assets/js/Utils.js?t=<?= time() ?>"></script>

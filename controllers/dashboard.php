@@ -45,11 +45,11 @@ if ($_SESSION["userType"] === "teacher") {
   ];
   echo json_encode($response);
   exit();
+} else {
+  $response = [
+    "status" => "error",
+    "message" => "invalid user type"
+  ];
+  echo json_encode($response);
+  exit();
 }
-
-$response =[
-  "status" => "error",
-  "message" => "invalid user type"
-];
-echo json_encode($response);
-exit();

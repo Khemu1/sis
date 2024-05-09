@@ -186,5 +186,3 @@ if (isset($_POST["submit"])) {
 
 </html>
 <script type="module" src="../assets/js/TeacherRegister.js?t=<?= time() ?>"></script>
-
-<script type="module" src="../assets/js/Utils.js?t=<?= time() ?>"></script>
