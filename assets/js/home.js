@@ -63,11 +63,11 @@ let about = `<div class="about">
 document.body.addEventListener("click", (e) => {
   if (
     !document.querySelector(".menu").contains(e.target) &&
-    setTimeout(() => {
-      !document.querySelector(".options").contains(e.target);
-    }, 100)
+    !document.querySelector(".options").contains(e.target)
   ) {
-    document.querySelector(".options").classList.add("hide-options");
+    setTimeout(() => {
+      document.querySelector(".options").classList.add("hide-options");
+    }, 100);
   }
 });
 document.querySelector(".menu").addEventListener("click", () => {
