@@ -1,6 +1,8 @@
 let fetchedData;
 let home1;
 let courses1;
+let burger = document.querySelector(".menu");
+let menu = document.querySelector(".options");
 let about = `<div class="about">
           <div class="about-container">
             <h3>Our Reliabile Connection</h3>
@@ -60,8 +62,13 @@ let about = `<div class="about">
           </div>
         </div>`;
 
-document.querySelector(".menu").addEventListener("click", () => {
-  document.querySelector(".options").classList.toggle("hide-options");
+        document.body.addEventListener("click", (e) => {
+          if (!burger.contains(e.target) && !menu.contains(e.target)) {
+            menu.classList.add("hide");
+          }
+        });
+burger.addEventListener("click", () => {
+  menu.classList.toggle("hide-options");
 });
 // Fetching data from the backend
 async function fetchData() {
