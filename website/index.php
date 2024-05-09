@@ -1,7 +1,4 @@
 <?php
-
-use function PHPSTORM_META\type;
-
 require_once ("../config/setup.php");
 require_once ("../models/Accounts.php");
 require_once ("../models/Courses.php");
