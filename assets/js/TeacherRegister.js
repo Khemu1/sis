@@ -5,6 +5,8 @@ const addressEl = document.querySelector("#address");
 const levelEl = document.querySelector("#level");
 const form = document.querySelector("form");
 const registerButton = document.querySelector('input[type="submit"]');
+const menuButton = document.querySelector("#courses");
+const menu = document.querySelector(".content");
 const checkUsername = () => {
   let valid = false;
 
@@ -183,10 +185,14 @@ function checkedCourses() {
   });
 }
 
-document.querySelector("#courses").addEventListener("click", (e) => {
-  e.preventDefault;
-  console.log("hi");
-  document.querySelector(".content").classList.toggle("hide");
+document.body.addEventListener("click", (e) => {
+  if (!menuButton.contains(e.target) && !menu.contains(e.target)) {
+    menu.classList.add("hide");
+  }
+});
+
+menuButton.addEventListener("click", (e) => {
+  menu.classList.toggle("hide");
 });
 
 const debounce = (fn, delay = 500) => {
