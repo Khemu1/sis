@@ -312,8 +312,8 @@ nav .nav-buttons {
   gap: 10px;
   z-index: 1;
   flex-direction: column;
-  left: -66px;
-  top: 42px;
+  right: -9px;
+  top: 67px;
   padding: 13px;
   overflow: hidden;
   height: max-content;

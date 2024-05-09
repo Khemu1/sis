@@ -150,4 +150,3 @@ if (!$_SESSION["id"]) {
 </html>
 
 <script type="module" src="../assets/js/home.js?t=<?= time() ?>"></script>
-<!-- <script type="module" src="../assets/js/Utils.js?t=<?= time() ?>"></script> -->
