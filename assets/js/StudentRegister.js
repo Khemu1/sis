@@ -162,24 +162,13 @@ const isNameSecure = (name) => {
   const re = new RegExp("^[a-zA-Z ]{3,12}$");
   return re.test(name);
 };
-const debounce = (fn, delay = 500) => {
-  let timeoutId;
-  return (...args) => {
-    // cancel the previous timer
-    if (timeoutId) {
-      clearTimeout(timeoutId);
-    }
-    // setup a new timer
-    timeoutId = setTimeout(() => {
-      fn.apply(null, args);
-    }, delay);
-  };
-};
 
 // fantastic way to call the methods
-form.addEventListener(
-  "input",
-  debounce(function (e) {
+// Assuming 'form' is the reference to your form element
+
+form.addEventListener("input", (e) => {
+
+  setTimeout(() => {
     switch (e.target.id) {
       case "user-name":
         checkUsername();
@@ -197,8 +186,8 @@ form.addEventListener(
         checkLevel();
         break;
     }
-  })
-);
+  }, 500);
+});
 
 setTimeout(function () {
   document.querySelector(".container").classList.add("move");
