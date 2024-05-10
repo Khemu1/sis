@@ -10,8 +10,8 @@ require_once ("../models/Utils.php");
 
 session_start();
 
+$account = [];
 if (isset($_POST["login"])) {
-    $account = [];
     $data = Accounts::select(["id", "userName"], ["userName" => $_POST["userName"], "password" => $_POST["password"]]);
     if (!empty($data)) {
         $id = $data[0]["id"];
@@ -57,16 +57,12 @@ if (isset($_POST["login"])) {
         <form method="POST">
             <div class="form-group">
                 <input type="text" name="userName" class="user-name" placeholder="Username">
-                <?php
-                echo $account["account"] ?? "";
-                ?>
             </div>
+        
             <div class="form-group">
                 <input type="password" name="password" class="password" placeholder="Password">
-                <?php
-                echo $account["account"] ?? "";
-                ?>
             </div>
+            <div class="error-msg"><?= $account["account"] ?? "" ?> </div>
             <div class="radio-group">
                 <input type="radio" id="Teacher" name="userType" value="teacher" required checked>
                 <label for="Teacher">Teacher</label>
@@ -81,7 +77,6 @@ if (isset($_POST["login"])) {
                 <a href="TeacherRegister.php" class="register-link">Register as a Teacher</a>
             </div>
         </form>
-
     </div>
     <div class="footer">
         <p>Powered by Kemet SIS</p>
