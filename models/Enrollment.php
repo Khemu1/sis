@@ -21,7 +21,7 @@ class Enrollment
     $students = Students::selectAll();
     // the method will stop if there aren't any students
     if (empty($students)) {
-      return ;
+      return;
     }
 
     foreach ($students as $student) {
@@ -34,22 +34,21 @@ class Enrollment
       $coursesForLevel = Courses::select(["name",], ["level" => $studentLevel]);
       $unassinged = true;
       $teacherFound = false;
-          // loop through each retunred course
+      // loop through each returned course
       foreach ($courses as $course) {
-      // there aren't any teachers for this course , get the next course
+        // if there aren't any teachers for this course , get the next course
         if (empty($teachers)) {
           self::insert([$course["name"], $course["level"], $course["hours"], $student["userName"], null]);
           continue;
         }
-
         foreach ($teachers as $teacher) {
           // Check if the teacher teaches the current course and has available slots for the student
-          $isTeachingCourse = Teaches::doesTeach(["teacherUserName" => $teacher["teacherUserName"], "course" => $course["name"]]) === 1;
-          $teacherCourseCount = self::exists(["teacherUserName" => $teacher["teacherUserName"], "courseName" => $course["name"]]) < 5;
-          $alreadyEnrolled = self::exists(["teacherUserName" => $teacher["teacherUserName"], "studentUserName" => $student["userName"], "courseName" => $course["name"]]) === 0;
-          $studentCourseCount = self::exists(["studentUserName" => $student["userName"]]) < count($coursesForLevel);
+          $isTeachingCourse = Teaches::doesTeach(["teacherUserName" => $teacher["teacherUserName"], "course" => $course["name"]]) === 1; // check if the current teacher teachs the current coruse
+          $teacherCourseCount = self::exists(["teacherUserName" => $teacher["teacherUserName"], "courseName" => $course["name"]]) < 5; // each teacher conly teach 5 students
+          $alreadyEnrolled = self::exists(["teacherUserName" => $teacher["teacherUserName"], "studentUserName" => $student["userName"], "courseName" => $course["name"]]) === 0; // check if this student is already with teacher and course
+          $studentCourseCount = self::exists(["studentUserName" => $student["userName"]]) < count($coursesForLevel); // is the current student assinged to all of their courses ?
           if (!$isTeachingCourse)
-          // get to the next teacher
+            // get to the next teacher
             continue;
           if (!$teacherCourseCount)
             // get to the next teacher
@@ -60,7 +59,7 @@ class Enrollment
           if (!$studentCourseCount)
             // get to the next course
             break;
-            // this means that the teacher is aviliable
+          // this means that the teacher is aviliable
           $teacherFound = true;
 
           if ($teacherFound) {
