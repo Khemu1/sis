@@ -19,20 +19,24 @@ class Enrollment
   public static function enroll(): void
   {
     $students = Students::selectAll();
-
+    // the method will stop if there aren't any students
     if (empty($students)) {
-      return;
+      return ;
     }
 
     foreach ($students as $student) {
+      /**
+       * returns an things tha are connected to the students --> coureses and teachers
+       */
       $studentLevel = $student["level"];
       $courses = Courses::select(Courses::$columns, ["level" => $studentLevel]);
       $teachers = Teaches::selectWithLevel($studentLevel);
       $coursesForLevel = Courses::select(["name",], ["level" => $studentLevel]);
       $unassinged = true;
       $teacherFound = false;
-
+          // loop through each retunred course
       foreach ($courses as $course) {
+      // there aren't any teachers for this course , get the next course
         if (empty($teachers)) {
           self::insert([$course["name"], $course["level"], $course["hours"], $student["userName"], null]);
           continue;
@@ -40,28 +44,32 @@ class Enrollment
 
         foreach ($teachers as $teacher) {
           // Check if the teacher teaches the current course and has available slots for the student
-
           $isTeachingCourse = Teaches::doesTeach(["teacherUserName" => $teacher["teacherUserName"], "course" => $course["name"]]) === 1;
           $teacherCourseCount = self::exists(["teacherUserName" => $teacher["teacherUserName"], "courseName" => $course["name"]]) < 5;
           $alreadyEnrolled = self::exists(["teacherUserName" => $teacher["teacherUserName"], "studentUserName" => $student["userName"], "courseName" => $course["name"]]) === 0;
           $studentCourseCount = self::exists(["studentUserName" => $student["userName"]]) < count($coursesForLevel);
-          ;
           if (!$isTeachingCourse)
+          // get to the next teacher
             continue;
           if (!$teacherCourseCount)
+            // get to the next teacher
             continue;
           if (!$alreadyEnrolled)
+            // get to the next course
             break;
           if (!$studentCourseCount)
+            // get to the next course
             break;
+            // this means that the teacher is aviliable
           $teacherFound = true;
 
           if ($teacherFound) {
-
             self::insert([$course["name"], $course["level"], $course["hours"], $student["userName"], $teacher["teacherUserName"]]);
+            // data is inserted and the students is assinged
             $unassinged = false;
           }
           if (!$teacherFound) {
+            // no teacher found at all so insert the value of the teacher username as null
             self::insert([$course["name"], $course["level"], $course["hours"], $student["userName"], null]);
           }
         }
@@ -70,7 +78,9 @@ class Enrollment
       // Update the null course names
       if ($unassinged && !empty($teachers)) {
         $nullCourses = self::selectNull(["courseName"], ["studentUserName" => $student["userName"]]);
+        // return courses that have the teacher column as null
         if (!empty($nullCourses)) {
+          // if there are null values loop through each course and assing the teachers
           foreach ($nullCourses as $nullCourse) {
 
             foreach ($teachers as $teacher) {
@@ -85,7 +95,6 @@ class Enrollment
                 continue;
               if (!$alreadyEnrolled)
                 break;
-
               self::update(["teacherUserName" => $teacher["teacherUserName"]], ["studentUserName" => $student["userName"], "courseName" => $nullCourse["courseName"]]);
               break;
             }

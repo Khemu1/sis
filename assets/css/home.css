@@ -391,7 +391,6 @@ section {
 }
 .teacher-students {
   align-items: center;
-  justify-items: center;
 }
 .teacher-students :first-child {
   height: max-content;

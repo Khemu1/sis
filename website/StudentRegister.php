@@ -29,12 +29,10 @@ if (isset($_POST["register"])) {
         $student = [$accountId, $userName, $name, $address, $level];
         Students::insert($student);
         Enrollment::enroll();
+        
         $_SESSION["id"] = $accountId;
         $_SESSION["userName"] = $userName;
         $_SESSION["userType"] = "student";
-
-        Enrollment::enroll();
-
         header("location: home.php");
         exit();
     }

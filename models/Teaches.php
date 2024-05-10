@@ -79,5 +79,4 @@ class Teaches
         $count = $stmt->fetchColumn();
         return intval($count);
     }
-
 }
