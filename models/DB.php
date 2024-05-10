@@ -38,9 +38,10 @@ class DB
   public static function insert(string $table, array $data): bool
   {
     $keys = array_keys($data);
-    $placeholders = array_map(fn(string $key) => ":$key", $keys);
+    $placeholders = array_map(fn(string $key) => ":$key", $keys); 
 
     // Construct the SQL query
+    // impolde turns the array into a string 
     $sql = "INSERT INTO $table (" . implode(", ", $keys) . ") VALUES (" . implode(", ", $placeholders) . ")";
 
     // Prepare the SQL statement
@@ -114,7 +115,7 @@ class DB
     $conditionKeys = array_keys($condition);
 
     $dataPlaceholders = array_map(function (string $key) {
-      return "$key = :$key";
+      return "$key = :$key"; // username = 
     }, $dataKeys);
     $conditionPlaceholders = array_map(function (string $key) {
       return "$key = :$key";

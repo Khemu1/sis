@@ -25,6 +25,7 @@ class Enrollment
     }
 
     foreach ($students as $student) {
+      //[id , username ,name , address ,level]
       /**
        * returns an things tha are connected to the students --> coureses and teachers
        */
@@ -199,5 +200,4 @@ class Enrollment
     $count = $stmt->fetchColumn();
     return intval($count);
   }
-
 }

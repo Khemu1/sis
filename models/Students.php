@@ -33,6 +33,7 @@ public static function select(array $columns, array $data): array
    * @param array $data an  array containing the values
    * @return bool true if the record was inserted, false otherwise
    */
+  // [ali,9513]
   public static function insert(array $data): bool
   {
     if (count($data) != count(self::$columns)) {
@@ -40,7 +41,6 @@ public static function select(array $columns, array $data): array
       return false;
     }
     $arr = array_combine(self::$columns, $data);
-
     return DB::insert(self::$table, $arr);
   }
 }
