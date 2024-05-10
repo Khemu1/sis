@@ -78,7 +78,7 @@ class Utils
         $level = intval($fields[4]);
 
         if (Utils::validUserName($userName) != 1)
-            $errors['username'] = "invalid name";
+            $errors['username'] = "invalid username";
         if (Utils::validName($name) != 1)
             $errors['name'] = "invalid name";
         if (Utils::validPassword($password) != 1)
