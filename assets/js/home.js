@@ -111,7 +111,7 @@ async function fetchDataAndUpdateVariable() {
     let url = window.location.href;
 
     if (url === "http://sis.test/website/home.php") {
-      console.log("will display home");
+      document.title = "Home";
       let tempDiv = document.createElement("div");
       tempDiv.innerHTML = home1;
       let homeNode = tempDiv.firstElementChild;
@@ -119,7 +119,7 @@ async function fetchDataAndUpdateVariable() {
     }
 
     if (url === "http://sis.test/website/home.php?page=courses") {
-      console.log("will display courses");
+      document.title = "Courses";
       let tempDiv = document.createElement("div");
       tempDiv.innerHTML = courses1;
       let coursesNode = tempDiv.firstElementChild;
@@ -127,7 +127,7 @@ async function fetchDataAndUpdateVariable() {
     }
 
     if (url === "http://sis.test/website/home.php?page=about") {
-      console.log("will display about");
+      document.title = "About";
       let tempDiv = document.createElement("div");
       tempDiv.innerHTML = about;
       let aboutNode = tempDiv.firstElementChild;
