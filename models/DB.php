@@ -31,8 +31,8 @@ class DB
 
   /**
    * This function is used to insert data into a tables in the database
-   * @param string $table the name of the table to insert into
-   * @param array $data an array of key-value pairs where the key is the column name and the value is the value to insert
+   * @param string $table The name of the table to insert into
+   * @param array $data An associative array
    * @return bool true if the data was inserted successfully, false otherwise
    */
   public static function insert(string $table, array $data): bool
