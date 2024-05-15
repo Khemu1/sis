@@ -63,7 +63,7 @@ if (isset($_POST["register"])) {
                     <small class="error-msg"></small><br>
                     <div class="error-msg">
                         <?php
-                        echo $arr["userName"] ?? " ";
+                        echo $arr["username"] ?? " ";
                         echo $arr["account"] ?? " ";
                         ?>
                     </div>
