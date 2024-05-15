@@ -8,7 +8,7 @@ class Utils
      */
     public static function validUserName($username)
     {
-        return preg_match('/^[a-zA-Z0-9 ]{3,12}$/', $username);
+        return strlen(trim($username)) >= 3 && strlen(trim($username)) <= 12;
     }
 
     /**
@@ -35,7 +35,7 @@ class Utils
      */
     public static function validAddress($address)
     {
-        return preg_match("/^[a-zA-Z0-9,. ]{2,30}$/", $address);
+        return strlen(trim($address)) >= 2 && strlen(trim($address)) <= 30;
     }
 
     /**
