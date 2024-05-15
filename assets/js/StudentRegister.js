@@ -37,11 +37,11 @@ const checkName = () => {
   if (!isRequired(name)) {
     showError(nameEl, "Name field cannot be blank.");
     document.getElementById("name").style.border = "1px solid red";
-  } else if (!isNameSecure(name)) {
-    showError(nameEl, "Name must only contain English letters");
-    document.getElementById("name").style.border = "1px solid red";
   } else if (!isBetween(name.length, min, max)) {
     showError(nameEl, "Name must be between 3 and 12 characters.");
+    document.getElementById("name").style.border = "1px solid red";
+  } else if (!isNameSecure(name)) {
+    showError(nameEl, "Name must only contain English letters");
     document.getElementById("name").style.border = "1px solid red";
   } else {
     showSuccess(nameEl);
