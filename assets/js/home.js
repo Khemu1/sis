@@ -192,7 +192,7 @@ function teacherContent(info, courses) {
       <div>Course</div>
       <div>Level</div>
       <div>Hours</div>
-      <div>Student Name</div>
+      <div>Student Username</div>
       </div> 
     `;
 
