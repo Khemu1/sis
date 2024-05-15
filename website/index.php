@@ -58,7 +58,7 @@ if (isset($_POST["login"])) {
             <div class="form-group">
                 <input type="text" name="userName" class="user-name" placeholder="Username">
             </div>
-        
+
             <div class="form-group">
                 <input type="password" name="password" class="password" placeholder="Password">
             </div>
@@ -84,4 +84,3 @@ if (isset($_POST["login"])) {
 </body>
 
 </html>
-<script type="module" src="../assets/js/index.js?t=<?= time() ?>"></script>
