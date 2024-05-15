@@ -28,7 +28,8 @@ if ($_SESSION["userType"] === "student") {
     "data" => $data,
     "courses" => $EnrolledCourses
   ];
-  echo json_encode($response);
+  $response = json_encode($response);
+  echo ($response);
   exit();
 }
 
@@ -43,13 +44,15 @@ if ($_SESSION["userType"] === "teacher") {
     "data" => $data,
     "courses" => $EnrolledCourses
   ];
-  echo json_encode($response);
+  $response = json_encode($response);
+  echo ($response);
   exit();
 } else {
   $response = [
     "status" => "error",
     "message" => "invalid user type"
   ];
-  echo json_encode($response);
+  $response = json_encode($response);
+  echo ($response);
   exit();
 }
