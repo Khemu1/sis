@@ -29,7 +29,7 @@ if (isset($_POST["register"])) {
         $student = [$accountId, $userName, $name, $address, $level];
         Students::insert($student);
         Enrollment::enroll();
-        
+
         $_SESSION["id"] = $accountId;
         $_SESSION["userName"] = $userName;
         $_SESSION["userType"] = "student";
@@ -44,6 +44,8 @@ if (isset($_POST["register"])) {
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="../assets/icons/icons8-register-40.png">
+
     <title>Student Sign Up</title>
     <link rel="stylesheet" href="..\assets\css\StudentRegister.css">
     <link rel="stylesheet" href="../assets/css/condition.css">
